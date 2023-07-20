@@ -9,7 +9,7 @@
 <jsp:useBean id="tdao" class="com.mni.test.Dao"></jsp:useBean>
 <body>
 	<h1>index.jsp</h1>
-	<h2>index.jsp2</h2>
+	<h2>index.jsp23</h2>
 <%
 	tdao.daoTest();
 %>
