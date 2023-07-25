@@ -1,0 +1,51 @@
+@charset "UTF-8";
+body {
+	width: 1200px;
+	margin: 100px auto;
+}
+
+h1 {
+	color: #ff7f50;
+}
+
+section {
+	margin: 0px auto;
+}
+
+.text_size {
+	width: 360px;
+	height: 30px;
+}
+
+select {
+	width: 150px;
+}
+
+label {
+	display: inline-block;
+	width: 90px;
+	font-weight: bold;
+}
+
+.text_margin_top {
+	margin-top: 10px;
+}
+
+.select_margin_top {
+	margin-top: 5px;
+}
+
+.buttonDeco {
+    width: 465px;
+    height: 35px;
+    color: white;
+    background-color: #ff7f50;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+.select_title {
+	display: inline-block;
+	width: 150px;
+}

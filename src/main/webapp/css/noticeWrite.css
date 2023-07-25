@@ -1,0 +1,37 @@
+@charset "UTF-8";
+body {
+	width: 1200px;
+	margin: 100px auto;
+}
+
+textarea {
+    width: 600px;
+    height: 400px;
+    resize: none;
+}
+
+.text_size {
+	width: 502px;
+	height: 30px;
+}
+
+label {
+	display: inline-block;
+	width: 90px;
+	font-weight: bold;
+}
+
+.buttonDeco {
+	cursor: pointer;
+    width: 290px;
+    height: 35px;
+    color: white;
+    background-color: #ff7f50;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    margin-right: 20px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+  	box-shadow: none;
+}
