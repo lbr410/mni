@@ -44,6 +44,11 @@
 .main{
     width: 1200px;
 }
+.imgsize{
+	width: 280px;
+    height: 290px;
+	
+}
 .place-image-wrapper {
     position: relative;
     width: 283px;
@@ -52,9 +57,10 @@
     overflow: hidden;
 }
 
-place-image-wrapper img {
+.place-image-wrapper img {
     width: 500px;
     height: 500px;
+    cursor: pointer;
 }
 
 .place-image-wrapper .heart-icon {
