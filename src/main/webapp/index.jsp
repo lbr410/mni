@@ -23,7 +23,7 @@
         <div id="place-items-wrapper">
          <div class="place-list-item">
             <div class="place-image-wrapper">
-                <img src="#" alt="place image">
+                <img src="#" alt="place image" class="imgsize">
                 <img class="heart-icon" src="img/heart.svg" alt="heart icon">
             </div>
             <div class="description-section">
