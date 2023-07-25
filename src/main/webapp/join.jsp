@@ -73,7 +73,7 @@ function addrpopup(){
 	}
 </script>
 <body onload = "sethide()">
-<%@include file = "../header.jsp" %>
+<%@include file = "header.jsp" %>
 <section class = "sectionjoin">
 	<article>
 		<h2>회원가입</h2>
