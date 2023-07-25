@@ -70,7 +70,7 @@
 
     <div class="head-title">
         <div class="best">신상품</div>
-        <div class="more">상세보기> </div>
+        <div class="more">상세보기</div>
     </div>
         <main>
             <div id="place-items-wrapper">
@@ -152,7 +152,7 @@
                     <div class="place-list-item">
                     <div class="place-image-wrapper">
                         <img src="#" alt="place image">
-                        <img class="heart-icon" src="./img/heart.svg" alt="heart icon">
+                        <img class="heart-icon" src="../img/heart.svg" alt="heart icon">
                     </div>
                     <div class="description-section">
                       <div class="description-section_title">강아지 간식</div>
@@ -163,7 +163,7 @@
                   <div class="place-list-item">
                     <div class="place-image-wrapper">
                       <img src="#" alt="place image">
-                      <img class="heart-icon" src="./img/heart.svg" alt="heart icon">
+                      <img class="heart-icon" src="../img/heart.svg" alt="heart icon">
                     </div>
                     <div class="description-section">
                       <div class="description-section_title">강아지 간식</div>
