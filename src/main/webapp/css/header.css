@@ -1,0 +1,276 @@
+@charset "UTF-8";
+*{
+    margin:0 auto;
+    padding: 0px;
+    list-style: none;
+    font-family: "Noto Sans";
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+/*header*/
+header{
+    display: block;
+    padding: 0px;
+    width: 1200px;
+    height: 220px;
+    align-items: center;
+    position: relative;
+}
+/*상단 회원가입*/
+#member{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    margin-top: 10px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    font-display: none;
+    font-size: 12px;
+}
+#member a{
+    margin :0 10px;
+}
+.t{
+    margin-right: 20px;
+}
+/*header*/
+.header-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.mainlogo{
+    margin-left: 20px;
+    width: 200px;
+    height: 80px;
+    cursor: pointer;
+}
+.l-logo{
+    width: 300px;
+    display: inline-block;
+}
+.l-button{
+    border: 0;
+    background-color: white;
+    color: orangered;
+    cursor: pointer;
+}
+.r-button{
+    border: 0;
+    background-color: white;
+    color: gray;
+    cursor: pointer;
+    left:0;
+}
+.dog{
+    border: none;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(217,217,217);
+}
+.inactive-img{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(217,217,217);
+}
+.active-img{
+    display: none;
+    width: 40px;
+    height: 40px;
+}
+.r-button:hover{
+    color: orangered;
+}
+.r-button:hover .active-img{
+    display: inline-block;
+}
+.r-button:hover .inactive-img{
+    display: none;
+}
+#active-button:hover .active-img{
+    display: inline-block;
+}
+
+/*검색*/
+.little-search{
+    margin-left: 30px;
+    display: flex;
+    padding: 0 8px;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    height: 48px;
+    box-sizing: border-box;
+    min-width: 500px;
+    border: 1px solid orange;
+}
+.little-search:hover{
+    box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+}
+.little-search *{
+    cursor: pointer;
+}
+#search{
+    border: none;
+    outline: none;
+    width: 400px;
+    font-size: 18px;
+}
+.top-right{
+    width: 100px;
+}
+.little-search_button{
+    width: 300px;
+    display: block;
+    flex-shrink: 0;
+    padding: 0 16px;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(34,34,34);
+}
+.magnifying-glass wrapper{
+    margin-left: 100px;
+}
+#search-icon{
+    margin-top: 2px;
+    margin-left:30px;
+    width: 40px;
+    text-align: right;
+}
+/*메뉴*/
+.dropdown{
+    position: relative;
+    display: inline-block;
+    color: #ff7f50;
+    margin-right: 10px;
+    width: 100px;
+}
+.dropbtn{
+    font-weight: 400;
+    color: rgb(37,37,37);
+    padding: 12px;
+    width: 100px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    font-weight: 400;
+    background-color: #f9f9f9;
+    width: 100px;
+    flex-direction: column;
+}
+.dropdown-content a{
+    display: block;
+    text-decoration: none;
+    color: rgb(37, 37, 37);
+    font-size: 18px;
+    text-align: left;
+    padding: 12px 20px;
+}
+.dropbtn_icon123:hover{
+    color: #ff7f50;
+}
+.dropdown-content a:hover{
+    background-color: #ececec;
+    color: #ff7f50;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.btn{
+    display: inline-block;
+    font-weight: 400;
+    color: rgb(37,37,37);
+    padding: 12px;
+    margin-right: 10px;
+    width: 100px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+.btn:hover{
+    color: #ff7f50;
+}
+section{
+    width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0px;
+    margin-left: -50px;
+}
+/*오른쪽 아이콘*/
+.right-section{
+    margin-right: 0px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    right: 0;
+    cursor: pointer;
+    
+}
+.cart-button{
+    padding: 12px;
+    margin-left: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.inactive-cart{
+    width: 42px;
+    height: 42px;
+}
+.active-cart{
+    display: none;
+    width: 42px;
+    height: 42px;
+}
+.cart-button:hover .active-cart{
+    display:inline-block;
+}
+.cart-button:hover .inactive-cart{
+    display: none;
+}
+#cart-icon:hover .active-cart{
+    display:inline-block;
+}
+.my-button{
+    padding: 12px;
+    margin-left: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.inactive-my{
+    width:42px;
+    height: 42px;
+}
+.active-my{
+    display: none;
+    width: 42px;
+    height: 42px;
+}
+.my-button:hover .active-my{
+    display: inline-block;
+}
+.my-button:hover .inactive-my{
+    display: none;
+}
+#my-icon:hover .active-my{
+    display: inline-block;
+}
