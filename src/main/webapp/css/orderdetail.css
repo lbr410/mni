@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+.ordersection{margin: 0px auto;}
+	
+.userimg{
+    border: 1px solid gray; 
+    height: 200px;
+    width: 200px; 
+    border-radius: 100%; 
+    background-color: darkgray; 
+    background: url('/mni/img/logo.png') darkgray center; 
+    background-size: 265px;
+    position: relative;
+    left: 30%;
+    top: -10%;
+    }
+    
+    .username{
+    font-size: 20px; 
+    margin-top: 250px; 
+    margin-left: 59px;
+    }
+    
+    h1{
+    font-size: 30px; 
+    margin-left: 500px;
+    margin-top: 90px;
+    }
+    
+    h3{
+    margin-left: 350px;
+    margin-top: 70px;
+    font-size: 25px;
+    }
+    
+    hr{width: 700px; margin-left: 350px;}
+    
+    .productimg{
+    	width: 130px;
+    	height: 170px;
+    	background: url("/mni/img/main.jpeg") darkgray center;
+    	background-size: 150px;
+    	margin-top: 10px;
+    	margin-left: 350px;
+    }
+    
+    .orderlist{
+    	margin-left: 550px;
+    	margin-top: -147px;
+    }
+    
+    .orderlist li{margin-bottom: 13px;}
+    
+    .a{margin-left: 900px; margin-top: -80px;}	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
