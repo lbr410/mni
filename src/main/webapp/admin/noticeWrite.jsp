@@ -11,8 +11,8 @@
 	<section>
 		<article>
 		<form name="noticeWrite" action="noticeWrite_ok.jsp" method="post">
-			<div><label>글제목</label>
-			<input type="text" name="notice_title" class="text_size"></div><br>
+			<div class="textFocus">
+			<input type="text" name="notice_title"><label>글제목</label></div><br>
 			<textarea name="notice_content"></textarea><br><br>
 			<input type="reset" value="모두 지우기" class="buttonDeco">
 			<input type="submit" value="작성" class="buttonDeco">

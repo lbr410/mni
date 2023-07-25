@@ -6,6 +6,7 @@ body {
 
 h1 {
 	color: #ff7f50;
+	width: 300px;
 }
 
 section {
@@ -35,6 +36,10 @@ label {
 	margin-top: 5px;
 }
 
+.text_margin_top2 {
+	margin-top: 20px;
+}
+
 .buttonDeco {
     width: 465px;
     height: 35px;
@@ -48,4 +53,37 @@ label {
 .select_title {
 	display: inline-block;
 	width: 150px;
+}
+
+.textFocus {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 462px;
+    align-items: center;
+}
+
+.textFocus input {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    color: #111111;
+    border: 0;
+    border: 1px #cccccc solid;
+}
+.textFocus label {
+    font-size: 16px;
+    color: #111111;
+    word-break: keep-all;
+    padding-right: 14px;
+}
+
+.textFocus input:focus {
+    border-color:#ff7f50;
+    outline: none;
+}
+.textFocus input:focus + label {
+    color: #ff7f50;
 }

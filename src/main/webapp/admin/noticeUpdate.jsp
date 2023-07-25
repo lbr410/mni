@@ -11,8 +11,8 @@
 	<section>
 		<article>
 		<form name="noticeUpdate" action="noticeUpdate_ok.jsp" method="post">
-			<div class="textFocus"><label>글제목</label>
-			<input type="text" name="notice_title" class="text_size" value="제목 수정"></div><br>
+			<div class="textFocus">
+			<input type="text" name="notice_title" value="제목 수정"><label>글제목</label></div><br>
 			<textarea name="notice_content">이곳은 수정할 내용</textarea><br><br>
 			<input type="reset" value="모두 지우기" class="buttonDeco">
 			<input type="submit" value="수정" class="buttonDeco">

@@ -12,8 +12,8 @@
 <section>
 	<article>
 		<form name="prodInsert" action="prodInsert_ok.jsp" method="post">
-		<div><label>상품</label>
-		<input type="text" name="prod_name" class="text_size"></div><br>
+		<div class="textFocus">
+		<input type="text" name="prod_name" class="text_size"><label>상품</label></div><br>
 		<div>
 		<label class="select_title">동물</label>
 		<label class="select_title">카테고리</label>
@@ -39,15 +39,15 @@
 		</div>
 		<br>
 		
-		<div class="text_margin_top"><label>가격</label>
-		<input type="text" name="prod_price" class="text_size"></div>
-		<div class="text_margin_top"><label>재고</label>
-		<input type="text" name="prod_count" class="text_size"></div>
-		<div class="text_margin_top"><label>글제목</label>
-		<input type="text" name="prod_title" class="text_size"></div>
-		<div class="text_margin_top"><label>상품이미지</label>
+		<div class="text_margin_top textFocus">
+		<input type="text" name="prod_price" class="text_size"><label>가격</label></div>
+		<div class="text_margin_top textFocus">
+		<input type="text" name="prod_count" class="text_size"><label>재고</label></div>
+		<div class="text_margin_top textFocus">
+		<input type="text" name="prod_title" class="text_size"><label>글제목</label></div>
+		<div class="text_margin_top2"><label>상품이미지</label>
 		<input type="file" name="prod_title_img"></div>
-		<div class="text_margin_top"><label>상세이미지</label>
+		<div class="text_margin_top2"><label>상세이미지</label>
 		<input type="file" name="prod_info_img"></div><br>
 		<div class="text_margin_top"><input type="submit" value="등록하기" class="buttonDeco"></div>
 		</form>
