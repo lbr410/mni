@@ -7,15 +7,7 @@
 <title>Insert title here</title>
 <link rel = "stylesheet" type = "text/css" href = "/mni/css/layout.css">
 </head>
-<style>
-	.loginsection{width: 1200px; margin: 0px auto; padding: 50px;}
-	.img{width: 350px; margin-left: 60px;}
-	.textbox{width: 500px; height: 70px; margin-top: 20px; border: 1px solid lightgray; border-radius: 10px;}
-	.button{width: 507px; height: 70px; margin-bottom: 10px; border: 1px solid lightgray; border-radius: 10px; cursor: pointer;}
-	.textsize{font-size: 20px;}
-	input{font-size: 18px;}
-	input[type="checkbox"]{zoom: 1.5;}
-</style>
+<link rel = "stylesheet" type = "text/css" href = "/mni/css/login.css">
 <body>
 <%@include file = "header.jsp" %>
 <section class = "loginsection">

@@ -7,49 +7,7 @@
 <title>Insert title here</title>
 <link rel = "stylesheet" type = "text/css" href = "/mni/css/layout.css">
 </head>
-<style>
-	.sectionjoin{
-	width: 1200px; 
-	margin: 0px auto; 
-	padding: 50px;
-	position: relative;
-	}
-	
-	h2{
-	display: inline-block;
-	margin-left:-20px;
-	font-size: 35px; 
-	margin-bottom: -20px;
-	}
-	
-	hr{width: 800px; margin-top: -50px;}
-	
-	.divsize{
-	font-size: 15px; 
-	margin-left: 650px; 
-	margin-bottom: 10px;}
-	
-	table{
-	width: 800px; 
-	text-align: left; 
-	border-spacing: 0 40px; 
-	margin: 0px auto;
-	}
-	
-	th{margin-bottom: 20px;}
-	
-	.add{width: 100px; height: 40px; margin-bottom: 10px;}
-	
-	.button{width: 100px; height: 40px;}
-	
-	.submit{width: 400px; height: 60px; margin-top: 30px; margin-left: 100px;}
-	
-	.inputtext{width: 300px; height: 40px; margin-bottom: 10px;}
-	
-	.jumin{width: 140px; height: 40px;}
-	
-	.pwdexception{color: red; font-size: 13px;}	
-</style>
+<link rel = "stylesheet" type = "text/css" href = "/mni/css/join.css">
 <script>
 
 function sethide(){
@@ -125,12 +83,12 @@ function addrpopup(){
 	</tr>
 	<tr>
 	<th>전화번호<font color = "red">*</font></th>
-	<td><input type = "text" name = "tel" class = "inputtext"></td>
+	<td><input type = "text" name = "user_tel" class = "inputtext"></td>
 	</tr>
 	<tr>
 		<th>이메일</th>
 		<td>
-		<input type = "text" name = "email" class = "inputtext"><br>
+		<input type = "text" name = "user_email" class = "inputtext"><br>
 		</td>
 	</tr>
 	<tr>
