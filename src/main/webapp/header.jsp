@@ -10,7 +10,7 @@
         <a class="center" href="#">고객센터</a>
     </div><br>
     <div class="header-content">
-        <div class="logo">
+        <div class="logo" onclick="location.href='/mni/index.jsp'">
             <img class="mainlogo" src="/mni/img/mainlogo.png" alt="mainlogo">
         </div>
         <div class="l-logo">
@@ -50,11 +50,11 @@
         <div class="btn">신상품</div>
         <div class="btn">브랜드</div>
         <div class="right-section">
-        <div class="cart-button" id="cart-icon">
+        <div class="cart-button" id="cart-icon" onclick = "javascript:location.href='/mni/user/usercart.jsp'">
             <img class="inactive-cart" src="/mni/img/cart-inactive.png" alt="cart-icon">
             <img class="active-cart" src="/mni/img/cart-active.png" alt="cart-icon">
         </div>
-        <div class="my-button" id="my-icon">
+        <div class="my-button" id="my-icon" onclick = "javascript:location.href='/mni/user/orderdetail.jsp'">
             <img class="inactive-my" src="/mni/img/mypage-inactive.png" alt="mypage-icon">
             <img class="active-my" src="/mni/img/mypage-active.png" alt="mypage-icon">
         </div>
