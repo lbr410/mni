@@ -14,7 +14,7 @@
 <section class = "ordersection">
 	<article>
 	<h1>***님의 주문내역</h1>
-	<%for(int i = 0 ; i < 2 ; i++){ %>
+	<%for(int i = 0 ; i < 5 ; i++){ %>
 	<h3>2023.01.01</h3>
 	<hr>
 	<div class = "productimg"></div>

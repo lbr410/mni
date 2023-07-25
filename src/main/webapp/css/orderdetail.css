@@ -11,8 +11,9 @@
     background: url('/mni/img/logo.png') darkgray center; 
     background-size: 265px;
     position: relative;
-    left: 30%;
-    top: -10%;
+    margin-top: -300px;
+    margin-bottom:300px;
+    left: -30%;
     }
     
     .username{
