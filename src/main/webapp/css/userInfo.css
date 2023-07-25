@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+.section{margin: 0px auto;}
+	
+    .userimg{
+    border: 1px solid gray; 
+    height: 200px;
+    width: 200px; 
+    border-radius: 100%; 
+    background-color: darkgray; 
+    background: url('/mni/img/logo.png') darkgray center; 
+    background-size: 265px;
+    position: relative;
+    right: 390px;
+    top: -630px;
+    }
+    
+    .username{
+    font-size: 20px; 
+    margin-top: 250px; 
+    margin-left: 55px;
+    }
+    
+    .pwdexception{color: red; font-size: 13px;}
+    
+    h2{
+	display: inline-block;
+	margin-left:200px;
+	font-size: 35px; 
+	margin-bottom: -20px;
+	margin-top: 20px;
+	}
+	hr{width: 500px; margin-top: 10px; margin-left: 200px;}
+	
+	table{
+	width: 500px; 
+	text-align: left; 
+	border-spacing: 0 40px; 
+	margin-left: 200px;
+	}
+	
+	.inputtext{width: 300px; height: 40px; margin-bottom: 10px;}
+	
+	.add{width: 100px; height: 40px; margin-bottom: 10px;}
+	
+	.button{
+	width: 100px; 
+	height: 40px; 
+	border: 1px solid #ff7f50;
+	border-radius: 50px;
+	background-color: #ff7f50;
+	color: white;
+	cursor: pointer;
+	}
+	
+	.submit{
+	width: 350px; 
+	height: 60px; 
+	margin-top: 30px; 
+	margin-left: 250px;
+	border: 1px solid #ff7f50;
+	border-radius: 50px;
+	background-color: #ff7f50;
+	color: white;
+	}

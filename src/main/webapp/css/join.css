@@ -1,0 +1,61 @@
+@charset "UTF-8";
+	.sectionjoin{
+	width: 1200px; 
+	margin: 0px auto; 
+	padding: 50px;
+	position: relative;
+	}
+	
+	h2{
+	display: inline-block;
+	margin-left:-20px;
+	font-size: 35px; 
+	margin-bottom: -20px;
+	}
+	
+	hr{width: 800px; margin-top: -50px;}
+	
+	.divsize{
+	font-size: 15px; 
+	margin-left: 650px; 
+	margin-bottom: 10px;}
+	
+	table{
+	width: 800px; 
+	text-align: left; 
+	border-spacing: 0 40px; 
+	margin: 0px auto;
+	}
+	
+	th{margin-bottom: 20px;}
+	
+	.add{width: 100px; height: 40px; margin-bottom: 10px;}
+	
+	.button{
+	width: 100px; 
+	height: 40px;
+	border: 1px solid #ff7f50;
+	border-radius: 50px;
+	background-color: #ff7f50;
+	color: white;
+	cursor: pointer;
+	
+	}
+	
+	.submit{
+	width: 400px; 
+	height: 60px; 
+	margin-top: 30px; 
+	margin-left: 100px;
+	border: 1px solid #ff7f50;
+	border-radius: 50px;
+	background-color: #ff7f50;
+	color: white;
+	cursor: pointer;
+	}
+	
+	.inputtext{width: 300px; height: 40px; margin-bottom: 10px;}
+	
+	.jumin{width: 140px; height: 40px;}
+	
+	.pwdexception{color: red; font-size: 13px;}	
