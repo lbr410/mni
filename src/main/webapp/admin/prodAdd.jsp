@@ -8,9 +8,13 @@
 </head>
 <link rel="stylesheet" type="text/css" href="/mni/css/prodAdd.css">
 <body>
-<h1>상품등록</h1>
+<div class="divSize">
+<%@ include file="admin_header/admin_header_2.jsp" %>
 <section>
+<br><br><br>
+	<span>상품등록</span>
 	<article>
+	<br>
 		<form name="prodInsert" action="prodInsert_ok.jsp" method="post">
 		<div class="textFocus">
 		<input type="text" name="prod_name" class="text_size"><label>상품</label></div><br>
@@ -53,5 +57,6 @@
 		</form>
 	</article>	
 </section>
+</div>
 </body>
 </html>

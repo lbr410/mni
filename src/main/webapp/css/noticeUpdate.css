@@ -1,46 +1,16 @@
 @charset "UTF-8";
 body {
-	width: 1200px;
-	margin: 100px auto;
+	margin: 0;
 }
 
-textarea {
-    width: 580px;
-    height: 400px;
-    resize: none;
-    padding: 12px;
-    font-size: 14px;
-    color: #111111;
-    border: 0;
-    border: 1px #cccccc solid;
-    font-family: '맑은 고딕';
+.divSize {
+	width: 1250px;
 }
-
-textarea:focus {
-	border-color:#ff7f50;
-    outline: none;
-}
-
 
 label {
 	display: inline-block;
 	width: 90px;
 	font-weight: bold;
-}
-
-.buttonDeco {
-	cursor: pointer;
-    width: 290px;
-    height: 35px;
-    color: white;
-    background-color: #ff7f50;
-    border-radius: 5px;
-    margin-bottom: 50px;
-    margin-right: 20px;
-    text-decoration: none;
-    border: none;
-    outline: none;
-  	box-shadow: none;
 }
 
 .textFocus {
@@ -71,4 +41,36 @@ label {
 }
 .textFocus input:focus + label {
     color: #ff7f50;
+}
+
+textarea {
+    width: 580px;
+    height: 400px;
+    resize: none;
+    padding: 12px;
+    font-size: 14px;
+    color: #111111;
+    border: 0;
+    border: 1px #cccccc solid;
+    font-family: '맑은 고딕';
+}
+
+textarea:focus {
+	border-color:#ff7f50;
+    outline: none;
+}
+
+.buttonDeco {
+	cursor: pointer;
+    width: 290px;
+    height: 35px;
+    color: white;
+    background-color: #ff7f50;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    margin-right: 20px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+  	box-shadow: none;
 }

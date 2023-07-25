@@ -8,7 +8,10 @@
 </head>
 <link rel="stylesheet" type="text/css" href="/mni/css/noticeWrite.css">
 <body>
+<div class="divSize">
+<%@ include file="admin_header/admin_header_6.jsp" %>
 	<section>
+	<br><br>
 		<article>
 		<form name="noticeWrite" action="noticeWrite_ok.jsp" method="post">
 			<div class="textFocus">
@@ -19,5 +22,6 @@
 		</form>
 		</article>
 	</section>
+</div>
 </body>
 </html>

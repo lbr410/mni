@@ -1,7 +1,16 @@
 @charset "UTF-8";
 body {
-	width: 1200px;
-	margin: 100px auto;
+	margin: 0 auto;
+}
+
+.divSize {
+	width: 1250px;
+}
+
+span {
+	font-size: 30px;
+	font-weight: bold;
+	color: #ff7f50;
 }
 
 h1 {
