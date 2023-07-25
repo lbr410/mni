@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<<<<<<< HEAD
     
 <link rel="stylesheet" type="text/css" href="css/header.css">
 
-=======
 <link rel="stylesheet" type="text/css" href="/mni/css/header.css">
->>>>>>> branch 'master' of https://github.com/lbr410/mni.git
     <header>
     <div id="member">
         <a id="memberjoin" href="/mni/join.jsp">회원가입</a>
