@@ -52,9 +52,10 @@
     overflow: hidden;
 }
 
-place-image-wrapper img {
+.place-image-wrapper img {
     width: 500px;
     height: 500px;
+    cursor: pointer;
 }
 
 .place-image-wrapper .heart-icon {
