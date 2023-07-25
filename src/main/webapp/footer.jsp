@@ -32,7 +32,7 @@ font-size: 11px;
 <footer>
 <div class="btlogo">
 	<a href="#">
-	<img src="img/logo_bottom_2.png" alt="botttom-logo">
+	<img src="/mni/img/logo_bottom_2.png" alt="botttom-logo">
 	</a>
 </div>
 <div class="copy">
