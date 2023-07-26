@@ -56,14 +56,34 @@
     .button{
     	width: 80px;
     	height: 50px;
-    	border-radius: 50px;
+    	border-radius: 10px;
 		cursor: pointer;
 		background-color: #ff7f50;
 		color: white;
+		border: 0px;
     }
     
+    .settinglogo{
+    	width:40px;
+    	height: 41px; 
+    	background: url("/mni/img/settinglogo.png");
+    	background-size: 39.5px;
+    	position: relative;
+    	left: 44px;
+    	top: -35px;
+    	cursor: pointer;
+    }
     
-    
+    .settinglogo:hover{
+    	width:40px;
+    	height: 40px; 
+    	background: url("/mni/img/settinglogoHover.png");
+    	background-size: 39px;
+    	position: relative;
+    	left: 44px;
+    	top: -35px;
+    	cursor: pointer;
+   	}
     
     
     

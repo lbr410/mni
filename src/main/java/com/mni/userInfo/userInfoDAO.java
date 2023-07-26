@@ -4,18 +4,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class userDAO {
+public class userInfoDAO {
 	
 	private Connection conn;
 	private PreparedStatement ps;
 	private ResultSet rs;
 	
-	public userDAO() {
+	public userInfoDAO() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	//회원가입
-	public int userjoin(userDTO dto) {
+	public int userjoin(userInfoDTO dto) {
 		try {
 			conn = com.mni.db.MniDB.getConn();
 			String sql = "insert into userinfo "

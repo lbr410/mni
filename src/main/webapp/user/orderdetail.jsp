@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel = "stylesheet" type = "text/css" href = "/mni/css/header.css">
 <link rel = "stylesheet" type = "text/css" href = "/mni/css/orderdetail.css">
 </head>
 <body>
@@ -14,7 +13,9 @@
 	<article>
 	
 	<div class = "userimg">
-		<div class = "username">사용자명</div>
+		<div class = "username">
+		사용자명 &nbsp;&nbsp;&nbsp;<div class = "settinglogo" onclick = "javascript:location.href='/mni/user/usercheck.jsp'"></div>
+		</div>
 	</div>
 		
 	<h1>***님의 주문내역</h1>
@@ -30,8 +31,8 @@
 			</ul>
 			<div class = "a">
 			배송유무
-			<input type = "button" value = "주문취소" class = "button">
-			<input type = "button" value = "수취확인" class = "button">
+			<input type = "button" value = "주문취소" class = "button" onclick = "">
+			<input type = "button" value = "수취확인" class = "button" onclick = "">
 			</div>
 			<%} %>
 	</article>
