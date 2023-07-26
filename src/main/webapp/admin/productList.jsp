@@ -8,12 +8,13 @@
 <link rel="stylesheet" type="text/css" href="/mni/css/adminList.css">
 </head>
 <body>
+<%@ include file="admin_header/admin_header_2.jsp" %>
 <h1>상품 관리</h1>
 	<section>
-	<div><input type="text" name="search" placeholder="검색어 입력" id="searchBox">
-	<input type="button" value="검색">
+	<div class="searchBox"><input type="text" name="prod_search" placeholder="검색어 입력" id="searchBox">
+	<input type="button" value="검색" class="seaBtnDeco">
 	</div>
-	<div class="productup"><input type="button" value="상품등록"></div>
+	<div class="productup"><input type="button" value="상품등록" class="longboxBtnDeco"></div>
 		<table>
 			<tr>
 				<th>NO.</th>
@@ -40,8 +41,8 @@
 				<td>특가★로얄캐닌 인도어 8kg 3일간 할인!</td>
 				<td><img src="#" alt="상세페이지이미지"></td>
 				<td>
-				<input type="button" value="수정">
-				<input type="button" value="삭제">
+				<input type="button" value="수정" class="proBtnDeco">
+				<input type="button" value="삭제" class="proBtnDeco">
 				</td>
 			</tr>
 		</table>

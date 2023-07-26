@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel = "stylesheet" type = "text/css" href = "/mni/css/layout.css">
 </head>
 <link rel = "stylesheet" type = "text/css" href = "/mni/css/join.css">
 <script>
@@ -27,7 +26,7 @@ function show(){
 		}
 
 function addrpopup(){
-		location.href = '#';
+		window.open('/mni/user/findaddr.jsp','findaddr','width=450,height=200');
 	}
 </script>
 <body onload = "sethide()">
@@ -96,5 +95,6 @@ function addrpopup(){
 	</tr>
 </table>
 </form>
+<%@include file = "footer.jsp" %>
 </body>
 </html>

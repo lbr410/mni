@@ -2,7 +2,7 @@ package com.mni.userInfo;
 
 import java.sql.*;
 
-public class userDTO {
+public class userInfoDTO {
 	private int user_idx;
 	private String user_id;
 	private String user_name;
@@ -18,13 +18,13 @@ public class userDTO {
 	private Date user_joindate;
 	private Date user_ddate;
 	
-	public userDTO() {
+	public userInfoDTO() {
 		System.out.println("userDTO()생성자 호출됨");
 	}
 		
 	
 	
-	public userDTO(int user_idx, String user_id, String user_name, String user_pwd, String user_tel, int user_jumin_front,
+	public userInfoDTO(int user_idx, String user_id, String user_name, String user_pwd, String user_tel, int user_jumin_front,
 			int user_jumin_back, int user_zip, String user_addr1, String user_addr2, String user_email,
 			String user_delete, Date user_joindate, Date user_ddate) {
 		super();

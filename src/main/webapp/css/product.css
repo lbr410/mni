@@ -1,48 +1,55 @@
 @charset "UTF-8";
 .section{
 	margin: 0px auto;
+	width: 1000px;
 }
 .prod{
 	width: 1000px;
 }
+/*상품 타이틀 이미지*/
 .prodimg img{
 	float:left;
 	height: 500px;
 	 width: 600px;
 }
+/*상품 제목 가격 장바구니*/
 .prodtitle{
 	float: right;
 	 width: 400px;
 }
+/*수량 강조*/
 #prodcount{
 	background-color:#e9e9e9;
 	border: 0px;
 	width: 25px;
 	font-size: 20px;
 }
+/*상품 이름*/
 .prodname{
 	margin-top:30px;
 	 font-size: 25px;
 }
+/*상품 가격*/
 .prodprice{
 	margin-top:15px;
 	 font-size: 30px;
 }
+/*상품 수량*/
 .prodcount{
 	margin-top:30px;
 	background-color:#e9e9e9;
 	font-size: 20px;
 	border-radius: 10px;
 }
-.prodcount_prod{
-	margin-top: 10px;
-}
+/*상품 가격*/
 .prodcount span{
-	margin-left: 220px;
+	margin-left: 200px;
 }
+/*주문금액 구분선*/
 #hr{
 	margin-top: 15px;
 }
+/*주문 금액,가격*/
 #prodcart{
 	margin-left: 240px;
 	font-size: 20px;
@@ -51,27 +58,7 @@
 .prodcart{
 	margin-top: 15px;
 }
-.ul li{
-	margin-top:40px;
-	font-size: 25px;
-	float: left;
-	padding-right: 130px;
-}
-.ul li a{
-	font-weight: normal;
-}
-#ulhr{
-	background-color: #e9e9e9;
-	height: 2px;
-	border: 0;
-}
-.section h2{
-	margin-top: 15px;
-	margin-right: 580px;
-}
-.info{
-	margin-top: 20px;
-}
+/*장바구니*/
 #cart{
 	margin-top:15px;
 	text-align: center;
@@ -85,11 +72,73 @@
 	cursor: pointer;
 	border: 0;
 }
-#detail_img{
-	margin-top: 40px;
+/*메뉴*/
+.ul li{
+	margin-top:40px;
+	font-size: 25px;
+	float: left;
+	padding-right: 130px;
+}
+.ul li a{
+	font-weight: normal;
+}
+/*메뉴 구분선*/
+#ulhr{
+	background-color: #e9e9e9;
+	height: 2px;
+	border: 0;
+}/*상세정보*/
+#section_dt{
+	margin-top: 15px;
+	margin-right: 580px;
+}
+/*리뷰*/
+.section_rv{
+	margin-top: 50px;
+	margin-right: 580px;
+	width: 425px;
+}
+.info{
+	margin-top: 20px;
 }
 .detail_hr{
 	background-color: black;
 	height: 2px;
-	border: 0;	
+	border: 0;
+}
+/*리뷰 사용자 이미지*/
+.reviewImg{
+	border: 1px solid gray; 
+    height: 50px;
+    width: 50px; 
+    border-radius: 100%; 
+    background-color: darkgray; 
+    background: url('/mni/img/logo.png') darkgray center; 
+    background-size: 63px;
+    position:relative;
+    top:30px;
+    left: -484px;
+}
+/*리뷰 아이디 작성날짜*/
+.review_id{
+	width: 200px;
+	position:relative;
+    left: -340px;
+    top: -20px;
+}
+.body_hr{
+	margin-top: 25px;
+}
+/*리뷰 내용*/
+.review_content{
+	width: 1000px;
+}
+.review_hr{
+	margin-top: 50px;
+}
+/*주문취소*/
+.cancel{
+	list-style-type: circle;
+	position:relative;
+	left: 20px;
 }

@@ -5,7 +5,7 @@ footer{
 	margin-top: 100px;
 	position: relative;
 	height: 200px;
-	width: 1200px;
+	width: 1000px;
 }
 .btlogo{
 	float: left;
@@ -22,7 +22,7 @@ footer{
 .copy{
 float: left;
 height: 100px;
-width: 800px;
+width: 600px;
 }
 label{
 color: #565656;
