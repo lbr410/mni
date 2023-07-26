@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="/mni/css/adminList.css">
 </head>
 <body>
+<%@ include file="admin_header/admin_header_1.jsp" %>
 <h1>주문 내역</h1>
 	<section>
 	<div><input type="text" name="search" placeholder="검색어 입력" id="searchBox">
@@ -15,7 +16,7 @@
 	</div>
 	<div class="misord"><input type="checkbox" name="check" value="미승인 주문" >미승인 주문</div>
 		<table>
-			<tr>
+			<tr id="trUp">
 				<th>NO.</th>
 				<th>주문일시</th>
 				<th>주문번호</th>

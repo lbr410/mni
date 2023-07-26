@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="/mni/css/adminList.css">
 </head>
 <body>
+<%@ include file="admin_header/admin_header_2.jsp" %>
 <h1>상품 관리</h1>
 	<section>
 	<div><input type="text" name="search" placeholder="검색어 입력" id="searchBox">
