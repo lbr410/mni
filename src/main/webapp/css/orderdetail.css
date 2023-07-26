@@ -33,7 +33,7 @@
     font-size: 25px;
     }
     
-    hr{width: 700px; margin-left: 350px;}
+    hr{width: 800px; margin-left: 350px;}
     
     .productimg{
     	width: 130px;
@@ -53,7 +53,14 @@
     
     .a{margin-left: 900px; margin-top: -80px;}	
     
-    
+    .button{
+    	width: 80px;
+    	height: 50px;
+    	border-radius: 50px;
+		cursor: pointer;
+		background-color: #ff7f50;
+		color: white;
+    }
     
     
     
