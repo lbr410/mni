@@ -1,0 +1,32 @@
+@charset "UTF-8";
+body {
+	margin: 0 auto;
+}
+
+.divSize {
+	width: 1250px;
+}
+
+span {
+	font-size: 30px;
+	font-weight: bold;
+	color: #ff7f50;
+}
+
+h1 {
+	color: #ff7f50;
+}
+
+.date_size {
+	width: 150px;
+}
+
+.font_Deco {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.font_Deco2 {
+	font-size: 30px;
+	font-weight: bold;
+}
