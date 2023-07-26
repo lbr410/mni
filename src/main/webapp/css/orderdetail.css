@@ -10,11 +10,10 @@
     background-color: darkgray; 
     background: url('/mni/img/logo.png') darkgray center; 
     background-size: 265px;
-    position: relative;
-    margin-top: -300px;
-    margin-bottom:300px;
-    left: -30%;
-    }
+    position:relative;
+    top:180px;
+    left: -424px;
+   }
     
     .username{
     font-size: 20px; 
@@ -25,7 +24,7 @@
     h1{
     font-size: 30px; 
     margin-left: 500px;
-    margin-top: 90px;
+    margin-top: -140px;
     }
     
     h3{

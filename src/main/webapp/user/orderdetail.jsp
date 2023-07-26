@@ -13,8 +13,13 @@
 <%@include file = "../header.jsp" %>
 <section class = "ordersection">
 	<article>
+	
+	<div class = "userimg">
+		<div class = "username">사용자명</div>
+	</div>
+		
 	<h1>***님의 주문내역</h1>
-	<%for(int i = 0 ; i < 5 ; i++){ %>
+	<%for(int i = 0 ; i < 10 ; i++){ %>
 	<h3>2023.01.01</h3>
 	<hr>
 	<div class = "productimg"></div>
@@ -29,9 +34,6 @@
 			<input type = "button" value = "후기작성">
 			</div>
 			<%} %>
-		<div class = "userimg">
-		<div class = "username">사용자명</div>
-		</div>
 	</article>
 </section>
 <%@include file = "../footer.jsp" %>
