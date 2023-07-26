@@ -25,7 +25,6 @@ label {
     padding: 12px;
     font-size: 18px;
     color: #111111;
-    border: 0;
     border: 1px #cccccc solid;
 }
 .textFocus label {
@@ -50,7 +49,6 @@ textarea {
     padding: 12px;
     font-size: 14px;
     color: #111111;
-    border: 0;
     border: 1px #cccccc solid;
     font-family: '맑은 고딕';
 }

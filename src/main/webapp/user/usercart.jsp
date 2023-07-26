@@ -35,9 +35,9 @@
 			<div class="fontSize">로얄캐닌 인도어 8kg</div></td>
 			<td class="td2">
 				<input type="button" value="-" class="countBtn" onclick="count('minus')">
-				<input type="number" name="order_count" value="1" class="countText">
+				<input type="text" name="order_count" value="1" class="countText">
 				<input type="button" value="+" class="countBtn" onclick="count('plus')"></td>
-			<td class="fontSize td3">100,000원</td>
+			<td class="fontSize2 td3">100,000원</td>
 			<td class="td4"><input type="submit" value="삭제" class="deleteBtn"></td>
 		</tr>
 		<tr>
@@ -47,9 +47,9 @@
 			<div class="fontSize">차오츄르 4p</div></td>
 			<td class="td2">
 				<input type="button" value="-" class="countBtn" onclick="count('minus')">
-				<input type="number" name="order_count" value="2" class="countText">
+				<input type="text" name="order_count" value="2" class="countText">
 				<input type="button" value="+" class="countBtn" onclick="count('plus')"></td>
-			<td class="fontSize td3">25,000원</td>
+			<td class="fontSize2 td3">25,000원</td>
 			<td class="td4"><input type="submit" value="삭제" class="deleteBtn"></td>
 		</tr>
 		<tr class="orderTd">

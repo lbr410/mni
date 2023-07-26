@@ -6,39 +6,12 @@
 <meta charset="UTF-8">
 <title>멍냥이 : 리뷰작성</title>
 </head>
-<style>
-	/*.menu {
-		display: inline-block;
-		width: 90px;
-		font-weight: bold;
-	}*/
-	
-	.tableSize {
-		margin-top: 40px;
-		height: 600px;
+<link rel="stylesheet" type="text/css" href="/mni/css/reviewWrite.css">
+<script>
+	function textCheck() {
+		document.all.textLength.innerHTML = document.reviewWrite.review_content.value.length;
 	}
-	
-	h1 {
-		font-size: 30px;
-	}
-	
-	textarea {
-	    width: 580px;
-	    height: 400px;
-	    resize: none;
-	    padding: 12px;
-	    font-size: 14px;
-	    color: #111111;
-	    border: 0;
-	    border: 1px #cccccc solid;
-	    font-family: '맑은 고딕';
-	}
-	
-	textarea:focus {
-		border-color:#ff7f50;
-	    outline: none;
-	}
-</style>
+</script>
 <body>
 <%@ include file="../header.jsp" %>
 <section>
@@ -47,12 +20,16 @@
 		<form name="reviewWrite" action="reviewWrite_ok.jsp" method="post">
 		<table class="tableSize">
 			<tr>
-				<td><label class="menu">이미지 등록</label></td>
-				<td><input type="file" name="review_img"></td>
+				<td colspan="3"><textarea placeholder="최대 200자까지 입력 가능합니다."
+				name="review_content" onkeyup="textCheck()"></textarea></td>
 			</tr>
 			<tr>
-				<td><label class="menu">리뷰 작성</label></td>
-				<td><textarea name="review_content"></textarea></td>
+				<td colspan="3"><div class="textCount">(<span id="textLength">0</span> / 200)</div></td>
+			</tr>
+			<tr>
+				<td><label class="menu">이미지 등록</label></td>
+				<td><input type="file" name="review_img"></td>
+				<td><input type="submit" value="작성">
 			</tr>
 		</table>
 		</form>
