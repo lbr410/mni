@@ -84,7 +84,7 @@ header{
 		<div class="list"><a href="/mni/admin/admin_header/admin_header_3.jsp">회원목록</a></div>
 		<div class="list1"><a href="/mni/admin/admin_header/admin_header_4.jsp">리뷰내역</a></div>
 		<div class="list"><a href="/mni/admin/sales.jsp">매출집계</a></div>
-		<div class="list"><a href="/mni/admin/admin_header/admin_header_6.jsp"">공지사항</a></div>
+		<div class="list"><a href="/mni/admin/admin_header/admin_header_6.jsp">공지사항</a></div>
 	</div>
 	<div class="logout"><a href="#">로그아웃</a></div>
 	</div>

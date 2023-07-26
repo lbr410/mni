@@ -10,10 +10,10 @@
     background-color: darkgray; 
     background: url('/mni/img/logo.png') darkgray center; 
     background-size: 265px;
-    position: relative;
-    left: 30%;
-    top: -10%;
-    }
+    position:relative;
+    top:180px;
+    left: -424px;
+   }
     
     .username{
     font-size: 20px; 
@@ -24,7 +24,7 @@
     h1{
     font-size: 30px; 
     margin-left: 500px;
-    margin-top: 90px;
+    margin-top: -140px;
     }
     
     h3{
@@ -33,7 +33,7 @@
     font-size: 25px;
     }
     
-    hr{width: 700px; margin-left: 350px;}
+    hr{width: 800px; margin-left: 350px;}
     
     .productimg{
     	width: 130px;
@@ -53,10 +53,37 @@
     
     .a{margin-left: 900px; margin-top: -80px;}	
     
+    .button{
+    	width: 80px;
+    	height: 50px;
+    	border-radius: 10px;
+		cursor: pointer;
+		background-color: #ff7f50;
+		color: white;
+		border: 0px;
+    }
     
+    .settinglogo{
+    	width:40px;
+    	height: 41px; 
+    	background: url("/mni/img/settinglogo.png");
+    	background-size: 39.5px;
+    	position: relative;
+    	left: 44px;
+    	top: -35px;
+    	cursor: pointer;
+    }
     
-    
-    
+    .settinglogo:hover{
+    	width:40px;
+    	height: 40px; 
+    	background: url("/mni/img/settinglogoHover.png");
+    	background-size: 39px;
+    	position: relative;
+    	left: 44px;
+    	top: -35px;
+    	cursor: pointer;
+   	}
     
     
     
