@@ -6,7 +6,7 @@ img {
 }
 
 #login {
-	padding-top:100px;
+	padding-top:150px;
     text-align: center;
     width: 300px;
     height: 400px;
@@ -15,18 +15,17 @@ img {
 
 .buttonDeco {
     width: 250px;
-    height: 35px;
+    height: 40px;
     color: white;
+    font-size:15px;
     background-color: #ff7f50;
     border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 25px;
     border:0px;
+    
 }
 .textFocus input {
     width: 240px;
     height: 30px;
-    margin-bottom: 15px;
     font-size: 16px;
     color: #111111;
     border: 0;
@@ -42,20 +41,21 @@ img {
 }
 /*----로그인 페이지 ----*/
 
+
+
+
 body{
 	margin: 0px auto;
 }
 
 .misord{
-	width:570px;
+	width:920px;
 	text-align:right;
 	margin: 0px auto;
-	
+	display: inline-block;
 }
 table{
-	width:800px;
-	height: 50px;
-
+	width:1150px;
 	padding-top: 10px;
 	border-spacing:0px;
 }
@@ -75,7 +75,7 @@ td{
 	padding-bottom: 9px;
 	padding-left :6px;
 	padding-right: 6px;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid #cccccc;
 }
 h1{
 	margin: 0 auto;
@@ -83,46 +83,128 @@ h1{
 	padding-bottom: 30px;
 	color:#ff7f50;
 }
-div{
+.searchBox{
 	display: inline-block;
 }
+.seaBtnDeco{
+	width: 45px;
+	height: 26.5px;
+	font-size: 13px;
+	font-weight: 550;
+	color: #ff7f50;
+	background-color: #ffeedd;
+    border: none;
+    border-radius: 5px;
+    padding-bottom: 2.6px;
+}
+.longboxBtnDeco{
+	width: 78px;
+	height: 26.5px;
+	font-size: 13px;
+	font-weight: 550;
+	color: #ff7f50;
+	background-color: #ffeedd;
+    border: none;
+    border-radius: 5px;
+    padding-bottom: 2.6px;
+}
+.ordBtnDeco{
+	width: 40px;
+	height: 22px;
+	font-size: 11px;
+	color: white;
+    background-color: #ff7f50;
+    border: none;
+    border-radius: 5px;
+}
+.ordText{
+	color: #ff7f50;
+}
+.proBtnDeco{
+	width: 40px;
+	height: 22px;
+	font-size: 11px;
+	color: white;
+    background-color: #ff7f50;
+    border: none;
+    border-radius: 5px;
+	margin-bottom: 5px;
+
+}
 .productup{
-	width:570px;
+	width:920px;
 	text-align:right;
 	margin: 0px auto;
+	display: inline-block;
 }
 
 .noticeUpBtn{
 	padding-top:10px;
-	width:800px;
+	width:1150px;
 	text-align:right;
 	margin: 0px auto;
+	display: inline-block;
+}
+.reBtnDeco{
+	width: 40px;
+	height: 22px;
+	font-size: 11px;
+	color: white;
+    background-color: #ff7f50;
+    border: none;
+    border-radius: 5px;
+	
 }
 #noticetable{
-	width:500px;
-	margin: 0px auto;
-	padding: 10px;
+	width:800px;
+	padding-top: 10px;
 
 }
 #noticelist {
-	width:640px;
-	text-align:right;
-	margin: 0px auto;
+	display: inline-block;
+	margin-left:750px;
 	font-size: 12px;
 }
 #noticetitle{
-	font-weight: bold;
+	font-weight: 550;
 	font-size:15px;
 	border: 0px;
+	background-color: #ff7f50;
+	color: white;
+
+}
+#noticeSub{
+	border-top: 1px solid #ff7f50;
+	border-bottom: 1px solid #ff7f50;
+	font-weight: bold;
+	font-size:15px;
 }
 #noticecontent{
-	border:0px;
-	height: 220px;
-	
+	border-bottom:1px solid #ff7f50;
+	font-size: 15px;
 }
 #noticeBtn{
 	border:0px;
 	text-align: right;
+}
+.noticeBtnDeco{
+	width: 40px;
+    height: 30px;
+    color: white;
+    background-color: #ff7f50;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 50px;
+	
+}
+.notDelBtnDeco{
+	width: 40px;
+	height: 22px;
+	font-size: 11px;
+	color: white;
+    background-color: #ff7f50;
+    border: none;
+    border-radius: 5px;
 }
 #thup{
 	width: 60px;
