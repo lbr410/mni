@@ -5,9 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel = "stylesheet" type = "text/css" href = "/mni/css/layout.css">
-</head>
 <link rel = "stylesheet" type = "text/css" href = "/mni/css/login.css">
+</head>
 <body>
 <%@include file = "header.jsp" %>
 <section class = "loginsection">
@@ -29,5 +28,6 @@
 		</form>
 	</article>
 </section>
+<%@include file = "footer.jsp" %>
 </body>
 </html>

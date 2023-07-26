@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel = "stylesheet" type = "text/css" href = "/mni/css/layout.css">
 <link rel = "stylesheet" type = "text/css" href = "/mni/css/userInfo.css">
 </head>
 <script>
