@@ -14,7 +14,7 @@ a{
 header{
     display: block;
     padding: 0px;
-    width: 1200px;
+    width: 1000px;
     height: 220px;
     align-items: center;
     position: relative;
@@ -46,7 +46,6 @@ header{
     margin-top: 30px;
 }
 .mainlogo{
-    margin-left: 20px;
     width: 200px;
     height: 80px;
     cursor: pointer;
@@ -96,7 +95,6 @@ header{
 #active-button:hover .active-img{
     display: inline-block;
 }
-
 /*검색*/
 .little-search{
     margin-left: 30px;
@@ -108,38 +106,29 @@ header{
     height: 48px;
     box-sizing: border-box;
     min-width: 500px;
-    border: 1px solid orange;
+    border: 2px solid orange;
+    cursor: pointer;
 }
 .little-search:hover{
-    box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+    box-shadow: 0 2px 4px #FFF5D2;
 }
 #search{
     border: none;
     outline: none;
     width: 400px;
-    font-size: 18px;
+    font-size: 15px;    
 }
 .top-right{
     width: 100px;
 }
-.little-search_button{
-    width: 300px;
-    display: block;
-    flex-shrink: 0;
-    padding: 0 16px;
-    white-space: nowrap;
-    font-size: 14px;
-    font-weight: 600;
-    color: rgb(34,34,34);
-}
 .magnifying-glass wrapper{
-    margin-left: 100px;
+    margin-left: 100px;    
 }
 #search-icon{
     margin-top: 2px;
     margin-left:30px;
     width: 40px;
-    text-align: right;
+    text-align: right;    
 }
 /*메뉴*/
 .dropdown{
@@ -156,7 +145,7 @@ header{
     width: 100px;
     text-align: left;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
 }
 .dropdown-content{
@@ -172,7 +161,7 @@ header{
     display: block;
     text-decoration: none;
     color: rgb(37, 37, 37);
-    font-size: 18px;
+    font-size: 15px;
     text-align: left;
     padding: 12px 20px;
 }
@@ -195,19 +184,18 @@ header{
     width: 100px;
     text-align: left;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
 }
 .btn:hover{
     color: #ff7f50;
 }
 section{
-    width: 1200px;
+    width: 1000px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 0px;
-    margin-left: -50px;
 }
 /*오른쪽 아이콘*/
 .right-section{
@@ -251,7 +239,6 @@ section{
     width: 40px;
     height: 40px;
     cursor: pointer;
-    margin-right: 10px;
 }
 .inactive-my{
     width:42px;
@@ -271,5 +258,3 @@ section{
 #my-icon:hover .active-my{
     display: inline-block;
 }
-
-
