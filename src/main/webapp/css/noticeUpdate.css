@@ -1,0 +1,76 @@
+@charset "UTF-8";
+body {
+	margin: 0;
+}
+
+.divSize {
+	width: 1250px;
+}
+
+label {
+	display: inline-block;
+	width: 90px;
+	font-weight: bold;
+}
+
+.textFocus {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 605px;
+    align-items: center;
+}
+
+.textFocus input {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    color: #111111;
+    border: 0;
+    border: 1px #cccccc solid;
+}
+.textFocus label {
+    font-size: 18px;
+    color: #111111;
+    word-break: keep-all;
+    padding-right: 14px;
+}
+
+.textFocus input:focus {
+    border-color:#ff7f50;
+    outline: none;
+}
+.textFocus input:focus + label {
+    color: #ff7f50;
+}
+
+textarea {
+    width: 580px;
+    height: 400px;
+    resize: none;
+    padding: 12px;
+    font-size: 14px;
+    color: #111111;
+    border: 0;
+    border: 1px #cccccc solid;
+    font-family: '맑은 고딕';
+}
+
+textarea:focus {
+	border-color:#ff7f50;
+    outline: none;
+}
+
+.buttonDeco {
+	cursor: pointer;
+    width: 290px;
+    height: 35px;
+    color: white;
+    background-color: #ff7f50;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    margin-right: 20px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+  	box-shadow: none;
+}

@@ -1,0 +1,136 @@
+@charset "UTF-8";
+/*----로그인 페이지 ----*/
+img {
+    width: 200px;
+    height: 90px;
+}
+
+#login {
+	padding-top:100px;
+    text-align: center;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.buttonDeco {
+    width: 250px;
+    height: 35px;
+    color: white;
+    background-color: #ff7f50;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    border:0px;
+}
+.textFocus input {
+    width: 240px;
+    height: 30px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #111111;
+    border: 0;
+    border: 1px #cccccc solid;
+}
+.textFocus input:focus {
+    border-color:#ff7f50;
+    outline: none;
+    
+}
+.checkbox{
+	padding-top: 10px;
+}
+/*----로그인 페이지 ----*/
+
+
+
+body{
+	width: 800px;
+	margin: 0px auto;
+	padding: 50px;
+}
+
+.misord{
+	width:570px;
+	text-align:right;
+	margin: 0px auto;
+	
+}
+table{
+	width:800px;
+	margin: 0px auto;
+	padding-top: 10px;
+	border-spacing:0px;
+}
+th{
+	
+	font-size: 12.9px;
+	border-top: 3px double #ff7f50;
+	border-bottom: 3px double #ff7f50;
+
+}
+td{
+	border: 0.7px solid lightgray;
+	text-align: center;
+	font-size: 12px;
+}
+h1{
+	margin: 0 auto;
+	padding-bottom: 30px;
+	color:#ff7f50;
+}
+div{
+	display: inline-block;
+}
+.productup{
+	width:570px;
+	text-align:right;
+	margin: 0px auto;
+}
+
+.noticeUpBtn{
+	padding-top:10px;
+	width:800px;
+	text-align:right;
+	margin: 0px auto;
+}
+#noticetable{
+	width:500px;
+	margin: 0px auto;
+	padding: 10px;
+
+}
+#noticelist {
+	width:640px;
+	text-align:right;
+	margin: 0px auto;
+	font-size: 12px;
+}
+#noticetitle{
+	font-weight: bold;
+	font-size:15px;
+	border: 0px;
+}
+#noticecontent{
+	border:0px;
+	height: 220px;
+	
+}
+#noticeBtn{
+	border:0px;
+	text-align: right;
+}
+#thup{
+	width: 60px;
+}
+#searchBox{
+	height: 20px;
+}
+a:link{
+	color:black;
+	text-decoration:none;
+}
+a:visited{
+	color:black;
+	text-decoration:none;
+}
