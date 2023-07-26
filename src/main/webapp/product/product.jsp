@@ -18,7 +18,7 @@
 	</div>
 	<div class="prodtitle">
 	<div class="prodname">
-	<h1>상품명</h1><br>
+	<h1>로얄캐닌 인도어 4kg 변냄새 감소</h1><br>
 	</div>
 	<div class="prodprice">
 	<h1>27,000원</h1><br>
@@ -34,10 +34,10 @@
 	안심하시고 급여하세요!
 	</div>
 	<div class="prodcount">
-	<div class="prodcount_prod">&nbsp;상품명12312321</div>
+	<div class="prodcount_prod">&nbsp;로얄캐닌 인도어 4kg 변냄새 감소</div>
 	<form name="prodcount">
 	&nbsp;<input type="button" value="ㅡ" onclick="prodCount();">&nbsp;
-	<input type="text" name="prodcount" maxlength="2" id="prodcount">&nbsp;
+	<input type="text" name="prodcount" maxlength="2" id="prodcount" value="1">&nbsp;
 	<input type="button" value="+" onclick="prodCount();">
 	<span>27,000원</span>
 	</form>
@@ -48,7 +48,7 @@
 	<span id="prodcart">54,000원</span>
 	</div>
 	<form name="cart">
-		<input type="button" value="장바구니" id="cart">
+		<input type="button" value="장바구니" onclick="" id="cart">
 	</form>
 	</div>
 	</div>
@@ -79,6 +79,8 @@
 <article class="section">
 	<h2><a name="review">구매후기</a></h2>
 	<hr class="detail_hr">
+	<div class="reviewImg">
+	</div>
 </article>
 </section>
 <%@include file="/footer.jsp"%>

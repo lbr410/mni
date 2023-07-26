@@ -34,11 +34,8 @@
 	font-size: 20px;
 	border-radius: 10px;
 }
-.prodcount_prod{
-	margin-top: 10px;
-}
 .prodcount span{
-	margin-left: 220px;
+	margin-left: 200px;
 }
 #hr{
 	margin-top: 15px;
@@ -92,4 +89,16 @@
 	background-color: black;
 	height: 2px;
 	border: 0;	
+}
+.reviewImg{
+	border: 1px solid gray; 
+    height: 200px;
+    width: 200px; 
+    border-radius: 100%; 
+    background-color: darkgray; 
+    background: url('/mni/img/logo.png') darkgray center; 
+    background-size: 265px;
+    position:relative;
+    top:180px;
+    left: -424px;
 }
