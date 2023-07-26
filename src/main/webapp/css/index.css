@@ -2,20 +2,20 @@
 /*이미지슬라이드자리*/
 .bodywrap{
     height: 360px;
-    width: 1200px;
+    width: 1000px;
     position: relative;
     background-color: rgb(255, 200, 0)
 }
 .imgslide{
     height: 360px;
-    width: 1200px;
+    width: 1000px;
     overflow: hidden;
 }
 /*제목*/
 .head-title{
     position: relative;
     display: flex;
-    width: 1200px;
+    width: 1000px;
     text-align: center;
     margin-top: 14px;
     margin-bottom: 14px;
@@ -42,12 +42,7 @@
     margin-right: 0;
 }
 .main{
-    width: 1200px;
-}
-.imgsize{
-	width: 280px;
-    height: 290px;
-	
+    width: 1000px;
 }
 .place-image-wrapper {
     position: relative;
@@ -60,7 +55,6 @@
 .place-image-wrapper img {
     width: 500px;
     height: 500px;
-    cursor: pointer;
 }
 
 .place-image-wrapper .heart-icon {
@@ -78,7 +72,6 @@
     font-size: 15px;
     color: rgb(34, 34, 34);  
     gap: 3px;
-    
 }
 .description-section_title {
     font-weight: 600;
@@ -104,14 +97,16 @@ main {
 
 #place-items-wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 283px);
+    grid-template-columns: repeat(4, 236px);
     justify-items: center;
     align-items: center;
     box-sizing: border-box;
-    gap: 10px 23px;
+    gap: 10px 19px;
 }
 .heart-icon:active {
     transform: scale(0.5);
     transition: transform 0.25s ease;
 }
-
+.place-image-wrapper img:hover{
+	cursor:pointer;
+}
