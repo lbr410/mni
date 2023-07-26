@@ -7,6 +7,7 @@
 <title>멍냥이 관리자 : 공지사항</title>
 <link rel="stylesheet" type="text/css" href="/mni/css/adminList.css">
 </head>
+<%@ include file="admin_header/admin_header_6.jsp" %>
 <body>
 <h1>공지사항</h1>
 <section>
@@ -25,10 +26,10 @@
 				<td>admin</td>
 				<td>2023-07-21</td>
 				<td>0</td>
-				<td><input type="button" value="삭제"></td>
+				<td><input type="button" value="삭제"  class="notDelBtnDeco"></td>
 			</tr>
 		</table>
-		<div class="noticeUpBtn"><input type="button" value="작성하기"></div>
+		<div class="noticeUpBtn"><input type="button" value="작성하기" class="longboxBtnDeco"></div>
 	</section>
 </body>
 </html>

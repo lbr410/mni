@@ -8,10 +8,11 @@
 <link rel="stylesheet" type="text/css" href="/mni/css/adminList.css">
 </head>
 <body>
+<%@ include file="admin_header/admin_header_4.jsp" %>
 <h1>리뷰 내역</h1>
 <section>
-	<div><input type="text" name="search" placeholder="검색어 입력" id="searchBox">
-	<input type="button" value="검색">
+	<div><input type="text" name="review_search" placeholder="검색어 입력" id="searchBox">
+	<input type="button" value="검색" class="seaBtnDeco">
 	</div>
 		<table>
 			<tr>
@@ -30,7 +31,7 @@
 				<td>ezen123</td>
 				<td>저희집 고양이가 너무 잘 먹습니당ㅎㅅㅎㅅㅎㅅㅎㅅㅎㅅㅎㅅㅎ</td>
 				<td>2023-07-03</td>
-				<td><input type="button" value="삭제"></td>
+				<td><input type="button" value="삭제" class="reBtnDeco"></td>
 			</tr>
 		</table>
 	</section>
