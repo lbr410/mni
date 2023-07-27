@@ -17,7 +17,7 @@ String savepath=request.getRealPath("/admin/product_img");
 int filesize=10485760; 
 MultipartRequest mr =
 new MultipartRequest(request,savepath,filesize,"utf-8",new DefaultFileRenamePolicy());
-
+System.out.println(savepath);
 String prod_name=mr.getParameter("prod_name");
 String prod_title=mr.getParameter("prod_title");
 String prod_price_s=mr.getParameter("prod_price");
