@@ -6,14 +6,13 @@
 <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>멍냥이</title>
-<link rel="stylesheet" type="text/css" href="css/header.css">
-<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="/mni/css/index.css">
 </head>
 
 <%@ include file="header.jsp"%>
 <body>
     <div class="bodywrap">
-        <img class="imgslide" src="img/imgslide.jpg" alt="banner">
+        <img class="imgslide" src="mni/img/imgslide.jpg" alt="banner">
     </div>
     <div class="head-title">
     	<div class="best">베스트</div>
@@ -24,7 +23,6 @@
          <div class="place-list-item">
             <div class="place-image-wrapper">
                 <img src="#" alt="place image" class="imgsize">
-                <img class="heart-icon" src="img/heart.svg" alt="heart icon">
             </div>
             <div class="description-section">
                 <div class="description-section_title">강아지 간식</div>
@@ -35,7 +33,6 @@
             <div class="place-list-item">
             <div class="place-image-wrapper">
                 <img src="#" alt="place image">
-                <img class="heart-icon" src="img/heart.svg" alt="heart icon">
             </div>
             <div class="description-section">
                 <div class="description-section_title">강아지 간식</div>
@@ -46,7 +43,6 @@
             <div class="place-list-item">
             <div class="place-image-wrapper">
                 <img src="#" alt="place image">
-                <img class="heart-icon" src="img/heart.svg" alt="heart icon">
             </div>
             <div class="description-section">
               <div class="description-section_title">강아지 간식</div>
@@ -57,7 +53,6 @@
           <div class="place-list-item">
             <div class="place-image-wrapper">
               <img src="#" alt="place image">
-              <img class="heart-icon" src="img/heart.svg" alt="heart icon">
             </div>
             <div class="description-section">
               <div class="description-section_title">강아지 간식</div>
@@ -77,7 +72,6 @@
              <div class="place-list-item">
                 <div class="place-image-wrapper">
                     <img src="#" alt="place image">
-                    <img class="heart-icon" src="./img/heart.svg" alt="heart icon">
                 </div>
                 <div class="description-section">
                     <div class="description-section_title">강아지 간식</div>
@@ -88,7 +82,6 @@
                 <div class="place-list-item">
                 <div class="place-image-wrapper">
                     <img src="#" alt="place image">
-                    <img class="heart-icon" src="./img/heart.svg" alt="heart icon">
                 </div>
                 <div class="description-section">
                     <div class="description-section_title">강아지 간식</div>
@@ -99,7 +92,6 @@
                 <div class="place-list-item">
                 <div class="place-image-wrapper">
                     <img src="#" alt="place image">
-                    <img class="heart-icon" src="./img/heart.svg" alt="heart icon">
                 </div>
                 <div class="description-section">
                   <div class="description-section_title">강아지 간식</div>
@@ -110,7 +102,6 @@
               <div class="place-list-item">
                 <div class="place-image-wrapper">
                   <img src="#" alt="place image">
-                  <img class="heart-icon" src="./img/heart.svg" alt="heart icon">
                 </div>
                 <div class="description-section">
                   <div class="description-section_title">강아지 간식</div>
@@ -130,7 +121,6 @@
                  <div class="place-list-item">
                     <div class="place-image-wrapper">
                         <img src="#" alt="place image">
-                        <img class="heart-icon" src="./img/heart.svg" alt="heart icon">
                     </div>
                     <div class="description-section">
                         <div class="description-section_title">강아지 간식</div>
@@ -141,7 +131,6 @@
                     <div class="place-list-item">
                     <div class="place-image-wrapper">
                         <img src="#" alt="place image">
-                        <img class="heart-icon" src="./img/heart.svg" alt="heart icon">
                     </div>
                     <div class="description-section">
                         <div class="description-section_title">강아지 간식</div>
@@ -152,7 +141,6 @@
                     <div class="place-list-item">
                     <div class="place-image-wrapper">
                         <img src="#" alt="place image">
-                        <img class="heart-icon" src="../img/heart.svg" alt="heart icon">
                     </div>
                     <div class="description-section">
                       <div class="description-section_title">강아지 간식</div>
@@ -163,7 +151,6 @@
                   <div class="place-list-item">
                     <div class="place-image-wrapper">
                       <img src="#" alt="place image">
-                      <img class="heart-icon" src="../img/heart.svg" alt="heart icon">
                     </div>
                     <div class="description-section">
                       <div class="description-section_title">강아지 간식</div>
