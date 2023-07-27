@@ -15,9 +15,9 @@
 	<span>상품등록</span>
 	<article>
 	<br>
-		<form name="prodInsert" action="prodInsert_ok.jsp" method="post">
+		<form name="prodInsert" action="prodInsert_ok.jsp" method="post" enctype="multipart/form-data">
 		<div class="textFocus">
-		<input type="text" name="prod_name" class="text_size"><label>상품</label></div><br>
+		<input type="text" name="prod_name" class="text_size"><label>상품이름</label></div><br>
 		<div>
 		<label class="select_title">동물</label>
 		<label class="select_title">카테고리</label>
