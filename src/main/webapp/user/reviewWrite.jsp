@@ -55,7 +55,7 @@
 			<tr>
 				<td colspan="4"><div class="textCount">(<span id="textLength">0</span> / 200)</div></td>
 			</tr>
-			<tr>
+			<tr> 
 				<td class="td0"><span class="menu">이미지 등록</span></td>
 				<td><div class="td1">
 				<input type="file" name="review_img"
