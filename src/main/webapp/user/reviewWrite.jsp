@@ -8,8 +8,37 @@
 </head>
 <link rel="stylesheet" type="text/css" href="/mni/css/reviewWrite.css">
 <script>
+	// 리뷰 글자수 확인
 	function textCheck() {
 		document.all.textLength.innerHTML = document.reviewWrite.review_content.value.length;
+	}
+	
+	// 확장자 확인
+	function extensionCheck(rp) {
+        var filename = rp.value;
+        var len = filename.length;
+        var filetype = filename.substring(len-4, len);
+        
+        if(filetype!='.jpg' && filetype!='.png' && filetype!='jpeg') {
+            window.alert('이미지 파일만 등록 가능!');
+            rp.value = '';
+        }
+    }
+	
+	// 업로드한 이미지 미리보기
+	function setReviewImg(event) {
+		//document.all.image_container.removeChild('preview');
+		var reader = new FileReader();
+		
+		reader.onload = function(event){
+			var img = document.createElement("img");
+			img.id = 'preview';
+			img.setAttribute("src", event.target.result);
+			img.setAttribute("class", "col-lg-6");
+			document.all.image_container.appendChild(img);
+		}
+		
+		reader.readAsDataURL(event.target.files[0]);
 	}
 </script>
 <body>
@@ -20,16 +49,19 @@
 		<form name="reviewWrite" action="reviewWrite_ok.jsp" method="post">
 		<table class="tableSize">
 			<tr>
-				<td colspan="3"><textarea placeholder="최대 200자까지 입력 가능합니다."
+				<td colspan="4"><textarea placeholder="최대 200자까지 입력 가능합니다."
 				name="review_content" onkeyup="textCheck()"></textarea></td>
 			</tr>
 			<tr>
-				<td colspan="3"><div class="textCount">(<span id="textLength">0</span> / 200)</div></td>
+				<td colspan="4"><div class="textCount">(<span id="textLength">0</span> / 200)</div></td>
 			</tr>
-			<tr>
-				<td><label class="menu">이미지 등록</label></td>
-				<td><input type="file" name="review_img"></td>
-				<td><input type="submit" value="작성">
+			<tr> 
+				<td class="td0"><span class="menu">이미지 등록</span></td>
+				<td><div class="td1">
+				<input type="file" name="review_img"
+				accept=".jpg, .jpeg, .png" onchange="extensionCheck(this); setReviewImg(event)"></div></td>
+				<td class="td2"><div id="image_container"></div></td>
+				<td class="td3"><input type="submit" value="작성"></td>
 			</tr>
 		</table>
 		</form>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +20,7 @@ if(cks!=null){
 }
 %>
 <body>
-<%@ include file="header.jsp" %>
+<%@ include file="/header.jsp" %>
 
 <section class = "loginsection">
 	<article>
@@ -40,6 +41,6 @@ if(cks!=null){
 		</form>
 	</article>
 </section>
-<%@ include file="footer.jsp" %>
+<%@ include file="/footer.jsp" %>
 </body>
 </html>

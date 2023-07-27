@@ -66,7 +66,12 @@
 	border:1px solid lightgray;
 	border-radius: 10px;
 	}
-	
+	<!--/*Chrome, Safari, Edge, Opera에서의 number 증가,감소 버튼 숨기기*/ -->
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+  	-webkit-appearance: none;
+  	margin: 0;
+	}
 	.jumin{
 	width: 140px; 
 	height: 40px;
@@ -74,4 +79,14 @@
 	border-radius: 10px;
 	}
 	
-	.pwdexception{color: red; font-size: 13px;}	
+	.juminback{
+	width: 140px; 
+	height: 40px;
+	border:1px solid lightgray;
+	border-radius: 10px;
+	-webkit-text-security: disc;
+	}
+	
+	.pwdexception{color: red; font-size: 13px;}
+	
+	.idexception{color: red; font-size: 13px;}	

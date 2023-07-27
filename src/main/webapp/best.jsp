@@ -7,7 +7,7 @@
 <title>베스트</title>
 <link rel="stylesheet" type="text/css" href="../css/best.css">
 </head>
-<%@ include file="header.jsp" %>
+<%@ include file="/header.jsp" %>
 <body>
 <div class="bar">홈>베스트</div>
 <div class="head-title">베스트</div>
