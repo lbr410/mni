@@ -12,7 +12,7 @@
     background-size: 265px;
     position:relative;
     top:180px;
-    left: -424px;
+    left: -524px;
    }
     
     .username{
@@ -23,17 +23,17 @@
     
     h1{
     font-size: 30px; 
-    margin-left: 500px;
+    margin-left: 560px;
     margin-top: -140px;
     }
     
     h3{
-    margin-left: 350px;
+    margin-left: 300px;
     margin-top: 70px;
     font-size: 25px;
     }
     
-    hr{width: 800px; margin-left: 350px;}
+    hr{width: 800px; margin-left: 300px;}
     
     .productimg{
     	width: 130px;
@@ -41,17 +41,17 @@
     	background: url("/mni/img/main.jpeg") darkgray center;
     	background-size: 150px;
     	margin-top: 10px;
-    	margin-left: 350px;
+    	margin-left: 300px;
     }
     
     .orderlist{
-    	margin-left: 550px;
+    	margin-left: 480px;
     	margin-top: -147px;
     }
     
     .orderlist li{margin-bottom: 13px;}
     
-    .a{margin-left: 900px; margin-top: -80px;}	
+    .a{margin-left: 840px; margin-top: -80px;}	
     
     .button{
     	width: 80px;

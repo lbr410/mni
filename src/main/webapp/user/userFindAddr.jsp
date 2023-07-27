@@ -41,23 +41,23 @@
 <script>
 	function show(){
 		
-		var zip = document.addr.order_zip.value;
+		var zip = document.popupaddr.popup_zip.value;
 		
-		var addr1 = document.addr.order_addr1.value;
+		var addr1 = document.popupaddr.popup_addr1.value;
 		
-		opener.document.fm.order_zip.value = zip;
+		opener.document.join.user_zip.value = zip;
 		
-		opener.document.fm.order_addr1.value = addr1;
+		opener.document.join.user_addr1.value = addr1;
 		
 		window.self.close();
 	}
 </script>
 <body>
-<form name = "addr">
+<form name = "popupaddr">
 <h2>주소 입력</h2>
 <hr>
-우편번호 <input type = "text" name = "order_zip" maxlength="5" class = "zip" required="required"><br>
-기본주소 <input type = "text" name = "order_addr1" class = "addr" required="required"><br>
+우편번호 <input type = "text" name = "popup_zip" maxlength="5" class = "zip"><br>
+기본주소 <input type = "text" name = "popup_addr1" class = "addr"><br>
 <input type = "button" value = "확인" class = "button" onclick = "show()"> 
 </form>
 </body>

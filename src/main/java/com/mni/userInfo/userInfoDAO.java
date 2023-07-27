@@ -11,7 +11,29 @@ public class userInfoDAO {
 	private ResultSet rs;
 	
 	public userInfoDAO() {
-		// TODO Auto-generated constructor stub
+		System.out.println("userInfo()생성자 호출됨.");
+	}
+	
+	//아이디 중복검사
+	public Boolean userIdCheck(String user_id) {
+		try {
+			conn = com.mni.db.MniDB.getConn();
+			String sql = "select user_id from userinfo "
+					+ "where user_id = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, user_id);
+			rs = ps.executeQuery();
+			return rs.next();
+		}catch(Exception e) {
+			e.printStackTrace();
+			return false;
+		}finally {
+			try {
+				if(rs != null) rs.close();
+				if(ps != null) ps.close();
+				if(conn != null) conn.close();
+			}catch(Exception e) {}
+		}
 	}
 	
 	//회원가입
