@@ -19,16 +19,15 @@
         var len = filename.length;
         var filetype = filename.substring(len-4, len);
         
-        if(filetype=='.jpg' || filetype=='.png' || filetype=='jpeg') {
-        	
-        } else {
-        	window.alert('이미지 파일만 등록 가능합니다.');
+        if(filetype!='.jpg' && filetype!='.png' && filetype!='jpeg') {
+            window.alert('이미지 파일만 등록 가능!');
             rp.value = '';
         }
     }
 	
 	// 업로드한 이미지 미리보기
 	function setReviewImg(event) {
+		//document.all.image_container.removeChild('preview');
 		var reader = new FileReader();
 		
 		reader.onload = function(event){
@@ -57,11 +56,11 @@
 				<td colspan="4"><div class="textCount">(<span id="textLength">0</span> / 200)</div></td>
 			</tr>
 			<tr>
-				<td><label class="menu">이미지 등록</label></td>
-				<td><div><input type="file" name="review_img"
+				<td class="td0"><span class="menu">이미지 등록</span></td>
+				<td><div class="td1"><input type="file" name="review_img"
 				accept=".jpg, .jpeg, .png" onchange="extensionCheck(this); setReviewImg(event)"></div></td>
-				<td><div id="image_container"></div></td>
-				<td><input type="submit" value="작성">
+				<td class="td2"><div id="image_container"></div></td>
+				<td class="td3"><input type="submit" value="작성"></td>
 			</tr>
 		</table>
 		</form>
