@@ -1,7 +1,7 @@
 package com.mni.product;
 
 import java.sql.*;
-
+ 
 public class ProductDTO {
 
 	private int prod_idx;

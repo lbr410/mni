@@ -43,9 +43,9 @@ function prodAdd(){
 			String pet="";
 			String brand="";
 			String category="";
-			SimpleDateFormat spdate=new SimpleDateFormat("yyyy-MM-dd a hh:MM:SS");
+			SimpleDateFormat spdate=new SimpleDateFormat("yyyy-MM-dd a hh:mm:ss");
 			String date="";
-			if(arr==null || arr.size()==0){
+			if(arr==null || arr.size()==0){ 
 				%>
 				<tr>
 					<td colspan="10">등록된 상품이 없습니다.</td>

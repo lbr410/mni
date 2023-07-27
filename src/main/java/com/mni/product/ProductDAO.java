@@ -38,7 +38,7 @@ public class ProductDAO {
 		}
 	}
 	/**상품 내역 출력 메서드*/
-	public ArrayList<ProductDTO> prodList(){
+	public ArrayList<ProductDTO> prodList(){ 
 		try {
 			conn=com.mni.db.MniDB.getConn();
 			String sql="select * from product order by prod_idx desc";

@@ -26,7 +26,7 @@
 		<select name="prod_pet" size="5">
 			<option value="d">강아지</option>
 			<option value="c">고양이</option>
-		</select>
+		</select> 
 		<select name="prod_category" size="5">
 			<option value="01">사료</option>
 			<option value="02">간식</option>

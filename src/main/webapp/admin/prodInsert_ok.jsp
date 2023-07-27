@@ -14,7 +14,7 @@ if(!f1.exists()){
 }
 
 String savepath=request.getRealPath("/admin/product_img");
-int filesize=10485760;
+int filesize=10485760; 
 MultipartRequest mr =
 new MultipartRequest(request,savepath,filesize,"utf-8",new DefaultFileRenamePolicy());
 
