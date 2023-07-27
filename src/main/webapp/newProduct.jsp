@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>신상품</title>
-<link rel="stylesheet" type="text/css" href="../css/best.css">
+<link rel="stylesheet" type="text/css" href="/mni/css/best.css">
 </head>
 <%@ include file="header.jsp" %>
 <body>
@@ -15,7 +15,7 @@
         <div id="place-items-wrapper">
          <div class="place-list-item">
           	<div class="place-image-wrapper">
-                <img src="mni/img/imgslide.jpg" alt="place image" name="newProduct">
+                <img src="/mni/img/imgslide.jpg" alt="place image" name="newProduct">
             </div>
             <div class="description-section">
                 <div class="description-section_title">강아지 간식</div>
@@ -25,7 +25,7 @@
             </div>
             <div class="place-list-item"> 
             <div class="place-image-wrapper">
-                <img src="mni/img/imgslide.jpg" alt="place image" name="newProduct">
+                <img src="/mni/img/imgslide.jpg" alt="place image" name="newProduct">
             </div>
             <div class="description-section">
                 <div class="description-section_title">강아지 간식</div>
@@ -35,7 +35,7 @@
             </div>
             <div class="place-list-item">
             <div class="place-image-wrapper">
-                <img src="mni/img/imgslide.jpg" alt="place image" name="newProduct">
+                <img src="/mni/img/imgslide.jpg" alt="place image" name="newProduct">
             </div>
             <div class="description-section">
               <div class="description-section_title">강아지 간식</div>
@@ -45,7 +45,7 @@
           </div>
           <div class="place-list-item">
             <div class="place-image-wrapper">
-              <img src="mni/img/imgslide.jpg" alt="place image" name="newProduct">
+              <img src="/mni/img/imgslide.jpg" alt="place image" name="newProduct">
             </div>
             <div class="description-section">
               <div class="description-section_title">강아지 간식</div>
@@ -59,7 +59,7 @@
         <div id="place-items-wrapper">
          <div class="place-list-item">
             <div class="place-image-wrapper">
-                <img src="mni/img/imgslide.jpg" alt="place image" name="newProduct">
+                <img src="/mni/img/imgslide.jpg" alt="place image" name="newProduct">
             </div>
             <div class="description-section">
                 <div class="description-section_title">강아지 간식</div>
@@ -69,7 +69,7 @@
             </div>
             <div class="place-list-item">
             <div class="place-image-wrapper">
-                <img src="mni/img/imgslide.jpg" alt="place image" name="newProduct">
+                <img src="/mni/img/imgslide.jpg" alt="place image" name="newProduct">
             </div>
             <div class="description-section">
                 <div class="description-section_title">강아지 간식</div>
@@ -79,7 +79,7 @@
             </div>
             <div class="place-list-item">
             <div class="place-image-wrapper">
-                <img src="mni/img/imgslide.jpg" alt="place image" name="newProduct">
+                <img src="/mni/img/imgslide.jpg" alt="place image" name="newProduct">
             </div>
             <div class="description-section">
               <div class="description-section_title">강아지 간식</div>
@@ -89,7 +89,7 @@
           </div>
           <div class="place-list-item">
             <div class="place-image-wrapper">
-              <img src="mni/img/imgslide.jpg" alt="place image" name="newProduct">
+              <img src="/mni/img/imgslide.jpg" alt="place image" name="newProduct">
             </div>
             <div class="description-section">
               <div class="description-section_title">강아지 간식</div>
