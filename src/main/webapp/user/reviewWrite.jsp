@@ -13,17 +13,31 @@
 		document.all.textLength.innerHTML = document.reviewWrite.review_content.value.length;
 	}
 	
+	// 확장자 확인
+	function extensionCheck(rp) {
+        var filename = rp.value;
+        var len = filename.length;
+        var filetype = filename.substring(len-4, len);
+        
+        if(filetype=='.jpg' || filetype=='.png' || filetype=='jpeg') {
+        	
+        } else {
+        	window.alert('이미지 파일만 등록 가능합니다.');
+            rp.value = '';
+        }
+    }
+	
 	// 업로드한 이미지 미리보기
 	function setReviewImg(event) {
 		var reader = new FileReader();
 		
 		reader.onload = function(event){
 			var img = document.createElement("img");
+			img.id = 'preview';
 			img.setAttribute("src", event.target.result);
 			img.setAttribute("class", "col-lg-6");
-			document.querySelector("div#image_container").appendChild(img);
-			//document.reviewWrite.image_container.appendChild(img);
-		};
+			document.all.image_container.appendChild(img);
+		}
 		
 		reader.readAsDataURL(event.target.files[0]);
 	}
@@ -44,7 +58,8 @@
 			</tr>
 			<tr>
 				<td><label class="menu">이미지 등록</label></td>
-				<td><div><input type="file" name="review_img" onchange="setReviewImg(event)"></div></td>
+				<td><div><input type="file" name="review_img"
+				accept=".jpg, .jpeg, .png" onchange="extensionCheck(this); setReviewImg(event)"></div></td>
 				<td><div id="image_container"></div></td>
 				<td><input type="submit" value="작성">
 			</tr>

@@ -36,3 +36,8 @@ textarea:focus {
 	text-align: right;
 	color: #646464;
 }
+
+#preview {
+	width: 100px;
+	height: 100px;
+}
