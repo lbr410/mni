@@ -5,10 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항</title>
-<link rel="stylesheet" type="text/css" href="../css/content.css">
+<link rel="stylesheet" type="text/css" href="/mni/css/content.css">
 </head>
 <body>
-<%@ include file="header.jsp" %>
+<%@ include file="header.jsp"%>
 <div class="bar">공지사항</div>
 	<h1>공지사항</h1>
 	<section>

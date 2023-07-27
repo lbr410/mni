@@ -1,13 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <link rel="stylesheet" type="text/css" href="/mni/css/header.css">
+    
+    <script>
+    <%
+    String name=(String)session.getAttribute("sname");
+    %>
+    </script>
+    
     <header>
     <div id="member">
-        <a id="memberjoin" href="/mni/join.jsp">회원가입</a>
-        <div class="t"></div>
-        <a class="login" href="/mni/login.jsp">로그인</a>
-        <div class="t"></div>
-        <a class="center" href="#">고객센터</a>
+    <%
+    if(name==null){
+    	%>
+        	<a id="memberjoin" href="/mni/join.jsp">회원가입</a>
+        		<div class="t"></div>
+        	<a class="login" href="/mni/login.jsp">로그인</a>
+       			<div class="t"></div>
+        <%
+    }else{
+        %>
+       		<div><%=name %>님 로그인중
+			 |<a href="/mni/logout.jsp">로그아웃</a></div>
+        	<a class="center" href="#">고객센터</a>
+        <%
+     }
+        %>
     </div><br>
     <div class="header-content">
         <div class="logo" onclick="location.href='/mni/index.jsp'">

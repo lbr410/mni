@@ -4,15 +4,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인</title>
 <link rel = "stylesheet" type = "text/css" href = "/mni/css/login.css">
 </head>
+<%
+String idremember="";
+Cookie cks[]=request.getCookies();
+if(cks!=null){
+	for(int i=0;i<cks.length;i++){
+		if(cks[i].getName().equals("idremember")){
+			idremember=cks[i].getValue();
+		}
+	}
+}
+%>
 <body>
-<%@include file = "header.jsp" %>
+<%@ include file="header.jsp" %>
+
 <section class = "loginsection">
 	<article>
 		<img src = "/mni/img/loginlogo.png" class = "img">
-		<form name = "fm" action = "" method="post">
+		<form name = "fm" action = "login_ok.jsp" method="post">
 			<div>
 				<input type = "text" name = "id" placeholder="아이디" class = "textbox"><br>
 				<div></div>
@@ -28,6 +40,6 @@
 		</form>
 	</article>
 </section>
-<%@include file = "footer.jsp" %>
+<%@ include file="footer.jsp" %>
 </body>
 </html>
