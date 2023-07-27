@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+request.setCharacterEncoding("utf-8");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +28,7 @@
 		font-size:20px;
 	}
 	input[type="text"]{margin-bottom: 20px; margin-left: 20px;}
+	input[type="number"]{margin-bottom: 20px; margin-left: 20px;}
 	
 	.button{
 		width: 150px;
@@ -36,6 +40,12 @@
 		margin-left: 150px;
 		cursor: pointer;
 		border: 0px;
+	}
+	
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+  		-webkit-appearance: none;
+  		margin: 0;
 	}
 </style>
 <script>
@@ -51,12 +61,18 @@
 		
 		window.self.close();
 	}
+	
+	function addr(object){
+	    if (object.value.length > object.maxLength){
+	      object.value = object.value.slice(0, object.maxLength);
+	    }    
+	  }
 </script>
 <body>
 <form name = "popupaddr">
 <h2>주소 입력</h2>
 <hr>
-우편번호 <input type = "text" name = "popup_zip" maxlength="5" class = "zip"><br>
+우편번호 <input type = "number" name = "popup_zip" maxlength="5" class = "zip" oninput = "addr(this)"><br>
 기본주소 <input type = "text" name = "popup_addr1" class = "addr"><br>
 <input type = "button" value = "확인" class = "button" onclick = "show()"> 
 </form>
