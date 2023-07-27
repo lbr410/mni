@@ -57,7 +57,8 @@
 			</tr>
 			<tr>
 				<td class="td0"><span class="menu">이미지 등록</span></td>
-				<td><div class="td1"><input type="file" name="review_img"
+				<td><div class="td1">
+				<input type="file" name="review_img"
 				accept=".jpg, .jpeg, .png" onchange="extensionCheck(this); setReviewImg(event)"></div></td>
 				<td class="td2"><div id="image_container"></div></td>
 				<td class="td3"><input type="submit" value="작성"></td>
