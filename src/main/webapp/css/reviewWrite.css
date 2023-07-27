@@ -1,0 +1,38 @@
+@charset "UTF-8";
+body {
+	margin: 0 auto;
+}
+
+.tableSize {
+	margin-top: 10px;
+	width: 800px;
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	text-align: center;
+}
+
+h1 {
+	font-size: 24px;
+}
+
+textarea {
+	margin-top: 15px;
+    width: 780px;
+    height: 200px;
+    resize: none;
+    padding: 12px;
+    font-size: 14px;
+    color: #111111;
+    border: 1px #cccccc solid;
+    font-family: '맑은 고딕';
+}
+
+textarea:focus {
+	border-color:#ff7f50;
+    outline: none;
+}
+
+.textCount {
+	text-align: right;
+	color: #646464;
+}

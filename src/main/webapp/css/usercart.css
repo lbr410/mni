@@ -1,0 +1,120 @@
+@charset "UTF-8";
+body {
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 24px;
+}
+
+table {
+	margin-top: 40px;
+	width: 900px;
+	border-collapse : collapse
+}
+
+.td0 {
+	width: 100px;
+}
+
+.td1 {
+	width: 280px;
+	padding-left: 7px;
+}
+
+.td2 {
+	width: 145px;
+	text-align: center;
+}
+
+.td3 {
+	width: 170px;
+	text-align: center;
+}
+
+.td4 {
+	width: 70px;
+}
+
+.trBottomBorder {
+	border-bottom: 1px solid #cccccc;
+}
+
+.prodImg {
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+}
+
+.countBtn {
+	padding-bottom: 20px;
+	cursor: pointer;
+    width: 30px;
+    height: 30px;
+    color: white;
+    font-size: 20px;
+    background-color: #ff7f50;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  	box-shadow: none;
+}
+
+.deleteBtn {
+	cursor: pointer;
+    width: 60px;
+    height: 30px;
+    color: #646464;
+    font-size: 16px;
+    background-color: #F6F6F6;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  	box-shadow: none;
+}
+
+.brandfontSize {
+	font-size: 16px;
+}
+
+.fontSize {
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.fontSize2 {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.countText {
+	width: 30px;
+	height: 27px;
+	font-size: 16px;
+	text-align: center;
+	border: 1px solid #F6F6F6;
+}
+
+input:focus {
+	outline: none;
+}
+
+.orderTd {
+	border-top: 1px solid #cccccc;
+	padding-top: 15px;
+	text-align: right;
+}
+
+.orderBtn {
+	margin-top: 15px;
+	cursor: pointer;
+    width: 500px;
+    height: 50px;
+    color: white;
+    font-size: 18px;
+    background-color: #ff7f50;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  	box-shadow: none;
+}
