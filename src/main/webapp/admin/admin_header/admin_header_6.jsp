@@ -86,6 +86,6 @@ header{
 		<div class="list"><a href="/mni/admin/sales.jsp">매출집계</a></div>
 		<div class="list1"><a href="/mni/admin/notice.jsp">공지사항</a></div>
 	</div>
-	<div class="logout"><a href="#">로그아웃</a></div>
+	<div class="logout"><a href="/mni/admin/adminLogout.jsp">로그아웃</a></div>
 	</div>
 </header>
