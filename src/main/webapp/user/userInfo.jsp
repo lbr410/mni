@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="com.mni.userInfo.*" %>
+<jsp:useBean id="udao" class="com.mni.userInfo.userInfoDAO" scope="session"></jsp:useBean>
+<%
+	
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +27,9 @@ function showException(){
 		document.getElementById('pwdchecking').style.display = '';
 		}
 	}
+function addrpopup(){
+	window.open('addrPopup.jsp','popup','width=500, height=300');
+}
 </script>
 <body onload = "sethide()">
 <%@include file = "../header.jsp" %>
@@ -29,38 +37,38 @@ function showException(){
 	<article>
 		<h2>회원정보 수정</h2>
 		<hr>
-		<form name = "fm" class = "info" action = "#" method="post">
+		<form name = "join" class = "info" action = "userInfo_ok.jsp" method="post">
 		<table>
 			<tr>
 				<th>이름</th>
-				<td><input type = "text" name = "user_name" class = "inputtext"></td>				
+				<td><input type = "text" name = "user_name" class = "inputtext" value="<%="홍길동"%>"></td>				
 			</tr>
 			<tr>
 				<th>전화번호</th>
-				<td><input type = "text" name = "user_tel" class = "inputtext"></td>
+				<td><input type = "text" name = "user_tel" class = "inputtext" value="<%="12"%>"></td>
 			</tr>
 			<tr>
 				<th>이메일</th>
-				<td><input type = "text" name = "user_email" class = "inputtext"></td>
+				<td><input type = "text" name = "user_email" class = "inputtext" value="<%=""%>"></td>
 			</tr>
 			<tr>
 				<th>비밀번호</th>
-				<td><input type = "text" name = "user_pwd" class = "inputtext"></td>
+				<td><input type = "text" name = "user_pwd" class = "inputtext" value="<%=""%>"></td>
 			</tr>
 			<tr>
 				<th>비밀번호 확인</th>
 				<td>
-				<input type = "password" name = "pwdcheck" onchange = "showException()" class = "inputtext">
+				<input type = "password" name = "pwdcheck" onchange = "showException()" class = "inputtext" value="<%=""%>">
 				<div id = "pwdchecking" class = "pwdexception">입력한 비밀번호가 일치하지 않습니다.</div>
 				</td>
 			</tr>
 			<tr>
 				<th>주소<font color = "red">*</font></th>
 				<td>
-				<input type = "text" name = "user_zip" class = "add" readonly >
+				<input type = "text" name = "user_zip" class = "add" readonly value="<%=""%>">
 				<input type = "button" value = "주소검색" onclick = "addrpopup()" class = "button"><br>
-				<input type = "text" name = "user_addr1" readonly class = "inputtext"><br>
-				<input type = "text" name = "user_addr2" class = "inputtext">
+				<input type = "text" name = "user_addr1" readonly class = "inputtext" value="<%=""%>"><br>
+				<input type = "text" name = "user_addr2" class = "inputtext" value="<%=""%>">
 				</td>
 			</tr>
 		</table>
