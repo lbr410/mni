@@ -14,7 +14,7 @@ public class userInfoDAO {
 		System.out.println("userInfo()생성자 호출됨.");
 	}
 	
-	//아이디 중복검사
+	//아이디 중복검사	
 	public Boolean userIdCheck(String user_id) {
 		try {
 			conn = com.mni.db.MniDB.getConn();
