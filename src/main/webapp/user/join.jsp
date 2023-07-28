@@ -71,7 +71,7 @@ function jumin(object){
   }
 </script>
 <body onload = "sethide()">
-<%@include file = "header.jsp" %>
+<%@include file = "/header.jsp" %>
 <section class = "sectionjoin">
 	<article>
 		<h2>회원가입</h2>
@@ -150,6 +150,6 @@ function jumin(object){
 	</tr>
 </table>
 </form>
-<%@include file = "footer.jsp" %>
+<%@include file = "/footer.jsp" %>
 </body>
 </html>

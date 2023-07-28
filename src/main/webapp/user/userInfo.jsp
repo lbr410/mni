@@ -56,12 +56,12 @@ function addrpopup(){
 			</tr>
 			<tr>
 				<th>비밀번호</th>
-				<td><input type = "text" name = "user_pwd" class = "inputtext" ></td>
+				<td><input type = "text" name = "user_pwd" class = "inputtext" value=""></td>
 			</tr>
 			<tr>
 				<th>비밀번호 확인</th>
 				<td>
-				<input type = "password" name = "pwdcheck" onchange = "showException()" class = "inputtext" >
+				<input type = "password" name = "pwdcheck" onchange = "showException()" class = "inputtext" value="">
 				<div id = "pwdchecking" class = "pwdexception">입력한 비밀번호가 일치하지 않습니다.</div>
 				</td>
 			</tr>

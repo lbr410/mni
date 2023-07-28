@@ -9,7 +9,7 @@ request.setCharacterEncoding("utf-8");
 
 <%
 int result=udao.setUserInfo(udto);
-String msg=result>0?"수정 성공":"수정 실패";
+String msg=result>0?"수정 성공":"수정 실패 [빈칸을 채워주세요.]";
 
 %>
 <script>

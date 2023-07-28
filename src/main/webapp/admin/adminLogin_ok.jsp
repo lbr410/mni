@@ -8,7 +8,7 @@ String admin_pwd=request.getParameter("adminlogin_pwd"); //관리자 pwd 입력 
 String admin_saveid=request.getParameter("admin_saveid"); //아이디 저장 체크박스 값 받기
 String admin_auto=request.getParameter("admin_auto"); //자동 로그인 체크박스 값 받기
 boolean result=adao.adminLogin(admin_id, admin_pwd); //로그인 성공하면 true 실패하면 falue 반환
-if(result){
+if(result){ 
 	if(admin_saveid!=null){ //아이디 저장 체크 시 30일간 쿠키 생성
 		Cookie saveid=new Cookie("admin_saveid",admin_id);
 		saveid.setMaxAge(60*60*24*30);

@@ -130,6 +130,7 @@ public class userInfoDAO {
 	               }
 	            }
 	      
+	      /**사용자 정보 수정*/
 	      public int setUserInfo(userInfoDTO dto) {
 	  		try {
 	  			conn=com.mni.db.MniDB.getConn();

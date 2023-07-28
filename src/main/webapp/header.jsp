@@ -13,7 +13,7 @@
     <%
     if(name==null){
        %>
-           <a id="memberjoin" href="join.jsp">회원가입</a>
+           <a id="memberjoin" href="/mni/join.jsp">회원가입</a>
               <div class="t"></div>
            <a class="login" href="/mni/user/login.jsp">로그인</a>
                 <div class="t"></div>
@@ -64,9 +64,9 @@
                 <a href="#">장난감</a>
             </div>
         </div>
-        <div class="btn">베스트</div>
-        <div class="btn">신상품</div>
-        <div class="btn">브랜드</div>
+        <div class="btn"><a href="/mni/best.jsp">베스트</a></div>
+        <div class="btn"><a href="/mni/newProduct.jsp">신상품</a></div>
+        <div class="btn"><a href="/mni/brand.jsp">브랜드</a></div>
         <div class="right-section">
         <div class="cart-button" id="cart-icon" onclick = "javascript:location.href='/mni/user/usercart.jsp'">
             <img class="inactive-cart" src="/mni/img/cart-inactive.png" alt="cart-icon">
