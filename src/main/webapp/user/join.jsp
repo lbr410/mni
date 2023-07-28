@@ -9,11 +9,12 @@
 </head>
 <link rel = "stylesheet" type = "text/css" href = "/mni/css/join.css">
 <script>
-function sethide(){	
-document.getElementById('pwdchecking').style.display = 'none';
-document.getElementById('idchecking_true').style.display = 'none';
-document.getElementById('idchecking_false').style.display = 'none';
-}
+function sethide(){   
+	document.getElementById('pwdchecking').style.display = 'none';
+	document.getElementById('idchecking_true').style.display = 'none';
+	document.getElementById('idchecking_false').style.display = 'none';
+	document.getElementById('idchecking_null').style.display = 'none';
+	}
 function showpwd(){
 	 
 	var pwd = document.join.user_pwd.value;
@@ -37,32 +38,36 @@ function idcheck(){
 }
 
 function joinsubmit(){
-	
-	var idcheckbutton = document.join.idcheckbutton.value;
-	var pwd = document.join.user_pwd.value;
-	var pwdcheck = document.join.pwdcheck.value;
-	
-	var tf = pwd == pwdcheck;
-	//비밀번호 일치여부 true false
-	
-	if(idcheckbutton == ""){
-		window.alert('아이디 중복확인을 해주세요.');
-		return false;
-	}else if(idcheckbutton == "f"){
-		window.alert('중복된 아이디입니다.');
-		return false;
-	}else if (idcheckbutton == "t"){
-		if(tf){
-			return true;
-		}else{
-			window.alert('비밀번호가 일치하지 않습니다.');
-			document.getElementById('pwdchecking').style.display = '';
-			return false;
-		}
+	   
+	   var idcheckbutton = document.join.idcheckbutton.value;
+	   var pwd = document.join.user_pwd.value;
+	   var pwdcheck = document.join.pwdcheck.value;
+	   
+	   var tf = pwd == pwdcheck;
+	   //비밀번호 일치여부 true false
+	   
+	   if(idcheckbutton == ""){
+	      window.alert('아이디 중복확인을 해주세요.');
+	      return false;
+	   }else if(idcheckbutton == "f"){
+	      window.alert('중복된 아이디입니다.');
+	      return false;
+	   }else if (idcheckbutton == "t"){
+	      if(tf){
+	         return true;
+	      }else{
+	         window.alert('비밀번호가 일치하지 않습니다.');
+	         document.getElementById('pwdchecking').style.display = '';
+	         return false;
+	      }
+	   }else if(idcheckbutton == "n"){
+	      window.alert('아이디를 입력하셔야합니다.');
+	      opener.document.getElementById('idchecking_null').style.display = '';
+	      return false;
+	   }
+	   
+	   
 	}
-	
-	
-}
 
 function jumin(object){
     if (object.value.length > object.maxLength){
@@ -94,8 +99,9 @@ function jumin(object){
 	<!-- 버튼을 누르면 idCheck.jsp로 이동해서 중복확인 메서드 실행-->
 	<input type = "button" value = "중복확인" onclick = "idcheck()" class = "button">
 	<!-- 사용자에게 중복인지 아닌지 알려주는 div태그 -->
-	<div id = "idchecking_true" class = "idexception">사용가능한 아이디입니다!</div>
+	<div id = "idchecking_true" class = "idtrue">사용가능한 아이디입니다!</div>
 	<div id = "idchecking_false" class = "idexception">중복된 아이디입니다!</div>
+	<div id = "idchecking_null" class = "idexception">아이디를 입력하셔야합니다..!</div>
 	</td>
 	</tr>
 	<tr>
@@ -142,7 +148,7 @@ function jumin(object){
 	<tr>
 		<th>이메일</th>
 		<td>
-		<input type = "text" name = "user_email" class = "inputtext" required><br>
+		<input type = "text" name = "user_email" class = "inputtext"><br>
 		</td>
 	</tr>
 	<tr>
