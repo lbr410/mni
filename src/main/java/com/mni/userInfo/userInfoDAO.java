@@ -107,7 +107,6 @@ public class userInfoDAO {
 	                  }
 	            }
 	            
-	   
 	//사용자 로그인? 
 	public String getUserInfo(String user_id) {
 	      try {
@@ -242,5 +241,27 @@ public class userInfoDAO {
          }catch(Exception e2) {}
       }
    }
+    
+    /**관리자 페이지 총 회원 수 메서드*/
+	public int userCnt() {
+		try {
+			conn=com.mni.db.MniDB.getConn();
+			String sql="select count(*) from userinfo";
+			ps=conn.prepareStatement(sql);
+			rs=ps.executeQuery();
+			rs.next();
+			int count=rs.getInt(1);
+			return count;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return 0;
+		}finally {
+			try {
+				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			}catch(Exception e2) {}
+		}
+	}
     
 }
