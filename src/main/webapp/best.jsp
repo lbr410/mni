@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>베스트</title>
-<link rel="stylesheet" type="text/css" href="../css/best.css">
+<link rel="stylesheet" type="text/css" href="/mni/css/best.css">
 </head>
 <%@ include file="/header.jsp" %>
 <body>

@@ -12,8 +12,11 @@
     <div id="member">
     <%
     if(name==null){
-       %>
-           <a id="memberjoin" href="join.jsp">회원가입</a>
+    %>
+           
+
+           <a id="memberjoin" href="/join.jsp">회원가입</a>
+
               <div class="t"></div>
            <a class="login" href="/mni/user/login.jsp">로그인</a>
                 <div class="t"></div>
@@ -33,12 +36,12 @@
         </div>
         <div class="l-logo">
         <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <button class="l-button">
+        <button class="l-button" onclick = "javascript:location.href='index.jsp?pet=d'">
             <img class="dog" src="/mni/img/dog.jpg" alt="dog-icon">
             <div>강아지</div>
         </button>
         <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <button class="r-button" id="active-button">
+        <button class="r-button" id="active-button" onclick = "javascript:location.href='index.jsp?pet=c'">
             <img class="inactive-img" src="/mni/img/cat-inactive.jpg" alt="cat-inactive icon">
             <img class="active-img" src="/mni/img/cat-active.jpg" alt="cat-active icon">
             <div>고양이</div>
@@ -64,9 +67,9 @@
                 <a href="#">장난감</a>
             </div>
         </div>
-        <div class="btn">베스트</div>
-        <div class="btn">신상품</div>
-        <div class="btn">브랜드</div>
+        <div class="btn"><a href="/mni/best.jsp">베스트</a></div>
+        <div class="btn"><a href="/mni/newProduct.jsp">신상품</a></div>
+        <div class="btn"><a href="/mni/brand.jsp">브랜드</a></div>
         <div class="right-section">
         <div class="cart-button" id="cart-icon" onclick = "javascript:location.href='/mni/user/usercart.jsp'">
             <img class="inactive-cart" src="/mni/img/cart-inactive.png" alt="cart-icon">

@@ -26,13 +26,17 @@ if(cks!=null){
 		<img src = "/mni/img/loginlogo.png" class = "img">
 		<form name = "fm" action = "login_ok.jsp" method="post">
 			<div>
-				<input type = "text" name = "id" placeholder="아이디" class = "textbox"><br>
+				<input type = "text" name = "id" placeholder="아이디" class = "textbox" value = "<%=idremember%>"><br>
 				<div></div>
 				<input type = "password" name = "pwd" placeholder="비밀번호" class = "textbox"><br>
 				<div class = "textsize">
+				<%if(!idremember.equals("")){%>
+				<input type = "checkbox" name = "idremember" class = "checkbox" checked>&nbsp;아이디 기억하기
+				<%}else{ %>
 				<input type = "checkbox" name = "idremember" class = "checkbox">&nbsp;아이디 기억하기
+				<%} %>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<a href = "">아이디 찾기</a> | <a href = "">비밀번호 찾기</a>
+				<a href = "idSearch.jsp">아이디 찾기</a> | <a href = "pwdSearch.jsp">비밀번호 찾기</a>
 				</div><br>
 				<input type = "submit" value = "로그인" class = "button"><br>
 				<input type = "button" value = "회원가입" class = "button" onclick = "javascript:location.href = 'join.jsp'">

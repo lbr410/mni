@@ -108,26 +108,139 @@ public class userInfoDAO {
 	            }
 	            
 	   
-	   	  //사용자 로그인? 
-	      public String getUserInfo(String user_id) {
-	               try {
-	                  conn=com.mni.db.MniDB.getConn();
-	                  String sql="select user_name from userinfo where user_id=?";
-	                  ps=conn.prepareStatement(sql);
-	                  ps.setString(1, user_id);
-	                  rs=ps.executeQuery();
-	                  rs.next();
-	                  return rs.getString(1);
-	               }catch(Exception e) {
-	                  e.printStackTrace();
-	                  return null;
-	               }finally {
-	                  try {
-	                     if(rs!=null)rs.close();
-	                     if(ps!=null)ps.close();
-	                     if(conn!=null)conn.close();
-	                  }catch(Exception e2) {}
-	               }
-	            }
+	//사용자 로그인? 
+	public String getUserInfo(String user_id) {
+	      try {
+	            conn=com.mni.db.MniDB.getConn();
+	            String sql="select user_name from userinfo where user_id=?";
+	            ps=conn.prepareStatement(sql);
+	            ps.setString(1, user_id);
+	            rs=ps.executeQuery();
+	            rs.next();
+	             return rs.getString(1);
+	          }catch(Exception e) {
+	               e.printStackTrace();
+	               return null;
+	          }finally {
+	            try {
+	            	if(rs!=null)rs.close();
+	                if(ps!=null)ps.close();
+	                if(conn!=null)conn.close();
+	           }catch(Exception e2) {}
+	          }
+}
+
+	//아이디 찾기
+	public String getUserId(int juminfront, int juminback) {
+		try {
+			conn = com.mni.db.MniDB.getConn();
+			String sql = "select user_id from userinfo "
+					+ "where user_jumin_front = ? and user_jumin_back = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, juminfront);
+			ps.setInt(2, juminback);
+			rs = ps.executeQuery();
+			String user_id = null;
+			if(rs.next()) {
+				user_id = rs.getString(1);
+			}
+			return user_id;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally {
+			try {
+				if(rs != null) rs.close();
+				if(ps != null) ps.close();
+				if(conn != null) conn.close();
+			}catch(Exception e) {}
+		}
+	}
 	
+	//비밀번호 찾기
+	public Boolean getUserPwd(String id, int juminfront, int juminback) {
+		try {
+			conn = com.mni.db.MniDB.getConn();
+			String sql = "select user_pwd from userinfo "
+					+ "where user_id = ? and "
+					+ "user_jumin_front = ? and "
+					+ "user_jumin_back = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, id);
+			ps.setInt(2, juminfront);
+			ps.setInt(3, juminback);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				return true;
+			}else {
+				return false;
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally {
+			try {
+				if(rs != null) rs.close();
+				if(ps != null) ps.close();
+				if(conn != null) conn.close();
+			}catch(Exception e) {}
+		}
+	}
+	
+	//비밀번호 변경
+	public int setUserUpdatePwd(String pwd,String id,int juminfront,int juminback) {
+		try{
+			conn = com.mni.db.MniDB.getConn();
+			String sql = "update userinfo "
+					+ "set user_pwd = ? "
+					+ "where user_id = ? and "
+					+ "user_jumin_front = ? and "
+					+ "user_jumin_back = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, pwd);
+			ps.setString(2, id);
+			ps.setInt(3, juminfront);
+			ps.setInt(4, juminback);
+			int count = ps.executeUpdate();
+			return count;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return -1;
+		}finally {
+			try {
+				if(ps != null) ps.close();
+				if(conn != null) conn.close();
+			}catch(Exception e) {}
+		}
+	}
+	
+	/**사용자 정보 수정*/
+    public int setUserInfo(userInfoDTO dto) {
+      try {
+         conn=com.mni.db.MniDB.getConn();
+         String sql="update userinfo set user_name=?, user_tel=?, "
+               + "user_email=?, user_pwd=?, user_zip=?, user_addr1=?, user_addr2=? ";
+         ps=conn.prepareStatement(sql);
+         ps.setString(1, dto.getUser_name());
+         ps.setString(2, dto.getUser_tel());
+         ps.setString(3, dto.getUser_email());
+         ps.setString(4, dto.getUser_pwd());
+         ps.setInt(5, dto.getUser_zip());
+         ps.setString(6, dto.getUser_addr1());
+         ps.setString(7, dto.getUser_addr2());
+         int count=ps.executeUpdate();
+         
+         return count;
+      }catch(Exception e) {
+         e.printStackTrace();
+         return -1;
+      }finally {
+         try {
+            if(ps!=null)ps.close();
+            if(conn!=null)conn.close();
+         }catch(Exception e2) {}
+      }
+   }
+    
 }

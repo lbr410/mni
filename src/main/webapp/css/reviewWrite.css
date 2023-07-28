@@ -5,9 +5,9 @@ body {
 
 .tableSize {
 	margin-top: 10px;
-	width: 800px;
+	margin-bottom: 10px;
+	width: 600px;
 	border-top: 1px solid #cccccc;
-	border-bottom: 1px solid #cccccc;
 	text-align: center;
 }
 
@@ -17,7 +17,7 @@ h1 {
 
 textarea {
 	margin-top: 15px;
-    width: 780px;
+    width: 600px;
     height: 200px;
     resize: none;
     padding: 12px;
@@ -42,23 +42,37 @@ textarea:focus {
 	height: 100px;
 }
 
+.menu {
+	font-weight: bold;
+}
+
 .td0 {
-	width: 100px;
-	height: 110px;
-	padding-bottom: 50px;
+	text-align: left;
+	border-bottom: 1px solid #cccccc;
+	padding-bottom: 10px;
 }
 
 .td1 {
-	width: 150px;
-	height: 110px;
+	text-align: left;
+	padding-top: 10px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #cccccc;
 }
 
 .td2 {
-	width: 300px;
-	height: 110px;
+	text-align: right;
+	padding-top: 10px;
 }
 
-.td3 {
-	width: 250px;
-	height: 110px;
+.countBtn {
+	cursor: pointer;
+    width: 150px;
+    height: 30px;
+    color: white;
+    font-size: 14px;
+    background-color: #ff7f50;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  	box-shadow: none;
 }

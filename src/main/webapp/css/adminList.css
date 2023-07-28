@@ -107,6 +107,7 @@ h1{
     border: none;
     border-radius: 5px;
     padding-bottom: 2.6px;
+    cursor: pointer;
 }
 .ordBtnDeco{
 	width: 40px;
