@@ -46,6 +46,15 @@ public class userInfoDTO {
 
 
 
+	public userInfoDTO(String user_id, int user_jumin_front, int user_jumin_back) {
+		super();
+		this.user_id = user_id;
+		this.user_jumin_front = user_jumin_front;
+		this.user_jumin_back = user_jumin_back;
+	}
+
+
+
 	public String getUser_id() {
 		return user_id;
 	}

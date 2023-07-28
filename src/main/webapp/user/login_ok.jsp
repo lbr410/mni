@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.mni.userInfo.*" %>
-<jsp:useBean id="udao" class="com.mni.userInfo.userInfoDAO"></jsp:useBean>
+<jsp:useBean id="udao" class="com.mni.userInfo.userInfoDAO" scope="session"></jsp:useBean>
 <%
 request.setCharacterEncoding("UTF-8");
 
@@ -24,6 +24,8 @@ userInfoDTO result = udao.loginCheck(user_id, user_pwd);
 		String user_name=udao.getUserInfo(user_id);
 		session.setAttribute("sid",user_id);
 		session.setAttribute("sname",user_name);
+		session.setAttribute("spwd",user_pwd);
+		
 		%>
 		<script>
 		location.href='/mni/index.jsp';
