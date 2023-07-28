@@ -82,7 +82,7 @@ hr{
 </style>
 </head>
 <body>
-<%@include file="/header.jsp" %>
+<%@include file="../header.jsp" %>
 <section>
 <article>
 	<div>
