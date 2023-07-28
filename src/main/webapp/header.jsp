@@ -13,7 +13,7 @@
     <%
     if(name==null){
        %>
-           <a id="memberjoin" href="/join.jsp">회원가입</a>
+           <a id="memberjoin" href="/mni/join.jsp">회원가입</a>
               <div class="t"></div>
            <a class="login" href="/mni/user/login.jsp">로그인</a>
                 <div class="t"></div>

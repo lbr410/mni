@@ -45,7 +45,7 @@ function prodAdd(){
 			String category="";
 			SimpleDateFormat spdate=new SimpleDateFormat("yyyy-MM-dd a hh:mm:ss");
 			String date="";
-			if(arr==null || arr.size()==0){ 
+			if(arr==null || arr.size()==0){
 				%>
 				<tr>
 					<td colspan="10">등록된 상품이 없습니다.</td>
@@ -53,7 +53,8 @@ function prodAdd(){
 				<%
 			}else{
 			for(int i=0; i<arr.size(); i++){
-				date=spdate.format(arr.get(i).getProd_date());
+				//date=spdate.format(arr.get(i).getProd_date());
+				//System.out.println(date);
 				if(arr.get(i).getProd_pet().equals("d")){
 					pet="강아지";
 				}else if(arr.get(i).getProd_pet().equals("c")){
@@ -81,7 +82,7 @@ function prodAdd(){
 				<td><%=pet %></td>
 				<td><%=category %></td>
 				<td><%=arr.get(i).getProd_count() %></td>
-				<td><%=date %></td>
+				<td><%=arr.get(i).getProd_date() %></td>
 				<td><%=arr.get(i).getProd_title() %></td>
 				<td><img src="/mni/admin/product_img/<%=arr.get(i).getProd_title_img() %>" alt="타이틀이미지"></td>
 				<td>

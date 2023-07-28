@@ -1,6 +1,4 @@
 package com.mni.product;
-
-import java.sql.*;
  
 public class ProductDTO {
 
@@ -9,7 +7,7 @@ public class ProductDTO {
 	private String prod_title;
 	private int prod_price;
 	private int prod_count;
-	private Date prod_date;
+	private String prod_date;
 	private String prod_title_img;
 	private String prod_pet;
 	private String prod_info_img;
@@ -20,7 +18,7 @@ public class ProductDTO {
 		
 	}
 
-	public ProductDTO(int prod_idx, String prod_name, String prod_title, int prod_price, int prod_count, Date prod_date,
+	public ProductDTO(int prod_idx, String prod_name, String prod_title, int prod_price, int prod_count, String prod_date,
 			String prod_pet, int prod_brand, int prod_category) {
 		super();
 		this.prod_idx = prod_idx;
@@ -48,7 +46,7 @@ public class ProductDTO {
 		this.prod_category = prod_category;
 	}
 
-	public ProductDTO(int prod_idx, String prod_name, String prod_title, int prod_price, int prod_count, Date prod_date,
+	public ProductDTO(int prod_idx, String prod_name, String prod_title, int prod_price, int prod_count, String prod_date,
 			String prod_title_img, String prod_pet, String prod_info_img, int prod_brand, int prod_category) {
 		super();
 		this.prod_idx = prod_idx;
@@ -104,11 +102,11 @@ public class ProductDTO {
 		this.prod_count = prod_count;
 	}
 
-	public Date getProd_date() {
+	public String getProd_date() {
 		return prod_date;
 	}
 
-	public void setProd_date(Date prod_date) {
+	public void setProd_date(String prod_date) {
 		this.prod_date = prod_date;
 	}
 
