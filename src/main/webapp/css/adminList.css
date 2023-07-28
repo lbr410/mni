@@ -68,7 +68,7 @@ th{
 
 }
 
-td{
+.td{
 	text-align: center;
 	font-size: 11px;
 	padding-top: 9px;
@@ -76,6 +76,25 @@ td{
 	padding-left :6px;
 	padding-right: 6px;
 	border-bottom: 1px solid #cccccc;
+}
+.page{
+	font-size: 20px;
+	background-color:white;
+	text-decoration: none;
+	border: 0.5px solid;
+	border-color: #ff7f50;
+	cursor: pointer;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.nowPage{
+	font-size: 20px;
+	background-color:#ff7f50;
+	text-decoration: none;
+	border: 0.5px solid;
+	border-color: white;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 h1{
 	margin: 0 auto;
@@ -130,6 +149,7 @@ h1{
     border: none;
     border-radius: 5px;
 	margin-bottom: 5px;
+	cursor: pointer;
 
 }
 .productup{

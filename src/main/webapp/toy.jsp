@@ -11,7 +11,7 @@
 <%@ include file="header.jsp" %>
 
 <body>
-   <div class="bar">홈 > 브랜드 > 오리젠</div>
+   <div class="bar">홈 > 카테고리 > 장난감</div>
    <div class="top">
       <div class="brandlogo">
          <img class="brandlogo" src="/mni/img/orijen.png" alt="logo">
@@ -29,7 +29,7 @@
          <div class="list2"><a href="/mni/toy.jsp">장난감</a></div>
       </div>
    </div>
-   <div class="head-title">전체</div>
+   <div class="head-title">장난감</div>
     <main>
        <div class="brand-list-item">
            <div class="brand-image-wrapper">
