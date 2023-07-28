@@ -1,5 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="com.mni.notice.*" %>
+<jsp:useBean id="ndao" class="com.mni.notice.NoticeDAO" ></jsp:useBean>
+<%
+	String idx_s=request.getParameter("idx");
+	if(idx_s==null || idx_s.equals("")){
+		idx_s="0";
+	}
+	int idx=Integer.parseInt(idx_s);
+	NoticeDTO dto=ndao.noticeContent(idx);
+	
+	if(dto==null){
+		%>
+		<script>
+		window.alert('잘못된 접근 또는 삭제된 게시글입니다.');
+		location.href='/mni/admin/notice.jsp';
+		</script>
+		<%
+		return;
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,17 +35,17 @@
 <table id="noticetable">
 	<tr>
 		<td id="noticetitle">글제목</td>
-		<td id="noticeSub">피어나기 전인 유소</td>
+		<td id="noticeSub"><%=dto.getNotice_title() %></td>
 	</tr>
 	<tr>
 		<td colspan="2" id="noticecontent">
-		하였으며 예수는 무엇을 위하여 광야에서 방황하였으며 
+		<%=dto.getNotice_content() %>
 		</td>
 	</tr>
 	<tr>
 		<td colspan="2" id="noticeBtn" align="right">
-		<input type="button" value="수정" class="noticeBtnDeco">
-		<input type="button" value="삭제" class="noticeBtnDeco">
+		<a href="noticeUpdate.jsp?idx=<%=dto.getNotice_idx()%>"><input type="button" value="수정" class="noticeBtnDeco"></a>
+		<a href="noticeDelete.jsp?idx=<%=dto.getNotice_idx()%>"><input type="button" value="삭제" class="noticeBtnDeco"></a>
 		</td>
 	</tr>
 </table>

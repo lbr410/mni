@@ -22,8 +22,21 @@ public class userInfoDTO {
 		System.out.println("userDTO()생성자 호출됨");
 	}
 		
-	
-	
+	/**회원정보 수정*/
+	public userInfoDTO(String user_name, String user_pwd, String user_tel, int user_zip, String user_addr1,
+			String user_addr2, String user_email) {
+		super();
+		this.user_name = user_name;
+		this.user_pwd = user_pwd;
+		this.user_tel = user_tel;
+		this.user_zip = user_zip;
+		this.user_addr1 = user_addr1;
+		this.user_addr2 = user_addr2;
+		this.user_email = user_email;
+	}
+
+
+
 	public userInfoDTO(int user_idx, String user_id, String user_name, String user_pwd, String user_tel, int user_jumin_front,
 			int user_jumin_back, int user_zip, String user_addr1, String user_addr2, String user_email,
 			String user_delete, Date user_joindate, Date user_ddate) {

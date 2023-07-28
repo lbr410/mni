@@ -3,7 +3,10 @@
 <%@page import="com.mni.userInfo.*" %>
 <jsp:useBean id="udao" class="com.mni.userInfo.userInfoDAO" scope="session"></jsp:useBean>
 <%
+	String user_id=(String)session.getAttribute("sid");
+	String user_pwd=(String)session.getAttribute("spwd");
 	
+	userInfoDTO dto = udao.loginCheck(user_id, user_pwd);
 %>
 <!DOCTYPE html>
 <html>
@@ -41,34 +44,34 @@ function addrpopup(){
 		<table>
 			<tr>
 				<th>이름</th>
-				<td><input type = "text" name = "user_name" class = "inputtext" value="<%="홍길동"%>"></td>				
+				<td><input type = "text" name = "user_name" class = "inputtext" value="<%=dto.getUser_name()%>"></td>				
 			</tr>
 			<tr>
 				<th>전화번호</th>
-				<td><input type = "text" name = "user_tel" class = "inputtext" value="<%="12"%>"></td>
+				<td><input type = "text" name = "user_tel" class = "inputtext" value="<%=dto.getUser_tel()%>"></td>
 			</tr>
 			<tr>
 				<th>이메일</th>
-				<td><input type = "text" name = "user_email" class = "inputtext" value="<%=""%>"></td>
+				<td><input type = "text" name = "user_email" class = "inputtext" value="<%=dto.getUser_email()%>"></td>
 			</tr>
 			<tr>
 				<th>비밀번호</th>
-				<td><input type = "text" name = "user_pwd" class = "inputtext" value="<%=""%>"></td>
+				<td><input type = "text" name = "user_pwd" class = "inputtext" value=""></td>
 			</tr>
 			<tr>
 				<th>비밀번호 확인</th>
 				<td>
-				<input type = "password" name = "pwdcheck" onchange = "showException()" class = "inputtext" value="<%=""%>">
+				<input type = "password" name = "pwdcheck" onchange = "showException()" class = "inputtext" value="">
 				<div id = "pwdchecking" class = "pwdexception">입력한 비밀번호가 일치하지 않습니다.</div>
 				</td>
 			</tr>
 			<tr>
 				<th>주소<font color = "red">*</font></th>
 				<td>
-				<input type = "text" name = "user_zip" class = "add" readonly value="<%=""%>">
+				<input type = "text" name = "user_zip" class = "add" readonly value="<%=dto.getUser_zip()%>">
 				<input type = "button" value = "주소검색" onclick = "addrpopup()" class = "button"><br>
-				<input type = "text" name = "user_addr1" readonly class = "inputtext" value="<%=""%>"><br>
-				<input type = "text" name = "user_addr2" class = "inputtext" value="<%=""%>">
+				<input type = "text" name = "user_addr1" readonly class = "inputtext" value="<%=dto.getUser_addr1()%>"><br>
+				<input type = "text" name = "user_addr2" class = "inputtext" value="<%=dto.getUser_addr2()%>">
 				</td>
 			</tr>
 		</table>

@@ -4,20 +4,23 @@
 <jsp:useBean id="udao" class="com.mni.userInfo.userInfoDAO" scope="session"></jsp:useBean>
 <%
 request.setCharacterEncoding("utf-8");
-
 String userpwd=request.getParameter("pwd");
-
-
+String pwd=(String)session.getAttribute("spwd");
 if(userpwd!=""){
-	/*String userpwd=request.getAttribute("pwd");
-	String dbpwd=udao.userjoin(userpwd);*/
-	if(userpwd.equals("dbpwd")){
+	if(userpwd.equals(pwd)){
 		%>
 		<script>
-		location.href='userinfo.jsp';
+		location.href='userInfo.jsp';
 		</script>
 		<%
-	}	
+	}else{
+		%>
+		<script>
+		window.alert('로그인 후 사용 가능합니다.');
+		location.href='login.jsp';
+		</script>
+		<%
+	}
 }else{
 	%>
 	<script>
