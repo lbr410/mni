@@ -25,19 +25,14 @@
         }
     }
 	
-	// 업로드한 이미지 미리보기
+	// 업로드한 이미지 미리보기	
 	function setReviewImg(event) {
-		//document.all.image_container.removeChild('preview');
 		var reader = new FileReader();
 		
-		reader.onload = function(event){
-			var img = document.createElement("img");
-			img.id = 'preview';
-			img.setAttribute("src", event.target.result);
-			img.setAttribute("class", "col-lg-6");
-			document.all.image_container.appendChild(img);
+		reader.onload = function(event) {
+			var img = document.all.preview;
+			img.setAttribute("src", event.target.result);			
 		}
-		
 		reader.readAsDataURL(event.target.files[0]);
 	}
 </script>
@@ -55,18 +50,27 @@
 			<tr>
 				<td colspan="4"><div class="textCount">(<span id="textLength">0</span> / 200)</div></td>
 			</tr>
-			<tr> 
-				<td class="td0"><span class="menu">이미지 등록</span></td>
-				<td><div class="td1">
+			<tr>
+				<td colspan="4" class="td0">
+				<span class="menu">이미지 등록</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<input type="file" name="review_img"
-				accept=".jpg, .jpeg, .png" onchange="extensionCheck(this); setReviewImg(event)"></div></td>
-				<td class="td2"><div id="image_container"></div></td>
-				<td class="td3"><input type="submit" value="작성"></td>
+				accept=".jpg, .jpeg, .png" onchange="extensionCheck(this); setReviewImg(event)"></td>
+			</tr>
+			<tr>
+				<td colspan="4" class="td1">
+				<img src="/mni/img/preview.jpg" id="preview">
+				<td>
+			</tr>
+			<tr>
+				<td colspan="4" class="td2">
+				<input type="submit" value="작성" class="countBtn">
+				</td>
 			</tr>
 		</table>
 		</form>
 	</article>
 </section>
-<span>footer.jsp 수정 후 footer 불러와야함!!</span>
+
+<%@ include file="../footer.jsp" %>
 </body>
 </html>

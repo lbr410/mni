@@ -58,15 +58,15 @@
                 <span class="dropbtn_icon123">카테고리</span>
             </nav>
             <div class="dropdown-content">
-                <a href="/mni/feed.jsp">사료</a>
-                <a href="/mni/snack.jsp">간식</a>
-                <a href="/mni/supplies.jsp">용품</a>
-                <a href="/mni/toy.jsp">장난감</a>
+                <a href="#">사료</a>
+                <a href="#">간식</a>
+                <a href="#">용품</a>
+                <a href="#">장난감</a>
             </div>
         </div>
-        <div class="btn">베스트</div>
-        <div class="btn">신상품</div>
-        <div class="btn">브랜드</div>
+        <div class="btn"><a href="/mni/best.jsp">베스트</a></div>
+        <div class="btn"><a href="/mni/newProduct.jsp">신상품</a></div>
+        <div class="btn"><a href="/mni/brand.jsp">브랜드</a></div>
         <div class="right-section">
         <div class="cart-button" id="cart-icon" onclick = "javascript:location.href='/mni/user/usercart.jsp'">
             <img class="inactive-cart" src="/mni/img/cart-inactive.png" alt="cart-icon">
@@ -79,3 +79,4 @@
         </div>
     </section>
 </header>
+    
