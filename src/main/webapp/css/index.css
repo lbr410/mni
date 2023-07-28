@@ -1,16 +1,7 @@
 @charset "UTF-8";
 /*이미지슬라이드자리*/
-.bodywrap{
-    height: 360px;
-    width: 1000px;
-    position: relative;
-    background-color: rgb(255, 200, 0)
-}
-.imgslide{
-    height: 360px;
-    width: 1000px;
-    overflow: hidden;
-}
+
+
 /*제목*/
 .head-title{
     position: relative;

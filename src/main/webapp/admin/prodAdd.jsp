@@ -28,8 +28,8 @@
 			<option value="c">고양이</option>
 		</select> 
 		<select name="prod_category" size="5">
-			<option value="01">사료</option>
-			<option value="02">간식</option>
+			<option value="01" >사료</option>
+			<option value="02" >간식</option>
 			<option value="03">용품</option>
 			<option value="04">장난감</option>
 		</select>
@@ -44,9 +44,9 @@
 		<br>
 		
 		<div class="text_margin_top textFocus">
-		<input type="text" name="prod_price" class="text_size"><label>가격</label></div>
+		<input type="text" name="prod_price" class="text_size" maxlength="6"><label>가격</label></div>
 		<div class="text_margin_top textFocus">
-		<input type="text" name="prod_count" class="text_size"><label>재고</label></div>
+		<input type="text" name="prod_count" class="text_size" maxlength="3"><label>재고</label></div>
 		<div class="text_margin_top textFocus">
 		<input type="text" name="prod_title" class="text_size"><label>글제목</label></div>
 		<div class="text_margin_top2"><label>상품이미지</label>

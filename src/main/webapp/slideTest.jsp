@@ -16,7 +16,7 @@
         float: left;
     }
     .inner img{
-        width: 100%;
+        width: 50%;
     }
     
     
@@ -33,6 +33,8 @@
     background-color: white;
     border: 1px #ff7f50 solid;
     border-radius: 5px;
+    margin-left: 70px;
+    cursor: pointer; 
 }
 #buttonDeco:focus {
     background-color:#ff7f50;
@@ -45,6 +47,12 @@
 	display:inline-block;
 	margin-left: 300px;
 }
+
+body{width: 1000px; margin: 0 auto;}
+
+
+
+
 </style>
 </head>
 <body>
@@ -68,7 +76,7 @@
     </div>
     </div >
     <div class="btnDiv">
-    <button class = "button1" id="buttonDeco" >1</button>
+    <button class = "button1" id="buttonDeco">1</button>
     <button class = "button2" id="buttonDeco">2</button>
     <button class = "button3" id="buttonDeco">3</button>
     </div>

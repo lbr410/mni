@@ -12,7 +12,8 @@
 <%@ include file="header.jsp"%>
 <body>
     <div class="bodywrap">
-        <img class="imgslide" src="mni/img/imgslide.jpg" alt="banner">
+    <%@include file = "slideTest.jsp" %>
+   
     </div>
     <div class="head-title">
     	<div class="best">베스트</div>

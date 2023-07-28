@@ -13,7 +13,7 @@ public class ProductDAO {
 	public int prodInsert(ProductDTO dto) {
 		try {
 			conn = com.mni.db.MniDB.getConn();
-			String sql = "insert into product " + "values(prod_idx.nextval,?,?,?,?,sysdate,?,?,?,?,?)";
+			String sql = "insert into product " + "values(prod_idx.nextval,?,?,?,?,sysdate,?,?,?,?,?,0)";
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, dto.getProd_name());
 			ps.setString(2, dto.getProd_title());
@@ -41,13 +41,20 @@ public class ProductDAO {
 	}
 
 	/** 상품 내역 출력 메서드 */
-	public ArrayList<ProductDTO> prodList() {
+	public ArrayList<ProductDTO> prodList(int cp,int pageCnt) {
 		try {
 			conn = com.mni.db.MniDB.getConn();
-			String sql = "select prod_idx,prod_name,prod_title,prod_price,prod_count,"
+			int start = (cp-1)*pageCnt+1;
+			int end = cp*pageCnt;
+			String sql = "select * from "
+					+ "(select rownum as rnum,a.* from "
+					+ "(select prod_idx,prod_name,prod_title,prod_price,prod_count,"
 					+ "To_char(prod_date,'yyyy-MM-dd Hh24:mi:ss') as prod_date,prod_title_img,prod_pet,"
-					+ "prod_info_img,prod_brand,prod_category from product order by prod_idx desc";
+					+ "prod_info_img,prod_brand,prod_category from product order by prod_idx desc) a) b "
+					+ "where rnum>=? and rnum<=?";
 			ps = conn.prepareStatement(sql);
+			ps.setInt(1, start);
+			ps.setInt(2, end);
 			rs = ps.executeQuery();
 			ArrayList<ProductDTO> arr = new ArrayList<ProductDTO>();
 			if (rs.next()) {
@@ -82,6 +89,62 @@ public class ProductDAO {
 					conn.close();
 			} catch (Exception e2) {
 			}
+		}
+	}
+	/**상품 총 개수 메서드*/
+	public int prodCnt() {
+		try {
+			conn=com.mni.db.MniDB.getConn();
+			String sql="select count(*) from product";
+			ps=conn.prepareStatement(sql);
+			rs=ps.executeQuery();
+			rs.next();
+			int count=rs.getInt(1);
+			return count;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return 0;
+		}finally {
+			try {
+				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			}catch(Exception e2) {}
+		}
+	}
+	/**상품 수정 클릭 시 해당 상품 출력 메서드*/
+	public ProductDTO prodUpdate(int prod_idx) {
+		try {
+			conn=com.mni.db.MniDB.getConn();
+			String sql="select prod_name,prod_title,prod_price,prod_count,"
+					+ "To_char(prod_date,'yyyy-MM-dd Hh24:mi:ss') as prod_date,prod_title_img,prod_pet,"
+					+ "prod_info_img,prod_brand,prod_category from product where prod_idx = ?";
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, prod_idx);
+			rs=ps.executeQuery();
+			ProductDTO dto = null;
+			if(rs.next()) {
+				String prod_name = rs.getString("prod_name");
+				String prod_title = rs.getString("prod_title");
+				int prod_price = rs.getInt("prod_price");
+				int prod_count = rs.getInt("prod_count");
+				String prod_date = rs.getString("prod_date");
+				String prod_title_img = rs.getString("prod_title_img");
+				String prod_pet = rs.getString("prod_pet");
+				String prod_info_img = rs.getString("prod_info_img");
+				int prod_brand = rs.getInt("prod_brand");
+				int prod_category = rs.getInt("prod_category");
+				dto = new ProductDTO(prod_name, prod_title, prod_price, prod_count, prod_date, prod_title_img, prod_pet, prod_info_img, prod_brand, prod_category);
+			}return dto;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally {
+			try {
+				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			}catch(Exception e2) {}
 		}
 	}
 }

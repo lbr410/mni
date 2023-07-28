@@ -12,7 +12,8 @@
     <div id="member">
     <%
     if(name==null){
-       %>
+
+    %>
            <a id="memberjoin" href="/mni/join.jsp">회원가입</a>
               <div class="t"></div>
            <a class="login" href="/mni/user/login.jsp">로그인</a>
@@ -33,12 +34,12 @@
         </div>
         <div class="l-logo">
         <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <button class="l-button">
+        <button class="l-button" onclick = "javascript:location.href='index.jsp?pet=d'">
             <img class="dog" src="/mni/img/dog.jpg" alt="dog-icon">
             <div>강아지</div>
         </button>
         <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <button class="r-button" id="active-button">
+        <button class="r-button" id="active-button" onclick = "javascript:location.href='index.jsp?pet=c'">
             <img class="inactive-img" src="/mni/img/cat-inactive.jpg" alt="cat-inactive icon">
             <img class="active-img" src="/mni/img/cat-active.jpg" alt="cat-active icon">
             <div>고양이</div>
@@ -79,4 +80,3 @@
         </div>
     </section>
 </header>
-    
