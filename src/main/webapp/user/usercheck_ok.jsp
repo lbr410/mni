@@ -7,14 +7,12 @@ request.setCharacterEncoding("utf-8");
 
 String userpwd=request.getParameter("pwd");
 
-
+String pwd=(String)session.getAttribute("spwd");
 if(userpwd!=""){
-	/*String userpwd=request.getAttribute("pwd");
-	String dbpwd=udao.userjoin(userpwd);*/
-	if(userpwd.equals("dbpwd")){
+	if(userpwd.equals(pwd)){
 		%>
 		<script>
-		location.href='userinfo.jsp';
+		location.href='userInfo.jsp';
 		</script>
 		<%
 	}	

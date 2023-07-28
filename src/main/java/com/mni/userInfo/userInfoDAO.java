@@ -129,5 +129,32 @@ public class userInfoDAO {
 	                  }catch(Exception e2) {}
 	               }
 	            }
+	      
+	      public int setUserInfo(userInfoDTO dto) {
+	  		try {
+	  			conn=com.mni.db.MniDB.getConn();
+	  			String sql="update userinfo set user_name=?, user_tel=?, "
+	  					+ "user_email=?, user_pwd=?, user_zip=?, user_addr1=?, user_addr2=? ";
+	  			ps=conn.prepareStatement(sql);
+	  			ps.setString(1, dto.getUser_name());
+	  			ps.setString(2, dto.getUser_tel());
+	  			ps.setString(3, dto.getUser_email());
+	  			ps.setString(4, dto.getUser_pwd());
+	  			ps.setInt(5, dto.getUser_zip());
+	  			ps.setString(6, dto.getUser_addr1());
+	  			ps.setString(7, dto.getUser_addr2());
+	  			int count=ps.executeUpdate();
+	  			
+	  			return count;
+	  		}catch(Exception e) {
+	  			e.printStackTrace();
+	  			return -1;
+	  		}finally {
+	  			try {
+	  				if(ps!=null)ps.close();
+	  				if(conn!=null)conn.close();
+	  			}catch(Exception e2) {}
+	  		}
+	  	}
 	
 }

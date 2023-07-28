@@ -24,6 +24,7 @@ userInfoDTO result = udao.loginCheck(user_id, user_pwd);
 		String user_name=udao.getUserInfo(user_id);
 		session.setAttribute("sid",user_id);
 		session.setAttribute("sname",user_name);
+		session.setAttribute("spwd",user_pwd);
 		%>
 		<script>
 		location.href='/mni/index.jsp';
