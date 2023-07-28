@@ -42,6 +42,9 @@ function joinsubmit(){
 	   var idcheckbutton = document.join.idcheckbutton.value;
 	   var pwd = document.join.user_pwd.value;
 	   var pwdcheck = document.join.pwdcheck.value;
+	   var zip = document.join.user_zip.value;
+	   var addr1 = document.join.user_addr1.value;
+	   var addr2 = document.join.user_addr2.value;
 	   
 	   var tf = pwd == pwdcheck;
 	   //비밀번호 일치여부 true false
@@ -53,8 +56,19 @@ function joinsubmit(){
 	      window.alert('중복된 아이디입니다.');
 	      return false;
 	   }else if (idcheckbutton == "t"){
+	      
 	      if(tf){
-	         return true;
+	         
+	         if(zip != "" && addr1 != "" && addr2 != ""){
+	            return true;
+	         }else if(zip == "" && addr1 == ""){
+	            window.alert('주소검색 버튼을 통해 우편번호와 기본주소를 작성해주세요..!');
+	            return false;
+	         }else if(addr2 == ""){
+	            window.alert('상세주소를 작성해주세요..!');
+	            return false;
+	         }
+	         
 	      }else{
 	         window.alert('비밀번호가 일치하지 않습니다.');
 	         document.getElementById('pwdchecking').style.display = '';
@@ -132,10 +146,10 @@ function jumin(object){
 	<tr>
 	<th>주소<font color = "red">*</font></th>
 	<td>
-	<input type = "text" name = "user_zip" class = "add" readonly required>
-	<input type = "button" value = "주소검색" onclick = "addrpopup()" class = "button"><br>
-	<input type = "text" name = "user_addr1" readonly class = "inputtext" required><br>
-	<input type = "text" name = "user_addr2" class = "inputtext" required>
+	<input type = "text" name = "user_zip" class = "add" readonly>
+   <input type = "button" value = "주소검색" onclick = "addrpopup()" class = "button"><br>
+   <input type = "text" name = "user_addr1"  class = "inputtext" readonly><br>
+   <input type = "text" name = "user_addr2" class = "inputtext" required>
 	</td>
 	</tr>
 	<tr>
