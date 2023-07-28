@@ -3,6 +3,7 @@ package com.mni.userInfo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class userInfoDAO {
 	
@@ -11,7 +12,6 @@ public class userInfoDAO {
 	private ResultSet rs;
 	
 	public userInfoDAO() {
-		System.out.println("userInfo()생성자 호출됨.");
 	}
 	
 	//아이디 중복검사
@@ -129,5 +129,70 @@ public class userInfoDAO {
 	                  }catch(Exception e2) {}
 	               }
 	            }
-	
+	/**관리자 페이지 회원목록 출력*/
+	public ArrayList<userInfoDTO> userInfoSelect(int cp,int pageCnt) {
+		try {
+			conn=com.mni.db.MniDB.getConn();
+			int start = (cp-1)*pageCnt+1;
+			int end = cp*pageCnt;
+			String sql="select * from "
+					+ "(select rownum as rnum,a.* from "
+					+ "(select * from userinfo order by user_idx desc) a) b "
+					+ "where rnum>=? and rnum<=?";
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, start);
+			ps.setInt(2, end);
+			rs=ps.executeQuery();
+			ArrayList<userInfoDTO> arr=new ArrayList<userInfoDTO>();
+			while(rs.next()) {
+				int user_idx = rs.getInt("user_idx");
+				String id = rs.getString("user_id");
+				String name = rs.getString("user_name");
+				String pwd = rs.getString("user_pwd");
+				String tel = rs.getString("user_tel");
+				int user_jumin_front = rs.getInt("user_jumin_front");
+				int user_jumin_back = rs.getInt("user_jumin_back");
+				int user_zip = rs.getInt("user_zip");
+				String user_addr1 = rs.getString("user_addr1");
+				String user_addr2 = rs.getString("user_addr2");
+				String user_email = rs.getString("user_email");
+				String user_delete = rs.getString("user_delete");
+				java.sql.Date user_joindate = rs.getDate("user_joindate");
+				java.sql.Date user_ddate = rs.getDate("user_ddate");
+				userInfoDTO dto = new userInfoDTO(user_idx, id, name, pwd, tel, user_jumin_front, user_jumin_back, user_zip, user_addr1, user_addr2, user_email, user_delete, user_joindate, user_ddate);
+				arr.add(dto);
+			}
+			return arr;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally {
+			try {
+				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			}catch(Exception e2) {}
+		}
+	}
+	/**관리자 페이지 총 회원 수 메서드*/
+	public int userCnt() {
+		try {
+			conn=com.mni.db.MniDB.getConn();
+			String sql="select count(*) from userinfo";
+			ps=conn.prepareStatement(sql);
+			rs=ps.executeQuery();
+			rs.next();
+			int count=rs.getInt(1);
+			return count;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return 0;
+		}finally {
+			try {
+				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			}catch(Exception e2) {}
+		}
+	}
 }

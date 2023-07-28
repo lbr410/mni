@@ -18,6 +18,21 @@ public class ProductDTO {
 		
 	}
 
+	public ProductDTO(String prod_name, String prod_title, int prod_price, int prod_count, String prod_date,
+			String prod_title_img, String prod_pet, String prod_info_img, int prod_brand, int prod_category) {
+		super();
+		this.prod_name = prod_name;
+		this.prod_title = prod_title;
+		this.prod_price = prod_price;
+		this.prod_count = prod_count;
+		this.prod_date = prod_date;
+		this.prod_title_img = prod_title_img;
+		this.prod_pet = prod_pet;
+		this.prod_info_img = prod_info_img;
+		this.prod_brand = prod_brand;
+		this.prod_category = prod_category;
+	}
+
 	public ProductDTO(int prod_idx, String prod_name, String prod_title, int prod_price, int prod_count, String prod_date,
 			String prod_pet, int prod_brand, int prod_category) {
 		super();

@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -16,6 +17,27 @@ function prodAdd(){
 }
 </script>
 </head>
+<%
+int totalCnt = pdao.prodCnt(); //db 연동 총 게시물
+int pageCnt = 5; //한 페이지당 보여줄 게시물
+int pageButton = 10; //페이지 버튼 개수
+
+String cp_s = request.getParameter("cp"); //첫 접속 시 1페이지로 이동
+if(cp_s == null || cp_s.equals("")){
+	cp_s = "1";
+}
+int cp = Integer.parseInt(cp_s); // 사용자 현재 위치
+
+int totalPage = totalCnt / pageCnt +1; //총 페이지 수
+if(totalCnt % pageCnt == 0){
+	totalPage--;
+}
+
+int userGroup = cp / pageButton; //유저 현재 위치 그룹
+if(cp % pageButton == 0){
+	userGroup--;
+}
+%>
 <body>
 <%@ include file="admin_header/admin_header_2.jsp" %>
 <h1>상품 관리</h1>
@@ -25,6 +47,7 @@ function prodAdd(){
 	</div>
 	<div class="productup"><input type="button" value="상품등록" class="longboxBtnDeco" onclick="prodAdd()"></div>
 		<table>
+		<thead>
 			<tr>
 				<th>NO.</th>
 				<th>상품명</th>
@@ -38,28 +61,51 @@ function prodAdd(){
 				<th>상세정보</th>
 				<th></th>
 			</tr>
+			</thead>
+			<tfoot>
+			<tr>
+				<td colspan="10" align="center">
 			<%
-			ArrayList<ProductDTO> arr=pdao.prodList();
+			/**페이징*/
+			if(userGroup != 0){
+				%><a href="productList.jsp?cp=<%=userGroup*pageButton%>">&lt;&lt;</a><%
+			}
+			for(int i = userGroup*pageButton+1; i<=(userGroup+1)*pageButton; i++){
+				String button = i == cp ? "nowPage":"page";
+				%>&nbsp;&nbsp;<button class="<%=button %>" onclick="javascript:location.href='productList.jsp?cp=<%=i%>'"><%=i %></button>&nbsp;&nbsp;<%
+				if(i == totalPage){
+					break;
+				}
+			}
+			if(userGroup != (totalPage/pageButton-(totalPage%pageButton==0?1:0))){
+				%><a href="productList.jsp?cp=<%=(userGroup+1)*pageButton+1%>">&gt;&gt;</a><%
+			}
+			%>
+			</td>
+			</tr>
+			</tfoot>
+			<tbody>
+			<%
+			ArrayList<ProductDTO> arr=pdao.prodList(cp, pageCnt);
 			String pet="";
 			String brand="";
 			String category="";
-			SimpleDateFormat spdate=new SimpleDateFormat("yyyy-MM-dd a hh:mm:ss");
-			String date="";
+			DecimalFormat df = new DecimalFormat();
+			df.applyLocalizedPattern("#,###,###");
 			if(arr==null || arr.size()==0){
 				%>
 				<tr>
-					<td colspan="10">등록된 상품이 없습니다.</td>
+					<td colspan="10" class="td">등록된 상품이 없습니다.</td>
 				</tr>
 				<%
 			}else{
 			for(int i=0; i<arr.size(); i++){
-				//date=spdate.format(arr.get(i).getProd_date());
-				//System.out.println(date);
 				if(arr.get(i).getProd_pet().equals("d")){
 					pet="강아지";
 				}else if(arr.get(i).getProd_pet().equals("c")){
 					pet="고양이";
 				}
+				String price=df.format(arr.get(i).getProd_price());
 				switch(arr.get(i).getProd_brand()){
 				case 100: brand="오리젠";break;
 				case 200: brand="아카나";break;
@@ -75,24 +121,25 @@ function prodAdd(){
 				}
 			%>
 			<tr>
-				<td><%=arr.get(i).getProd_idx() %></td>
-				<td><%=arr.get(i).getProd_name() %></td>
-				<td><%=arr.get(i).getProd_price() %></td>
-				<td><%=brand %></td>
-				<td><%=pet %></td>
-				<td><%=category %></td>
-				<td><%=arr.get(i).getProd_count() %></td>
-				<td><%=arr.get(i).getProd_date() %></td>
-				<td><%=arr.get(i).getProd_title() %></td>
-				<td><img src="/mni/admin/product_img/<%=arr.get(i).getProd_title_img() %>" alt="타이틀이미지"></td>
-				<td>
-				<input type="button" value="수정" class="proBtnDeco">
+				<td class="td"><%=arr.get(i).getProd_idx() %></td>
+				<td class="td"><%=arr.get(i).getProd_name() %></td>
+				<td class="td"><%=price %></td>
+				<td class="td"><%=brand %></td>
+				<td class="td"><%=pet %></td>
+				<td class="td"><%=category %></td>
+				<td class="td"><%=arr.get(i).getProd_count() %></td>
+				<td class="td"><%=arr.get(i).getProd_date() %></td>
+				<td class="td"><%=arr.get(i).getProd_title() %></td>
+				<td class="td"><img src="/mni/admin/product_img/<%=arr.get(i).getProd_title_img() %>" alt="타이틀이미지"></td>
+				<td class="td">
+				<input type="button" value="수정" class="proBtnDeco" onclick="location.href='/mni/admin/prodUpdate.jsp?prod_idx=<%=arr.get(i).getProd_idx()%>'">
 				<input type="button" value="삭제" class="proBtnDeco">
 				</td>
 			</tr>
 			<%
 			}
 			}%>
+			</tbody>
 		</table>
 	</section>
 </body>
