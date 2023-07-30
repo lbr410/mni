@@ -16,7 +16,7 @@
         float: left;
     }
     .inner img{
-        width: 50%;
+        width: 70%;
     }
     
     
@@ -44,8 +44,8 @@
 }
 
 .btnDiv{
-	display:inline-block;
-	margin-left: 300px;
+   display:inline-block;
+   margin-left: 300px;
 }
 
 body{width: 1000px; margin: 0 auto;}

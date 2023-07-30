@@ -312,4 +312,42 @@ public class userInfoDAO {
 		}
 	}
     
+	/** 결제 시 사용자 정보 출력 - BR */
+	public userInfoDTO paymentUserInfo(int user_idx) {
+		try {
+			conn = com.mni.db.MniDB.getConn();
+			
+			String sql = "select * from userinfo where user_idx = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, user_idx);
+			rs = ps.executeQuery();
+			
+			userInfoDTO dto = new userInfoDTO();
+			rs.next();
+			String user_name = rs.getString("user_name");
+			String user_tel = rs.getString("user_tel");
+			int user_zip = rs.getInt("user_zip");
+			String user_addr1 = rs.getString("user_addr1");
+			String user_addr2 = rs.getString("user_addr2");
+			String user_email = rs.getString("user_email");
+			
+			dto.setUser_name(user_name);
+			dto.setUser_email(user_email);
+			dto.setUser_tel(user_tel);
+			dto.setUser_zip(user_zip);
+			dto.setUser_addr1(user_addr1);
+			dto.setUser_addr2(user_addr2);
+			
+			return dto;
+		} catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			try {
+				if(rs!=null) rs.close();
+				if(ps!=null) ps.close();
+				if(conn!=null) conn.close();
+			} catch(Exception e) {}
+		}
+	}
 }

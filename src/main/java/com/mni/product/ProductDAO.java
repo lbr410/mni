@@ -147,4 +147,88 @@ public class ProductDAO {
 			}catch(Exception e2) {}
 		}
 	}
+	
+	/** 신상품 보기 - BR */
+	public ArrayList<ProductDTO> newProdView(String pet_prod) {
+		try {
+			conn = com.mni.db.MniDB.getConn();
+			
+			String sql = "select * from product "
+					+ "where prod_pet = ? and "
+					+ "prod_date between sysdate-14 and sysdate order by prod_date desc";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, pet_prod);
+			rs = ps.executeQuery();
+			
+			ArrayList<ProductDTO> table = new ArrayList<ProductDTO>();
+			if(rs.next()) {
+				do {
+					int prod_idx = rs.getInt("prod_idx");
+					String prod_title_img = rs.getString("prod_title_img");
+					String prod_name = rs.getString("prod_name");
+					String prod_title = rs.getString("prod_title");
+					int prod_price = rs.getInt("prod_price");
+					
+					ProductDTO dto = new ProductDTO();
+					dto.setProd_idx(prod_idx);
+					dto.setProd_title_img(prod_title_img);
+					dto.setProd_name(prod_name);
+					dto.setProd_title(prod_title);
+					dto.setProd_price(prod_price);
+					table.add(dto);
+				} while(rs.next());
+			}
+			return table;
+		} catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			try {
+				if(rs!=null) rs.close();
+				if(ps!=null) ps.close();
+				if(conn!=null) conn.close();
+			} catch(Exception e) {}
+		}
+	}
+	
+	/** 상품 상세 페이지 - BR */
+	public ProductDTO prodDetail(int idx) {
+		try {
+			conn = com.mni.db.MniDB.getConn();
+			
+			String sql = "select prod_idx, prod_title, prod_title_img, prod_name, prod_count, prod_price, prod_info_img from product "
+					+ "where prod_idx = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, idx);
+			rs = ps.executeQuery();
+			
+			ProductDTO dto = new ProductDTO();
+			if(rs.next()) {
+				String prod_title = rs.getString("prod_title");
+				String prod_title_img = rs.getString("prod_title_img");
+				String prod_name = rs.getString("prod_name");
+				int prod_count = rs.getInt("prod_count");
+				int prod_price = rs.getInt("prod_price");
+				String prod_info_img = rs.getString("prod_info_img");
+				
+				dto.setProd_title(prod_title);
+				dto.setProd_title_img(prod_title_img);
+				dto.setProd_name(prod_name);
+				dto.setProd_count(prod_count);
+				dto.setProd_price(prod_price);
+				dto.setProd_info_img(prod_info_img);
+			}
+			return dto;
+		} catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			try {
+				if(rs!=null) rs.close();
+				if(ps!=null) ps.close();
+				if(conn!=null) conn.close();
+			} catch(Exception e) {}
+		}
+	}
 }

@@ -9,8 +9,8 @@
 /*상품 타이틀 이미지*/
 .prodimg img{
 	float:left;
-	height: 500px;
-	 width: 600px;
+	height: 300px;
+	 width: 400px;
 }
 /*상품 제목 가격 장바구니*/
 .prodtitle{
@@ -59,7 +59,7 @@
 	margin-top: 15px;
 }
 /*장바구니*/
-#cart{
+#cartBtn{
 	margin-top:15px;
 	text-align: center;
 	font-size:20px;

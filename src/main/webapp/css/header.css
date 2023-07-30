@@ -106,11 +106,11 @@ header{
     height: 48px;
     box-sizing: border-box;
     min-width: 500px;
-    border: 2px solid orange;
+    border: 2px solid #ff7f50;
     cursor: pointer;
 }
 .little-search:hover{
-    box-shadow: 0 2px 4px #FFF5D2;
+    box-shadow: 0 2px 4px #cecece;
 }
 #search{
     border: none;
@@ -127,7 +127,8 @@ header{
 #search-icon{
     margin-top: 2px;
     margin-left:30px;
-    width: 40px;
+    width: 26px;
+    height: 26px;
     text-align: right;    
 }
 /*메뉴*/
@@ -136,10 +137,18 @@ header{
     display: inline-block;
     color: #ff7f50;
     margin-right: 10px;
-    width: 100px;
+    width: 150px;
+}
+.dropbtn img{
+   vertical-align: middle;
+   margin-left: -80px;
+   padding: 14px;
+   padding-bottom: 20px;
+   width: 24px;
+   height: 24px;
 }
 .dropbtn{
-    font-weight: 400;
+    font-weight: 200;
     color: rgb(37,37,37);
     padding: 12px;
     width: 100px;
@@ -154,7 +163,8 @@ header{
     z-index: 1;
     font-weight: 400;
     background-color: #f9f9f9;
-    width: 100px;
+    margin-left: -50px;
+    width: 200px;
     flex-direction: column;
 }
 .dropdown-content a{
@@ -167,6 +177,7 @@ header{
 }
 .dropbtn_icon123:hover{
     color: #ff7f50;
+    font-size: 15px;
 }
 .dropdown-content a:hover{
     background-color: #ececec;
@@ -202,7 +213,7 @@ section{
     margin-right: 0px;
     display: flex;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 0px;
     right: 0;
     cursor: pointer;
     
@@ -210,19 +221,19 @@ section{
 .cart-button{
     padding: 12px;
     margin-left: 20px;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     cursor: pointer;
     margin-right: 10px;
 }
 .inactive-cart{
-    width: 42px;
-    height: 42px;
+    width: 32px;
+    height: 32px;
 }
 .active-cart{
     display: none;
-    width: 42px;
-    height: 42px;
+    width: 32px;
+    height: 32px;
 }
 .cart-button:hover .active-cart{
     display:inline-block;
@@ -236,18 +247,18 @@ section{
 .my-button{
     padding: 12px;
     margin-left: 20px;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     cursor: pointer;
 }
 .inactive-my{
-    width:42px;
-    height: 42px;
+    width:32px;
+    height: 32px;
 }
 .active-my{
     display: none;
-    width: 42px;
-    height: 42px;
+    width: 32px;
+    height: 32px;
 }
 .my-button:hover .active-my{
     display: inline-block;

@@ -1,0 +1,303 @@
+@charset "UTF-8";
+*{
+    margin:0 auto;
+    padding: 0px;
+    list-style: none;
+    font-family: "Noto Sans";
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+/*header*/
+header{
+    display: block;
+    padding: 0px;
+    width: 1000px;
+    height: 220px;
+    align-items: center;
+    position: relative;
+}
+/*상단 회원가입*/
+#member{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    margin-top: 10px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    font-display: none;
+    font-size: 12px;
+}
+#member a{
+    margin :0 10px;
+}
+.t{
+    margin-right: 20px;
+}
+/*header*/
+.header-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.mainlogo{
+    width: 200px;
+    height: 80px;
+    cursor: pointer;
+}
+.l-logo{
+    width: 300px;
+    display: inline-block;
+}
+.l-button{
+    border: 0;
+    background-color: white;
+    color: gray;
+    cursor: pointer;
+    left:0;
+}
+.r-button{
+   border: 0;
+    background-color: white;
+    color: orangered;
+    cursor: pointer;
+}
+.active-doglogo{
+    display: none;
+    width: 40px;
+    height: 40px;
+}
+.inactive-doglogo{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(217,217,217);
+}
+.catlogo{
+    width: 40px;
+    height: 40px;
+}
+.l-button:hover{
+    color: orangered;
+}
+.l-button:hover.active-doglogo{
+    display: inline-block;
+}
+.l-button:hover.inactive-doglogo{
+    display: none;
+}
+#active-button:hover.active-doglogo{
+    display: inline-block;
+}
+/*검색*/
+.little-search{
+    margin-left: 30px;
+    display: flex;
+    padding: 0 8px;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    height: 48px;
+    box-sizing: border-box;
+    min-width: 500px;
+    border: 2px solid #ff7f50;
+    cursor: pointer;
+}
+.little-search:hover{
+    box-shadow: 0 2px 4px #cecece;
+}
+#search{
+    border: none;
+    outline: none;
+    width: 400px;
+    font-size: 15px;    
+}
+.top-right{
+    width: 100px;
+}
+.magnifying-glass wrapper{
+    margin-left: 100px;    
+}
+#search-icon{
+    margin-top: 2px;
+    margin-left:30px;
+    width: 24px;
+    text-align: right;    
+}
+/*검색*/
+.little-search{
+    margin-left: 30px;
+    display: flex;
+    padding: 0 8px;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    height: 48px;
+    box-sizing: border-box;
+    min-width: 500px;
+    border: 2px solid #ff7f50;
+    cursor: pointer;
+}
+.little-search:hover{
+    box-shadow: 0 2px 4px #cecece;
+}
+#search{
+    border: none;
+    outline: none;
+    width: 400px;
+    font-size: 15px;    
+}
+.top-right{
+    width: 100px;
+}
+.magnifying-glass wrapper{
+    margin-left: 100px;    
+}
+#search-icon{
+    margin-top: 2px;
+    margin-left:30px;
+    width: 24px;
+    text-align: right;    
+}
+/*메뉴*/
+.dropdown{
+    position: relative;
+    display: inline-block;
+    color: #ff7f50;
+    margin-right: 10px;
+    width: 150px;
+}
+.dropbtn img{
+   vertical-align: middle;
+   margin-left: -80px;
+   padding: 14px;
+   padding-bottom: 20px;
+   width: 24px;
+   height: 24px;
+}
+.dropbtn{
+    font-weight: 200;
+    color: rgb(37,37,37);
+    padding: 12px;
+    width: 100px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    font-weight: 400;
+    background-color: #f9f9f9;
+    margin-left: -50px;
+    width: 200px;
+    flex-direction: column;
+}
+.dropdown-content a{
+    display: block;
+    text-decoration: none;
+    color: rgb(37, 37, 37);
+    font-size: 15px;
+    text-align: left;
+    padding: 12px 20px;
+}
+.dropbtn_icon123:hover{
+    color: #ff7f50;
+    font-size: 15px;
+}
+.dropdown-content a:hover{
+    background-color: #ececec;
+    color: #ff7f50;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.btn{
+    display: inline-block;
+    font-weight: 400;
+    color: rgb(37,37,37);
+    padding: 12px;
+    margin-right: 10px;
+    width: 100px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+.btn:hover{
+    color: #ff7f50;
+}
+section{
+    width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0px;
+}
+/*오른쪽 아이콘*/
+.right-section{
+    margin-right: 0px;
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    right: 0;
+    cursor: pointer;
+    
+}
+.cart-button{
+    padding: 12px;
+    margin-left: 20px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.inactive-cart{
+    width: 32px;
+    height: 32px;
+}
+.active-cart{
+    display: none;
+    width: 32px;
+    height: 32px;
+}
+.cart-button:hover .active-cart{
+    display:inline-block;
+}
+.cart-button:hover .inactive-cart{
+    display: none;
+}
+#cart-icon:hover .active-cart{
+    display:inline-block;
+}
+.my-button{
+    padding: 12px;
+    margin-left: 20px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+.inactive-my{
+    width:32px;
+    height: 32px;
+}
+.active-my{
+    display: none;
+    width: 32px;
+    height: 32px;
+}
+.my-button:hover .active-my{
+    display: inline-block;
+}
+.my-button:hover .inactive-my{
+    display: none;
+}
+#my-icon:hover .active-my{
+    display: inline-block;
+}

@@ -22,6 +22,8 @@ userInfoDTO result = udao.loginCheck(user_id, user_pwd);
 			response.addCookie(ck);
 		}
 		String user_name=udao.getUserInfo(user_id);
+		userInfoDTO dto = udao.loginCheck(user_id, user_pwd);
+		session.setAttribute("sidx", dto.getUser_idx()); // idx로 session - BR
 		session.setAttribute("sid",user_id);
 		session.setAttribute("sname",user_name);
 		session.setAttribute("spwd",user_pwd);

@@ -34,12 +34,12 @@
         </div>
         <div class="l-logo">
         <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <button class="l-button" onclick = "javascript:location.href='index.jsp?pet=d'">
+        <button class="l-button" onclick = "javascript:location.href='/mni/index.jsp?pet=d'">
             <img class="dog" src="/mni/img/dog.jpg" alt="dog-icon">
             <div>강아지</div>
         </button>
         <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <button class="r-button" id="active-button" onclick = "javascript:location.href='index.jsp?pet=c'">
+        <button class="r-button" id="active-button"  onclick="location.href='/mni/index.jsp?pet=c'">
             <img class="inactive-img" src="/mni/img/cat-inactive.jpg" alt="cat-inactive icon">
             <img class="active-img" src="/mni/img/cat-active.jpg" alt="cat-active icon">
             <div>고양이</div>

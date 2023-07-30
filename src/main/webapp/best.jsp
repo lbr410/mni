@@ -15,10 +15,10 @@
         <div id="place-items-wrapper">
          <div class="place-list-item">
          	<div class="best-icon">
-				<img src="mni/img/best1.png" alt="best1" name="besticon">
+				<img src="/mni/img/best1.png" alt="best1" name="besticon">
 			</div>
             <div class="place-image-wrapper">
-                <img src="mni/img/imgslide.jpg" alt="place image" name="best">
+                <img src="/mni/img/imgslide.jpg" alt="place image" name="best">
             </div>
             <div class="description-section">
                 <div class="description-section_title">강아지 간식</div>
@@ -28,10 +28,10 @@
             </div>
             <div class="place-list-item">
             <div class="best-icon">
-				<img src="mni/img/best2.png" alt="best2" name="besticon">
+				<img src="/mni/img/best2.png" alt="best2" name="besticon">
 			</div>
             <div class="place-image-wrapper">
-                <img src="mni/img/imgslide.jpg" alt="place image" name="best">
+                <img src="/mni/img/imgslide.jpg" alt="place image" name="best">
             </div>
             <div class="description-section">
                 <div class="description-section_title">강아지 간식</div>
@@ -41,10 +41,10 @@
             </div>
             <div class="place-list-item">
             <div class="best-icon">
-				<img src="mni/img/best3.png" alt="best3" name="besticon">
+				<img src="/mni/img/best3.png" alt="best3" name="besticon">
 			</div>
             <div class="place-image-wrapper">
-                <img src="mni/img/imgslide.jpg" alt="place image" name="best">
+                <img src="/mni/img/imgslide.jpg" alt="place image" name="best">
             </div>
             <div class="description-section">
               <div class="description-section_title">강아지 간식</div>
@@ -55,7 +55,7 @@
           <div class="place-list-item">
           	<div class="best-icon-text">4위</div>
             <div class="place-image-wrapper">
-              <img src="mni/img/imgslide.jpg" alt="place image">
+              <img src="/mni/img/imgslide.jpg" alt="place image">
             </div>
             <div class="description-section">
               <div class="description-section_title">강아지 간식</div>
@@ -70,7 +70,7 @@
          <div class="place-list-item">
          	<div class="best-icon-text">5위</div>
             <div class="place-image-wrapper">
-                <img src="mni/img/imgslide.jpg" alt="place image">
+                <img src="/mni/img/imgslide.jpg" alt="place image">
             </div>
             <div class="description-section">
                 <div class="description-section_title">강아지 간식</div>
@@ -81,7 +81,7 @@
             <div class="place-list-item">
             <div class="best-icon-text">6위</div>
             <div class="place-image-wrapper">
-                <img src="mni/img/imgslide.jpg" alt="place image">
+                <img src="/mni/img/imgslide.jpg" alt="place image">
             </div>
             <div class="description-section">
                 <div class="description-section_title">강아지 간식</div>
@@ -92,7 +92,7 @@
             <div class="place-list-item">
             <div class="best-icon-text">7위</div>
             <div class="place-image-wrapper">
-                <img src="mni/img/imgslide.jpg" alt="place image">
+                <img src="/mni/img/imgslide.jpg" alt="place image">
             </div>
             <div class="description-section">
               <div class="description-section_title">강아지 간식</div>
@@ -103,7 +103,7 @@
           <div class="place-list-item">
           	<div class="best-icon-text">8위</div>
             <div class="place-image-wrapper">
-              <img src="mni/img/imgslide.jpg" alt="place image">
+              <img src="/mni/img/imgslide.jpg" alt="place image">
             </div>
             <div class="description-section">
               <div class="description-section_title">강아지 간식</div>

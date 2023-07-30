@@ -13,6 +13,7 @@ public class ProductDTO {
 	private String prod_info_img;
 	private int prod_brand;
 	private int prod_category;
+	private int prod_sale;
 	
 	public ProductDTO() {
 		
@@ -163,5 +164,13 @@ public class ProductDTO {
 
 	public void setProd_category(int prod_category) {
 		this.prod_category = prod_category;
+	}
+
+	public int getProd_sale() {
+		return prod_sale;
+	}
+
+	public void setProd_sale(int prod_sale) {
+		this.prod_sale = prod_sale;
 	}
 }

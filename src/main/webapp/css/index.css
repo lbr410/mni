@@ -41,11 +41,12 @@
     height: 293px;
     border-radius: 23px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .place-image-wrapper img {
-    width: 500px;
-    height: 500px;
+    width: 200px;
+    height: 200px;
 }
 
 .place-image-wrapper .heart-icon {
@@ -74,6 +75,7 @@
     margin-bottom: 5px;
     font-weight: 500;
     font-size: 21px;
+    cursor: pointer;
 }
 .description-section_price{
     margin: 0;
