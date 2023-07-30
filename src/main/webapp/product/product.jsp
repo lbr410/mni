@@ -93,6 +93,7 @@
 		<hr id="hr">
 		<div class="prodcart">
 		<span>&nbsp;주문금액</span>
+		<input type="hidden" name="cart_price" value="<%=dto.getProd_price() %>">
 		<input type="hidden" name="cart_total_price" value="<%=dto.getProd_price() %>">
 		<input type="text" name="cart_total_price2" value="<%=df.format(dto.getProd_price()) %>">
 		</div>

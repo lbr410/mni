@@ -33,7 +33,7 @@
 		} else {
 			ArrayList<CartDTO> table = cdao.cartList(idx);
 			int total[] = cdao.totalCntPrice(idx);
-
+	
 			if(table.size()!=0) {
 				for(int i=0; i<table.size(); i++) {
 			%>

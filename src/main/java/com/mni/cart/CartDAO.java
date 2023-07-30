@@ -13,13 +13,14 @@ public class CartDAO {
 		try {
 			conn = com.mni.db.MniDB.getConn();
 			
-			String sql = "insert into cart values(cart_idx.nextval, ?, ?, ?, ?)";
+			String sql = "insert into cart values(cart_idx.nextval, ?, ?, ?, ?, ?)";
 			
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, dto.getUser_idx());
 			ps.setInt(2, dto.getProd_idx());
 			ps.setInt(3, dto.getCart_count());
-			ps.setInt(4, dto.getCart_total_price());
+			ps.setInt(4, dto.getCart_price());
+			ps.setInt(5, dto.getCart_total_price());
 			int count = ps.executeUpdate();
 			
 			return count;
@@ -39,7 +40,7 @@ public class CartDAO {
 		try {
 			conn = com.mni.db.MniDB.getConn();
 			
-			String sql = "select c.prod_idx prod_idx, cart_idx, prod_name, prod_title_img, user_idx, cart_count, cart_total_price * cart_count cart_total_price from product p, cart c "
+			String sql = "select c.prod_idx prod_idx, cart_idx, prod_name, prod_title_img, user_idx, cart_count, cart_price, cart_total_price * cart_count cart_total_price from product p, cart c "
 					+ "where p.prod_idx = c.prod_idx "
 					+ "and user_idx = ?";
 			
@@ -55,6 +56,7 @@ public class CartDAO {
 					String prod_name = rs.getString("prod_name");
 					String prod_title_img = rs.getString("prod_title_img");
 					int cart_count = rs.getInt("cart_count");
+					int cart_price = rs.getInt("cart_price");
 					int cart_total_price = rs.getInt("cart_total_price");
 					
 					CartDTO dto = new CartDTO();
@@ -63,6 +65,7 @@ public class CartDAO {
 					dto.setProd_name(prod_name);
 					dto.setProd_title_img(prod_title_img);
 					dto.setCart_count(cart_count);
+					dto.setCart_price(cart_price);
 					dto.setCart_total_price(cart_total_price);
 					
 					table.add(dto);
@@ -109,7 +112,7 @@ public class CartDAO {
 		try {
 			conn = com.mni.db.MniDB.getConn();
 			
-			String sql = "select sum(cart_count) sum_count, sum(cart_total_price * cart_count) sum_price from cart where user_idx = ?";
+			String sql = "select sum(cart_count) sum_count, sum(cart_price * cart_count) sum_price from cart where user_idx = ?";
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, user_idx);
 			rs = ps.executeQuery();
@@ -137,6 +140,7 @@ public class CartDAO {
 		try {
 			conn = com.mni.db.MniDB.getConn();
 			
+			//String sql = "update cart set cart_count = cart_count+1, cart_total_price = (cart_count+1)*cart_price where prod_idx = ?";
 			String sql = "update cart set cart_count = cart_count+1 where prod_idx = ?";
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, prod_idx);
@@ -159,6 +163,7 @@ public class CartDAO {
 		try {
 			conn = com.mni.db.MniDB.getConn();
 			
+			//String sql = "update cart set cart_count = cart_count-1, cart_total_price = (cart_count-1)*cart_price where prod_idx = ?";
 			String sql = "update cart set cart_count = cart_count-1 where prod_idx = ?";
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, prod_idx);

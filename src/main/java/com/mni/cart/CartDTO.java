@@ -5,6 +5,7 @@ public class CartDTO {
 	private int user_idx;
 	private int prod_idx;
 	private int cart_count;
+	private int cart_price;
 	private int cart_total_price;
 	private String prod_name;
 	private String prod_title_img;
@@ -13,12 +14,13 @@ public class CartDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public CartDTO(int cart_idx, int user_idx, int prod_idx, int cart_count, int cart_total_price, String prod_name, String prod_title_img) {
+	public CartDTO(int cart_idx, int user_idx, int prod_idx, int cart_count, int cart_price, int cart_total_price, String prod_name, String prod_title_img) {
 		super();
 		this.cart_idx = cart_idx;
 		this.user_idx = user_idx;
 		this.prod_idx = prod_idx;
 		this.cart_count = cart_count;
+		this.cart_price = cart_price;
 		this.cart_total_price = cart_total_price;
 		this.prod_name = prod_name;
 		this.prod_title_img = prod_title_img;
@@ -54,6 +56,14 @@ public class CartDTO {
 
 	public void setCart_count(int cart_count) {
 		this.cart_count = cart_count;
+	}
+
+	public int getCart_price() {
+		return cart_price;
+	}
+
+	public void setCart_price(int cart_price) {
+		this.cart_price = cart_price;
 	}
 
 	public int getCart_total_price() {
