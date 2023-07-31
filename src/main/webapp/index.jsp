@@ -34,7 +34,7 @@
     </div>
     <div class="head-title">
     	<div class="best">베스트</div>
-    	<div class="more">상세보기</div>
+        <div class="more"><a href="/mni/best.jsp">상세보기</a></div>
     </div>
     <main>
         <div id="place-items-wrapper">
@@ -50,7 +50,7 @@
             </div>
             <div class="place-list-item">
             <div class="place-image-wrapper">
-                <img src="#" alt="place image">
+                <img src="/mni/img/002.jpg" alt="place image">
             </div>
             <div class="description-section">
                 <div class="description-section_title">강아지 간식</div>
@@ -83,7 +83,7 @@
 
     <div class="head-title">
         <div class="best">신상품</div>
-        <div class="more">상세보기</div>
+        <div class="more"><a href="/mni/newProduct.jsp">상세보기</a></div>
     </div>
         <main>
             <div id="place-items-wrapper">
