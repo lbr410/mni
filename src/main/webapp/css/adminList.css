@@ -43,7 +43,9 @@ img {
 
 
 
-
+.divSize {
+	width: 1500px;
+}
 body{
 	margin: 0px auto;
 }
@@ -66,6 +68,10 @@ th{
 	padding-top: 6px;
 	padding-bottom: 6px;
 
+}
+td{
+	text-align: center;
+	border-bottom: 1px solid #cccccc;
 }
 
 .td{
@@ -192,17 +198,19 @@ h1{
 	border: 0px;
 	background-color: #ff7f50;
 	color: white;
-
+	text-align: center;
 }
 #noticeSub{
 	border-top: 1px solid #ff7f50;
 	border-bottom: 1px solid #ff7f50;
 	font-weight: bold;
 	font-size:15px;
+	text-align: center;
 }
 #noticecontent{
 	border-bottom:1px solid #ff7f50;
 	font-size: 15px;
+	text-align: center;
 }
 #noticeBtn{
 	border:0px;

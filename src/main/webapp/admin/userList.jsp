@@ -33,9 +33,11 @@ if(cp % pageButton == 0){
 }
 %>
 <body>
+<div class="divSize">
 <%@ include file="admin_header/admin_header_3.jsp" %>
 <h1>회원 목록</h1>
 <section>
+<article>
 	<div><input type="text" name="user_search" placeholder="검색어 입력" id="searchBox">
 	<input type="button" value="검색" class="seaBtnDeco">
 	</div>
@@ -103,6 +105,8 @@ if(cp % pageButton == 0){
 			<%} %>
 			</tbody>
 		</table>
+		</article>
 	</section>
+</div>
 </body>
 </html>

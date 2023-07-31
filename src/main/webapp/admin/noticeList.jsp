@@ -28,9 +28,11 @@
 <link rel="stylesheet" type="text/css" href="/mni/css/adminList.css">
 </head>
 <body>
+<div class="divSize">
 <%@ include file="admin_header/admin_header_6.jsp" %>
 <h1>공지사항</h1>
 <section>
+<article>
 <div id="noticelist"><a href="notice.jsp">목록으로</a></div>
 <table id="noticetable">
 	<tr>
@@ -39,7 +41,7 @@
 	</tr>
 	<tr>
 		<td colspan="2" id="noticecontent">
-		<%=dto.getNotice_content() %>
+		<%=dto.getNotice_content().replaceAll("\n", "<br>") %>
 		</td>
 	</tr>
 	<tr>
@@ -49,7 +51,8 @@
 		</td>
 	</tr>
 </table>
-
+</article>
 </section>
+</div>
 </body>
 </html>

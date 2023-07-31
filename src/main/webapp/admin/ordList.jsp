@@ -8,9 +8,11 @@
 <link rel="stylesheet" type="text/css" href="/mni/css/adminList.css">
 </head>
 <body>
+<div class="divSize">
 <%@ include file="admin_header/admin_header_1.jsp" %>
 <h1>주문 내역</h1>
 	<section>
+	<article>
 	<div class="searchBox"><input type="text" name="ord_search" placeholder="검색어 입력" id="searchBox">
 	<input type="button" value="검색" class="seaBtnDeco">
 	</div>
@@ -68,6 +70,8 @@
 				<td>공동 현관문 비밀번호 1234</td>
 			</tr>
 		</table>
+		</article>
 	</section>
+</div>
 </body>
 </html>

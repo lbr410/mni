@@ -6,7 +6,7 @@
 <jsp:setProperty property="*" name="ndto"/>
 <jsp:useBean id="ndao" class="com.mni.notice.NoticeDAO"></jsp:useBean>
 <%
-String idx_s=request.getParameter("notice_idx");
+String idx_s=request.getParameter("userNotice_idx");
 int idx=Integer.parseInt(idx_s);
 NoticeDTO dto=ndao.userNoticeContent(idx);
 
@@ -16,36 +16,70 @@ NoticeDTO dto=ndao.userNoticeContent(idx);
 <head>
 <meta charset="UTF-8">
 <title>공지사항 내용</title>
-<link rel="stylesheet" type="text/css" href="/mni/css/noticeContent.jsp">
+<style>
+h2{
+	text-align: center;
+	padding-bottom: 20px;
+}
+table{
+	width:800px;
+	padding-top: 10px;
+	border-spacing: 0px;
+}
+th{
+	background-color: #ff7f50;
+	color:white;
+	height: 30px;
+	
+}
+.td1{
+	border-bottom: 1px solid #ff7f50;
+	padding-left: 10px;
+}
+.td2{
+	border-top: 1px solid #ff7f50;
+	border-bottom: 1px solid #ff7f50;
+	padding-left: 10px;
+}
+.content{
+	text-align: center;
+	border-bottom: 1px solid #ff7f50;
+}
+#noticelist {
+	display: inline-block;
+	margin-left:750px;
+	font-size: 12px;
+	font-weight: normal;
+}
+</style>
 </head>
 <%@ include file="/header.jsp" %>
-<div class="bar">공지사항</div>
 <section>
 	<article>
 	<h2>공지사항</h2>
-		<table >
+		<table>
 			<thead>
 				<tr>
-					<th>번호</th>
-					<td><%=dto.getNotice_idx()%></td>
+					<th >번호</th>
+					<td class="td2" ><%=dto.getNotice_idx()%></td>
 					<th>작성날짜</th>
-					<td><%=dto.getNotice_date() %></td>
+					<td class="td2"><%=dto.getNotice_date() %></td>
 				</tr>
 				<tr>
 					<th>작성자</th>
-					<td><%=dto.getAdmin_id() %></td>
+					<td class="td1"><%=dto.getAdmin_id() %></td>
 					<th>조회수</th>
-					<td><%=dto.getNotice_count() %></td>
+					<td class="td1"><%=dto.getNotice_count()%></td>
 				</tr>
 				<tr>
 					<th>제목</th>
-					<td colspan="3"><%=dto.getNotice_title() %></td>
+					<td colspan="3" class="td1"><%=dto.getNotice_title() %></td>
 				</tr>
 				<tr height="250">
-				<td colspan="3"><%=dto.getNotice_content() %></td>
+					<td colspan="4" class="content"><%=dto.getNotice_content().replaceAll("\n", "<br>") %></td>
 				</tr>
 		</table>
-		<input type="button" value="목록" onclick = "javascript:location.href='/mni/user/noticeList.jsp'">
+		<div id="noticelist"><a href="/mni/user/noticeList.jsp">목록으로</a></div>
 	</article>
 </section>
 <%@ include file="/footer.jsp" %>

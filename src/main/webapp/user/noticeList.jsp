@@ -34,9 +34,8 @@ body{
 }
 h1{
    margin: 0 auto;
-   padding-top:50px;
-   padding-bottom: 30px;
-   color:#ff7f50;
+   padding-bottom:20px;
+   text-align: center;
 }
 .misord{
    width:920px;
@@ -60,7 +59,7 @@ th{
 tfoot{
    height:100px;
 }
-.td{
+td{
    text-align: center;
    font-size: 11px;
    padding-top: 9px;
@@ -108,14 +107,14 @@ if(cp % pageButton == 0){
       </thead>
       <tfoot>
          <tr>
-            <td colspan="6" align="center">
+            <td colspan="5" align="center">
          <%
          if(userGroup != 0){
             %><a href="notice.jsp?cp=<%=userGroup*pageButton%>">&lt;&lt;</a><%
          }
          for(int i = userGroup*pageButton+1; i<=(userGroup+1)*pageButton; i++){
             String button = i == cp ? "nowPage":"page";
-            %>&nbsp;&nbsp;<button class="<%=button %>" onclick="javascript:location.href='notice.jsp?cp=<%=i%>'"><%=i %></button>&nbsp;&nbsp;<%
+            %>&nbsp;&nbsp;<button class="<%=button %>" onclick="javascript:location.href='/mni/user/noticeList.jsp?cp=<%=i%>'"><%=i %></button>&nbsp;&nbsp;<%
             if(i == totalPage){
                break;
             }
@@ -142,7 +141,7 @@ if(cp % pageButton == 0){
                   %>
                   <tr>
                      <td><%=dto.getNotice_idx() %></td>
-                     <td><a href="noticeContent.jsp?idx=<%=arr.get(i).getNotice_idx()%>"><%=dto.getNotice_title() %></a></td>
+                     <td><a href="/mni/user/noticeContent.jsp?userNotice_idx=<%=arr.get(i).getNotice_idx()%>"><%=dto.getNotice_title() %></a></td>
                      <td><%=dto.getAdmin_id() %></td>
                      <td><%=dto.getNotice_date() %></td>
                      <td><%=dto.getNotice_count() %></td>
