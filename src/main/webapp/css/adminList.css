@@ -136,6 +136,7 @@ h1{
     background-color: #ff7f50;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 .ordText{
 	color: #ff7f50;
