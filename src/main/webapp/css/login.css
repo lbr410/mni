@@ -1,24 +1,30 @@
 @charset "UTF-8";
-.loginsection{width: 1000px; margin: 0px auto; padding: 50px;}
-	.img{width: 350px; margin-left: 60px;}
+.loginsection{width: 1000px; margin: 0px auto; padding: 20px;}
+	
+	.img{width: 250px; margin-left: 100px;}
+	
 	.textbox{
-	width: 500px; 
-	height: 70px; 
+	width: 350px; 
+	height: 30px; 
 	margin-top: 20px; 
+	margin-left: 45px;
 	border: 1px solid lightgray; 
-	border-radius: 50px;
-	text-align: left 10px;
+	border-radius: 10px;
+	padding: 10px;
 	}
 	.button{
-	width: 507px; 
-	height: 70px; 
+	width: 380px; 
+	height: 55px; 
 	margin-bottom: 10px; 
 	border: 1px solid #ff7f50; 
-	border-radius: 50px; 
+	border-radius: 10px;
+	margin-left: 45px; 
 	background-color: #ff7f50;
 	color: white;
 	cursor: pointer;
 	}
-	.textsize{font-size: 20px;}
+	.textsize{font-size: 15px; margin-left: 50px; margin-top: 20px;}
+	
 	input{font-size: 18px;}
-	input[type="checkbox"]{zoom: 1.5;}
+	
+	input[type="checkbox"]{zoom: 1;}
