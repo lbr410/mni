@@ -35,7 +35,7 @@
 				</script>
 				<input type="submit" value="조회"><br><br><br>
 				<div class="font_Deco">조회기간 : 2023-01-01 ~ 2023-07-25</div>
-				<div class="font_Deco2"><label>매출 : ?원(조회Btn 누르면 생기게 할 예정!)</label></div>
+				<div class="font_Deco2"><label>매출 : ?원</label></div>
 			</form>
 		</article>
 	</section>

@@ -199,7 +199,7 @@ public class OrdDAO {
 	public int adminSales(String startDate,String endDate) {
 		try {
 			conn=com.mni.db.MniDB.getConn();
-			String sql="select order_price from ord where to_char(order_date,'YYYYMMDD')>=? and to_char(order_date,'YYYYMMDD')<=? and order_state = '구매확정'";
+			String sql="select sum(order_price) from ord where to_char(order_date,'YYYYMMDD')>=? and to_char(order_date,'YYYYMMDD')<=? and order_state = '구매확정'";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, startDate);
 			ps.setString(2, endDate);
