@@ -27,7 +27,7 @@ if(cks!=null){
 <body>
 <section>
 <form name="adminlogin" id="login" action="adminLogin_ok.jsp" method="post"> 
-<img src="/mni/img/mainlogo.png" alt="adminlogo"><br>
+<img src="/mni/img/mainlogo.png" alt="adminlogo" class="login_logo"><br>
 	<div class="textFocus"><input type="text" name="adminlogin_id" placeholder=" 아이디" 
 	value="<%=admin_saveid%>"></div><br>
 	<div class="textFocus"><input type="password" name="adminlogin_pwd" class="textBoxsize" placeholder=" 비밀번호"></div><br>

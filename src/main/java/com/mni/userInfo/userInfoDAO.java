@@ -53,7 +53,11 @@ public class userInfoDAO {
          ps.setInt(7, dto.getUser_zip());
          ps.setString(8, dto.getUser_addr1());
          ps.setString(9, dto.getUser_addr2());
-         ps.setString(10, dto.getUser_email());
+        if(dto.getUser_email() == null) {
+        	ps.setString(10, "x");
+        }else {
+        	ps.setString(10, dto.getUser_email());
+        }
          int count = ps.executeUpdate();
          return count;
       }catch(Exception e) {
