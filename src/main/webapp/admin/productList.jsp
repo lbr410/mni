@@ -36,6 +36,9 @@ if(cp_s == null || cp_s.equals("")){
 }
 int cp = Integer.parseInt(cp_s); // 사용자 현재 위치
 
+if(totalCnt == 0){
+	totalCnt=1;
+}
 int totalPage = totalCnt / pageCnt +1; //총 페이지 수
 if(totalCnt % pageCnt == 0){
    totalPage--;
@@ -101,7 +104,7 @@ if(cp % pageButton == 0){
          String brand="";
          String category="";
          DecimalFormat df = new DecimalFormat();
-         df.applyLocalizedPattern("#,###,###");
+         df.applyLocalizedPattern("#,###,###원");
          if(arr==null || arr.size()==0){
             %>
             <tr>

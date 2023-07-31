@@ -12,6 +12,10 @@
 			window.alert('시작 날짜가 끝나는 날짜보다 클 수 없습니다.');
 			return false;
 		}
+		<%
+		String startDate = request.getParameter("startDate");
+		String endDate = request.getParameter("endDate");
+		%>
 	}
 </script>
 </head>

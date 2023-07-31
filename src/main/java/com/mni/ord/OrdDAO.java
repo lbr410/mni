@@ -195,5 +195,28 @@ public class OrdDAO {
              }catch(Exception e) {}
           }
        }
-
+  
+    /**관리자 페이지 매출 메서드*/
+	public int adminSales(String startDate,String endDate) {
+		try {
+			conn=com.mni.db.MniDB.getConn();
+			String sql="select order_price from ord where to_char(order_date,'YYYYMMDD')>=? and to_char(order_date,'YYYYMMDD')<=? and order_state = '구매확정'";
+			ps=conn.prepareStatement(sql);
+			ps.setString(1, startDate);
+			ps.setString(2, endDate);
+			rs=ps.executeQuery();
+			rs.next();
+			int price = rs.getInt(1);
+			return price;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return 0;
+		}finally {
+			try {
+				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			}catch(Exception e2) {}
+		}
+	}
 }

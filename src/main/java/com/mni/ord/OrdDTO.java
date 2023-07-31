@@ -22,6 +22,7 @@ public class OrdDTO {
     private String prod_title_img;
     private String prod_name;
 
+
 	
 	public OrdDTO() {
 		// TODO Auto-generated constructor stub
@@ -226,6 +227,5 @@ public class OrdDTO {
 	public void setProd_name(String prod_name) {
 		this.prod_name = prod_name;
 	}
-	
-	
+
 }
