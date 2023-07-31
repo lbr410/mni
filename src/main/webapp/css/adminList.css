@@ -44,7 +44,8 @@
 
 
 .divSize {
-   width: 1500px;
+	width: 1500px;
+
 }
 body{
    margin: 0px auto;
@@ -70,8 +71,8 @@ th{
 
 }
 td{
-   text-align: center;
-   border-bottom: 1px solid #cccccc;
+	text-align: center;
+	border-bottom: 1px solid #cccccc;
 }
 
 .td{
@@ -194,24 +195,24 @@ h1{
    font-size: 12px;
 }
 #noticetitle{
-   font-weight: 550;
-   font-size:15px;
-   border: 0px;
-   background-color: #ff7f50;
-   color: white;
-   text-align: center;
+	font-weight: 550;
+	font-size:15px;
+	border: 0px;
+	background-color: #ff7f50;
+	color: white;
+	text-align: center;
 }
 #noticeSub{
-   border-top: 1px solid #ff7f50;
-   border-bottom: 1px solid #ff7f50;
-   font-weight: bold;
-   font-size:15px;
-   text-align: center;
+	border-top: 1px solid #ff7f50;
+	border-bottom: 1px solid #ff7f50;
+	font-weight: bold;
+	font-size:15px;
+	text-align: center;
 }
 #noticecontent{
-   border-bottom:1px solid #ff7f50;
-   font-size: 15px;
-   text-align: center;
+	border-bottom:1px solid #ff7f50;
+	font-size: 15px;
+	text-align: center;
 }
 #noticeBtn{
    border:0px;

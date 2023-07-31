@@ -54,7 +54,7 @@ if(cp % pageButton == 0){
 <%@ include file="admin_header/admin_header_2.jsp" %>
 <h1>상품 관리</h1>
    <section>
-      <article>
+   	<article>
    <div class="searchBox"><input type="text" name="prod_search" placeholder="검색어 입력" id="searchBox">
    <input type="button" value="검색" class="seaBtnDeco">
    </div>

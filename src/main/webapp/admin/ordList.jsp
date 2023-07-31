@@ -53,9 +53,11 @@ if(cp % pageButton == 0){
 int count = 0;
 %>
 <body>
+<div class="divSize">
 <%@ include file="admin_header/admin_header_1.jsp" %>
 <h1>주문 내역</h1>
 	<section>
+	<article>
 	<div class="searchBox"><input type="text" name="ord_search" placeholder="검색어 입력" id="searchBox">
 	<input type="button" value="검색" class="seaBtnDeco">
 	</div>
@@ -142,6 +144,8 @@ int count = 0;
 			%>
 			</tbody>
 		</table>
+		</article>
 	</section>
+</div>
 </body>
 </html>
