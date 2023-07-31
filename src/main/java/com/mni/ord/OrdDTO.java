@@ -16,29 +16,72 @@ public class OrdDTO {
 	private String order_state;
 	private int order_count;
 	private int order_price;
+    private String user_name;
+    private String user_id;
+    private String prod_title;
+    private String prod_title_img;
+    private String prod_name;
+
 	
 	public OrdDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public OrdDTO(int order_idx, int user_idx, int prod_idx, String order_recie, int order_zip, String order_addr1,
-			String order_addr2, String order_type, String order_req, Date order_date, String order_state,
-			int order_count, int order_price) {
-		super();
-		this.order_idx = order_idx;
-		this.user_idx = user_idx;
-		this.prod_idx = prod_idx;
-		this.order_recie = order_recie;
-		this.order_zip = order_zip;
-		this.order_addr1 = order_addr1;
-		this.order_addr2 = order_addr2;
-		this.order_type = order_type;
-		this.order_req = order_req;
-		this.order_date = order_date;
-		this.order_state = order_state;
-		this.order_count = order_count;
-		this.order_price = order_price;
-	}
+            String order_addr2, String order_type, String order_req, Date order_date, String order_state,
+            int order_count, int order_price, String prod_title_img, String prod_name) {
+         super();
+         this.order_idx = order_idx;
+         this.user_idx = user_idx;
+         this.prod_idx = prod_idx;
+         this.order_recie = order_recie;
+         this.order_zip = order_zip;
+         this.order_addr1 = order_addr1;
+         this.order_addr2 = order_addr2;
+         this.order_type = order_type;
+         this.order_req = order_req;
+         this.order_date = order_date;
+         this.order_state = order_state;
+         this.order_count = order_count;
+         this.order_price = order_price;
+         this.prod_title_img = prod_title_img;
+         this.prod_name = prod_name;
+      }
+
+	
+	   public OrdDTO(int order_idx, int user_idx, int prod_idx, String order_recie, int order_zip, String order_addr1,
+		         String order_addr2, String order_type, String order_req, Date order_date, String order_state,
+		         int order_count, int order_price, String user_name, String user_id, String prod_title) {
+		      super();
+		      this.order_idx = order_idx;
+		      this.user_idx = user_idx;
+		      this.prod_idx = prod_idx;
+		      this.order_recie = order_recie;
+		      this.order_zip = order_zip;
+		      this.order_addr1 = order_addr1;
+		      this.order_addr2 = order_addr2;
+		      this.order_type = order_type;
+		      this.order_req = order_req;
+		      this.order_date = order_date;
+		      this.order_state = order_state;
+		      this.order_count = order_count;
+		      this.order_price = order_price;
+		      this.user_name = user_name;
+		      this.user_id = user_id;
+		      this.prod_title = prod_title;
+		   }
+
+		   public OrdDTO(int order_idx, String order_type, Date order_date, int order_price, String prod_title_img,
+		            String prod_name) {
+		         super();
+		         this.order_idx = order_idx;
+		         this.order_type = order_type;
+		         this.order_date = order_date;
+		         this.order_price = order_price;
+		         this.prod_title_img = prod_title_img;
+		         this.prod_name = prod_name;
+		      }
+
 
 	public int getOrder_idx() {
 		return order_idx;
@@ -143,4 +186,46 @@ public class OrdDTO {
 	public void setOrder_price(int order_price) {
 		this.order_price = order_price;
 	}
+
+	public String getUser_name() {
+		return user_name;
+	}
+
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
+
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
+	public String getProd_title() {
+		return prod_title;
+	}
+
+	public void setProd_title(String prod_title) {
+		this.prod_title = prod_title;
+	}
+
+	public String getProd_title_img() {
+		return prod_title_img;
+	}
+
+	public void setProd_title_img(String prod_title_img) {
+		this.prod_title_img = prod_title_img;
+	}
+
+	public String getProd_name() {
+		return prod_name;
+	}
+
+	public void setProd_name(String prod_name) {
+		this.prod_name = prod_name;
+	}
+	
+	
 }

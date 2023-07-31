@@ -142,7 +142,7 @@
 		<div>등록된 리뷰가 없습니다.</div>
 <%
 	} else {
-		for(int i=0; i<3; i++) {
+		for(int i=0; i<table.size(); i++) {
 %>
 		
 
