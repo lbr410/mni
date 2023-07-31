@@ -4,9 +4,10 @@
 
 
 footer{
+   float: bottom;
+   display: absolute;
    margin-top: 100px;
    padding-top: 80px;
-   position: relative;
    height: 200px;
    width: 100%;
    background-color: #fcfcfc;

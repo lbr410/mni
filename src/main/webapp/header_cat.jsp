@@ -20,7 +20,7 @@
         <%
     }else{
         %>
-             <div><%=name %>님 로그인중 
+             <div><%=name %>님 로그인 중 
           |<a href="/mni/user/logout.jsp">로그아웃</a></div>
         <% 
      }
@@ -59,10 +59,10 @@
                 <span class="dropbtn_icon123">카테고리</span>
             </nav>
             <div class="dropdown-content">
-                <a href="#">사료</a>
-                <a href="#">간식</a>
-                <a href="#">용품</a>
-                <a href="#">장난감</a>
+                <a href="/mni/feed.jsp">사료</a>
+                <a href="/mni/snack.jsp">간식</a>
+                <a href="/mni/supplies.jsp">용품</a>
+                <a href="/mni/toy.jsp">장난감</a>
             </div>
         </div>
         <div class="btn"><a href="/mni/best.jsp">베스트</a></div>
