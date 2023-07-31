@@ -17,13 +17,8 @@
     font-size: 32px;
     font-weight: bold;
     padding-top: 60px;
-    padding-bottom:30px;
+    padding-bottom:10px;
     color: #3a3a3a;
-}
-.best-icon{
-	width: 212px;
-	height: 40px;
-	padding: 2px;
 }
 .best-icon{
 	width: 212px;
@@ -34,13 +29,7 @@
 	width: 40px;
 	height: 40px;
 }
-.best-icon-text{
-	width: 212px;
-	height: 40px;
-	font-weight: bold;
-	font-size: 15px;
-	padding: 2px;
-}
+
 .main{
     width: 1000px;
 }

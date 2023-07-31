@@ -25,6 +25,9 @@
    border: 0.5px solid;
    border-color: white;
 }
+td{
+	text-align: center;
+}
 </style>
 </head>
 <%

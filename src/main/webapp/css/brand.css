@@ -1,3 +1,7 @@
+@charset "UTF-8";
+body{
+	height: 2000px;
+}
 .bar{
 	width: 1000px;
 	height: 20px;
@@ -23,14 +27,15 @@
 }
 .brand-image-wrapper {
     position: relative;
-    width: 236px;
-    height: 236px;
+    width: 140px;
+    height: 140px;
     overflow: hidden;
     border-radius: 70%;
 }
-brand-image-wrapper img {
-    width: 500px;
+.brandlogo{
+    width: 2000px;
     height: 500px;
+    overflow: hiddent
 }
 
 .description-section {
@@ -49,25 +54,27 @@ brand-image-wrapper img {
 }
 #title{
 	cursor: pointer;
+	margin-top: 20px;
 }
 main {
     display: flex;
     justify-content: center;
     padding: 24px 40px;
-    margin-bottom: 20px;
+
 }
 #brand-items-wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 236px);
+    grid-template-columns: repeat(4, 140px);
     justify-items: center;
     align-items: center;
     box-sizing: border-box;
-    gap: 10px 19px;
+    gap: 10px 80px;
 }
 .brand-image-wrapper img{
-	width: 236px;
-	height: 268px;
+	width: 140px;
+	height: 140px;
 	overflow: hidden;
+	margin-bottom: 40px;
 }
 .brand-image-wrapper:hover{
 	cursor:pointer;

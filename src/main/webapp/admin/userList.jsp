@@ -22,6 +22,9 @@ if(cp_s == null || cp_s.equals("")){
 }
 int cp = Integer.parseInt(cp_s);
 
+if(totalCnt == 0){
+	totalCnt=1;
+}
 int totalPage = totalCnt / pageCnt +1;
 if(totalCnt % pageCnt == 0){
    totalPage--;

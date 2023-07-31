@@ -82,4 +82,23 @@ public class ReviewDAO {
 			} catch(Exception e) {}
 		}
 	}
+	
+	/** 리뷰 작성 - 작성중 */
+//	public int reviewWrite(int prod_idx, int user_idx) {
+//		try {
+//			conn = com.mni.db.MniDB.getConn();
+//			
+//			// insert into review values(review_idx.nextval, 135, 41, '저희 뭉이가 좋아해요 ㅎㅎㅎㅎ', '9.jpg', sysdate) 
+//			String sql = "insert into review values(review_idx.nextval, ?, ?, ?, ?, sysdate";
+//			ps = conn.prepareStatement(sql);
+//			ps.setInt(1, prod_idx);
+//			ps.setInt(2, user_idx);
+//		} catch(Exception e) {
+//			
+//		} finally {
+//			try {
+//				
+//			} catch(Exception e) {}
+//		}
+//	}
 }
