@@ -148,6 +148,56 @@ public class ProductDAO {
 		}
 	}
 	
+	/**상품 수정 메서드*/
+	   public int prodUpdate(int prod_idx,ProductDTO dto) {
+	      try {
+	         conn=com.mni.db.MniDB.getConn();
+	         String sql="update product set prod_name=?,prod_title=?,prod_price=?,"
+	               + "prod_count=?,prod_date=sysdate,prod_title_img=?,prod_pet=?,"
+	               + "prod_info_img=?,prod_brand=?,prod_category=? where prod_idx=?";
+	         ps=conn.prepareStatement(sql);
+	         ps.setString(1, dto.getProd_name());
+	         ps.setString(2, dto.getProd_title());
+	         ps.setInt(3, dto.getProd_price());
+	         ps.setInt(4, dto.getProd_count());
+	         ps.setString(5, dto.getProd_title_img());
+	         ps.setString(6, dto.getProd_pet());
+	         ps.setString(7, dto.getProd_info_img());
+	         ps.setInt(8, dto.getProd_brand());
+	         ps.setInt(9, dto.getProd_category());
+	         ps.setInt(10, prod_idx);
+	         int count=ps.executeUpdate();
+	         return count;
+	      }catch(Exception e) {
+	         e.printStackTrace();
+	         return 0;
+	      }finally {
+	         try {
+	            if(ps!=null)ps.close();
+	            if(conn!=null)conn.close();
+	         }catch(Exception e2) {}
+	      }
+	   }
+	   /**상품 삭제 메서드*/
+	   public int prodDelete(int prod_idx) {
+	      try {
+	         conn=com.mni.db.MniDB.getConn();
+	         String sql="delete from product where prod_idx=?";
+	         ps=conn.prepareStatement(sql);
+	         ps.setInt(1, prod_idx);
+	         int count=ps.executeUpdate();
+	         return count;
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	         return 0;
+	      }finally {
+	         try {
+	            if(ps!=null)ps.close();
+	            if(conn!=null)conn.close();
+	         } catch (Exception e2) {}
+	      }
+	   }
+	
 	/** 신상품 보기 - BR */
 	public ArrayList<ProductDTO> newProdView(String pet_prod) {
 		try {
