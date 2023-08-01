@@ -68,6 +68,7 @@ body {
 	margin-bottom: 20px;
 	float: left;
 	}
+
     tr{
     border-spacing: 6px;
     }
@@ -83,12 +84,14 @@ body {
 	.nowPage{
 	width: 26px;
 	border-radius: 4px;
+
     font-size: 20px;
     background-color:#ff7f50;
     text-decoration: none;
     border: 0.5px solid;
     border-color: white;
     color: white;
+
 	}
     .prodImg {
         width: 200px;
@@ -101,6 +104,7 @@ body {
         width: 200px;
         cursor: pointer;
     }
+
 	.prodName{
 		width: 200px;
 		height: 20px;
@@ -111,6 +115,8 @@ body {
    	 	font-size: 12px;
     	text-align: left;
 	}
+
+
     .prodTitle {
         width: 200px;
         height: 20px;

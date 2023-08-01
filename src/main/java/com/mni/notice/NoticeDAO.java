@@ -92,7 +92,7 @@ public class NoticeDAO {
 	      try {
 	         conn=com.mni.db.MniDB.getConn();
 	         /*String sql="select * from notice order by notice_idx desc";*/
-	         int start=(cp-1)*ls+1;
+	         	int start=(cp-1)*ls+1;
 				int end=cp*ls;
 				String sql="select * from "
 						+ "(select rownum as rnum,a.* from "

@@ -7,7 +7,7 @@
 	String prod_idx_s = request.getParameter("prod_idx");
 	int prod_idx = Integer.parseInt(prod_idx_s);
 	request.setCharacterEncoding("UTF-8");
-
+	
 	int count = cdao.cartInsert(cdto);
 	
 	String result = count>0 ? "장바구니에 담았습니다." : "장바구니 등록 실패!";

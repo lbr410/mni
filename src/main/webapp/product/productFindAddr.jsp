@@ -45,9 +45,9 @@
 		
 		var addr1 = document.addr.order_addr1.value;
 		
-		opener.document.fm.order_zip.value = zip;
+		opener.document.payment.order_zip.value = zip;
 		
-		opener.document.fm.order_addr1.value = addr1;
+		opener.document.payment.order_addr1.value = addr1;
 		
 		window.self.close();
 	}

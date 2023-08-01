@@ -4,6 +4,7 @@
 <%@ page import="com.mni.review.*" %>
 <jsp:useBean id="rdao" class="com.mni.review.ReviewDAO"></jsp:useBean>
 <%
+String prod_name = request.getParameter("review_search");
 String admin_id = (String)session.getAttribute("admin_saveid");
 String ck = "";
 Cookie cks[]=request.getCookies();
@@ -30,18 +31,17 @@ if(cks!=null){
 <title>멍냥이 관리자 : 리뷰내역</title>
 <link rel="stylesheet" type="text/css" href="/mni/css/adminList.css">
 <script>
-function reviewDel(review_idx){
-	let del = window.confirm('리뷰를 삭제하시겠습니까?');
-	if(del){
-	location.href='/mni/admin/reviewDelete.jsp?review_idx='+review_idx;
-	}else{
-	location.href='/mni/admin/reviewList.jsp';
+function prodName(){
+	<%
+	if(prod_name == null){
+		prod_name = request.getParameter("prod_name");
 	}
+	%>
 }
 </script>
 </head>
 <%
-int totalCnt = rdao.adminReviewCnt(); //총 게시물 수
+int totalCnt = rdao.reviewSearchCnt(prod_name); //총 게시물 수
 int pageCnt = 10; // 한 페이지당 게시물 개수
 int pageButton = 10; // 페이지 버튼 개수
 
@@ -66,11 +66,11 @@ if(cp % pageButton == 0){
 <body>
 <div class="divSize">
 <%@ include file="admin_header/admin_header_4.jsp" %>
-<h1>리뷰 내역</h1>
+<h1><%=prod_name %> 상품 리뷰 내역</h1>
 <section>
 <article>
-	<form name="reviewList" action="/mni/admin/reviewListSearch.jsp" method="post">
-	<div><input type="text" name="review_search" placeholder="상품명 입력" id="searchBox" required>
+	<form name="reviewList" action="/mni/admin/reviewListSearch.jsp" method="post" onsubmit="prodName();">
+	<div><input type="text" name="prod_name" placeholder="상품명 입력" id="searchBox" required>
 	<input type="submit" value="검색" class="seaBtnDeco">
 	</div>
 	</form>
@@ -96,20 +96,20 @@ if(cp % pageButton == 0){
          }
          for(int i = userGroup*pageButton+1; i<=(userGroup+1)*pageButton; i++){
             String button = i == cp ? "nowPage":"page";
-            %>&nbsp;&nbsp;<button class="<%=button %>" onclick="javascript:location.href='/mni/admin/reviewList.jsp?cp=<%=i%>'"><%=i %></button>&nbsp;&nbsp;<%
+            %>&nbsp;&nbsp;<button class="<%=button %>" onclick="javascript:location.href='/mni/admin/reviewListSearch.jsp?cp=<%=i%>'"><%=i %></button>&nbsp;&nbsp;<%
             if(i == totalPage){
                break;
             }
          }
          if(userGroup != (totalPage/pageButton-(totalPage%pageButton==0?1:0))){
-            %><a href="/mni/admin/reviewList.jsp?cp=<%=(userGroup+1)*pageButton+1%>">&gt;&gt;</a><%
+            %><a href="/mni/admin/reviewListSearch.jsp?cp=<%=(userGroup+1)*pageButton+1%>">&gt;&gt;</a><%
          }
          %>
          </td>
          </tr>
 		</tfoot>
 		<tbody>
-		<%ArrayList<ReviewDTO> arr = rdao.getReview(cp, pageCnt);
+		<%ArrayList<ReviewDTO> arr = rdao.reviewSearch(prod_name, cp, pageCnt);
 		if(arr == null || arr.size() == 0){
 			 %>
 	            <tr>
@@ -126,7 +126,7 @@ if(cp % pageButton == 0){
 				<td><%=arr.get(i).getUser_id() %></td>
 				<td><%=arr.get(i).getReview_content() %></td>
 				<td><%=arr.get(i).getReview_date() %></td>
-				<td><input type="button" value="삭제" class="reBtnDeco" onclick="reviewDel(<%=arr.get(i).getReview_idx()%>);"></td>
+				<td><input type="button" value="삭제" class="reBtnDeco"></td>
 			</tr>
 			<%
 			}

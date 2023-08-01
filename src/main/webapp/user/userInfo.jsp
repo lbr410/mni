@@ -77,9 +77,6 @@ function addrpopup(){
 		</table>
 		<input type = "submit" value = "수정" class = "submit">
 		</form>
-		<div class = "userimg">
-		<div class = "username">사용자 명</div>
-		</div>
 	</article>
 </section>
 <%@include file = "../footer.jsp" %>

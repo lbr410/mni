@@ -17,16 +17,15 @@ if(result){
 		Cookie ck=new Cookie("admin_saveid",admin_id);
 		ck.setMaxAge(0);
 		response.addCookie(ck);
-	}if(admin_auto!=null){ //자동 로그인 체크 시 90일간 쿠키 생성
+	}if(admin_auto!=null){ //자동 로그인 체크 시 365일간 쿠키 생성
 		Cookie auto=new Cookie("admin_auto",admin_id);
-		auto.setMaxAge(60*60*24*90);
+		auto.setMaxAge(60*60*24*365);
 		response.addCookie(auto);
 	}
 	session.setAttribute("admin_saveid", admin_id); //관리자 id를 세션에 저장
-	session.setAttribute("admin_auto", admin_id);
 	%>
 	<script>
-	location.href='ordList.jsp';
+	location.href='/mni/admin/ordList.jsp';
 	</script>
 	<%
 }else{

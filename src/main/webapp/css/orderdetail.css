@@ -12,14 +12,13 @@
     background-size: 265px;
     position:relative;
     top:180px;
-    left: -524px;
-    
+    left: -450px;
    }
     
     .username{
     font-size: 20px; 
     margin-top: 250px; 
-    margin-left: 59px;
+    margin-left: 47px;
     }
     
     h1{
@@ -46,10 +45,15 @@
     }
     
     
-    table{margin-top: -150px; border-spacing: 0 10px; width: 200px;}
+    table{
+    margin-top: -150px; 
+    border-spacing: 0 10px; 
+    width: 500px;
+    margin-left: 450px;
+    }
     
-    th{text-align: left;}
-   
+    th{text-align: left; width: 100px;}
+   	td{width: 300px;}
     .a{margin-left: 840px; margin-top: -80px;}	
     
     .button{
@@ -61,7 +65,8 @@
 		color: white;
 		border: 0px;
     }
-    
+    .span{margin-left: 40px;}
+    .spanready{margin-left: 20px;}
     .settinglogo{
     	width:40px;
     	height: 41px; 

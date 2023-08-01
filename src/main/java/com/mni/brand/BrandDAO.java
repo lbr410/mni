@@ -14,12 +14,20 @@ public class BrandDAO {
 	}
 
 	/*브랜드 번호로 상품 조회*/
-	public ArrayList<BrandDTO> brandNum(int num) {
+	public ArrayList<BrandDTO> brandNum(int num,int cp, int ls) {
 		try {
 			conn=com.mni.db.MniDB.getConn();
-			String sql="select * from product where prod_brand=?";
+			//String sql="select * from product where prod_brand=?";
+			int start=(cp-1)*ls+1;
+			int end=cp*ls;
+			String sql="select * from "
+					+ "(select rownum as rnum,a.* from "
+					+ "(select * from product where prod_brand=?) a) "
+					+ "where rnum>=? and rnum<=?";
 			ps=conn.prepareStatement(sql);
 			ps.setInt(1, num);
+			ps.setInt(2, start);
+			ps.setInt(3, end);
 			rs=ps.executeQuery();
 			
 			ArrayList<BrandDTO> arr=new ArrayList<BrandDTO>();
@@ -38,6 +46,30 @@ public class BrandDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 			return null;
+		}finally {
+			try {
+				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			}catch(Exception e2) {}
+		}
+	}
+	
+	/**페이징 관련 총 게시물수*/
+	public int getTotal(int num) {
+		try {
+			conn=com.mni.db.MniDB.getConn();
+			String sql="select count(*) from product where prod_brand=?";
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, num);
+			rs=ps.executeQuery();
+			rs.next();
+			int count=rs.getInt(1);
+			return count==0?-1:count;
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			return -1;
 		}finally {
 			try {
 				if(rs!=null)rs.close();
