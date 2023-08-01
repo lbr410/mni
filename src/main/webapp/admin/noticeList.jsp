@@ -41,7 +41,7 @@
 	</tr>
 	<tr>
 		<td colspan="2" id="noticecontent">
-		<%=dto.getNotice_content().replaceAll("\n", "<br>") %>
+		<div class="contentDiv"><%=dto.getNotice_content().replaceAll("\n", "<br>") %></div>
 		</td>
 	</tr>
 	<tr>
