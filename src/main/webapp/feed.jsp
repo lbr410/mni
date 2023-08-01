@@ -20,7 +20,7 @@
          <div class="list2"><a href="/mni/supplies.jsp">용품</a></div>
          <div class="list2"><a href="/mni/toy.jsp">장난감</a></div>
       </div>
-   </div>
+   </div>  
    <div class="head-title">사료</div>
    <div class="prodNum"><% %>개의 상품</div>
    <div class="prodSection">

@@ -45,7 +45,7 @@
             <div>고양이</div>
         </button>
         </div>
-        <form class="little-search">
+        <form class="little-search" action = "/mni/headerSearch.jsp">
             <input type="text" maxlength="30" name="search" id="search" placeholder="검색어를 입력하세요.">
                 <div id="magnifying-glass wrapper">
                     <img id="search-icon" src="/mni/img/magnifying glass icon.png" alt="magnifying glass icon">
@@ -59,11 +59,11 @@
                <img id="Icon_Menu" src="/mni/img/Icon_Menu.png" alt="category">
                 <span class="dropbtn_icon123">카테고리</span>
             </nav>
-            <div class="dropdown-content">
-                <a href="/mni/feed.jsp">사료</a>
-                <a href="/mni/snack.jsp">간식</a>
-                <a href="/mni/supplies.jsp">용품</a>
-                <a href="/mni/toy.jsp">장난감</a>
+             <div class="dropdown-content">
+                <a href="javascript:location.href='feed.jsp?categoryNum=01'">사료</a>
+                <a href="javascript:location.href='snack.jsp?categoryNum=02'">간식</a>
+                <a href="javascript:location.href='supplies.jsp?categoryNum=03'">용품</a>
+                <a href="javascript:location.href='toy.jsp?categoryNum=04'">장난감</a>
             </div>
         </div>
         <div class="btn"><a href="/mni/best.jsp">베스트</a></div>
