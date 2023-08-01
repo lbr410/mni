@@ -1,5 +1,28 @@
+<%@page import="java.util.Calendar"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.text.*" %>
+<jsp:useBean id="odao" class="com.mni.ord.OrdDAO"></jsp:useBean>
+<%
+String admin_id = (String)session.getAttribute("admin_saveid");
+String ck = "";
+Cookie cks[]=request.getCookies();
+if(cks!=null){
+	for(int i=0; i<cks.length; i++){
+		//자동 로그인 쿠키 유무
+		if(cks[i].getName().equals("admin_auto")){
+			ck = cks[i].getValue();
+		}
+	}
+	if(admin_id == null && !ck.equals("admin")){
+		%><script>
+		window.alert('로그인 후 이용가능합니다.');
+		location.href='/mni/admin/index_admin.jsp';
+		</script>
+		<%
+	}
+}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,9 +56,23 @@
 					document.sales.startDate.valueAsDate = new Date();
 					document.sales.endDate.valueAsDate = new Date();
 				</script>
+				<%
+				 DecimalFormat df = new DecimalFormat();
+		         df.applyLocalizedPattern("#,###,###원");
+		         if(startDate == null){
+		        	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		        	Calendar d1 = Calendar.getInstance();
+		        	startDate = sdf.format(d1.getTime());
+		         }
+		         if(endDate == null){
+			        	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			        	Calendar d1 = Calendar.getInstance();
+			        	endDate = sdf.format(d1.getTime());
+			         }
+				%>
 				<input type="submit" value="조회"><br><br><br>
-				<div class="font_Deco">조회기간 : 2023-01-01 ~ 2023-07-25</div>
-				<div class="font_Deco2"><label>매출 : ?원(조회Btn 누르면 생기게 할 예정!)</label></div>
+				<div class="font_Deco">조회기간 : <%=startDate %> ~ <%=endDate %></div>
+				<div class="font_Deco2"><label>매출 : <%=df.format(odao.adminSales(startDate, endDate)) %></label></div>
 			</form>
 		</article>
 	</section>

@@ -40,6 +40,9 @@ public class CartDAO {
 		try {
 			conn = com.mni.db.MniDB.getConn();
 			
+
+			//String sql = "select c.prod_idx prod_idx, cart_idx, prod_name, prod_title_img, user_idx, cart_count, cart_price, cart_price * cart_count cart_total_price from product p, cart c "
+
 			String sql = "select c.prod_idx prod_idx, cart_idx, prod_name, "
 					+ "prod_title_img, user_idx, cart_count, cart_price, "
 					+ "cart_price * cart_count cart_total_price from product p, cart c "

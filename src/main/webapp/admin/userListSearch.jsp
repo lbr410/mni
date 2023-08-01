@@ -4,6 +4,7 @@
 <%@ page import="com.mni.userInfo.*" %>
 <jsp:useBean id="udao" class="com.mni.userInfo.userInfoDAO"></jsp:useBean>
 <%
+String user_id = request.getParameter("user_search");
 String admin_id = (String)session.getAttribute("admin_saveid");
 String ck = "";
 Cookie cks[]=request.getCookies();
@@ -29,10 +30,19 @@ if(cks!=null){
 <meta charset="UTF-8">
 <title>멍냥이 관리자 : 회원목록</title>
 <link rel="stylesheet" type="text/css" href="/mni/css/adminList.css">
+<script>
+function userInfoSearch(){
+	<%
+	if(user_id == null){
+		user_id = request.getParameter("userinfo_id");
+	}
+	%>
+}
+</script>
 </head>
 <%
 /**페이징*/
-int totalCnt = udao.userCnt();
+int totalCnt = udao.userSearchCnt(user_id);
 int pageCnt = 15;
 int pageButton = 10;
 
@@ -61,8 +71,8 @@ if(cp % pageButton == 0){
 <h1>회원 목록</h1>
 <section>
 <article>
-	<form name="userListSearch" action="/mni/admin/userListSearch.jsp" method="post">
-	<div><input type="text" name="user_search" placeholder="회원 ID 입력" id="searchBox" required>
+	<form name="userListSearch" action="/mni/admin/userListSearch.jsp" method="post" onsubmit="userInfoSearch();">
+	<div><input type="text" name="userinfo_id" placeholder="회원 ID 입력" id="searchBox" required>
 	<input type="submit" value="검색" class="seaBtnDeco">
 	</div>
 	</form>
@@ -105,7 +115,7 @@ if(cp % pageButton == 0){
          </tfoot>
 			<tbody>
 			<%
-			ArrayList<userInfoDTO> arr = udao.userInfoSelect(cp, pageCnt);//회원 목록 메서드
+			ArrayList<userInfoDTO> arr = udao.userInfoSearchSelect(user_id, cp, pageCnt);//회원 목록 메서드
 			if(arr == null || arr.size() == 0){
 				%>
 				<tr>

@@ -3,6 +3,7 @@ package com.mni.review;
 import java.sql.Date;
 
 public class ReviewDTO {
+
    private int review_idx;
    private int prod_idx;
    private int user_idx;

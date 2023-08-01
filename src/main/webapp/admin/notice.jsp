@@ -3,6 +3,26 @@
 <%@page import="java.util.*" %>
 <%@page import="com.mni.notice.*" %>
 <jsp:useBean id="ndao" class="com.mni.notice.NoticeDAO"></jsp:useBean>
+<%
+String admin_id = (String)session.getAttribute("admin_saveid");
+String ck = "";
+Cookie cks[]=request.getCookies();
+if(cks!=null){
+	for(int i=0; i<cks.length; i++){
+		//자동 로그인 쿠키 유무
+		if(cks[i].getName().equals("admin_auto")){
+			ck = cks[i].getValue();
+		}
+	}
+	if(admin_id == null && !ck.equals("admin")){
+		%><script>
+		window.alert('로그인 후 이용가능합니다.');
+		location.href='/mni/admin/index_admin.jsp';
+		</script>
+		<%
+	}
+}
+%>
 <!DOCTYPE html>
 <html>
 <head>
