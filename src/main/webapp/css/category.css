@@ -61,40 +61,67 @@ body {
 
     .prodSection {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
         width: 820px;
     }
-
-    .table-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 각 열의 크기를 동일하게 3개로 반복합니다. */
-  grid-gap: 10px; /* 테이블 사이의 간격 조정 */
-}
-table {
-  border-collapse: collapse; /* 테이블 셀 간 경계 제거 */
-}
+    table{
+    border-spacing: 16px;
+	margin-bottom: 20px;
+	float: left;
+	}
+    tr{
+    border-spacing: 6px;
+    }
+    .page{
+    width: 26px;
+    font-size: 20px;
+    background-color:white;
+    text-decoration: none;
+    border: 0.5px solid;
+    border-color: #ff7f50;
+    cursor: pointer;
+	}
+	.nowPage{
+	width: 26px;
+	border-radius: 4px;
+    font-size: 20px;
+    background-color:#ff7f50;
+    text-decoration: none;
+    border: 0.5px solid;
+    border-color: white;
+    color: white;
+	}
     .prodImg {
         width: 200px;
         height: 235px;
         border-radius: 24px;
         overflow: hidden;
-        background-color: #cecece;
+        background-color: #f5f5f5;
     }
-
     .prodImg img {
         width: 200px;
+        cursor: pointer;
     }
-
-    .prodName {
-        width: 200px;
-        height: 18px;
-        font-size: 22px;
+	.prodName{
+		width: 200px;
+		height: 20px;
         padding: 8px;
-    }
-
-    .prodPrice {
+        color: dimgrey;
+        font-weight: bold;
+    	margin: 0;
+   	 	font-size: 12px;
+    	text-align: left;
+	}
+    .prodTitle {
         width: 200px;
         height: 20px;
+        font-size: 15px;
+        padding-left: 2px;
+        cursor: pointer;
+    }
+    .prodprice {
+        width: 200px;
+        height: 20px;
+        font-size: 15px;
         padding: 8px;
+        padding-bottom: 34px;
     }
