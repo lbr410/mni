@@ -26,11 +26,16 @@ table{
 	padding-top: 10px;
 	border-spacing: 0px;
 }
-th{
+.th1{
 	background-color: #ff7f50;
 	color:white;
 	height: 30px;
-	
+}
+.th2{
+	background-color: #ff7f50;
+	color:white;
+	height: 30px;
+	border-bottom: 1px solid white;
 }
 .td1{
 	border-bottom: 1px solid #ff7f50;
@@ -42,7 +47,6 @@ th{
 	padding-left: 10px;
 }
 .content{
-	text-align: center;
 	border-bottom: 1px solid #ff7f50;
 }
 #noticelist {
@@ -50,6 +54,13 @@ th{
 	margin-left:750px;
 	font-size: 12px;
 	font-weight: normal;
+}
+.contentDiv{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-right: 20px;
+    width: 630px;
+    text-align: left;
 }
 </style>
 </head>
@@ -60,23 +71,24 @@ th{
 		<table>
 			<thead>
 				<tr>
-					<th >번호</th>
+					<th class="th2">번호</th>
 					<td class="td2" ><%=dto.getNotice_idx()%></td>
-					<th>작성날짜</th>
+					<th class="th2">작성날짜</th>
 					<td class="td2"><%=dto.getNotice_date() %></td>
 				</tr>
 				<tr>
-					<th>작성자</th>
+					<th class="th2">작성자</th>
 					<td class="td1"><%=dto.getAdmin_id() %></td>
-					<th>조회수</th>
+					<th class="th1">조회수</th>
 					<td class="td1"><%=dto.getNotice_count()%></td>
 				</tr>
 				<tr>
-					<th>제목</th>
+					<th class="th1">제목</th>
 					<td colspan="3" class="td1"><%=dto.getNotice_title() %></td>
 				</tr>
-				<tr height="250">
-					<td colspan="4" class="content"><%=dto.getNotice_content().replaceAll("\n", "<br>") %></td>
+				<tr>
+					<td colspan="4" class="content">
+					<div class="contentDiv"><%=dto.getNotice_content().replaceAll("\n", "<br>") %></div></td>
 				</tr>
 		</table>
 		<div id="noticelist"><a href="/mni/user/noticeList.jsp">목록으로</a></div>

@@ -25,18 +25,17 @@
     
     h2{
 	display: inline-block;
-	margin-left:200px;
 	font-size: 35px; 
 	margin-bottom: -20px;
 	margin-top: 20px;
 	}
-	hr{width: 500px; margin-top: 10px; margin-left: 200px;}
+	hr{width: 500px; margin-top: 10px; }
 	
 	table{
 	width: 500px; 
 	text-align: left; 
 	border-spacing: 0 40px; 
-	margin-left: 200px;
+	margin:0 auto;
 	}
 	
 	.inputtext{
@@ -69,7 +68,7 @@
 	width: 350px; 
 	height: 60px; 
 	margin-top: 30px; 
-	margin-left: 250px;
+	margin-left: 50px;
 	border: 1px solid #ff7f50;
 	border-radius: 10px;
 	background-color: #ff7f50;

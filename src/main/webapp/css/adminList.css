@@ -214,7 +214,15 @@ h1{
 #noticecontent{
 	border-bottom:1px solid #ff7f50;
 	font-size: 15px;
-	text-align: center;
+	background-color: gray;
+	text-align: left;
+}
+.contentDiv{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-right: 20px;
+    width: 630px;
+    text-align: left;
 }
 #noticeBtn{
    border:0px;
