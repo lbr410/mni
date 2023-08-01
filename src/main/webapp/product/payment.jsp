@@ -1,3 +1,4 @@
+<%@ page import="com.mni.cart.CartDTO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.text.*" %>
@@ -5,12 +6,13 @@
 <%@ page import="java.util.*" %>
 <%
 	request.setCharacterEncoding("UTF-8");
-
+	
+	ArrayList<CartDTO> cart = (ArrayList)session.getAttribute("cart");
 	Integer idx = (Integer)session.getAttribute("sidx");
 	
 	int totalPrice = Integer.parseInt(request.getParameter("total_price"));
-
 	DecimalFormat df = new DecimalFormat("#,##0원");
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -55,7 +57,7 @@ function addrpopup(){
 		<table>
 			<tr>
 				<th>받는사람</th>
-				<td>사용자명</td>
+				<td><input type="text" name="order_recie" value="<%=dto.getUser_name() %>"></td>
 			</tr>
 			<tr>
 				<th class = "th">배송주소</th>
@@ -74,22 +76,17 @@ function addrpopup(){
 		<h3>결제 정보</h3>
 		<table>
 			<tr>
-				<th>총상품가격</th>
-				<td>0원</td>
-			</tr>
-			<tr>
 				<th class = "th">총결제금액</th>
 				<td class = "td"><%=df.format(totalPrice) %></td>
 			</tr>
 			<tr>
 				<th>결제 방법</th>
 				<td>
-				<input type = "radio" name = "order" value = "card">&nbsp;신용카드&nbsp;
-				<input type = "radio" name = "order" value = "tel">&nbsp;휴대폰<br>
+				<input type = "radio" name = "order_type" value = "card">&nbsp;신용카드&nbsp;
+				<input type = "radio" name = "order_type" value = "tel">&nbsp;휴대폰<br>
 				</td>
 			</tr>
 		</table>
-		<input type="hidden">
 		<input type = "submit" value = "결제하기" class = "button">
 		</form>
 	</article>

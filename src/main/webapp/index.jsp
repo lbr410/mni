@@ -83,7 +83,7 @@
 
     <div class="head-title">
         <div class="best">신상품</div>
-        <div class="more"><a href="/mni/newProduct.jsp">상세보기</a></div>
+        <div class="more"><a href="/mni/best.jsp">상세보기</a></div>
     </div>
         <main>
             <div id="place-items-wrapper">

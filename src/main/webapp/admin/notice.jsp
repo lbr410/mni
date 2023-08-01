@@ -25,6 +25,9 @@
    border: 0.5px solid;
    border-color: white;
 }
+td{
+	text-align: center;
+}
 </style>
 </head>
 <%
@@ -49,9 +52,11 @@ if(cp % pageButton == 0){
 }
 %>
 <body>
+<div class="divSize">
 <%@ include file="admin_header/admin_header_6.jsp" %>
-<h1>공지사항</h1>
 <section>
+<h1>공지사항</h1>
+	<article>
 		<table>
 		<thead>
 			<tr>
@@ -111,6 +116,8 @@ if(cp % pageButton == 0){
 		</tbody>
 		</table>
 		<div class="noticeUpBtn"><a href="noticeWrite.jsp"><input type="button" value="작성하기" class="longboxBtnDeco"></a></div>
+		</article>
 	</section>
+</div>
 </body>
 </html>

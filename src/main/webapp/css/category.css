@@ -1,89 +1,100 @@
-@charset "UTF-8";
-body{
-	width: 1000px;
-	height: 100%;
-}
-.bar{
-   width: 990px;
-   height: 20px;
-   padding-top: 15px;
-   padding-bottom: 10px;
-   padding-left: 10px;
-   background-color: #f3f3f3;
-   font-size: 12px;
-   text-align: left;
-   margin-bottom: 15px;
-}
-.menu{
-   margin: 0 auto;
-   width: 1000px;
-   height: 100%;
-   margin-bottom: 50px;
-}
-.category{
-   float: left;
-   width: 150px;
-   height: 100%;
-   margin-top: 24px;
-   margin-bottom: 50px;
-}
-.list1{
-   border-bottom: 1px solid #cccccc;
-   padding: 14px;
-   padding-bottom: 20px;
-   font-weight: bold;
-   color: #ff7f50;
-}
-.list2{
-   padding: 14px;
-}
-.list3{
-	padding: 14px;
-	font-weight: bold;
-    color: #ff7f50;
-}
-.section{
-	height: 200px;
-}
-.head-title{
-   display: block;
-   float: left;
-    width: 720px;
-    font-size: 24px;
-    font-weight: bold;
-    padding-bottom:25px;
-    padding-left: 60px;
-    color: #3a3a3a;
-}
+body {
+        width: 1000px;
+        height: 100%;
+    }
 
-.prodSection{
-	display: inline-block;
-	width: 820px;
+    .bar {
+        width: 990px;
+        height: 20px;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        background-color: #f3f3f3;
+        font-size: 12px;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+    .menu {
+        margin: 0 auto;
+        width: 1000px;
+        height: 100%;
+        margin-bottom: 50px;
+    }
+
+    .category {
+        float: left;
+        width: 150px;
+        height: 100%;
+        margin-top: 24px;
+        margin-bottom: 50px;
+    }
+
+    .list1 {
+        border-bottom: 1px solid #cccccc;
+        padding: 14px;
+        padding-bottom: 20px;
+        font-weight: bold;
+        color: #ff7f50;
+    }
+
+    .list2 {
+        padding: 14px;
+    }
+
+    .list3 {
+        padding: 14px;
+        font-weight: bold;
+        color: #ff7f50;
+    }
+
+    .head-title {
+        display: block;
+        float: left;
+        width: 720px;
+        font-size: 24px;
+        font-weight: bold;
+        padding-bottom: 25px;
+        padding-left: 40px;
+        color: #3a3a3a;
+    }
+
+    .prodSection {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 820px;
+    }
+
+    .table-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 각 열의 크기를 동일하게 3개로 반복합니다. */
+  grid-gap: 10px; /* 테이블 사이의 간격 조정 */
 }
-table{
-	display: inline-block;
-	width: 228px;
-	height: 240px;
-	margin-left: 40px;
+table {
+  border-collapse: collapse; /* 테이블 셀 간 경계 제거 */
 }
-.prodImg{
-	width: 240px;
-	height: 235px;
-	border-radius: 24px;
-	overflow: hidden;
-	background-color: #cecece;
-}
-.prodImg img{
-	width: 248px;
-}
-.prodName{
-	width: 240px;
-	height: 20px;
-	font-size: 22px;
-	padding: 8px;
-}
-.prodPrice{
-	width: 240px;
-	height: 20px;
-	padding: 8px;
-}
+    .prodImg {
+        width: 200px;
+        height: 235px;
+        border-radius: 24px;
+        overflow: hidden;
+        background-color: #cecece;
+    }
+
+    .prodImg img {
+        width: 200px;
+    }
+
+    .prodName {
+        width: 200px;
+        height: 18px;
+        font-size: 22px;
+        padding: 8px;
+    }
+
+    .prodPrice {
+        width: 200px;
+        height: 20px;
+        padding: 8px;
+    }
