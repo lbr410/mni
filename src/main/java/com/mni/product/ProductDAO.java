@@ -5,40 +5,40 @@ import java.util.ArrayList;
 
 public class ProductDAO {
 
-	private Connection conn;
-	private PreparedStatement ps;
-	private ResultSet rs;
+   private Connection conn;
+   private PreparedStatement ps;
+   private ResultSet rs;
 
-	/** 상품 등록 메서드 */
-	public int prodInsert(ProductDTO dto) {
-		try {
-			conn = com.mni.db.MniDB.getConn();
-			String sql = "insert into product " + "values(prod_idx.nextval,?,?,?,?,sysdate,?,?,?,?,?,0)";
-			ps = conn.prepareStatement(sql);
-			ps.setString(1, dto.getProd_name());
-			ps.setString(2, dto.getProd_title());
-			ps.setInt(3, dto.getProd_price());
-			ps.setInt(4, dto.getProd_count());
-			ps.setString(5, dto.getProd_title_img());
-			ps.setString(6, dto.getProd_pet());
-			ps.setString(7, dto.getProd_info_img());
-			ps.setInt(8, dto.getProd_brand());
-			ps.setInt(9, dto.getProd_category());
-			int count = ps.executeUpdate();
-			return count;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return -1;
-		} finally {
-			try {
-				if (ps != null)
-					ps.close();
-				if (conn != null)
-					conn.close();
-			} catch (Exception e2) {
-			}
-		}
-	}
+   /** 상품 등록 메서드 */
+   public int prodInsert(ProductDTO dto) {
+      try {
+         conn = com.mni.db.MniDB.getConn();
+         String sql = "insert into product " + "values(prod_idx.nextval,?,?,?,?,sysdate,?,?,?,?,?,0)";
+         ps = conn.prepareStatement(sql);
+         ps.setString(1, dto.getProd_name());
+         ps.setString(2, dto.getProd_title());
+         ps.setInt(3, dto.getProd_price());
+         ps.setInt(4, dto.getProd_count());
+         ps.setString(5, dto.getProd_title_img());
+         ps.setString(6, dto.getProd_pet());
+         ps.setString(7, dto.getProd_info_img());
+         ps.setInt(8, dto.getProd_brand());
+         ps.setInt(9, dto.getProd_category());
+         int count = ps.executeUpdate();
+         return count;
+      } catch (Exception e) {
+         e.printStackTrace();
+         return -1;
+      } finally {
+         try {
+            if (ps != null)
+               ps.close();
+            if (conn != null)
+               conn.close();
+         } catch (Exception e2) {
+         }
+      }
+   }
 
 	/** 상품 내역 출력 메서드 */
 	public ArrayList<ProductDTO> prodList(int cp,int pageCnt) {

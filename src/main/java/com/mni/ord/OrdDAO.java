@@ -5,50 +5,50 @@ import com.mni.cart.*;
 import java.util.*;
 
 public class OrdDAO {
-	private Connection conn;
-	private PreparedStatement ps;
-	private ResultSet rs;
-	
-	/** 상품 주문 - BR*/
+   private Connection conn;
+   private PreparedStatement ps;
+   private ResultSet rs;
+   
+   /** 상품 주문 - BR*/
     public int buyProduct(int sidx, OrdDTO dto, int count, int price, int prod_idx) {
-	    try {
-	    	conn = com.mni.db.MniDB.getConn();
-	
-		    String sql = "insert into ord values(order_idx.nextval,?,?,?,?,?,?,?,?,sysdate,'주문완료',?,?)";
-		    ps = conn.prepareStatement(sql);
-		    ps.setInt(1, sidx);
-		    ps.setInt(2, prod_idx);
-		    ps.setString(3, dto.getOrder_recie());
-		    ps.setInt(4, dto.getOrder_zip());
-		    ps.setString(5, dto.getOrder_addr1());
-		    ps.setString(6, dto.getOrder_addr2());
-		    ps.setString(7, dto.getOrder_type());
-		    ps.setString(8, dto.getOrder_req());
-		    if(dto.getOrder_req() == null) {
-		    	ps.setString(8, "배송 전에 연락주세요.");
-		    } else {
-		        ps.setString(8, dto.getOrder_req());
-		    }
-	        ps.setInt(9, count);
-	        ps.setInt(10, price);
-		    
-		    int result = 0;
-		    if(ps.executeUpdate() == 1 ? true : false) {
-		    	ps.close();
-		    	CartDAO cdao = new CartDAO();
-		    	result = cdao.userCartDelete(sidx);
-		    }
-		    
-		    return result;
-	    } catch(Exception e) {
-	         e.printStackTrace();
-	         return -1;
-	    } finally {
-	         try {
-	            if(conn!=null) conn.close();
-	         } catch(Exception e) {}
-	      }
-	   }
+       try {
+          conn = com.mni.db.MniDB.getConn();
+   
+          String sql = "insert into ord values(order_idx.nextval,?,?,?,?,?,?,?,?,sysdate,'주문완료',?,?)";
+          ps = conn.prepareStatement(sql);
+          ps.setInt(1, sidx);
+          ps.setInt(2, prod_idx);
+          ps.setString(3, dto.getOrder_recie());
+          ps.setInt(4, dto.getOrder_zip());
+          ps.setString(5, dto.getOrder_addr1());
+          ps.setString(6, dto.getOrder_addr2());
+          ps.setString(7, dto.getOrder_type());
+          ps.setString(8, dto.getOrder_req());
+          if(dto.getOrder_req() == null) {
+             ps.setString(8, "배송 전에 연락주세요.");
+          } else {
+              ps.setString(8, dto.getOrder_req());
+          }
+           ps.setInt(9, count);
+           ps.setInt(10, price);
+          
+          int result = 0;
+          if(ps.executeUpdate() == 1 ? true : false) {
+             ps.close();
+             CartDAO cdao = new CartDAO();
+             result = cdao.userCartDelete(sidx);
+          }
+          
+          return result;
+       } catch(Exception e) {
+            e.printStackTrace();
+            return -1;
+       } finally {
+            try {
+               if(conn!=null) conn.close();
+            } catch(Exception e) {}
+         }
+      }
     
     /**관리자 주문 내역 출력 메서드*/
     public ArrayList<OrdDTO> prodSelect(){
@@ -307,46 +307,46 @@ public class OrdDAO {
           }catch(Exception e2) {}
        }
     }
-	
-	   /*사용자 주문내역에서 주문취소*/
-	   public int userOrderCancel(int order_idx) {
-	      try {
-	         conn = com.mni.db.MniDB.getConn();
-	         String sql = "update ord set order_state = '주문취소' "
-	               + "where order_idx = ?";
-	         ps = conn.prepareStatement(sql);
-	         ps.setInt(1, order_idx);
-	         int result = ps.executeUpdate();
-	         return result;
-	      }catch(Exception e) {
-	         e.printStackTrace();
-	         return -1;
-	      }finally {
-	         try {
-	            if(ps != null) ps.close();
-	            if(conn != null) conn.close();
-	         }catch(Exception e) {}
-	      }
-	   }
-	   
-	   /*사용자 주문내역에서 수취확인*/
-	   public int userReceiptConfirmation(int order_idx) {
-	      try {
-	         conn = com.mni.db.MniDB.getConn();
-	         String sql = "update ord set order_state = '배송완료' "
-	               + "where order_idx = ?";
-	         ps = conn.prepareStatement(sql);
-	         ps.setInt(1, order_idx);
-	         int result = ps.executeUpdate();
-	         return result;
-	      }catch(Exception e) {
-	         e.printStackTrace();
-	         return -1;
-	      }finally {
-	         try {
-	            if(ps != null) ps.close();
-	            if(conn != null) conn.close();
-	         }catch(Exception e) {}
-	      }
-	   }
+   
+      /*사용자 주문내역에서 주문취소*/
+      public int userOrderCancel(int order_idx) {
+         try {
+            conn = com.mni.db.MniDB.getConn();
+            String sql = "update ord set order_state = '주문취소' "
+                  + "where order_idx = ?";
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, order_idx);
+            int result = ps.executeUpdate();
+            return result;
+         }catch(Exception e) {
+            e.printStackTrace();
+            return -1;
+         }finally {
+            try {
+               if(ps != null) ps.close();
+               if(conn != null) conn.close();
+            }catch(Exception e) {}
+         }
+      }
+      
+      /*사용자 주문내역에서 수취확인*/
+      public int userReceiptConfirmation(int order_idx) {
+         try {
+            conn = com.mni.db.MniDB.getConn();
+            String sql = "update ord set order_state = '배송완료' "
+                  + "where order_idx = ?";
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, order_idx);
+            int result = ps.executeUpdate();
+            return result;
+         }catch(Exception e) {
+            e.printStackTrace();
+            return -1;
+         }finally {
+            try {
+               if(ps != null) ps.close();
+               if(conn != null) conn.close();
+            }catch(Exception e) {}
+         }
+      }
 }

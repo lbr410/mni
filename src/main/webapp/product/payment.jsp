@@ -82,8 +82,8 @@ function addrpopup(){
 			<tr>
 				<th>결제 방법</th>
 				<td>
-				<input type = "radio" name = "order_type" value = "card">&nbsp;신용카드&nbsp;
-				<input type = "radio" name = "order_type" value = "tel">&nbsp;휴대폰<br>
+				<input type = "radio" name = "order_type" value = "card" required>&nbsp;신용카드&nbsp;
+				<input type = "radio" name = "order_type" value = "tel" required>&nbsp;휴대폰<br>
 				</td>
 			</tr>
 		</table>

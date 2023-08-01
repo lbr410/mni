@@ -70,29 +70,29 @@ ArrayList<OrdDTO> arr = odao.UserOrderSelect(idx);
          <input type = "button" value = "수취확인" class = "button" onclick = "javascript:location.href='userReceiptConfirmation.jsp?ord_idx=<%=arr.get(i).getOrder_idx()%>'">
          </div>
          <%
-            }else if(arr.get(i).getOrder_state().equals("배송 준비중")){
-               %>
-               <div class = "a">
-                  <span class = "span">배송 준비중</span>
-                  <input type = "button" value = "주문취소" class = "button" onclick = "javascript:location.href='userOrderCancel.jsp?ord_idx=<%=arr.get(i).getOrder_idx()%>'">
-                  <input type = "button" value = "수취확인" class = "button" onclick = "javascript:location.href='userReceiptConfirmation.jsp?ord_idx=<%=arr.get(i).getOrder_idx()%>'">
-                  </div>
-                 <%
-            }else if(arr.get(i).getOrder_state().equals("주문취소")){
-               %>
-               <div class = "a">
-                  <span class = "span">주문취소</span>
-                  </div><br>
-                 <%
-            }else if(arr.get(i).getOrder_state().equals("배송완료")){
-               %>
-               <div class = "a">
-                  <span class = "span">배송 완료</span>
-                  <input type="button" value="리뷰작성" class="button" 
-                  onclick="location.href='/mni/user/reviewWrite.jsp?prod_idx=<%=arr.get(i).getProd_idx() %>'">
-                  </div>
-                 <%
-            }
+      		}else if(arr.get(i).getOrder_state().equals("배송 준비중")){
+      			%>
+      			<div class = "a">
+      	         <span class = "span">배송 준비중</span>
+      	         <input type = "button" value = "주문취소" class = "button" onclick = "javascript:location.href='userOrderCancel.jsp?ord_idx=<%=arr.get(i).getOrder_idx()%>'">
+      	         <input type = "button" value = "수취확인" class = "button" onclick = "javascript:location.href='userReceiptConfirmation.jsp?ord_idx=<%=arr.get(i).getOrder_idx()%>'">
+      	         </div>
+      	        <%
+      		}else if(arr.get(i).getOrder_state().equals("주문취소")){
+      			%>
+      			<div class = "a">
+      	         <span class = "span">주문취소</span>
+      	         </div><br>
+      	        <%
+      		}else if(arr.get(i).getOrder_state().equals("배송완료")){
+      			%>
+      			<div class = "a">
+      	         <span class = "span">배송 완료</span>
+      	         <input type="button" value="리뷰작성" class="button" 
+      	         onclick="location.href='/mni/user/reviewWrite.jsp?prod_idx=<%=arr.get(i).getProd_idx() %>'">
+      	         </div>
+      	        <%
+      		}
       }
 }
          %>
