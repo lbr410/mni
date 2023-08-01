@@ -84,13 +84,13 @@ header{
 .l-button:hover{
     color: orangered;
 }
-.l-button:hover.active-doglogo{
+.l-button:hover .active-doglogo{
     display: inline-block;
 }
-.l-button:hover.inactive-doglogo{
+.l-button:hover .inactive-doglogo{
     display: none;
 }
-#active-button:hover.active-doglogo{
+#active-button:hover .active-doglogo{
     display: inline-block;
 }
 /*검색*/
@@ -160,7 +160,7 @@ header{
 #search-icon{
     margin-top: 2px;
     margin-left:30px;
-    width: 24px;
+    width: 26px;
     text-align: right;    
 }
 /*메뉴*/
@@ -180,15 +180,18 @@ header{
    height: 24px;
 }
 .dropbtn{
-    font-weight: 200;
     color: rgb(37,37,37);
-    padding: 12px;
+    padding: 8px;
     width: 100px;
     text-align: left;
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
 }
+.dropbtn:hover .dropdown-content{
+	display: block;
+}
+
 .dropdown-content{
     display: none;
     position: absolute;
@@ -253,19 +256,19 @@ section{
 .cart-button{
     padding: 12px;
     margin-left: 20px;
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     cursor: pointer;
     margin-right: 10px;
 }
 .inactive-cart{
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
 }
 .active-cart{
     display: none;
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
 }
 .cart-button:hover .active-cart{
     display:inline-block;
@@ -279,18 +282,18 @@ section{
 .my-button{
     padding: 12px;
     margin-left: 20px;
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     cursor: pointer;
 }
 .inactive-my{
-    width:32px;
-    height: 32px;
+    width:34px;
+    height: 34px;
 }
 .active-my{
     display: none;
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
 }
 .my-button:hover .active-my{
     display: inline-block;

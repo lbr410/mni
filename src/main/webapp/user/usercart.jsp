@@ -1,8 +1,12 @@
+<%@page import="com.mni.ord.OrdDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="com.mni.cart.*" %>
 <%@page import="java.text.*"%>
+<%
+	ArrayList<CartDTO> arr = new ArrayList<CartDTO>();
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,14 +37,17 @@
 		} else {
 			ArrayList<CartDTO> table = cdao.cartList(idx);
 			int total[] = cdao.totalCntPrice(idx);
-	
+		
 			if(table.size()!=0) {
 				for(int i=0; i<table.size(); i++) {
+					if(i!=0) {
 			%>
 				<tr>
 					<td class="td0">
 					<input type="hidden" name="cart_idx" value="<%=table.get(i).getCart_idx() %>">
 					<input type="hidden" name="total_price" value="<%=total[1] %>">
+					<input type="hidden" name="cart_size" value="<%=table.size() %>">
+					<input type="hidden" name="prod_idx" value="<%=table.get(i).getProd_idx() %>">
 					<img src="../admin/product_img/<%=table.get(i).getProd_title_img() %>" alt="상품이미지" class="prodImg"></td>
 					<td class="td1">
 					<div class="fontSize"><%=table.get(i).getProd_name() %></div></td>
@@ -54,7 +61,7 @@
 						<input type="text" name="order_count" value="<%=table.get(i).getCart_count() %>" class="countText">
 						<input type="button" value="+" class="countBtn" 
 						onclick="javascript: var count = document.all.order_count[<%=i %>].value; 
-									number = parseInt(count) + 1; 
+									number = parseInt(count) + 1;
 									document.all.order_count[<%=i %>].value = number;
 									location.href='/mni/user/cartCntplus.jsp?prod_idx=<%=table.get(i).getProd_idx() %>';
 									"></td>
@@ -64,6 +71,39 @@
 						</td>
 				</tr>
 			<%
+					} else {
+						%>
+				<tr>
+					<td class="td0">
+					<input type="hidden" name="cart_idx" value="<%=table.get(i).getCart_idx() %>">
+					<input type="hidden" name="total_price" value="<%=total[1] %>">
+					<input type="hidden" name="cart_size" value="<%=table.size() %>">
+					<input type="hidden" name="prod_idx" values="<%=table.get(i).getProd_idx() %>">
+					<img src="../admin/product_img/<%=table.get(i).getProd_title_img() %>" alt="상품이미지" class="prodImg"></td>
+					<td class="td1">
+					<div class="fontSize"><%=table.get(i).getProd_name() %></div></td>
+					<td class="td2">
+						<input type="button" value="-" class="countBtn"
+						onclick="javascript: var count = document.all.order_count.value; 
+									number = parseInt(count) - 1;
+									document.all.order_count.value = number;
+									location.href='/mni/user/cartCntMinus.jsp?prod_idx=<%=table.get(i).getProd_idx() %>'
+									">
+						<input type="text" name="order_count" value="<%=table.get(i).getCart_count() %>" class="countText">
+						<input type="button" value="+" class="countBtn" 
+						onclick="javascript: var count = document.all.order_count.value;
+									number = parseInt(count) + 1; 
+									document.all.order_count.value = number;
+									location.href='/mni/user/cartCntplus.jsp?prod_idx=<%=table.get(i).getProd_idx() %>';
+									"></td>
+					<td class="fontSize2 td3"><%=df.format(table.get(i).getCart_total_price()) %></td>
+					<td class="td4"><input type="button" value="삭제" class="deleteBtn" 
+						onclick="javascript: location.href='cartDelete.jsp?user_idx=<%=idx %>&prod_idx=<%=table.get(i).getProd_idx() %>'">					
+						</td>
+				</tr>
+						<%
+					}
+					arr.add(table.get(i));
 				}
 			%>
 				<tr class="orderTd">
@@ -77,6 +117,8 @@
 				<%	
 			}
 		}
+		
+		session.setAttribute("cart", arr);
 	%>
 	</table>
 	</form>

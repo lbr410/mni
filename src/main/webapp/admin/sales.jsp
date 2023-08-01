@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.text.*" %>
+<jsp:useBean id="odao" class="com.mni.ord.OrdDAO"></jsp:useBean>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,9 +35,14 @@
 					document.sales.startDate.valueAsDate = new Date();
 					document.sales.endDate.valueAsDate = new Date();
 				</script>
+				<%
+				 DecimalFormat df = new DecimalFormat();
+		         df.applyLocalizedPattern("#,###,###원");
+
+				%>
 				<input type="submit" value="조회"><br><br><br>
 				<div class="font_Deco">조회기간 : 2023-01-01 ~ 2023-07-25</div>
-				<div class="font_Deco2"><label>매출 : ?원</label></div>
+				<div class="font_Deco2"><label>매출 : <%= %></label></div>
 			</form>
 		</article>
 	</section>

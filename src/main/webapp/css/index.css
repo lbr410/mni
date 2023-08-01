@@ -37,16 +37,16 @@
 }
 .place-image-wrapper {
     position: relative;
-    width: 283px;
-    height: 293px;
+    width: 236px;
+    height: 236px;
     border-radius: 23px;
     overflow: hidden;
     cursor: pointer;
 }
 
 .place-image-wrapper img {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
 
 .place-image-wrapper .heart-icon {

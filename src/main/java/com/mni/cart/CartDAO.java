@@ -40,7 +40,12 @@ public class CartDAO {
 		try {
 			conn = com.mni.db.MniDB.getConn();
 			
-			String sql = "select c.prod_idx prod_idx, cart_idx, prod_name, prod_title_img, user_idx, cart_count, cart_price, cart_price * cart_count cart_total_price from product p, cart c "
+
+			//String sql = "select c.prod_idx prod_idx, cart_idx, prod_name, prod_title_img, user_idx, cart_count, cart_price, cart_price * cart_count cart_total_price from product p, cart c "
+
+			String sql = "select c.prod_idx prod_idx, cart_idx, prod_name, "
+					+ "prod_title_img, user_idx, cart_count, cart_price, "
+					+ "cart_price * cart_count cart_total_price from product p, cart c "
 					+ "where p.prod_idx = c.prod_idx "
 					+ "and user_idx = ?";
 			
@@ -140,8 +145,8 @@ public class CartDAO {
 		try {
 			conn = com.mni.db.MniDB.getConn();
 			
-			//String sql = "update cart set cart_count = cart_count+1, cart_total_price = (cart_count+1)*cart_price where prod_idx = ?";
-			String sql = "update cart set cart_count = cart_count+1 where prod_idx = ?";
+			String sql = "update cart set cart_count = cart_count+1, cart_total_price = (cart_count+1)*cart_price where prod_idx = ?";
+			//String sql = "update cart set cart_count = cart_count+1 where prod_idx = ?";
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, prod_idx);
 			int count = ps.executeUpdate();
@@ -163,10 +168,33 @@ public class CartDAO {
 		try {
 			conn = com.mni.db.MniDB.getConn();
 			
-			//String sql = "update cart set cart_count = cart_count-1, cart_total_price = (cart_count-1)*cart_price where prod_idx = ?";
-			String sql = "update cart set cart_count = cart_count-1 where prod_idx = ?";
+			String sql = "update cart set cart_count = cart_count-1, cart_total_price = (cart_count-1)*cart_price where prod_idx = ?";
+			//String sql = "update cart set cart_count = cart_count-1 where prod_idx = ?";
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, prod_idx);
+			int count = ps.executeUpdate();
+
+			return count;
+		} catch(Exception e) {
+			e.printStackTrace();
+			return -1;
+		} finally {
+			try {
+				if(ps!=null) ps.close();
+				if(conn!=null) conn.close();
+			} catch(Exception e) {}
+		}
+	}
+	
+	/** 상품 구매 후 장바구니 목록 삭제 */
+	public int userCartDelete(int idx) {
+		try {
+			conn = com.mni.db.MniDB.getConn();
+			
+			String sql = "delete from cart where user_idx = ?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, idx);
 			int count = ps.executeUpdate();
 			
 			return count;

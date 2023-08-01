@@ -50,9 +50,11 @@ if(cp % pageButton == 0){
 }
 %>
 <body>
+<div class="divSize">
 <%@ include file="admin_header/admin_header_2.jsp" %>
 <h1>상품 관리</h1>
    <section>
+   	<article>
    <div class="searchBox"><input type="text" name="prod_search" placeholder="검색어 입력" id="searchBox">
    <input type="button" value="검색" class="seaBtnDeco">
    </div>
@@ -69,7 +71,7 @@ if(cp % pageButton == 0){
             <th id="thup">재고</th>
             <th>등록일</th>
             <th>글제목</th>
-            <th>상세정보</th>
+            <th>상품이미지</th>
             <th></th>
          </tr>
          </thead>
@@ -141,7 +143,7 @@ if(cp % pageButton == 0){
             <td class="td"><%=arr.get(i).getProd_count() %></td>
             <td class="td"><%=arr.get(i).getProd_date() %></td>
             <td class="td"><%=arr.get(i).getProd_title() %></td>
-            <td class="td"><img src="/mni/admin/product_img/<%=arr.get(i).getProd_title_img() %>" alt="타이틀이미지"></td>
+            <td class="td"><img src="/mni/admin/product_img/<%=arr.get(i).getProd_title_img() %>" alt="타이틀이미지" class="title_img"></td>
             <td class="td">
             <input type="button" value="수정" class="proBtnDeco" onclick="location.href='/mni/admin/prodUpdate.jsp?prod_idx=<%=arr.get(i).getProd_idx()%>'">
             <input type="button" value="삭제" class="proBtnDeco" onclick="prodDelete(<%=arr.get(i).getProd_idx()%>);">
@@ -152,6 +154,8 @@ if(cp % pageButton == 0){
          }%>
          </tbody>
       </table>
+      </article>
    </section>
+   </div>
 </body>
 </html>

@@ -13,6 +13,7 @@
     position:relative;
     top:180px;
     left: -524px;
+    
    }
     
     .username{
@@ -44,13 +45,11 @@
     	margin-left: 300px;
     }
     
-    .orderlist{
-    	margin-left: 480px;
-    	margin-top: -147px;
-    }
     
-    .orderlist li{margin-bottom: 13px;}
+    table{margin-top: -150px; border-spacing: 0 10px; width: 200px;}
     
+    th{text-align: left;}
+   
     .a{margin-left: 840px; margin-top: -80px;}	
     
     .button{
