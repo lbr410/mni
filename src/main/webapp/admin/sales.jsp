@@ -53,8 +53,9 @@ if(cks!=null){
 				<input type="date" class="date_size" name="startDate" min="1970-01-01">&nbsp;~
 				<input type="date" class="date_size" name="endDate" min="1970-01-01">
 				<script>
-					document.sales.startDate.valueAsDate = new Date();
-					document.sales.endDate.valueAsDate = new Date();
+					const offset = 1000 * 60 * 60 * 9;
+					document.sales.startDate.valueAsDate = new Date((new Date()).getTime() + offset);
+					document.sales.endDate.valueAsDate = new Date((new Date()).getTime() + offset);
 				</script>
 				<%
 				 DecimalFormat df = new DecimalFormat();
