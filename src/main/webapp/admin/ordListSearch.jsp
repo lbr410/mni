@@ -4,6 +4,7 @@
 <%@ page import="com.mni.ord.*" %>
 <jsp:useBean id="odao" class="com.mni.ord.OrdDAO"></jsp:useBean>
 <%
+String user_id = request.getParameter("ord_search");
 String admin_id = (String)session.getAttribute("admin_saveid");
 String ck = "";
 Cookie cks[]=request.getCookies();
@@ -46,10 +47,17 @@ function orderDeclined(order_idx){
 		location.href='/mni/admin/ordList.jsp';
 	}
 }
+function userID(){
+	<%
+	if(user_id == null){
+	user_id = request.getParameter("user_id");
+	}
+	%>
+}
 </script>
 </head>
 <%
-int totalCnt = odao.getProductCnt(); //총 게시물 수
+int totalCnt = odao.getSearchCnt(user_id); //총 게시물 수
 int pageCnt = 10; // 한 페이지당 게시물 개수
 int pageButton = 10; // 페이지 버튼 개수
 
@@ -70,15 +78,16 @@ int userGroup = cp / pageButton; //유저 그룹 위치
 if(cp % pageButton == 0){
 	userGroup--;
 }
+int count = 0;
 %>
 <body>
 <div class="divSize">
 <%@ include file="admin_header/admin_header_1.jsp" %>
-<h1>주문 내역</h1>
+<h1><%=user_id %>님 주문 내역 검색 결과</h1>
 	<section>
 	<article>
-	<form name="ordListSearch" action="/mni/admin/ordListSearch.jsp" method="post">
-	<div class="searchBox"><input type="text" name="ord_search" placeholder="사용자 ID 입력" id="searchBox" required>
+	<form name="ordListSearch" onsubmit="userId();" method="post">
+	<div class="searchBox"><input type="text" name="user_id" placeholder="검색어 입력" id="searchBox" required>
 	<input type="submit" value="검색" class="seaBtnDeco">
 	</div>
 	</form>
@@ -112,7 +121,7 @@ if(cp % pageButton == 0){
          }
          for(int i = userGroup*pageButton+1; i<=(userGroup+1)*pageButton; i++){
             String button = i == cp ? "nowPage":"page";
-            %>&nbsp;&nbsp;<button class="<%=button %>" onclick="javascript:location.href='/mni/admin/ordList.jsp?cp=<%=i%>'"><%=i %></button>&nbsp;&nbsp;<%
+            %>&nbsp;&nbsp;<button class="<%=button %>" onclick="javascript:location.href='/mni/admin/ordListSearch.jsp?cp=<%=i%>'"><%=i %></button>&nbsp;&nbsp;<%
             if(i == totalPage){
                break;
             }
@@ -126,7 +135,7 @@ if(cp % pageButton == 0){
 			</tfoot>
 			<tbody>
 			<%
-			ArrayList<OrdDTO> arr = odao.prodSelect(cp, pageCnt);
+			ArrayList<OrdDTO> arr = odao.ordSearch(user_id,cp, pageCnt);
 			if(arr == null || arr.size() == 0){
 				 %>
 		            <tr>

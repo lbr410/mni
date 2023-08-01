@@ -10,13 +10,14 @@ public class ReviewDTO {
 	private String review_img;
 	private Date review_date;
 	private String user_id; // userInfo의 user_id
+	private String prod_name; //product의 prod_name
 	
 	public ReviewDTO() {
 		
 	}
 
 	public ReviewDTO(int review_idx, int prod_idx, int user_idx, String review_content, String review_img,
-			Date review_date, String user_id) {
+			Date review_date, String user_id, String prod_name) {
 		super();
 		this.review_idx = review_idx;
 		this.prod_idx = prod_idx;
@@ -25,6 +26,7 @@ public class ReviewDTO {
 		this.review_img = review_img;
 		this.review_date = review_date;
 		this.user_id = user_id;
+		this.prod_name = prod_name;
 	}
 
 	public int getReview_idx() {
@@ -81,5 +83,13 @@ public class ReviewDTO {
 
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;
+	}
+
+	public String getProd_name() {
+		return prod_name;
+	}
+
+	public void setProd_name(String prod_name) {
+		this.prod_name = prod_name;
 	}
 }

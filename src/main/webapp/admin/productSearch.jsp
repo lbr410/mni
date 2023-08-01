@@ -6,6 +6,7 @@
 <%@ page import="com.mni.product.*" %>
 <jsp:useBean id="pdao" class="com.mni.product.ProductDAO"></jsp:useBean>
 <%
+String prod_name = request.getParameter("prod_search");
 String admin_id = (String)session.getAttribute("admin_saveid");
 String ck = "";
 Cookie cks[]=request.getCookies();
@@ -43,10 +44,17 @@ function prodDelete(prod_idx){
       location.href='/mni/admin/productList.jsp';
    }
 }
+function productTitle(){
+	<%
+	if(prod_name == null){
+		prod_name = request.getParameter("prod_name");
+	}
+	%>
+}
 </script>
 </head>
 <%
-int totalCnt = pdao.prodCnt(); //db 연동 총 게시물
+int totalCnt = pdao.getSearchCnt(prod_name); //db 연동 총 게시물
 int pageCnt = 5; //한 페이지당 보여줄 게시물
 int pageButton = 10; //페이지 버튼 개수
 
@@ -72,11 +80,11 @@ if(cp % pageButton == 0){
 <body>
 <div class="divSize">
 <%@ include file="admin_header/admin_header_2.jsp" %>
-<h1>상품 관리</h1>
+<h1><%=prod_name %> 상품 관리</h1>
    <section>
    	<article>
-   	<form name="prodSearch" action="/mni/admin/productSearch.jsp" method="post">
-   <div class="searchBox"><input type="text" name="prod_search" placeholder="상품명 입력" id="searchBox" required>
+   	<form name="prodSearch" action="/mni/admin/productSearch.jsp" method="post" onsubmit="productTitle()">
+   <div class="searchBox"><input type="text" name="prod_name" placeholder="상품명 입력" id="searchBox" required>
    <input type="submit" value="검색" class="seaBtnDeco">
    </div>
    </form>
@@ -121,7 +129,7 @@ if(cp % pageButton == 0){
          </tfoot>
          <tbody>
          <%
-         ArrayList<ProductDTO> arr=pdao.prodList(cp, pageCnt);
+         ArrayList<ProductDTO> arr=pdao.prodSearch(prod_name, cp, pageCnt);
          String pet="";
          String brand="";
          String category="";
