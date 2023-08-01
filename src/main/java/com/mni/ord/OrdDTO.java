@@ -21,6 +21,7 @@ public class OrdDTO {
     private String prod_title;
     private String prod_title_img;
     private String prod_name;
+    private int order_total_price;
 
 
 	
@@ -72,16 +73,18 @@ public class OrdDTO {
 		      this.prod_title = prod_title;
 		   }
 
-		   public OrdDTO(int order_idx, String order_type, Date order_date, int order_price, String prod_title_img,
-		            String prod_name) {
-		         super();
-		         this.order_idx = order_idx;
-		         this.order_type = order_type;
-		         this.order_date = order_date;
-		         this.order_price = order_price;
-		         this.prod_title_img = prod_title_img;
-		         this.prod_name = prod_name;
-		      }
+	   public OrdDTO(int order_idx, String order_type, Date order_date, String prod_title_img,
+               String prod_name, String order_state, int prod_idx, int order_total_price) {
+            super();
+            this.order_idx = order_idx;
+            this.order_type = order_type;
+            this.order_date = order_date;
+            this.prod_title_img = prod_title_img;
+            this.prod_name = prod_name;
+            this.order_state = order_state;
+            this.prod_idx = prod_idx;
+            this.order_total_price = order_total_price;
+         }
 
 
 	public int getOrder_idx() {
@@ -228,4 +231,11 @@ public class OrdDTO {
 		this.prod_name = prod_name;
 	}
 
+	public int getOrder_total_price() {
+		return order_total_price;
+	}
+
+	public void setOrder_total_price(int order_total_price) {
+		this.order_total_price = order_total_price;
+	}
 }
