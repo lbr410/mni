@@ -16,7 +16,7 @@
         float: left;
     }
     .inner img{
-        width: 70%;
+        width: 58%;
     }
     
     

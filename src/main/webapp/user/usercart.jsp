@@ -78,7 +78,7 @@
 					<input type="hidden" name="cart_idx" value="<%=table.get(i).getCart_idx() %>">
 					<input type="hidden" name="total_price" value="<%=total[1] %>">
 					<input type="hidden" name="cart_size" value="<%=table.size() %>">
-					<input type="hidden" name="prod_idx" values="<%=table.get(i).getProd_idx() %>">
+					<input type="hidden" name="prod_idx" value="<%=table.get(i).getProd_idx() %>">
 					<img src="../admin/product_img/<%=table.get(i).getProd_title_img() %>" alt="상품이미지" class="prodImg"></td>
 					<td class="td1">
 					<div class="fontSize"><%=table.get(i).getProd_name() %></div></td>
