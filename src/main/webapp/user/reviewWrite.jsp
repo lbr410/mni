@@ -38,17 +38,33 @@
 </script>
 <body>
 <%@ include file="../header.jsp" %>
+<%
+	String prod_idx_s = request.getParameter("prod_idx");
+	if(prod_idx_s==null || prod_idx_s.equals("")) {
+%>
+		<script>
+			window.alert('접근할 수 없는 페이지입니다.');
+			location.href = '/mni/index.jsp';
+		</script>
+<%
+		return;
+	}
+	
+	int prod_idx = Integer.parseInt(prod_idx_s);
+	
+	Integer user_idx = (Integer)session.getAttribute("sidx");
+%>
 <section>
 	<article>
 	<br><h1>리뷰작성</h1>
-		<form name="reviewWrite" action="reviewWrite_ok.jsp" method="post">
+		<form name="reviewWrite" action="reviewWrite_ok.jsp" method="post" enctype="multipart/form-data">
 		<table class="tableSize">
 			<tr>
-				<td colspan="4"><textarea placeholder="최대 200자까지 입력 가능합니다."
-				name="review_content" onkeyup="textCheck()"></textarea></td>
+				<td colspan="4"><textarea placeholder="최대 300자까지 입력 가능합니다."
+				name="review_content" maxlength="299" onkeyup="textCheck()"></textarea></td>
 			</tr>
 			<tr>
-				<td colspan="4"><div class="textCount">(<span id="textLength">0</span> / 200)</div></td>
+				<td colspan="4"><div class="textCount">(<span id="textLength">0</span> / 300)</div></td>
 			</tr>
 			<tr>
 				<td colspan="4" class="td0">
@@ -63,6 +79,8 @@
 			</tr>
 			<tr>
 				<td colspan="4" class="td2">
+				<input type="hidden" name="prod_idx" value="<%=prod_idx %>">
+				<input type="hidden" name="user_idx" value="<%=user_idx %>">
 				<input type="submit" value="작성" class="countBtn">
 				</td>
 			</tr>
@@ -70,7 +88,6 @@
 		</form>
 	</article>
 </section>
-
 <%@ include file="../footer.jsp" %>
 </body>
 </html>

@@ -231,11 +231,11 @@ public class OrdDTO {
       this.prod_name = prod_name;
    }
 
-   public int getOrder_total_price() {
-      return order_total_price;
-   }
+	public int getOrder_total_price() {
+		return order_total_price;
+	}
 
-   public void setOrder_total_price(int order_total_price) {
-      this.order_total_price = order_total_price;
-   }
+	public void setOrder_total_price(int order_total_price) {
+		this.order_total_price = order_total_price;
+	}
 }
