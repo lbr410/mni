@@ -1,6 +1,7 @@
 package com.mni.userInfo;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -37,29 +38,28 @@ public class userInfoDAO {
       }
    }
    
-   //회원가입
+   //회원가입SM
    public int userjoin(userInfoDTO dto) {
       try {
          conn = com.mni.db.MniDB.getConn();
          String sql = "insert into userinfo "
-               + "values(user_idx.nextval,?,?,?,?,?,?,?,?,?,?,'n',sysdate,null)";
+               + "values(user_idx.nextval,?,?,?,?,?,?,?,?,'n',sysdate,sysdate,?)";
          ps = conn.prepareStatement(sql);
          ps.setString(1, dto.getUser_id());
          ps.setString(2, dto.getUser_name());
          ps.setString(3, dto.getUser_pwd());
          ps.setString(4, dto.getUser_tel());
-         ps.setInt(5, dto.getUser_jumin_front());
-         ps.setInt(6, dto.getUser_jumin_back());
-         ps.setInt(7, dto.getUser_zip());
-         ps.setString(8, dto.getUser_addr1());
-         ps.setString(9, dto.getUser_addr2());
-        if(dto.getUser_email() == null) {
-           ps.setString(10, "x");
+         ps.setInt(5, dto.getUser_zip());
+         ps.setString(6, dto.getUser_addr1());
+         ps.setString(7, dto.getUser_addr2());
+        if(dto.getUser_email() == null || dto.getUser_email().equals("")) {
+           ps.setString(8, "x");
         }else {
-           ps.setString(10, dto.getUser_email());
+           ps.setString(8, dto.getUser_email());
         }
-         int count = ps.executeUpdate();
-         return count;
+        ps.setLong(9, dto.getUser_jumin());
+        int count = ps.executeUpdate();
+        return count;
       }catch(Exception e) {
          e.printStackTrace();
          return -1;
@@ -87,8 +87,7 @@ public class userInfoDAO {
                String name=rs.getString("user_name");
                String usrpwd=rs.getString("user_pwd");
                String tel=rs.getString("user_tel");
-               int jumin_f=rs.getInt("user_jumin_front");
-               int jumin_b=rs.getInt("user_jumin_back");
+               int jumin=rs.getInt("user_jumin");
                int zip=rs.getInt("user_zip");
                String addr1=rs.getString("user_addr1");
                String addr2=rs.getString("user_addr2");
@@ -96,7 +95,7 @@ public class userInfoDAO {
                String del=rs.getString("user_delete");
                java.sql.Date joindate=rs.getDate("user_joindate");
                java.sql.Date ddate=rs.getDate("user_ddate");
-            dto = new userInfoDTO(idx, usrid, name, usrpwd, tel, jumin_f, jumin_b, zip, addr1, addr2, email, del,joindate, ddate);
+            dto = new userInfoDTO(idx, usrid, name, usrpwd, tel, jumin, zip, addr1, addr2, email, del,joindate, ddate);
             
             }                  
                return dto;
@@ -313,8 +312,7 @@ public class userInfoDAO {
             String name = rs.getString("user_name");
             String pwd = rs.getString("user_pwd");
             String tel = rs.getString("user_tel");
-            int user_jumin_front = rs.getInt("user_jumin_front");
-            int user_jumin_back = rs.getInt("user_jumin_back");
+            int user_jumin = rs.getInt("user_jumin");
             int user_zip = rs.getInt("user_zip");
             String user_addr1 = rs.getString("user_addr1");
             String user_addr2 = rs.getString("user_addr2");
@@ -322,7 +320,7 @@ public class userInfoDAO {
             String user_delete = rs.getString("user_delete");
             java.sql.Date user_joindate = rs.getDate("user_joindate");
             java.sql.Date user_ddate = rs.getDate("user_ddate");
-            userInfoDTO dto = new userInfoDTO(user_idx, id, name, pwd, tel, user_jumin_front, user_jumin_back, user_zip, user_addr1, user_addr2, user_email, user_delete, user_joindate, user_ddate);
+            userInfoDTO dto = new userInfoDTO(user_idx, id, name, pwd, tel, user_jumin, user_zip, user_addr1, user_addr2, user_email, user_delete, user_joindate, user_ddate);
             arr.add(dto);
          }
          return arr;
@@ -359,8 +357,7 @@ public class userInfoDAO {
                String user_name = rs.getString("user_name");
                String user_pwd = rs.getString("user_pwd");
                String user_tel = rs.getString("user_tel");
-               int user_jumin_front = rs.getInt("user_jumin_front");
-               int user_jumin_back = rs.getInt("user_jumin_back");
+               int user_jumin = rs.getInt("user_jumin");
                int user_zip = rs.getInt("user_zip");
                String user_addr1 = rs.getString("user_addr1");
                String user_addr2 = rs.getString("user_addr2");
@@ -368,7 +365,7 @@ public class userInfoDAO {
                String user_delete = rs.getString("user_delete");
                java.sql.Date user_joindate = rs.getDate("user_joindate");
                java.sql.Date user_ddate = rs.getDate("user_ddate");
-               userInfoDTO dto = new userInfoDTO(user_idx, user_id, user_name, user_pwd, user_tel, user_jumin_front, user_jumin_back, user_zip, user_addr1, user_addr2, user_email, user_delete, user_joindate, user_ddate);
+               userInfoDTO dto = new userInfoDTO(user_idx, user_id, user_name, user_pwd, user_tel, user_jumin, user_zip, user_addr1, user_addr2, user_email, user_delete, user_joindate, user_ddate);
                arr.add(dto);
             }
             return arr;
