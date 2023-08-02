@@ -312,7 +312,7 @@ public class userInfoDAO {
             String name = rs.getString("user_name");
             String pwd = rs.getString("user_pwd");
             String tel = rs.getString("user_tel");
-            int user_jumin = rs.getInt("user_jumin");
+            Long user_jumin = rs.getLong("user_jumin");
             int user_zip = rs.getInt("user_zip");
             String user_addr1 = rs.getString("user_addr1");
             String user_addr2 = rs.getString("user_addr2");
@@ -357,7 +357,7 @@ public class userInfoDAO {
                String user_name = rs.getString("user_name");
                String user_pwd = rs.getString("user_pwd");
                String user_tel = rs.getString("user_tel");
-               int user_jumin = rs.getInt("user_jumin");
+               Long user_jumin = rs.getLong("user_jumin");
                int user_zip = rs.getInt("user_zip");
                String user_addr1 = rs.getString("user_addr1");
                String user_addr2 = rs.getString("user_addr2");
