@@ -27,6 +27,7 @@ String prod_pet=mr.getParameter("prod_pet");
 String prod_info_img=mr.getFilesystemName("prod_info_img");
 String prod_brand_s=mr.getParameter("prod_brand");
 String prod_category_s=mr.getParameter("prod_category");
+
 int prod_price=Integer.parseInt(prod_price_s);
 int prod_count=Integer.parseInt(prod_count_s);
 int prod_brand=Integer.parseInt(prod_brand_s);

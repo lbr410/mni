@@ -139,7 +139,7 @@ int count = 0;
 			if(arr == null || arr.size() == 0){
 				 %>
 		            <tr>
-		               <td colspan="10" class="td">등록된 상품이 없습니다.</td>
+		               <td colspan="14" class="td">검색된 주문이 없습니다.</td>
 		            </tr>
 		            <%
 			}else{

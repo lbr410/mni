@@ -234,7 +234,7 @@ public class OrdDAO {
     public int adminSales(String startDate,String endDate) {
        try {
           conn=com.mni.db.MniDB.getConn();
-          String sql="select sum(order_price) from ord where to_char(order_date,'YYYY-MM-DD')>=? and to_char(order_date,'YYYY-MM-DD')<=? and order_state = '배송완료'";
+          String sql="select sum(order_price*order_count) from ord where to_char(order_date,'YYYY-MM-DD')>=? and to_char(order_date,'YYYY-MM-DD')<=? and order_state = '배송완료'";
           ps=conn.prepareStatement(sql);
           ps.setString(1, startDate);
           ps.setString(2, endDate);
