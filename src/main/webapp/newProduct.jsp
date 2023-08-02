@@ -9,7 +9,7 @@
 </head>
 <%@ include file="header.jsp" %>
 <body>
-<div class="bar">홈>신상품</div>
+<div class="bar">홈 > 신상품</div>
 <div class="head-title">신상품</div>
 	<main>
         <div id="place-items-wrapper">
