@@ -36,6 +36,8 @@
 	ProductDTO dto = pdao.prodDetail(idx);
 	
 	int totalPrice = dto.getProd_price();
+	String prod_idx_s = request.getParameter("idx");
+	int prod_idx = Integer.parseInt(prod_idx_s);
 %>
 <script>
 	// 갯수 버튼 눌렀을 때 갯수 증감, 갯수에 따라 주문 금액 변경
@@ -115,14 +117,14 @@
 	<li><a href="#detail">상세정보</a></li>
 	<li><a href="#review">구매후기</a></li>
 	<li><a href="#cancel">취소안내</a></li>
-	<li><a href="/mni/notice/noticeList.jsp">문의</a></li>
+	<li><a href="/mni/user/noticeList.jsp">문의</a></li>
 	</ul>
 </article>
 </section>
 <hr id="ulhr">
 <section class="section">
 <article>
-	<h2 id="section_dt"><a>상세정보</a></h2>
+	<h2 id="section_dt"><a name="detail">상세정보</a></h2>
 	<div id="detail_img">
 	<img alt="상세이미지" src="/mni/admin/product_img/<%=dto.getProd_info_img() %>">
 	</div>
@@ -131,7 +133,7 @@
 <section class="section">
 <article>
 	<h2 class="section_rv"><a>구매후기</a></h2>
-	<span><a href="/mni/product/reviewMore.jsp">리뷰 더 보기</a></span>
+	<span><a href="/mni/product/reviewMore.jsp?idx=<%=prod_idx %>">리뷰 더 보기</a></span>
 	<hr class="detail_hr">
 		</article>
 	</section>
@@ -181,7 +183,7 @@
 </section>
 <section class="section">
 <article>
-	<h1 class="section_rv"><a>취소안내</a></h1>
+	<h1 class="section_rv"><a name="cancel">취소안내</a></h1>
 	<fieldset>
 	<ul>
 		<li><h3>주문취소</h3></li>

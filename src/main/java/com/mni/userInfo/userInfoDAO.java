@@ -220,7 +220,7 @@ public class userInfoDAO {
    
    /**사용자 정보 수정*/
     public int setUserInfo(userInfoDTO dto) {
-    	try {
+       try {
          conn=com.mni.db.MniDB.getConn();
          String sql="update userinfo set user_name=?, user_tel=?, "
                + "user_email=?, user_pwd=?, user_zip=?, user_addr1=? , user_addr2=? ";

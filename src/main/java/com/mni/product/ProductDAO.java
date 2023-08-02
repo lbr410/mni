@@ -40,6 +40,46 @@ public class ProductDAO {
       }
    }
 
+      /** 카테고리별 상품 내역 출력 메서드 */
+         public ArrayList<ProductDTO> menuList(int cp, int pageCnt, int num) {
+            try {
+               conn = com.mni.db.MniDB.getConn();
+               int start = (cp-1)*pageCnt+1;
+               int end = cp*pageCnt;
+               String sql = "select * from"
+                     + "(select rownum as rnum, a.* from"
+                     + "(select * from product where prod_category = ?) a) "
+                     + "where rnum>=? and rnum<=?";
+               ps = conn.prepareStatement(sql);
+               ps.setInt(1, num);
+               ps.setInt(2, start);
+               ps.setInt(3, end);
+               rs = ps.executeQuery();
+               ArrayList<ProductDTO> arr = new ArrayList<ProductDTO>();
+               while(rs.next()) {
+                  String name=rs.getString("prod_name");
+                  String title=rs.getString("prod_title");
+                  int price=rs.getInt("prod_price");
+                  String img=rs.getString("prod_title_img");
+                  
+                  ProductDTO dto=new ProductDTO(name, title, price, img);
+                  arr.add(dto);
+               }
+               return arr;
+            } catch(Exception e) {
+               e.printStackTrace();
+               return null;
+            } finally {
+               try {
+                  if(rs!=null)rs.close();
+                  if(ps!=null)ps.close();
+                  if(conn!=null)conn.close();
+               } catch(Exception e2) {
+               }
+            }
+         }
+         
+
 	/** 상품 내역 출력 메서드 */
 	public ArrayList<ProductDTO> prodList(int cp,int pageCnt) {
 		try {
@@ -357,4 +397,63 @@ public class ProductDAO {
 	         }
 	      }
 	   }
+	      
+	      /**카테고리별상품 총 개수 메서드*/
+	      public int menuCnt(int num) {
+	         try {
+	            conn=com.mni.db.MniDB.getConn();
+	            String sql="select count(*) from product where prod_category = ?";
+	            ps=conn.prepareStatement(sql);
+	              ps.setInt(1, num);
+	            rs=ps.executeQuery();
+	            rs.next();
+	            int count=rs.getInt(1);
+	            return count;
+	            
+	         }catch(Exception e) {
+	            e.printStackTrace();
+	            return 0;
+	         }finally {
+	            try {
+	               if(rs!=null)rs.close();
+	               if(ps!=null)ps.close();
+	               if(conn!=null)conn.close();
+	            }catch(Exception e2) {}
+	         }
+	      }
+	      
+	      /**베스트 관련 메서드*/
+	      public ArrayList<ProductDTO> prodBest(){
+	         try {
+	            conn=com.mni.db.MniDB.getConn();
+	            String sql="select * from "
+	                  + "(select rownum as rnum,a.* from "
+	                  + "(select * from product order by prod_sale desc) a) b "
+	                  + "where rnum>=(1-1)*8+1 and rnum<=1*8";
+	            ps=conn.prepareStatement(sql);
+	            rs=ps.executeQuery();
+	            
+	            ArrayList<ProductDTO>arr=new ArrayList<ProductDTO>();
+	            while(rs.next()) {
+	               String prod_name=rs.getString("prod_name");
+	               String prod_title=rs.getString("prod_title");
+	               int prod_price=rs.getInt("prod_price");
+	               String prod_title_img=rs.getString("prod_title_img");
+	               int prod_idx=rs.getInt("prod_idx");
+	               ProductDTO dto=new ProductDTO(prod_idx, prod_name, prod_title, prod_price, prod_title_img);
+	               arr.add(dto);
+	            }
+	            return arr;
+	         }catch(Exception e) {
+	            e.printStackTrace();
+	            return null;
+	         }finally {
+	            try {
+	               if(rs!=null)rs.close();
+	               if(ps!=null)ps.close();
+	               if(conn!=null)conn.close();
+	            }catch(Exception e2) {}
+	         }
+	      }
+	      
 }

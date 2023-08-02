@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="java.text.*" %>
+<%@page import="com.mni.product.*" %>
+<%@page import="java.util.*" %>
+<jsp:useBean id="pdao" class="com.mni.product.ProductDAO"></jsp:useBean>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,121 +13,58 @@
 </head>
 <%@ include file="/header.jsp" %>
 <body>
-<div class="bar">홈>베스트</div>
+<div class="bar">홈 > 베스트</div>
 <div class="head-title">베스트</div>
-	<main>
-        <div id="place-items-wrapper">
-         <div class="place-list-item">
-         	<div class="best-icon">
-				<img src="/mni/img/best1.png" alt="best1" name="besticon">
-			</div>
-            <div class="place-image-wrapper">
-                <img src="/mni/img/imgslide.jpg" alt="place image" name="best">
-            </div>
-            <div class="description-section">
-                <div class="description-section_title">강아지 간식</div>
-                <div class="description-section_content" id="title">맛있는 강아지 사료</div>
-                <div class="description-section_price">10,000원</div>
-            </div>
-            </div>
-            <div class="place-list-item">
-            <div class="best-icon">
-				<img src="/mni/img/best2.png" alt="best2" name="besticon">
-			</div>
-            <div class="place-image-wrapper">
-                <img src="/mni/img/imgslide.jpg" alt="place image" name="best">
-            </div>
-            <div class="description-section">
-                <div class="description-section_title">강아지 간식</div>
-                <div class="description-section_content" id="title">맛있는 강아지 사료</div>
-                <div class="description-section_price">10,000원</div>
-            </div>
-            </div>
-            <div class="place-list-item">
-            <div class="best-icon">
-				<img src="/mni/img/best3.png" alt="best3" name="besticon">
-			</div>
-            <div class="place-image-wrapper">
-                <img src="/mni/img/imgslide.jpg" alt="place image" name="best">
-            </div>
-            <div class="description-section">
-              <div class="description-section_title">강아지 간식</div>
-              <div class="description-section_content" id="title">맛있는 강아지 사료</div>
-              <div class="description-section_price">10,000원</div>
-            </div>
-          </div>
-          <div class="place-list-item">
-			<div class="best-icon">
-				<img src="/mni/img/rank4.jpg" alt="best4" name="besticon">
-			</div>
-			<div class="place-image-wrapper">
-              <img src="/mni/img/imgslide.jpg" alt="place image">
-            </div>
-            <div class="description-section">
-              <div class="description-section_title">강아지 간식</div>
-              <div class="description-section_content" id="title">맛있는 강아지 사료</div>
-              <div class="description-section_price">10,000원</div>
-            </div>
-        </div>
-        </div>
-    </main>
-    <main>
-        <div id="place-items-wrapper">
-         <div class="place-list-item">
-         	<div class="best-icon">
-				<img src="/mni/img/rank5.jpg" alt="best5" name="besticon">
-			</div>
-            <div class="place-image-wrapper">
-                <img src="/mni/img/imgslide.jpg" alt="place image" name="best">
-            </div>
-            <div class="description-section">
-                <div class="description-section_title">강아지 간식</div>
-                <div class="description-section_content" id="title">맛있는 강아지 사료</div>
-                <div class="description-section_price">10,000원</div>
-            </div>
-            </div>
-            <div class="place-list-item">
-            <div class="best-icon">
-				<img src="/mni/img/rank6.jpg" alt="best6" name="besticon">
-			</div>
-            <div class="place-image-wrapper">
-                <img src="/mni/img/imgslide.jpg" alt="place image" name="best">
-            </div>
-            <div class="description-section">
-                <div class="description-section_title">강아지 간식</div>
-                <div class="description-section_content" id="title">맛있는 강아지 사료</div>
-                <div class="description-section_price">10,000원</div>
-            </div>
-            </div>
-            <div class="place-list-item">
-            <div class="best-icon">
-				<img src="/mni/img/rank7.jpg" alt="best7" name="besticon">
-			</div>
-            <div class="place-image-wrapper">
-                <img src="/mni/img/imgslide.jpg" alt="place image" name="best">
-            </div>
-            <div class="description-section">
-              <div class="description-section_title">강아지 간식</div>
-              <div class="description-section_content" id="title">맛있는 강아지 사료</div>
-              <div class="description-section_price">10,000원</div>
-            </div>
-          </div>
-          <div class="place-list-item">
-			<div class="best-icon">
-				<img src="/mni/img/rank8.jpg" alt="best8" name="besticon">
-			</div>            <div class="place-image-wrapper">
-              <img src="/mni/img/imgslide.jpg" alt="place image">
-            </div>
-            <div class="description-section">
-              <div class="description-section_title">강아지 간식</div>
-              <div class="description-section_content" id="title">맛있는 강아지 사료</div>
-              <div class="description-section_price">10,000원</div>
-            </div>
-        </div>
-        </div>
-    </main>
-    	
-
+<div class="prodSection">
+<table>
+	<tbody>
+	<%
+	ArrayList<ProductDTO>arr=pdao.prodBest();
+	DecimalFormat df = new DecimalFormat("#,##0원");
+	if(arr==null || arr.size()==0){
+		%>
+		<tr>
+			<td colspan="3">등록된 상품이 없습니다.</td>
+		</tr>
+		<%
+	}else{
+		%><tr><%
+		for(int i=0;i<arr.size();i++){
+			String icon="";
+			switch(i){
+			case 0: icon="best1.png"; break;
+			case 1: icon="best2.png"; break;
+			case 2: icon="best3.png"; break;
+			default : icon="rank"+(i+1)+".jpg"; 
+			}		
+			%>
+				<td>
+					<div class="place-list-item">
+         				<div class="best-icon">
+						<img src="/mni/img/<%=icon %>" alt="best1" name="besticon">
+					</div>
+          		  <div class="place-image-wrapper">
+             		   <a href="javascript:location.href='/mni/product/product.jsp?idx=<%=arr.get(i).getProd_idx()%>'">
+             		   <img src="/mni/img/<%=arr.get(i).getProd_title_img() %>" alt="place image" name="best"></a>
+          		  </div>
+          		  <div class="description-section">
+             		  <div class="description-section_title"><%=arr.get(i).getProd_name() %></div>
+              		  <div class="description-section_content" id="title"><%=arr.get(i).getProd_title() %></div>
+               		  <div class="description-section_price"><%=df.format(arr.get(i).getProd_price()) %></div>
+           		 </div>
+           		 </div>
+				</td>
+			<%
+				if(i%4==3 && i!=arr.size()){
+					%></tr><tr><%	
+				}					
+			}
+			%></tr><%	
+		}
+	%>
+	</tbody>
+</table>
+</div>
 <%@ include file="footer.jsp" %>
 </body>
 
