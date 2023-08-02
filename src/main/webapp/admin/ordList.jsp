@@ -126,7 +126,7 @@ if(cp % pageButton == 0){
 			</tfoot>
 			<tbody>
 			<%
-			ArrayList<OrdDTO> arr = odao.prodSelect(cp, pageCnt);
+			ArrayList<OrdDTO> arr = odao.prodSelect();
 			if(arr == null || arr.size() == 0){
 				 %>
 		            <tr>
