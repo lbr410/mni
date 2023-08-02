@@ -70,7 +70,7 @@
 	    for(int i = userGroup*pageButton+1; i<=(userGroup+1)*pageButton; i++) {
 			String button = i == cp ? "nowPage":"page";
 			%>&nbsp;&nbsp;<button class="<%=button %>" onclick="javascript:location.href='/mni/product/reviewMore.jsp?idx=<%=prod_idx %>&cp=<%=i%>'"><%=i %></button>&nbsp;&nbsp;<%
-			if(i == totalPage){
+			if(i == totalPage){ 
 				break;
 			}
 		}
