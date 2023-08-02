@@ -10,19 +10,17 @@
 .container{
         width: 300vw;
         transition: transform 0.5s;
-    }
-    .inner{
-        width: 100vw;
-        float: left;
-    }
-    .inner img{
-        width: 58%;
-    }
-    
-    
-    label{
-        z-index: 10;
-    }
+}
+.inner{
+    width: 100vw;
+    float: left;
+}
+.inner img{
+    width: 65%;
+}
+label{
+    z-index: 10;
+}
     
 #buttonDeco{
     width: 22px;
