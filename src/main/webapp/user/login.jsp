@@ -19,7 +19,7 @@ if(cks!=null){
 }
 %>
 <body>
-<%@ include file="/header.jsp" %>
+<%@ include file="/header.jsp" %> 
 
 <section class = "loginsection">
 	<article>

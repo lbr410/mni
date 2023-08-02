@@ -21,8 +21,8 @@ function sethide(){
 	}
 function showException(){
 		 
-	var pwd = document.fm.user_pwd.value;
-	var pwd_s = document.fm.pwdcheck.value;
+	var pwd = document.join.user_pwd.value;
+	var pwd_s = document.join.pwdcheck.value;
 		 
 	if(pwd == pwd_s){
 		document.getElementById('pwdchecking').style.display = 'none';
@@ -33,6 +33,19 @@ function showException(){
 function addrpopup(){
 	window.open('addrPopup.jsp','popup','width=500, height=300');
 }
+
+function userInfoModify(){
+	var pwd = document.join.user_pwd.value;
+	var pwd_s = document.join.pwdcheck.value;
+	
+	if(pwd == pwd_s){
+		return = true;
+	}else{
+		window.alert('입력하신 비밀번호가 일치하지 않습니다.');
+		return = false;
+	}
+	
+}
 </script>
 <body onload = "sethide()">
 <%@include file = "../header.jsp" %>
@@ -40,7 +53,7 @@ function addrpopup(){
 	<article>
 		<h2>회원정보 수정</h2>
 		<hr>
-		<form name = "join" class = "info" action = "userInfo_ok.jsp" method="post">
+		<form name = "join" action = "userInfo_ok.jsp" method="post" onsubmit = "return userInfoModify()">
 		<table>
 			<tr>
 				<th>이름</th>

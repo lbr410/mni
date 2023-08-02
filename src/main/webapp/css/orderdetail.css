@@ -27,6 +27,12 @@
     margin-top: -140px;
     }
     
+    .h1{
+    font-size: 30px; 
+    margin-left: 400px;
+    margin-top: -140px;
+    }
+    
     h3{
     margin-left: 300px;
     margin-top: 70px;
@@ -38,12 +44,17 @@
     .productimg{
     	width: 130px;
     	height: 170px;
-    	background: url("/mni/img/main.jpeg") darkgray center;
-    	background-size: 150px;
     	margin-top: 10px;
     	margin-left: 300px;
     }
     
+    .orderList{
+    width: 400px; 
+    font-size:20px;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    margin-right: -150px;
+    }
     
     table{
     margin-top: -150px; 

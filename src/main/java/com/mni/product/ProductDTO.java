@@ -88,6 +88,14 @@ public class ProductDTO {
       this.prod_idx = prod_idx;
       this.prod_title = prod_title;
    }
+   
+	public ProductDTO(String prod_name, String prod_title, int prod_price, String prod_title_img) {
+		super();
+		this.prod_name = prod_name;
+		this.prod_title = prod_title;
+		this.prod_price = prod_price;
+		this.prod_title_img = prod_title_img;
+	}
 
    public int getProd_idx() {
       return prod_idx;
