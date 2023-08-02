@@ -20,22 +20,21 @@
 	MultipartRequest mr = new MultipartRequest(request, savePath, size, "UTF-8", new DefaultFileRenamePolicy());
 	String nfile = mr.getFilesystemName("review_img");
 	
-	if(nfile!=null) {
-		int count = rdao.reviewWrite(mr);
-		if(count>0) {
-		%>
-			<script>
-				window.alert('리뷰 작성 성공!');
-				location.href = '/mni/user/orderdetail.jsp';
-			</script>
-		<%
-		} else {
-		%>
-			<script>
-				window.alert('리뷰 작성 실패!');
-				location.href = '/mni/user/orderdetail.jsp';
-			</script>
-		<%		
-		}
+	int count = rdao.reviewWrite(mr);
+	if(count>0) {
+	%>
+		<script>
+			window.alert('리뷰 작성 성공!');
+			location.href = '/mni/user/orderdetail.jsp';
+		</script>
+	<%
+	} else {
+	%>
+		<script>
+			window.alert('리뷰 작성 실패!');
+			location.href = '/mni/user/orderdetail.jsp';
+		</script>
+	<%		
 	}
+
 %>

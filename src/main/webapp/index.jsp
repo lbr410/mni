@@ -97,7 +97,8 @@
             		<span>아무것도 없으면 나올 페이지 추가</span>
             <%
             	} else {
-            		for(int i=0; i<4; i++) {
+            		int forSize = table.size()<=4 ? table.size() : 4;
+            		for(int i=0; i<forSize; i++) {
             %>
 	             <div class="place-list-item">
 	                <div class="place-image-wrapper">

@@ -14,7 +14,7 @@ public class OrdDAO {
        try {
           conn = com.mni.db.MniDB.getConn();
    
-          String sql = "insert into ord values(order_idx.nextval,?,?,?,?,?,?,?,?,sysdate,'주문완료',?,?)";
+          String sql = "insert into ord values(order_idx.nextval, ?, ?, ?, ?, ?, ?, ?, ?, sysdate, '미승인', ?, ?)";
           ps = conn.prepareStatement(sql);
           ps.setInt(1, sidx);
           ps.setInt(2, prod_idx);

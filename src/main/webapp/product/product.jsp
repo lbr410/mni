@@ -143,7 +143,8 @@
 		<div>등록된 리뷰가 없습니다.</div>
 <%
 	} else {
-		for(int i=0; i<table.size(); i++) {
+		int forSize = table.size()<=3 ? table.size() : 3;
+		for(int i=0; i<forSize; i++) {
 %>
 		
 
@@ -164,7 +165,7 @@
 			<span><%=table.get(i).getReview_content() %></span>
 			</div>
 			<div>
-			<img src="/mni/user/review_img/<%=table.get(i).getReview_img() %>" alt="review image">
+			<img src="/mni/user/review_img/<%=table.get(i).getReview_img() %>" alt="review image" onError="this.style.visibility='hidden'">
 			</div>
 			<hr class="review_hr">
 <%
