@@ -8,8 +8,7 @@ public class userInfoDTO {
 	private String user_name;
 	private String user_pwd;
 	private String user_tel;
-	private int user_jumin_front;
-	private int user_jumin_back;
+	private long user_jumin;
 	private int user_zip;
 	private String user_addr1;
 	private String user_addr2;
@@ -34,20 +33,19 @@ public class userInfoDTO {
 		this.user_addr2 = user_addr2;
 		this.user_email = user_email;
 	}
-
-
-
-	public userInfoDTO(int user_idx, String user_id, String user_name, String user_pwd, String user_tel, int user_jumin_front,
-			int user_jumin_back, int user_zip, String user_addr1, String user_addr2, String user_email,
-			String user_delete, Date user_joindate, Date user_ddate) {
+	
+	
+	
+	public userInfoDTO(int user_idx, String user_id, String user_name, String user_pwd, String user_tel, long user_jumin,
+			int user_zip, String user_addr1, String user_addr2, String user_email, String user_delete,
+			Date user_joindate, Date user_ddate) {
 		super();
 		this.user_idx = user_idx;
 		this.user_id = user_id;
 		this.user_name = user_name;
 		this.user_pwd = user_pwd;
 		this.user_tel = user_tel;
-		this.user_jumin_front = user_jumin_front;
-		this.user_jumin_back = user_jumin_back;
+		this.user_jumin = user_jumin;
 		this.user_zip = user_zip;
 		this.user_addr1 = user_addr1;
 		this.user_addr2 = user_addr2;
@@ -56,26 +54,21 @@ public class userInfoDTO {
 		this.user_joindate = user_joindate;
 		this.user_ddate = user_ddate;
 	}
-
-
-
-	public userInfoDTO(String user_id, int user_jumin_front, int user_jumin_back) {
+	
+	
+	/*회원가입SM*/
+	public userInfoDTO(String user_id, String user_name, String user_pwd, String user_tel, long user_jumin, int user_zip,
+			String user_addr1, String user_addr2, String user_email) {
 		super();
 		this.user_id = user_id;
-		this.user_jumin_front = user_jumin_front;
-		this.user_jumin_back = user_jumin_back;
-	}
-
-
-
-	public String getUser_id() {
-		return user_id;
-	}
-
-
-
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
+		this.user_name = user_name;
+		this.user_pwd = user_pwd;
+		this.user_tel = user_tel;
+		this.user_jumin = user_jumin;
+		this.user_zip = user_zip;
+		this.user_addr1 = user_addr1;
+		this.user_addr2 = user_addr2;
+		this.user_email = user_email;
 	}
 
 	public int getUser_idx() {
@@ -84,6 +77,14 @@ public class userInfoDTO {
 
 	public void setUser_idx(int user_idx) {
 		this.user_idx = user_idx;
+	}
+
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
 
 	public String getUser_name() {
@@ -110,20 +111,12 @@ public class userInfoDTO {
 		this.user_tel = user_tel;
 	}
 
-	public int getUser_jumin_front() {
-		return user_jumin_front;
+	public long getUser_jumin() {
+		return user_jumin;
 	}
 
-	public void setUser_jumin_front(int user_jumin_front) {
-		this.user_jumin_front = user_jumin_front;
-	}
-
-	public int getUser_jumin_back() {
-		return user_jumin_back;
-	}
-
-	public void setUser_jumin_back(int user_jumin_back) {
-		this.user_jumin_back = user_jumin_back;
+	public void setUser_jumin(long user_jumin) {
+		this.user_jumin = user_jumin;
 	}
 
 	public int getUser_zip() {
@@ -181,6 +174,11 @@ public class userInfoDTO {
 	public void setUser_ddate(Date user_ddate) {
 		this.user_ddate = user_ddate;
 	}
+
+	
+
+
+
 	
 	
 }
