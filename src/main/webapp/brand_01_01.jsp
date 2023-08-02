@@ -1,11 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="java.text.*"%>
 <%@page import="java.util.*" %>
 <%@page import="com.mni.brand.*" %>
 <jsp:useBean id="bdao" class="com.mni.brand.BrandDAO"></jsp:useBean>
 <%
 String num_s=request.getParameter("brandNum");
+if(num_s==null || num_s.equals("")){
+	num_s="0";
+	%>
+	<script>
+	window.alert('잘못된 접근입니다.');
+	location.href='/mni/index.jsp';
+	</script>
+	<%
+}
 int num=Integer.parseInt(num_s);
+
 
 String brandName="";
 String brandLogo="";
@@ -15,7 +26,7 @@ case 100: brandName="오리젠"; brandLogo="/mni/img/orijen.jpg"; brandBanner="/
 case 200: brandName="아카나"; brandLogo="/mni/img/acana.jpg"; brandBanner="/mni/img/acana_banner.jpg"; break;
 case 300: brandName="로얄캐닌"; brandLogo="/mni/img/royalcanin.JPG"; brandBanner="/mni/img/royalcanin_banner.jpg"; break;
 case 400: brandName="아투"; brandLogo="/mni/img/aatu.JPG"; brandBanner="/mni/img/aatu_banner.jpg"; break;
-default : %><script> window.alert='잘못된..경로 입니다.'; location.href='brand_01_01.jsp';</script><%
+default : %><script> window.alert='잘못된 접근입니다.'; location.href='brand.jsp';</script><%
 }
 
 %>    
@@ -24,7 +35,7 @@ default : %><script> window.alert='잘못된..경로 입니다.'; location.href=
 <html>
 <head>
 <meta charset="UTF-8">
-<title>오리젠</title>
+<title><%=brandName %></title>
 <link rel="stylesheet" type="text/css" href="/mni/css/brand_01_01.css">
 </head>
 <%
@@ -102,6 +113,7 @@ if(totalCnt!=-1){
 		<tbody>
 				<%
 				ArrayList<BrandDTO> arr=bdao.brandNum(num,cp,pageCnt);
+				DecimalFormat df = new DecimalFormat("#,##0원");
 				if(arr==null || arr.size()==0){
 					%>
 					<tr>
@@ -120,7 +132,7 @@ if(totalCnt!=-1){
 	               					<div class="description-section">
 	               		 				<div class="prodName" id="title"><%=arr.get(i).getProd_name() %></div>
 				           				<div class="prodTitle"><%=arr.get(i).getProd_title() %></div>
-				             	    	<div class="prodPrice"><%=arr.get(i).getProd_price() %>원</div>
+				             	    	<div class="prodPrice"><%=df.format(arr.get(i).getProd_price()) %></div>
 	          	 					</div>
 	      		  				</div>		
 							</td>	

@@ -87,7 +87,7 @@ public class userInfoDAO {
                String name=rs.getString("user_name");
                String usrpwd=rs.getString("user_pwd");
                String tel=rs.getString("user_tel");
-               long jumin=rs.getLong("user_jumin");
+               Long jumin=rs.getLong("user_jumin");
                int zip=rs.getInt("user_zip");
                String addr1=rs.getString("user_addr1");
                String addr2=rs.getString("user_addr2");

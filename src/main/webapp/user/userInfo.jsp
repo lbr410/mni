@@ -48,7 +48,7 @@ function userInfoModify(){
 }
 </script>
 <body onload = "sethide()">
-<%@include file = "../header.jsp" %>
+<%@include file = "/header.jsp" %>
 <section class = "section">
 	<article>
 		<h2>회원정보 수정</h2>

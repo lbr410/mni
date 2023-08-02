@@ -15,10 +15,7 @@
         <div id="brand-items-wrapper">
          <div class="brand-list-item">
             <div class="brand-image-wrapper">
-
-                <a href="/mni/brand_01_01.jsp"><img class="brandlogo"src="/mni/img/orijen.jpg" alt="brand image" name="brand"></a>
-
-                <a href="javascript:location.href='brand_01_01.jsp?brandNum=100'"><img src="mni/img/orijen_logo.png" alt="brand image" name="brand"></a>
+                <a href="javascript:location.href='brand_01_01.jsp?brandNum=100'"><img src="/mni/img/orijen.jpg" alt="brand image" name="brand" ></a>
             </div>
             <div class="description-section">
                 <div class="description-section_title" id="title">오리젠</div>
@@ -26,10 +23,7 @@
           </div>
          <div class="brand-list-item">
             <div class="brand-image-wrapper">
-
-                <a href="#"><img src="/mni/img/acana.jpg" alt="brand image" name="brand"></a>
-
-                <a href="javascript:location.href='brand_01_01.jsp?brandNum=200'"><img src="/mni/img/imgslide.jpg" alt="brand image" name="brand"></a>
+                <a href="javascript:location.href='brand_01_01.jsp?brandNum=200'"><img src="/mni/img/acana.jpg" alt="brand image" name="brand"></a>
             </div>
             <div class="description-section">
                 <div class="description-section_title" id="title">아카나</div>
@@ -37,9 +31,7 @@
           </div>
           <div class="brand-list-item">
             <div class="brand-image-wrapper">
-
-                <a href="#"><img src="/mni/img/royalcanin.JPG" alt="brand image" name="brand"></a>
-                <a href="javascript:location.href='brand_01_01.jsp?brandNum=300'"><img src="/mni/img/imgslide.jpg" alt="brand image" name="brand"></a>
+                <a href="javascript:location.href='brand_01_01.jsp?brandNum=300'"><img src="/mni/img/royalcanin.JPG" alt="brand image" name="brand"></a>
             </div>
             <div class="description-section">
                 <div class="description-section_title" id="title">로얄캐닌</div>
@@ -47,10 +39,7 @@
           </div>
           <div class="brand-list-item">
             <div class="brand-image-wrapper">
-
-                <a href="#"><img src="/mni/img/aatu.JPG" alt="brand image" name="brand"></a>
-                <a href="javascript:location.href='brand_01_01.jsp?brandNum=400'"><img src="/mni/img/imgslide.jpg" alt="brand image" name="brand"></a>
-
+                <a href="javascript:location.href='brand_01_01.jsp?brandNum=400'"><img src="/mni/img/aatu.JPG" alt="brand image" name="brand"></a>
             </div>
             <div class="description-section">
                 <div class="description-section_title" id="title">아투</div>
