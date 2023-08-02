@@ -7,7 +7,12 @@
     String name=(String)session.getAttribute("sname");
     %>
     
-       
+    <script>
+    	function userSearch(){
+    		var search = document.headerSearch.search.value;
+    		location.href = '/mni/headerSearch.jsp?search='+search;
+    	}
+    </script>   
     <header>
     <div id="member">
     <%
@@ -45,10 +50,10 @@
             <div>고양이</div>
         </button>
         </div>
-        <form class="little-search" action = "/mni/headerSearch.jsp">
+        <form name = "headerSearch" class="little-search" action = "/mni/headerSearch.jsp">
             <input type="text" maxlength="30" name="search" id="search" placeholder="검색어를 입력하세요.">
                 <div id="magnifying-glass wrapper">
-                    <img id="search-icon" src="/mni/img/magnifying glass icon.png" alt="magnifying glass icon">
+                    <img id="search-icon" src="/mni/img/magnifying glass icon.png" alt="magnifying glass icon" onclick = "userSearch()">
                 </div>
         </form>
     <span class="top-right"> </span>
