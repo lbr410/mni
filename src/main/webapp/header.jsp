@@ -26,7 +26,7 @@
         <% 
      }
         %>
-           <a class="center" href="#">고객센터</a>
+           <a class="center" href="/mni/user/noticeList.jsp">고객센터</a>
     </div><br>
     <div class="header-content">
         <div class="logo" onclick="location.href='/mni/index.jsp'">
@@ -60,10 +60,10 @@
                 <span class="dropbtn_icon123">카테고리</span>
             </nav>
              <div class="dropdown-content">
-                <a href="javascript:location.href='feed.jsp?categoryNum=01'">사료</a>
-                <a href="javascript:location.href='snack.jsp?categoryNum=02'">간식</a>
-                <a href="javascript:location.href='supplies.jsp?categoryNum=03'">용품</a>
-                <a href="javascript:location.href='toy.jsp?categoryNum=04'">장난감</a>
+                <a href="javascript:location.href='/mni/category.jsp?categoryNum=01'">사료</a>
+                <a href="javascript:location.href='/mni/category.jsp?categoryNum=02'">간식</a>
+                <a href="javascript:location.href='/mni/category.jsp?categoryNum=03'">용품</a>
+                <a href="javascript:location.href='/mni/category.jsp?categoryNum=04'">장난감</a>
             </div>
         </div>
         <div class="btn"><a href="/mni/best.jsp">베스트</a></div>
