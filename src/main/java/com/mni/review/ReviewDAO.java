@@ -262,4 +262,77 @@ public class ReviewDAO {
 		}catch(Exception e2) {}
 	}
    }
+   
+   
+   /** 해당 상품에 대한 리뷰 수(리뷰 더 보기) - BR */
+   public int productReviewCnt(int prod_idx) {
+	   	try {
+	   		conn = com.mni.db.MniDB.getConn();
+	   		String sql = "select count(*) from review where prod_idx = ?";
+	   		ps = conn.prepareStatement(sql);
+	   		ps.setInt(1, prod_idx);
+	   		rs = ps.executeQuery();
+	   		rs.next();
+	   		int count = rs.getInt(1);
+	   		return count;
+	   	} catch(Exception e) {
+	   		e.printStackTrace();
+	   		return -1;
+	   	} finally {
+	   		try {
+	   			if(rs!=null) rs.close();
+	   			if(ps!=null) ps.close();
+	   			if(conn!=null) conn.close();
+	   		}catch(Exception e) {}
+	   	}
+   }
+   
+   /** 해당 상품에 대한 리뷰 출력(리뷰 더 보기) - BR */
+   public ArrayList<ReviewDTO> productReview(int prod_idx, int cp, int pageCnt){
+	   try {
+		   conn = com.mni.db.MniDB.getConn();
+		   int start = (cp-1)*pageCnt+1;
+		   int end = cp*pageCnt;
+		   
+		   String sql = "select * from "
+		   		+ "(select rownum as rnum, a.* from "
+		   		+ "(select u.user_id, r.review_idx, r.review_content, r.review_img, r.review_date from review r, userinfo u where u.user_idx = r.user_idx and r.prod_idx = ? "
+		   		+ "order by review_idx desc) a) b "
+		   		+ "where rnum >= ? and rnum <= ?";
+		   
+		   ps=conn.prepareStatement(sql);
+		   ps.setInt(1, prod_idx);
+		   ps.setInt(2, start);
+		   ps.setInt(3, end);
+		   
+		   rs = ps.executeQuery();
+		   
+		   ArrayList<ReviewDTO> table = new ArrayList<ReviewDTO>();
+		   while(rs.next()) {
+			   int review_idx = rs.getInt("review_idx");
+			   String user_id = rs.getString("user_id");
+			   String review_content = rs.getString("review_content");
+			   java.sql.Date review_date = rs.getDate("review_date");
+			   String review_img = rs.getString("review_img");
+			   
+			   ReviewDTO dto = new ReviewDTO();
+			   dto.setReview_idx(review_idx);
+			   dto.setUser_id(user_id);
+			   dto.setReview_content(review_content);
+			   dto.setReview_date(review_date);
+			   dto.setReview_img(review_img);
+			   table.add(dto);
+		   }
+		   return table;
+	   } catch (Exception e) {
+		   e.printStackTrace();
+		   return null;
+	   } finally {
+		   try {
+			   if(rs!=null)rs.close();
+			   if(ps!=null)ps.close();
+			   if(conn!=null)conn.close();
+		   }catch(Exception e) {}
+	   }
+   }
 }

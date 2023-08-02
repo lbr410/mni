@@ -36,6 +36,8 @@
 	ProductDTO dto = pdao.prodDetail(idx);
 	
 	int totalPrice = dto.getProd_price();
+	String prod_idx_s = request.getParameter("idx");
+	int prod_idx = Integer.parseInt(prod_idx_s);
 %>
 <script>
 	// 갯수 버튼 눌렀을 때 갯수 증감, 갯수에 따라 주문 금액 변경
@@ -131,7 +133,7 @@
 <section class="section">
 <article>
 	<h2 class="section_rv"><a>구매후기</a></h2>
-	<span><a href="/mni/product/reviewMore.jsp">리뷰 더 보기</a></span>
+	<span><a href="/mni/product/reviewMore.jsp?idx=<%=prod_idx %>">리뷰 더 보기</a></span>
 	<hr class="detail_hr">
 		</article>
 	</section>
