@@ -10,6 +10,7 @@
 	border-radius: 100%;
 	float: left;
 	margin-right: 20px;
+	background-color: #cccccc;
 }
 
 .SpanMargin {
@@ -33,4 +34,8 @@
 
 section {
 	margin: 0 auto;
+}
+
+.reviewImg {
+	margin-top: 20px;
 }

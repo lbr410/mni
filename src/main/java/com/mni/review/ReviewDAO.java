@@ -96,8 +96,8 @@ public class ReviewDAO {
          ps.setInt(1, Integer.parseInt(mr.getParameter("prod_idx")));
          ps.setInt(2, Integer.parseInt(mr.getParameter("user_idx")));
          ps.setString(3, mr.getParameter("review_content"));
-         if(mr.getParameter("review_img")!=null) {
-        	 ps.setString(4, mr.getParameter("review_img"));
+         if(mr.getFilesystemName("review_img")!=null) {
+        	 ps.setString(4, mr.getFilesystemName("review_img"));
          } else {
         	 ps.setString(4, "-");
          }
