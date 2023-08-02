@@ -135,6 +135,7 @@ if (cp % pageButton == 0) {
       </tbody>
    </table>
 </div>
+
 <%@ include file="footer.jsp" %>
 </body>
 </html>
