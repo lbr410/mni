@@ -122,7 +122,7 @@ public class ReviewDAO {
 			int end = cp*pageCnt;
 		   String sql = "select * from "
 		   		+ "(select rownum as rnum,a.* from "
-		   		+ "(select u.user_id,r.review_idx,p.prod_idx,p.prod_name,r.review_content,r.review_date from review r,product p,userinfo u where r.prod_idx = p.prod_idx and u.user_idx = r.user_idx and p.prod_name = ? order by review_idx desc) a) b "
+		   		+ "(select u.user_id,r.review_idx,r.review_img,p.prod_idx,p.prod_name,r.review_content,r.review_date from review r,product p,userinfo u where r.prod_idx = p.prod_idx and u.user_idx = r.user_idx and p.prod_name = ? order by review_idx desc) a) b "
 		   		+ "where rnum>=? and rnum<=?";
 		   ps=conn.prepareStatement(sql);
 		   ps.setString(1, prod_name);
@@ -136,6 +136,7 @@ public class ReviewDAO {
 			   String user_id = rs.getString("user_id");
 			   String review_content = rs.getString("review_content");
 			   java.sql.Date review_date = rs.getDate("review_date");
+			   String review_img = rs.getString("review_img");
 			   ReviewDTO dto = new ReviewDTO();
 			   dto.setReview_idx(review_idx);
 			   dto.setProd_idx(prod_idx);
@@ -143,6 +144,7 @@ public class ReviewDAO {
 			   dto.setProd_name(prod_name);
 			   dto.setReview_content(review_content);
 			   dto.setReview_date(review_date);
+			   dto.setReview_img(review_img);
 			   arr.add(dto);
 		   }
 		   return arr;
@@ -165,7 +167,7 @@ public class ReviewDAO {
 			int end = cp*pageCnt;
 		   String sql = "select * from "
 		   		+ "(select rownum as rnum,a.* from "
-		   		+ "(select u.user_id,r.review_idx,p.prod_idx,p.prod_name,r.review_content,r.review_date from review r,product p,userinfo u where r.prod_idx = p.prod_idx and u.user_idx = r.user_idx order by review_idx desc) a) b "
+		   		+ "(select u.user_id,r.review_img,r.review_idx,p.prod_idx,p.prod_name,r.review_content,r.review_date from review r,product p,userinfo u where r.prod_idx = p.prod_idx and u.user_idx = r.user_idx order by review_idx desc) a) b "
 		   		+ "where rnum>=? and rnum<=?";
 		   ps=conn.prepareStatement(sql);
 		   ps.setInt(1, start);
@@ -179,6 +181,7 @@ public class ReviewDAO {
 			   String user_id = rs.getString("user_id");
 			   String review_content = rs.getString("review_content");
 			   java.sql.Date review_date = rs.getDate("review_date");
+			   String review_img = rs.getString("review_img");
 			   ReviewDTO dto = new ReviewDTO();
 			   dto.setReview_idx(review_idx);
 			   dto.setProd_idx(prod_idx);
@@ -186,6 +189,7 @@ public class ReviewDAO {
 			   dto.setUser_id(user_id);
 			   dto.setReview_content(review_content);
 			   dto.setReview_date(review_date);
+			   dto.setReview_img(review_img);
 			   arr.add(dto);
 		   }
 		   return arr;

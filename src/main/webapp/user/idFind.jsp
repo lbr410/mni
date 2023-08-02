@@ -4,10 +4,8 @@
 <jsp:useBean id = "udao" class = "com.mni.userInfo.userInfoDAO"></jsp:useBean>
 <%
 request.setCharacterEncoding("utf-8");
-String juminfront_s = request.getParameter("juminfront");
-String juminback_s = request.getParameter("juminback");
-int juminfront = Integer.parseInt(juminfront_s);
-int juminback = Integer.parseInt(juminback_s);
+String juminfront = request.getParameter("juminfront");
+String juminback = request.getParameter("juminback");
 String id = udao.getUserId(juminfront, juminback);
 %>
 <html>

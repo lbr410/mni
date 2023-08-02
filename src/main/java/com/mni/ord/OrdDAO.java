@@ -55,15 +55,15 @@ public class OrdDAO {
        try {
           conn=com.mni.db.MniDB.getConn();
           int start = (cp-1)*pageCnt+1;
-			int end = cp*pageCnt;
+         int end = cp*pageCnt;
           String sql="select * from "
-          		+ "(select rownum as rnum,a.* from "
-          		+ "(select u.user_idx,u.user_name,u.user_id,p.prod_title,p.prod_idx,order_idx,order_date,order_type,order_zip,order_addr1,order_addr2,order_state,order_recie,order_req,order_count,order_price "
+                + "(select rownum as rnum,a.* from "
+                + "(select u.user_idx,u.user_name,u.user_id,p.prod_title,p.prod_idx,order_idx,order_date,order_type,order_zip,order_addr1,order_addr2,order_state,order_recie,order_req,order_count,order_price "
                 + "from userinfo u,ord o,product p where u.user_idx = o.user_idx and p.prod_idx = o.prod_idx order by order_date desc) a) b "
                 + "where rnum>=? and rnum<=?";
           ps=conn.prepareStatement(sql);
           ps.setInt(1, start);
-			ps.setInt(2, end);
+         ps.setInt(2, end);
           rs=ps.executeQuery();
           ArrayList<OrdDTO> arr = new ArrayList<OrdDTO>();
           while(rs.next()) {
