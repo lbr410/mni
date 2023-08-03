@@ -55,6 +55,14 @@ function orderDelevery(order_idx){
       location.href='/mni/admin/ordList.jsp';
    }
 }
+function orderDelevery(order_idx){
+	let sign = window.confirm('배송을 시작하시겠습니까?');
+	if(sign){
+		location.href='/mni/admin/ordDelevery.jsp?order_idx='+order_idx;
+	}else{
+		location.href='/mni/admin/ordList.jsp';
+	}
+}
 </script>
 </head>
 <%

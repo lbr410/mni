@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="java.util.*"%>
-<%@ page import="com.mni.review.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +36,7 @@
 		userGroup--;
 	}
 %>
-	<h2><a>구매후기</a></h2>
+	<h2>구매후기</h2>
 	<hr class="hrStyle">
 	<section>
 	<article>
@@ -46,19 +44,23 @@
 		ArrayList<ReviewDTO> table = rdao.prodReviewMore(prod_idx, cp, pageCnt);
 		for(int i=0; i<table.size(); i++) {
 	%>
-	<div>
-	<img src="/mni/img/orijen.jpg" alt="이미지" class="proImg">
+	<div class="reviewSize">
+	<img src="/mni/img/logo.png" alt="이미지" class="proImg">
 		<span class="SpanMargin"><%=table.get(i).getUser_id() %></span><br>
 		<span class="SpanMargin"><%=table.get(i).getReview_date() %></span>
 	</div>
-		<div class="contentMargin"><%=table.get(i).getReview_content() %></div>
+		<div class="contentMargin">ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</div>
 	<div>
-		<img src="/mni/user/review_img/<%=table.get(i).getReview_img() %>" alt="review image" onError="this.style.visibility='hidden'">
+		<a href="/mni/user/review_img/<%=table.get(i).getReview_img() %>" target="blank">
+		<img src="/mni/user/review_img/<%=table.get(i).getReview_img() %>" alt="review image" class="reviewContentImg" onError="this.style.visibility='hidden'"></a>
 	</div>
 	<hr class="hrStyle">
-	<%
-		}
-	%>
+		<div>
+	<img src="/mni/img/orijen.jpg" alt="이미지" class="proImg">
+		<span class="SpanMargin">abc</span><br>
+		<span class="SpanMargin">2023-01-01</span>
+	</div>
+		<div class="contentMargin">ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</div>
 	<div>
 	<%
 	if(userGroup != 0){
@@ -66,7 +68,7 @@
          }
          for(int i = userGroup*pageButton+1; i<=(userGroup+1)*pageButton; i++){
             String button = i == cp ? "nowPage":"page";
-            %>&nbsp;&nbsp;<button class="<%=button %>" onclick="javascript:location.href='/mni/product/reviewMore.jsp?idx=<%=prod_idx %>&cp=<%=i%>'"><%=i %></button>&nbsp;&nbsp;<%
+            %>&nbsp;&nbsp;<button class="<%=button %>" id="page" onclick="javascript:location.href='/mni/product/reviewMore.jsp?idx=<%=prod_idx %>&cp=<%=i%>'"><%=i %></button>&nbsp;&nbsp;<%
             if(i == totalPage){
                break;
             }
@@ -76,8 +78,30 @@
          }
          %>
 	</div>
+	<!-- 이 밑으로 지울 부분임. review 등록이 안 되서 테스트로 만듦 -->
+	<div class="reviewSize">
+	<img src="/mni/img/logo.png" alt="이미지" class="proImg">
+		<span class="SpanMargin">bb</span><br>
+		<span class="SpanMargin">2023-08-03</span>
+	</div>
+		<div class="contentMargin">뭉이가 잘 먹어요</div>
+	<div>
+		<img src="/mni/img/acana_banner.jpg" alt="review image" class="reviewContentImg" onError="this.style.visibility='hidden'">
+	</div>
+	<hr class="hrStyle">
+	<div class="reviewSize">
+	<img src="/mni/img/orijen.jpg" alt="이미지" class="proImg">
+		<span class="SpanMargin">bb</span><br>
+		<span class="SpanMargin">2023-08-03</span>
+	</div>
+		<div class="contentMargin">뭉이가 잘 먹어요</div>
+	<div>
+		<a href="/mni/img/acana_banner.jpg" target="blank">
+		<img src="/mni/img/acana_banner.jpg" alt="review image" class="reviewContentImg" onError="this.style.visibility='hidden'"></a>
+	</div>
+	<hr class="hrStyle">
+	<!-- 여기까지 -->
 </article>
 </section>
-<%@ include file="/footer.jsp" %>
 </body>
 </html>

@@ -114,36 +114,36 @@ if(cp % pageButton == 0){
          </td>
          </tr>
          </tfoot>
-         <tbody>
-         <%
-         ArrayList<userInfoDTO> arr = udao.userInfoSearchSelect(user_id, cp, pageCnt);//회원 목록 메서드
-         if(arr == null || arr.size() == 0){
-            %>
-            <tr>
-            <td colspan="10" class="td">등록된 회원이 없습니다.</td>
-         </tr>
-         <%
-         }
-         for(int i=0; i<arr.size(); i++){
-            String jumin = Long.toString(arr.get(i).getUser_jumin());
-         %>
-         <tr>
-            <td><%=arr.get(i).getUser_idx() %></td>
-            <td><%=arr.get(i).getUser_id() %></td>
-            <td><%=arr.get(i).getUser_pwd() %></td>
-            <td><%=arr.get(i).getUser_name() %></td>
-            <td><%=jumin.substring(0, 6)%>-<%=jumin.substring(6) %></td>
-            <td><%=arr.get(i).getUser_email() %></td>
-            <td><%=arr.get(i).getUser_tel().substring(0, 3)%>-<%=arr.get(i).getUser_tel().substring(3, 7)%>-<%=arr.get(i).getUser_tel().substring(7)%></td>
-            <td><%=arr.get(i).getUser_addr1() %>&nbsp;<%=arr.get(i).getUser_addr2() %></td>
-            <td><%=arr.get(i).getUser_joindate() %></td>
-            <td><%=arr.get(i).getUser_delete() %></td>
-         </tr>
-         <%} %>
-         </tbody>
-      </table>
-      </article>
-   </section>
+			<tbody>
+			<%
+			ArrayList<userInfoDTO> arr = udao.userInfoSearchSelect(user_id, cp, pageCnt);//회원 목록 메서드
+			if(arr == null || arr.size() == 0){
+				%>
+				<tr>
+				<td colspan="10" class="td">등록된 회원이 없습니다.</td>
+			</tr>
+			<%
+			}
+			for(int i=0; i<arr.size(); i++){
+				String jumin = Long.toString(arr.get(i).getUser_jumin());
+			%>
+			<tr>
+				<td><%=arr.get(i).getUser_idx() %></td>
+				<td><%=arr.get(i).getUser_id() %></td>
+				<td><%=arr.get(i).getUser_pwd() %></td>
+				<td><%=arr.get(i).getUser_name() %></td>
+				<td><%=jumin.substring(0, 6)%>-<%=jumin.substring(6) %></td>
+				<td><%=arr.get(i).getUser_email() %></td>
+				<td><%=arr.get(i).getUser_tel().substring(0, 3)%>-<%=arr.get(i).getUser_tel().substring(3, 7)%>-<%=arr.get(i).getUser_tel().substring(7)%></td>
+				<td><%=arr.get(i).getUser_addr1() %>&nbsp;<%=arr.get(i).getUser_addr2() %></td>
+				<td><%=arr.get(i).getUser_joindate() %></td>
+				<td><%=arr.get(i).getUser_delete() %></td>
+			</tr>
+			<%} %>
+			</tbody>
+		</table>
+		</article>
+	</section>
 </div>
 </body>
 </html>
