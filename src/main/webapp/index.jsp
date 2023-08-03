@@ -93,6 +93,7 @@
             	ArrayList<ProductDTO> table = pdao.newProdView(pet);
             	
             	if(table==null || table.size()==0) {
+
             %>
             		<span>아무것도 없으면 나올 페이지 추가</span>
             <%
@@ -112,9 +113,11 @@
 	                </div>
             <% 		}
             	}
+
             %>    
              </div>
         </main>
+
 <%@ include file="footer.jsp" %>
 </body>
 </html>
