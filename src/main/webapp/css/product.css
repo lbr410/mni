@@ -9,7 +9,7 @@
 /*상품 타이틀 이미지*/
 .prodimg img{
 	float:left;
-	height: 300px;
+	height: 400px;
 	 width: 400px;
 }
 /*상품 제목 가격 장바구니*/
@@ -141,4 +141,8 @@
 	list-style-type: circle;
 	position:relative;
 	left: 20px;
+}
+.title_img {
+	width: 100px;
+	height: 100px;
 }

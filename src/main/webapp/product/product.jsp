@@ -130,8 +130,8 @@
 </section>
 <section class="section">
 <article>
-	<h2 class="section_rv"><a>구매후기</a></h2>
-	<span><a href="/mni/product/reviewMore.jsp">리뷰 더 보기</a></span>
+	<h2 class="section_rv"><a name="review">구매후기</a></h2>
+	<span><a href="/mni/product/reviewMore.jsp?idx=<%=prod_idx %>">리뷰 더 보기</a></span>
 	<hr class="detail_hr">
 		</article>
 	</section>
@@ -165,7 +165,7 @@
 			<span><%=table.get(i).getReview_content() %></span>
 			</div>
 			<div>
-			<img src="/mni/user/review_img/<%=table.get(i).getReview_img() %>" alt="review image" onError="this.style.visibility='hidden'">
+			<img src="/mni/user/review_img/<%=table.get(i).getReview_img() %>" alt="review image" onError="this.style.visibility='hidden'" class="title_img">
 			</div>
 			<hr class="review_hr">
 <%

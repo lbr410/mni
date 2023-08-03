@@ -29,3 +29,13 @@ body {
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
+
+section {
+	margin: 0 auto;
+}
+
+.reviewImg {
+	margin-top: 20px;
+	width: 100px;
+	height: 100px;
+}

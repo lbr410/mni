@@ -4,6 +4,7 @@
 <%@ page import="com.mni.review.*" %>
 <jsp:useBean id="rdao" class="com.mni.review.ReviewDAO"></jsp:useBean>
 <%
+request.setCharacterEncoding("utf-8");
 String prod_name = request.getParameter("review_search");
 String admin_id = (String)session.getAttribute("admin_saveid");
 String ck = "";
@@ -124,6 +125,8 @@ if(cp % pageButton == 0){
 				<td><%=arr.get(i).getProd_idx() %></td>
 				<td><%=arr.get(i).getProd_name() %></td>
 				<td><%=arr.get(i).getUser_id() %></td>
+				<td><img alt="리뷰 사진" src="/mni/user/review_img/<%=arr.get(i).getReview_img() %>" class="title_img"></td>
+
 				<td><%=arr.get(i).getReview_content() %></td>
 				<td><%=arr.get(i).getReview_date() %></td>
 				<td><input type="button" value="삭제" class="reBtnDeco"></td>

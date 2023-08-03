@@ -6,6 +6,7 @@
 <%@ page import="com.mni.product.*" %>
 <jsp:useBean id="pdao" class="com.mni.product.ProductDAO"></jsp:useBean>
 <%
+request.setCharacterEncoding("utf-8");
 String admin_id = (String)session.getAttribute("admin_saveid");
 String ck = "";
 Cookie cks[]=request.getCookies();
