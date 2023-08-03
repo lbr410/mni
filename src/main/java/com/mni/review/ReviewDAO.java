@@ -337,18 +337,18 @@ public class ReviewDAO {
 	   }
    
    /*사용자 주문내역 리뷰 작성시 버튼안보이게 하는 조건 메서드 SM*/
-   public Boolean prodReview(ArrayList<OrdDTO> arr, int index, int idx) {
+   public Boolean prodReview(int user_idx,int prod_idx,int order_idx) {
 	   try {
 		   conn = com.mni.db.MniDB.getConn();
 		   String sql = "select * from review "
 		   		+ "where user_idx = ? and prod_idx = ? and order_idx = ?";
 		   ps = conn.prepareStatement(sql);
-		   ps.setInt(1, idx);
-		   System.out.println(idx);
-		   ps.setInt(2, arr.get(index).getProd_idx());
-		   System.out.println(arr.get(index).getProd_idx());
-		   ps.setInt(3, arr.get(index).getOrder_idx());
-		   System.out.println(arr.get(index).getOrder_idx());
+		   ps.setInt(1, user_idx);
+		   System.out.println(user_idx);
+		   ps.setInt(2, prod_idx);
+		   System.out.println(prod_idx);
+		   ps.setInt(3, order_idx);
+		   System.out.println(order_idx);
 		   rs = ps.executeQuery();
 		   System.out.println(rs.next());
 		   return rs.next();

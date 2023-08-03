@@ -107,7 +107,7 @@ userInfoDTO dto = udao.loginCheck(id);
       	         </div><br>
       	        <%
       		}else if(arr.get(i).getOrder_state().equals("배송완료")){
-      			Boolean reviewButton = rdao.prodReview(arr, idx, i);
+      			Boolean reviewButton = rdao.prodReview(idx,arr.get(i).getProd_idx(),arr.get(i).getOrder_idx());
       			if(reviewButton){
       				%>
           			<div class = "a">

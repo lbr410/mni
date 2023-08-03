@@ -359,7 +359,6 @@ public class OrdDAO {
       }
       /**관리자 페이지 배송 시작*/
       public int orderDelevery(int order_idx) {
-<<<<<<< HEAD
     	  try {
     		  conn = com.mni.db.MniDB.getConn();
     		  String sql = "update ord set order_state = '배송중' where order_idx = ?";
@@ -376,23 +375,5 @@ public class OrdDAO {
 				if(conn!=null)conn.close();
 			}catch(Exception e2) {}
 		}
-=======
-         try {
-            conn = com.mni.db.MniDB.getConn();
-            String sql = "update ord set order_state = '배송중' where order_idx = ?";
-            ps = conn.prepareStatement(sql);
-            ps.setInt(1, order_idx);
-            int count = ps.executeUpdate();
-            return count;
-         }catch(Exception e) {
-            e.printStackTrace(); 
-            return 0;
-         }finally {
-         try {
-            if(ps!=null)ps.close();
-            if(conn!=null)conn.close();
-         }catch(Exception e2) {}
-      }
->>>>>>> branch 'master' of https://github.com/lbr410/mni.git
       }
 }
