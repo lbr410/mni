@@ -84,12 +84,11 @@ userInfoDTO dto = udao.loginCheck(id);
          <input type = "button" value = "수취확인" class = "button" onclick = "javascript:location.href='userReceiptConfirmation.jsp?ord_idx=<%=arr.get(i).getOrder_idx()%>'">
          </div>
          <%
-      		}else if(arr.get(i).getOrder_state().equals("배송 준비중")){
+      		}else if(arr.get(i).getOrder_state().equals("상품준비중")){
       			%>
       			<div class = "a">
       	         <span class = "span">배송 준비중</span>
       	         <input type = "button" value = "주문취소" class = "button" onclick = "javascript:location.href='userOrderCancel.jsp?ord_idx=<%=arr.get(i).getOrder_idx()%>'">
-      	         <input type = "button" value = "수취확인" class = "button" onclick = "javascript:location.href='userReceiptConfirmation.jsp?ord_idx=<%=arr.get(i).getOrder_idx()%>'">
       	         </div>
       	        <%
 
@@ -101,7 +100,6 @@ userInfoDTO dto = udao.loginCheck(id);
       	         </div>
       			<%
       		}else if(arr.get(i).getOrder_state().equals("주문취소") || arr.get(i).getOrder_state().equals("승인거절")){
-
       			%>
       			<div class = "a">
       	         <span class = "span">주문취소</span>

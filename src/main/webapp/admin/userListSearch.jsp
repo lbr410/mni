@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
@@ -124,15 +125,16 @@ if(cp % pageButton == 0){
 			<%
 			}
 			for(int i=0; i<arr.size(); i++){
+				String jumin = Long.toString(arr.get(i).getUser_jumin());
 			%>
 			<tr>
 				<td><%=arr.get(i).getUser_idx() %></td>
 				<td><%=arr.get(i).getUser_id() %></td>
 				<td><%=arr.get(i).getUser_pwd() %></td>
 				<td><%=arr.get(i).getUser_name() %></td>
-				<td><%=arr.get(i).getUser_jumin_front() %>-<%=arr.get(i).getUser_jumin_back() %></td>
+				<td><%=jumin.substring(0, 6)%>-<%=jumin.substring(6) %></td>
 				<td><%=arr.get(i).getUser_email() %></td>
-				<td><%=arr.get(i).getUser_tel() %></td>
+				<td><%=arr.get(i).getUser_tel().substring(0, 3)%>-<%=arr.get(i).getUser_tel().substring(3, 7)%>-<%=arr.get(i).getUser_tel().substring(7)%></td>
 				<td><%=arr.get(i).getUser_addr1() %>&nbsp;<%=arr.get(i).getUser_addr2() %></td>
 				<td><%=arr.get(i).getUser_joindate() %></td>
 				<td><%=arr.get(i).getUser_delete() %></td>
