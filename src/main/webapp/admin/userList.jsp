@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
@@ -8,19 +9,19 @@ String admin_id = (String)session.getAttribute("admin_saveid");
 String ck = "";
 Cookie cks[]=request.getCookies();
 if(cks!=null){
-	for(int i=0; i<cks.length; i++){
-		//자동 로그인 쿠키 유무
-		if(cks[i].getName().equals("admin_auto")){
-			ck = cks[i].getValue();
-		}
-	}
-	if(admin_id == null && !ck.equals("admin")){
-		%><script>
-		window.alert('로그인 후 이용가능합니다.');
-		location.href='/mni/admin/index_admin.jsp';
-		</script>
-		<%
-	}
+   for(int i=0; i<cks.length; i++){
+      //자동 로그인 쿠키 유무
+      if(cks[i].getName().equals("admin_auto")){
+         ck = cks[i].getValue();
+      }
+   }
+   if(admin_id == null && !ck.equals("admin")){
+      %><script>
+      window.alert('로그인 후 이용가능합니다.');
+      location.href='/mni/admin/index_admin.jsp';
+      </script>
+      <%
+   }
 }
 %>
 <!DOCTYPE html>
@@ -43,7 +44,7 @@ if(cp_s == null || cp_s.equals("")){
 int cp = Integer.parseInt(cp_s);
 
 if(totalCnt == 0){
-	totalCnt=1;
+   totalCnt=1;
 }
 int totalPage = totalCnt / pageCnt +1;
 if(totalCnt % pageCnt == 0){
@@ -61,27 +62,27 @@ if(cp % pageButton == 0){
 <h1>회원 목록</h1>
 <section>
 <article>
-	<form name="userListSearch" action="/mni/admin/userListSearch.jsp" method="post">
-	<div><input type="text" name="user_search" placeholder="회원 ID 입력" id="searchBox" required>
-	<input type="submit" value="검색" class="seaBtnDeco">
-	</div>
-	</form>
-		<table>
-		<thead>
-			<tr>
-				<th>NO.</th>
-				<th>아이디</th>
-				<th id="thup">비밀번호</th>
-				<th>이름</th>
-				<th>주민번호</th>
-				<th>이메일</th>
-				<th>연락처</th>
-				<th>주소</th>
-				<th>가입일자</th>
-				<th id="thup">탈퇴여부</th>
-			</tr>
-			</thead>
-			<tfoot>
+   <form name="userListSearch" action="/mni/admin/userListSearch.jsp" method="post">
+   <div><input type="text" name="user_search" placeholder="회원 ID 입력" id="searchBox" required>
+   <input type="submit" value="검색" class="seaBtnDeco">
+   </div>
+   </form>
+      <table>
+      <thead>
+         <tr>
+            <th>NO.</th>
+            <th>아이디</th>
+            <th id="thup">비밀번호</th>
+            <th>이름</th>
+            <th>주민번호</th>
+            <th>이메일</th>
+            <th>연락처</th>
+            <th>주소</th>
+            <th>가입일자</th>
+            <th id="thup">탈퇴여부</th>
+         </tr>
+         </thead>
+         <tfoot>
          <tr>
             <td colspan="10" align="center">
          <%
@@ -103,35 +104,37 @@ if(cp % pageButton == 0){
          </td>
          </tr>
          </tfoot>
-			<tbody>
-			<%
-			ArrayList<userInfoDTO> arr = udao.userInfoSelect(cp, pageCnt);//회원 목록 메서드
-			if(arr == null || arr.size() == 0){
-				%>
-				<tr>
-				<td colspan="10" class="td">등록된 회원이 없습니다.</td>
-			</tr>
-			<%
-			}
-			for(int i=0; i<arr.size(); i++){
-			%>
-			<tr>
-				<td><%=arr.get(i).getUser_idx() %></td>
-				<td><%=arr.get(i).getUser_id() %></td>
-				<td><%=arr.get(i).getUser_pwd() %></td>
-				<td><%=arr.get(i).getUser_name() %></td>
-				<td><%=arr.get(i).getUser_jumin_front() %>-<%=arr.get(i).getUser_jumin_back() %></td>
-				<td><%=arr.get(i).getUser_email() %></td>
-				<td><%=arr.get(i).getUser_tel() %></td>
-				<td><%=arr.get(i).getUser_addr1() %>&nbsp;<%=arr.get(i).getUser_addr2() %></td>
-				<td><%=arr.get(i).getUser_joindate() %></td>
-				<td><%=arr.get(i).getUser_delete() %></td>
-			</tr>
-			<%} %>
-			</tbody>
-		</table>
-		</article>
-	</section>
+         <tbody>
+         <%
+         ArrayList<userInfoDTO> arr = udao.userInfoSelect(cp, pageCnt);//회원 목록 메서드
+         if(arr == null || arr.size() == 0){
+            %>
+            <tr>
+            <td colspan="10" class="td">등록된 회원이 없습니다.</td>
+         </tr>
+         <%
+         }
+         for(int i=0; i<arr.size(); i++){
+            Long jumin_s = arr.get(i).getUser_jumin();
+            String jumin = Long.toString(jumin_s);
+         %>
+         <tr>
+            <td><%=arr.get(i).getUser_idx() %></td>
+            <td><%=arr.get(i).getUser_id() %></td>
+            <td><%=arr.get(i).getUser_pwd() %></td>
+            <td><%=arr.get(i).getUser_name() %></td>
+            <td><%=jumin.substring(0, 6) %>-<%=jumin.substring(6) %></td>
+            <td><%=arr.get(i).getUser_email() %></td>
+            <td><%=arr.get(i).getUser_tel() %></td>
+            <td><%=arr.get(i).getUser_addr1() %>&nbsp;<%=arr.get(i).getUser_addr2() %></td>
+            <td><%=arr.get(i).getUser_joindate() %></td>
+            <td><%=arr.get(i).getUser_delete() %></td>
+         </tr>
+         <%} %>
+         </tbody>
+      </table>
+      </article>
+   </section>
 </div>
 </body>
 </html>

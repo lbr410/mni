@@ -118,6 +118,7 @@ userInfoDTO dto = udao.loginCheck(id);
       		}
       }
 }
+}
          %>
    </article>
 </section>

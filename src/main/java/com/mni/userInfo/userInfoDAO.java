@@ -132,62 +132,62 @@ public class userInfoDAO {
 }
 
    //아이디 찾기
-   public String getUserId(int juminfront, int juminback) {
-      try {
-         conn = com.mni.db.MniDB.getConn();
-         String sql = "select user_id from userinfo "
-               + "where user_jumin_front = ? and user_jumin_back = ?";
-         ps = conn.prepareStatement(sql);
-         ps.setInt(1, juminfront);
-         ps.setInt(2, juminback);
-         rs = ps.executeQuery();
-         String user_id = null;
-         if(rs.next()) {
-            user_id = rs.getString(1);
-         }
-         return user_id;
-      }catch(Exception e) {
-         e.printStackTrace();
-         return null;
-      }finally {
-         try {
-            if(rs != null) rs.close();
-            if(ps != null) ps.close();
-            if(conn != null) conn.close();
-         }catch(Exception e) {}
-      }
-   }
+   public String getUserId(String juminfront, String juminback) {
+	      try {
+	         conn = com.mni.db.MniDB.getConn();
+	         String sql = "select user_id from userinfo "
+	               + "where user_jumin = ?";
+	         ps = conn.prepareStatement(sql);
+	         String jumin_s = juminfront+juminback;
+	         Long jumin = Long.parseLong(jumin_s);
+	         ps.setLong(1, jumin);
+	         rs = ps.executeQuery();
+	         String user_id = null;
+	         if(rs.next()) {
+	            user_id = rs.getString(1);
+	         }
+	         return user_id;
+	      }catch(Exception e) {
+	         e.printStackTrace();
+	         return null;
+	      }finally {
+	         try {
+	            if(rs != null) rs.close();
+	            if(ps != null) ps.close();
+	            if(conn != null) conn.close();
+	         }catch(Exception e) {}
+	      }
+	   }
    
    //비밀번호 찾기
-   public Boolean getUserPwd(String id, int juminfront, int juminback) {
-      try {
-         conn = com.mni.db.MniDB.getConn();
-         String sql = "select user_pwd from userinfo "
-               + "where user_id = ? and "
-               + "user_jumin_front = ? and "
-               + "user_jumin_back = ?";
-         ps = conn.prepareStatement(sql);
-         ps.setString(1, id);
-         ps.setInt(2, juminfront);
-         ps.setInt(3, juminback);
-         rs = ps.executeQuery();
-         if(rs.next()) {
-            return true;
-         }else {
-            return false;
-         }
-         
-      }catch(Exception e) {
-         e.printStackTrace();
-         return null;
-      }finally {
-         try {
-            if(rs != null) rs.close();
-            if(ps != null) ps.close();
-            if(conn != null) conn.close();
-         }catch(Exception e) {}
-      }
-   }
+   public Boolean getUserPwd(String id, String juminfront, String juminback) {
+	      try {
+	         conn = com.mni.db.MniDB.getConn();
+	         String sql = "select user_pwd from userinfo "
+	                 + "where user_id = ? and user_jumin = ?";
+	         ps = conn.prepareStatement(sql);
+	         ps.setString(1, id);
+	         String jumin_s = juminfront+juminback;
+	         Long jumin = Long.parseLong(jumin_s);
+	         ps.setLong(2, jumin);
+	         rs = ps.executeQuery();
+	         if(rs.next()) {
+	            return true;
+	         }else {
+	            return false;
+	         }
+	         
+	      }catch(Exception e) {
+	         e.printStackTrace();
+	         return null;
+	      }finally {
+	         try {
+	            if(rs != null) rs.close();
+	            if(ps != null) ps.close();
+	            if(conn != null) conn.close();
+	         }catch(Exception e) {}
+	      }
+	   }
    
    //비밀번호 변경
    public int setUserUpdatePwd(String pwd,String id,int juminfront,int juminback) {
