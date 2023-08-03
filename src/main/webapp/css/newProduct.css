@@ -4,14 +4,14 @@ body {
     height: 100%;
 }
 .bar{
-	width: 990px;
-	height: 20px;
-	padding-top: 15px;
-	padding-bottom: 10px;
-	padding-left: 10px;
-	background-color: #f3f3f3;
-	font-size: 12px;
-	text-align: left;
+   width: 990px;
+   height: 20px;
+   padding-top: 15px;
+   padding-bottom: 10px;
+   padding-left: 10px;
+   background-color: #f3f3f3;
+   font-size: 12px;
+   text-align: left;
 }
 .head-title {
     position: relative;
@@ -27,19 +27,18 @@ body {
 .prodSection {
     display: flex;
     width: 820px;
-    margin-left: 20px;
+    margin-left: 0px;
 }
 table{
-	border-spacing: 30px;
-	margin-bottom: 20px;
-	float: left;
+   border-spacing: 8px;
+   margin-bottom: 20px;
 }
 
 tr{
-	border-spacing: 20px;
+   border-spacing: 16px;
 }
 td{
-	height: 40px;
+   height: 40px;
 }
 #page{
     width: 22px;
@@ -60,39 +59,39 @@ td{
     border-radius: 5px;
 }
 .prodImg {
-    width: 200px;
+    width: 226px;
     height: 235px;
     border-radius: 24px;
     overflow: hidden;
     background-color: #f5f5f5;
 }
 .prodImg img {
- 	width: 200px;
- 	cursor: pointer;
- 	margin-bottom: 10px;
+    width: 226px;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .prodName{
-	width: 200px;
-	height: 32px;
+   width: 226px;
+   height: 32px;
     padding: 8px;
     color: #808080;
     font-weight: bold;
-   	margin: 0;
- 	font-size: 13px;
-   	text-align: left;
+      margin: 0;
+    font-size: 13px;
+      text-align: left;
 }
 .prodTitle {
-    width: 200px;
+    width: 226px;
     height: 58px;
     font-size: 16px;
-	font-weight: 500;
+   font-weight: 500;
     padding-left: 2px;
     color: #333333;
     cursor: pointer;
 }
 .prodPrice {
-    width: 200px;
+    width: 226px;
     height: 20px;
     font-size: 18px;
     font-weight: bold;

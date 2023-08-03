@@ -1,60 +1,60 @@
 @charset "UTF-8";
 body{
-	width: 1200px;
-	height: 100%;
+   width: 1200px;
+   height: 100%;
 }
 
 .bar{
-	width: 990px;
-	height: 20px;
-	padding-top: 15px;
-	padding-bottom: 10px;
-	padding-left: 10px;
-	background-color: #f3f3f3;
-	font-size: 12px;
-	text-align: left;
-	margin-bottom: 15px;
+   width: 990px;
+   height: 20px;
+   padding-top: 15px;
+   padding-bottom: 10px;
+   padding-left: 10px;
+   background-color: #f3f3f3;
+   font-size: 12px;
+   text-align: left;
+   margin-bottom: 15px;
 }
 .top{
-	width: 960px;
-	height: 60px;
-	padding-top: 10px;
-	padding-bottom: 30px;
+   width: 960px;
+   height: 60px;
+   padding-top: 10px;
+   padding-bottom: 30px;
 }
 .brandlogo{
-	width:90px;
-	height: 60px;
-	overflow: hidden;
+   width:90px;
+   height: 60px;
+   overflow: hidden;
 }
 .banner{
-	width: 1000px;
-	height: 350px;
+   width: 1000px;
+   height: 350px;
 }
 .imgslide{
-	width: 1000px;
-	height: 350px;
+   width: 1000px;
+   height: 350px;
 }
 .menu{
-	margin: 0 auto;
-	width: 1000px;
+   margin: 0 auto;
+   width: 1000px;
 }
 .category{
-	float: left;
-	width: 150px;
-	height: 900px;
-	margin-top: 24px;
+   float: left;
+   width: 150px;
+   height: 900px;
+   margin-top: 24px;
 }
 .list1{
-	border-bottom: 1px solid #cccccc;
-	padding: 14px;
-	color: #ff7f50;
+   border-bottom: 1px solid #cccccc;
+   padding: 14px;
+   color: #ff7f50;
 }
 .list2{
-	padding: 14px;
+   padding: 14px;
 }
 .head-title{
-	margin-top:50px; 
-	display: block;
+   margin-top:50px; 
+   display: block;
     float: left;
     width: 680px;
     font-size: 24px;
@@ -75,8 +75,8 @@ body{
 }
 
 #title{
-	cursor: pointer;
-	color: dimgray;
+   cursor: pointer;
+   color: dimgray;
 }
 
 .prodSection {
@@ -87,9 +87,9 @@ body{
 }
 table {
     border-spacing: 16px;
-  	margin-bottom: 20px;
-  	width: 800px;
-  	margin-right: 50px;
+     margin-bottom: 20px;
+     width: 800px;
+     margin-right: 50px;
 }
 
 tr{
@@ -103,7 +103,7 @@ tr{
     background-color: #f1f1f1;
 }
 .prodImg img {
-	margin-top:15px;
+   margin-top:15px;
     width: 200px;
 }
 .prodName{
@@ -123,8 +123,11 @@ tr{
      padding: 8px;
 }
 hr{
-	width: 780px; 
-	margin-top: 10px;
+   width: 780px; 
+   margin-top: 10px;
+   height:1px;
+   border:0;
+   background:#cccccc;
 }
 
 .prodPrice {
@@ -135,28 +138,30 @@ hr{
      padding-bottom: 34px;
 }
 .prodNum{
-	margin-top: 55px;
+   margin-top: 55px;
 }
 
-.page{	
-	width: 25px;
-   font-size: 15px;
-   background-color:white;
-   text-decoration: none;
-   border: 0.5px solid;
-   border-color: #ff7f50;
-   cursor: pointer;
+.page{   
+   width: 22px;
+    height: 22px;
+    font-size: 12px;
+    color: black;
+    border: 0;
+    background-color: white;
+    border: 1px #ff7f50 solid;
+    border-radius: 5px;
+    cursor: pointer; 
    
 }
 .nowPage{
-	width: 25px;
-   font-size: 15px;
+   width: 22px;
+    height: 22px;
    background-color:#ff7f50;
-   text-decoration: none;
-   border: 0.5px solid;
-   border-color: white;
+    color:white;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
 }
 .brand-list-item{
-	width: 200px;
-
+   width: 200px;
 }
