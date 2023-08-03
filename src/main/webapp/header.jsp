@@ -4,14 +4,19 @@
 <link rel="stylesheet" type="text/css" href="/mni/css/header.css">
     
     <%
-    String name=(String)session.getAttribute("sname");
+    String id=(String)session.getAttribute("sid");
     %>
     
-       
+    <script>
+       function userSearch(){
+          var search = document.headerSearch.search.value;
+          location.href = '/mni/headerSearch.jsp?search='+search;
+       }
+    </script>   
     <header>
     <div id="member">
     <%
-    if(name==null){
+    if(id==null){
 
     %>
            <a id="memberjoin" href="/mni/user/join.jsp">회원가입</a>
@@ -21,7 +26,7 @@
         <%
     }else{
         %>
-             <div><%=name %>님 로그인 중
+             <div><%=id %>님 로그인 중
           |<a href="/mni/user/logout.jsp">로그아웃</a></div>
         <% 
      }
