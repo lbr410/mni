@@ -4,6 +4,7 @@
 <%@ page import="com.mni.review.*" %>
 <jsp:useBean id="rdao" class="com.mni.review.ReviewDAO"></jsp:useBean>
 <%
+request.setCharacterEncoding("utf-8");
 String admin_id = (String)session.getAttribute("admin_saveid");
 String ck = "";
 Cookie cks[]=request.getCookies();
@@ -128,7 +129,7 @@ if(cp % pageButton == 0){
 				<td><%if(arr.get(i).getReview_img() == null || arr.get(i).getReview_img().equals("")){
 					%>사진없음<%
 					}else{%>
-				<img alt="리뷰 사진" src="/mni/user/review_img/<%=arr.get(i).getReview_img() %>"></td>
+				<img alt="리뷰 사진" src="/mni/user/review_img/<%=arr.get(i).getReview_img() %>" class="title_img"></td>
 				<%} %>
 				<td><%=arr.get(i).getReview_content() %></td>
 				<td><%=arr.get(i).getReview_date() %></td>

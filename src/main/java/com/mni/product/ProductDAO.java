@@ -356,7 +356,7 @@ public class ProductDAO {
 	               + "(select rownum as rnum,a.* from "
 	               + "(select prod_idx,prod_name,prod_title,prod_price,prod_count,"
 	               + "To_char(prod_date,'yyyy-MM-dd Hh24:mi:ss') as prod_date,prod_title_img,prod_pet,"
-	               + "prod_info_img,prod_brand,prod_category from product where prod_name like '%'||?||'%' order by prod_idx desc) a) b "
+	               + "prod_info_img,prod_brand,prod_category from product where prod_name = ? order by prod_idx desc) a) b "
 	               + "where rnum>=? and rnum<=?";
 	         ps = conn.prepareStatement(sql);
 	         ps.setString(1, prod_name);

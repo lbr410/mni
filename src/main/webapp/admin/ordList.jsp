@@ -4,6 +4,7 @@
 <%@ page import="com.mni.ord.*" %>
 <jsp:useBean id="odao" class="com.mni.ord.OrdDAO"></jsp:useBean>
 <%
+request.setCharacterEncoding("utf-8");
 String admin_id = (String)session.getAttribute("admin_saveid");
 String ck = "";
 Cookie cks[]=request.getCookies();

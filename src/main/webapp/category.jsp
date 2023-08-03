@@ -115,14 +115,14 @@ if (cp % pageButton == 0) {
          	<td>
             	<div class="brand-list-item">
                		<div class="prodImg">
-                 		<img src="/mni/img/<%=arr.get(i).getProd_title_img() %>" alt="brand image" name="brand"></a>
+                 		<img src="/mni/admin/product_img/<%=arr.get(i).getProd_title_img() %>" alt="brand image" name="brand"></a>
                		</div>
                		<div class="description-section">
                  		<div class="prodName" id="title"><%=arr.get(i).getProd_name() %></div>
                  		<div class="prodTitle"><%=arr.get(i).getProd_title() %></div>
                  		<div class="prodPrice"><%=arr.get(i).getProd_price() %>원</div>
                		</div>
-            		</div>      
+            		</div>
          	</td>   
          <%
          if(i%3==2 && i!=arr.size()){
