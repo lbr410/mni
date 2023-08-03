@@ -4,19 +4,19 @@
 <link rel="stylesheet" type="text/css" href="/mni/css/header.css">
     
     <%
-    String name=(String)session.getAttribute("sname");
+    String id=(String)session.getAttribute("sid");
     %>
     
     <script>
-    	function userSearch(){
-    		var search = document.headerSearch.search.value;
-    		location.href = '/mni/headerSearch.jsp?search='+search;
-    	}
+       function userSearch(){
+          var search = document.headerSearch.search.value;
+          location.href = '/mni/headerSearch.jsp?search='+search;
+       }
     </script>   
     <header>
     <div id="member">
     <%
-    if(name==null){
+    if(id==null){
 
     %>
            <a id="memberjoin" href="/mni/user/join.jsp">회원가입</a>
@@ -26,7 +26,7 @@
         <%
     }else{
         %>
-             <div><%=name %>님 로그인 중
+             <div><%=id %>님 로그인 중
           |<a href="/mni/user/logout.jsp">로그아웃</a></div>
         <% 
      }
@@ -50,10 +50,10 @@
             <div>고양이</div>
         </button>
         </div>
-        <form name = "headerSearch" class="little-search" action = "/mni/headerSearch.jsp">
+        <form class="little-search" action = "/mni/headerSearch.jsp">
             <input type="text" maxlength="30" name="search" id="search" placeholder="검색어를 입력하세요.">
                 <div id="magnifying-glass wrapper">
-                    <img id="search-icon" src="/mni/img/magnifying glass icon.png" alt="magnifying glass icon" onclick = "userSearch()">
+                    <img id="search-icon" src="/mni/img/magnifying glass icon.png" alt="magnifying glass icon">
                 </div>
         </form>
     <span class="top-right"> </span>

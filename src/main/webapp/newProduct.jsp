@@ -54,15 +54,15 @@ if (cp % pageButton == 0) {
 	<tr>
 		<td colspan="10" align="center">
          <% if (userGroup != 0) { %>
-            <a href="category.jsp?cp=<%= userGroup*pageButton %>">&lt;&lt;</a>
+            <a href="newProduct.jsp?cp=<%= userGroup*pageButton %>">&lt;&lt;</a>
          <% } %>
          <% for (int i = userGroup*pageButton+1; i <= (userGroup+1)*pageButton; i++) { %>
             <% String button = i == cp ? "nowPage" : "page"; %>
-            &nbsp;&nbsp;<button class="<%= button %>" onclick="javascript:location.href='category.jsp?cp=<%= i %>'"><%= i %></button>&nbsp;&nbsp;
+            &nbsp;&nbsp;<button class="<%= button %>" onclick="javascript:location.href='newProduct.jsp?cp=<%= i %>'" id="page"><%= i %></button>&nbsp;&nbsp;
             <% if (i == totalPage) { break; } %>
          <% } %>
          <% if (userGroup != (totalPage/pageButton-(totalPage%pageButton==0?1:0))) { %>
-            <a href="category.jsp?cp=<%=(userGroup+1)*pageButton+1%>">&gt;&gt;</a>
+            <a href="newProduct.jsp?cp=<%=(userGroup+1)*pageButton+1%>">&gt;&gt;</a>
          <% } %>
          </td>
 	</tr>
@@ -84,15 +84,18 @@ if (cp % pageButton == 0) {
 		<td>
            	<div class="brand-list-item">
               		<div class="prodImg">
-                		<img src="/mni/img/<%=arr.get(i).getProd_title_img() %>" alt="prodImg" name="prod">
+						<a href="/mni/product/product.jsp?idx=<%=arr.get(i).getProd_idx() %>">
+                		<img src="/mni/img/<%=arr.get(i).getProd_title_img() %>" alt="prodImg" name="prod"></a>
               		</div>
               		<div class="description-section">
                 		<div class="prodName" id="title"><%=arr.get(i).getProd_name() %></div>
-                		<div class="prodTitle"><%=arr.get(i).getProd_title() %></div>
+                		<a href="/mni/product/product.jsp?idx=<%=arr.get(i).getProd_idx() %>">
+                			<div class="prodTitle"><%=arr.get(i).getProd_title() %></div>
+                		</a>
                 		<div class="prodPrice"><%=arr.get(i).getProd_price() %>원</div>
               		</div>
            	</div>      
-        	</td>   
+        </td>   
         <%
         if(i%4==3 && i!=arr.size()){
            %></tr><tr><%   

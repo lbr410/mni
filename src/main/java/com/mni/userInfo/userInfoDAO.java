@@ -1,7 +1,6 @@
 package com.mni.userInfo;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -72,13 +71,12 @@ public class userInfoDAO {
    }
    
    //사용자 정보 세션
-   public userInfoDTO loginCheck(String id, String pwd){
+   public userInfoDTO loginCheck(String id){
          try {
             conn=com.mni.db.MniDB.getConn();
-            String sql="select * from userinfo where user_id = ? and user_pwd = ?";
+            String sql="select * from userinfo where user_id = ?";
             ps=conn.prepareStatement(sql);
             ps.setString(1, id);
-            ps.setString(2, pwd);
             rs=ps.executeQuery();
             userInfoDTO dto = null;      
             if(rs.next()) {
@@ -133,16 +131,15 @@ public class userInfoDAO {
              }
 }
 
-   //아이디 찾기SM
-   public String getUserId(String juminfront, String juminback) {
+   //아이디 찾기
+   public String getUserId(int juminfront, int juminback) {
       try {
          conn = com.mni.db.MniDB.getConn();
          String sql = "select user_id from userinfo "
-               + "where user_jumin = ?";
+               + "where user_jumin_front = ? and user_jumin_back = ?";
          ps = conn.prepareStatement(sql);
-         String jumin_s = juminfront+juminback;
-         Long jumin = Long.parseLong(jumin_s);
-         ps.setLong(1, jumin);
+         ps.setInt(1, juminfront);
+         ps.setInt(2, juminback);
          rs = ps.executeQuery();
          String user_id = null;
          if(rs.next()) {
@@ -161,17 +158,18 @@ public class userInfoDAO {
       }
    }
    
-   //비밀번호 찾기SM
-   public Boolean getUserPwd(String id, String juminfront, String juminback) {
+   //비밀번호 찾기
+   public Boolean getUserPwd(String id, int juminfront, int juminback) {
       try {
          conn = com.mni.db.MniDB.getConn();
          String sql = "select user_pwd from userinfo "
-                 + "where user_id = ? and user_jumin = ?";
+               + "where user_id = ? and "
+               + "user_jumin_front = ? and "
+               + "user_jumin_back = ?";
          ps = conn.prepareStatement(sql);
          ps.setString(1, id);
-         String jumin_s = juminfront+juminback;
-         Long jumin = Long.parseLong(jumin_s);
-         ps.setLong(2, jumin);
+         ps.setInt(2, juminfront);
+         ps.setInt(3, juminback);
          rs = ps.executeQuery();
          if(rs.next()) {
             return true;
@@ -191,20 +189,20 @@ public class userInfoDAO {
       }
    }
    
-   //비밀번호 변경SM
-   public int setUserUpdatePwd(String pwd,String id,String juminfront,String juminback) {
+   //비밀번호 변경
+   public int setUserUpdatePwd(String pwd,String id,int juminfront,int juminback) {
       try{
          conn = com.mni.db.MniDB.getConn();
          String sql = "update userinfo "
                + "set user_pwd = ? "
                + "where user_id = ? and "
-               + "user_jumin = ?";
+               + "user_jumin_front = ? and "
+               + "user_jumin_back = ?";
          ps = conn.prepareStatement(sql);
          ps.setString(1, pwd);
          ps.setString(2, id);
-         String jumin_s = juminfront+juminback;
-         Long jumin = Long.parseLong(jumin_s);
-         ps.setLong(3, jumin);
+         ps.setInt(3, juminfront);
+         ps.setInt(4, juminback);
          int count = ps.executeUpdate();
          return count;
       }catch(Exception e) {
@@ -219,11 +217,12 @@ public class userInfoDAO {
    }
    
    /**사용자 정보 수정*/
-    public int setUserInfo(userInfoDTO dto) {
+    public int setUserInfo(userInfoDTO dto, int idx) {
        try {
          conn=com.mni.db.MniDB.getConn();
          String sql="update userinfo set user_name=?, user_tel=?, "
-               + "user_email=?, user_pwd=?, user_zip=?, user_addr1=? , user_addr2=? ";
+               + "user_email=?, user_pwd=?, user_zip=?, user_addr1=? , user_addr2=? "
+               + "where user_idx = ?";
          ps=conn.prepareStatement(sql);
          ps.setString(1, dto.getUser_name());
          ps.setString(2, dto.getUser_tel());
@@ -232,8 +231,9 @@ public class userInfoDAO {
          ps.setInt(5, dto.getUser_zip());
          ps.setString(6, dto.getUser_addr1());
          ps.setString(7, dto.getUser_addr2());
+         ps.setInt(8, idx);
          int count=ps.executeUpdate();
-         System.out.println("ddd="+count);
+         
          return count;
       }catch(Exception e) {
          e.printStackTrace();
@@ -312,7 +312,7 @@ public class userInfoDAO {
             String name = rs.getString("user_name");
             String pwd = rs.getString("user_pwd");
             String tel = rs.getString("user_tel");
-            Long user_jumin = rs.getLong("user_jumin");
+            int user_jumin = rs.getInt("user_jumin");
             int user_zip = rs.getInt("user_zip");
             String user_addr1 = rs.getString("user_addr1");
             String user_addr2 = rs.getString("user_addr2");
@@ -357,7 +357,7 @@ public class userInfoDAO {
                String user_name = rs.getString("user_name");
                String user_pwd = rs.getString("user_pwd");
                String user_tel = rs.getString("user_tel");
-               Long user_jumin = rs.getLong("user_jumin");
+               int user_jumin = rs.getInt("user_jumin");
                int user_zip = rs.getInt("user_zip");
                String user_addr1 = rs.getString("user_addr1");
                String user_addr2 = rs.getString("user_addr2");
@@ -408,7 +408,7 @@ public class userInfoDAO {
          dto.setUser_addr1(user_addr1);
          dto.setUser_addr2(user_addr2);
          
-         return dto; 
+         return dto;
       } catch(Exception e) {
          e.printStackTrace();
          return null;

@@ -48,14 +48,6 @@ function orderDeclined(order_idx){
 		location.href='/mni/admin/ordList.jsp';
 	}
 }
-function orderDelevery(order_idx){
-	let sign = window.confirm('배송 처리하시겠습니까?');
-	if(sign){
-		location.href='/mni/admin/ordSign.jsp?order_idx='+order_idx;
-	}else{
-		location.href='/mni/admin/ordList.jsp';
-	}
-}
 function userID(){
 	<%
 	if(user_id == null){
@@ -148,7 +140,7 @@ int count = 0;
 			if(arr == null || arr.size() == 0){
 				 %>
 		            <tr>
-		               <td colspan="14" class="td">검색된 주문이 없습니다.</td>
+		               <td colspan="10" class="td">등록된 상품이 없습니다.</td>
 		            </tr>
 		            <%
 			}else{
@@ -166,10 +158,7 @@ int count = 0;
 				<input type="button" value="승인" class="ordBtnDeco" onclick="orderSign(<%=arr.get(i).getOrder_idx()%>)">	
 				<input type="button" value="거절" class="ordBtnDeco" onclick="orderDeclined(<%=arr.get(i).getOrder_idx()%>)">
 				</td>
-				<%}else if(arr.get(i).getOrder_state().equals("상품준비중")){
-					%><td><%=arr.get(i).getOrder_state() %>
-					<input type="button" value="배송" class="ordBtnDeco" onclick="orderDelevery(<%=arr.get(i).getOrder_idx()%>)"></td><%	
-				}else{ %>
+				<%}else{ %>
 				<td><%=arr.get(i).getOrder_state() %></td>
 				<%} %>
 				<td><%=arr.get(i).getOrder_type() %></td>

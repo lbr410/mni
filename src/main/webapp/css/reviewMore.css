@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.titleMargin {
+body {
 	margin: 0 auto;
 	width: 800px;
 }
@@ -10,7 +10,6 @@
 	border-radius: 100%;
 	float: left;
 	margin-right: 20px;
-	background-color: #cccccc;
 }
 
 .SpanMargin {
@@ -19,9 +18,8 @@
 	margin-top: 30px;
 }
 
-.contentDesign {
+.contentMargin {
 	margin-top: 40px;
-	width: 800px;
 }
 
 .hrStyle {

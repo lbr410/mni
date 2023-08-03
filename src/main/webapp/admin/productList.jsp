@@ -100,7 +100,7 @@ if(cp % pageButton == 0){
          </thead>
          <tfoot>
          <tr>
-            <td colspan="11" align="center">
+            <td colspan="10" align="center">
          <%
          /**페이징*/
          if(userGroup != 0){
