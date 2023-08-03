@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="java.util.*"%>
+<%@ page import="com.mni.review.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,18 +51,15 @@
 		<span class="SpanMargin"><%=table.get(i).getUser_id() %></span><br>
 		<span class="SpanMargin"><%=table.get(i).getReview_date() %></span>
 	</div>
-		<div class="contentMargin">ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</div>
+		<div class="contentMargin"><%=table.get(i).getReview_content() %></div>
 	<div>
 		<a href="/mni/user/review_img/<%=table.get(i).getReview_img() %>" target="blank">
 		<img src="/mni/user/review_img/<%=table.get(i).getReview_img() %>" alt="review image" class="reviewContentImg" onError="this.style.visibility='hidden'"></a>
 	</div>
 	<hr class="hrStyle">
-		<div>
-	<img src="/mni/img/orijen.jpg" alt="이미지" class="proImg">
-		<span class="SpanMargin">abc</span><br>
-		<span class="SpanMargin">2023-01-01</span>
-	</div>
-		<div class="contentMargin">ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</div>
+	<%
+		}
+	%>
 	<div>
 	<%
 	if(userGroup != 0){
@@ -103,5 +102,6 @@
 	<!-- 여기까지 -->
 </article>
 </section>
+<%@ include file="/footer.jsp" %>
 </body>
 </html>

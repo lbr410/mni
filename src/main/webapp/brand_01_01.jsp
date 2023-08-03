@@ -6,7 +6,6 @@
 <%
 String num_s=request.getParameter("brandNum");
 if(num_s==null || num_s.equals("")){
-
 	num_s="0";
 	%>
 	<script>
@@ -14,7 +13,7 @@ if(num_s==null || num_s.equals("")){
 	location.href='/mni/brand.jsp';
 	</script>
 	<%
-
+}
 
 int num=Integer.parseInt(num_s);
 
@@ -26,7 +25,7 @@ case 100: brandName="오리젠"; brandLogo="/mni/img/orijen.jpg"; brandBanner="/
 case 200: brandName="아카나"; brandLogo="/mni/img/acana.jpg"; brandBanner="/mni/img/acana_banner.jpg"; break;
 case 300: brandName="로얄캐닌"; brandLogo="/mni/img/royalcanin.JPG"; brandBanner="/mni/img/royalcanin_banner.jpg"; break;
 case 400: brandName="아투"; brandLogo="/mni/img/aatu.JPG"; brandBanner="/mni/img/aatu_banner.jpg"; break;
-default : %><script> window.alert='잘못된..경로 입니다.'; location.href='brand_01_01.jsp';</script><%
+default : %><script> window.alert='잘못된 접근입니다.'; location.href='/mni/brand.jsp';</script><%
 }
 
 %>    
@@ -61,36 +60,36 @@ if(cp % pageButton == 0){
 
 int proTotal=0;
 if(totalCnt!=-1){
-	proTotal=totalCnt;
+   proTotal=totalCnt;
 }
 %>
 <body>
 <%@ include file="header.jsp" %>
-	<div class="bar">홈 > 브랜드 > <%=brandName %></div>
-	<div class="top">
-		<div class="brandlogo">
-			<img class="brandlogo" src="<%=brandLogo %>" alt="logo">
-		</div>
-	</div>
+   <div class="bar">홈 > 브랜드 > <%=brandName %></div>
+   <div class="top">
+      <div class="brandlogo">
+         <img class="brandlogo" src="<%=brandLogo %>" alt="logo">
+      </div>
+   </div>
     <div class="banner">
         <img class="imgslide" src="<%=brandBanner %>" alt="banner">
-   	</div>
-   	<div class="menu">
-	<div class="category">
-		<div class="list1"><a href="#">카테고리</a></div>
-		<div class="list2"><a href="#">전체</a></div>
-		<div class="list2"><a href="#">사료</a></div>
-	</div>
-	</div>
- 	 <div class="head-title">전체
- 	 <hr>
- 	 </div>
-   <div class="prodNum"><%=proTotal %>개의 상품</div>	
+      </div>
+      <div class="menu">
+   <div class="category">
+      <div class="list1"><a href="#">카테고리</a></div>
+      <div class="list2"><a href="#">전체</a></div>
+      <div class="list2"><a href="#">사료</a></div>
+   </div>
+   </div>
+     <div class="head-title">전체
+     <hr>
+     </div>
+   <div class="prodNum"><%=proTotal %>개의 상품</div>   
 <div class="prodSection">
 
-	<table>
-		<tfoot>
-			<tr>
+   <table>
+      <tfoot>
+         <tr>
             <td colspan="6" align="center">
          <%
          if(userGroup != 0){
@@ -109,43 +108,42 @@ if(totalCnt!=-1){
          %>
          </td>
          </tr>
-		</tfoot>
-		<tbody>
-				<%
-				ArrayList<BrandDTO> arr=bdao.brandNum(num,cp,pageCnt);
-				if(arr==null || arr.size()==0){
-					%>
-					<tr>
-						<td colspan="3">등록된 상품이 없습니다.</td>
-					</tr>
-					<%
-				}else{
-					%><tr><%
-					for(int i=0;i<arr.size();i++){
-						%>
-							<td>
-								<div class="brand-list-item">
-	           						<div class="prodImg">
-	               					 <a href="#"><img src="/mni/img/<%=arr.get(i).getProd_title_img() %>" alt="brand image" name="brand"></a>
-	           						</div>
-	               					<div class="description-section">
-	               		 				<div class="prodName" id="title"><%=arr.get(i).getProd_name() %></div>
-				           				<div class="prodTitle"><%=arr.get(i).getProd_title() %></div>
-				             	    	<div class="prodPrice"><%=arr.get(i).getProd_price() %>원</div>
-	          	 					</div>
-	      		  				</div>		
-							</td>	
-						<%
-						if(i%3==2 && i!=arr.size()){
-							%></tr><tr><%	
-							}					
-					}
-					%></tr><%
-				}
-}
-				%>
-		</tbody>
-	</table>
+      </tfoot>
+      <tbody>
+            <%
+            ArrayList<BrandDTO> arr=bdao.brandNum(num,cp,pageCnt);
+            if(arr==null || arr.size()==0){
+               %>
+               <tr>
+                  <td colspan="3">등록된 상품이 없습니다.</td>
+               </tr>
+               <%
+            }else{
+               %><tr><%
+               for(int i=0;i<arr.size();i++){
+                  %>
+                     <td>
+                        <div class="brand-list-item">
+                                <div class="prodImg">
+                                  <a href="#"><img src="/mni/img/<%=arr.get(i).getProd_title_img() %>" alt="brand image" name="brand"></a>
+                                </div>
+                                 <div class="description-section">
+                                     <div class="prodName"><%=arr.get(i).getProd_name() %></div>
+                                   <div class="prodTitle"><%=arr.get(i).getProd_title() %></div>
+                                   <div class="prodPrice"><%=arr.get(i).getProd_price() %>원</div>
+                                </div>
+                             </div>      
+                     </td>   
+                  <%
+                  if(i%3==2 && i!=arr.size()){
+                     %></tr><tr><%   
+                     }               
+               }
+               %></tr><%   
+            }
+            %>
+      </tbody>
+   </table>
 </div>
 
 <%@ include file="footer.jsp" %>
