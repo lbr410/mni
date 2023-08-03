@@ -4,6 +4,12 @@
 <%
 String order_idx_s = request.getParameter("order_idx");
 if(order_idx_s == null || order_idx_s.equals("")){
+	%>
+	<script>
+	window.alert('잘못된 접근입니다.');
+	location.href = '/mni/admin/ordList.jsp';
+	</script>
+	<%
    %>
    <script>
    window.alert('잘못된 접근입니다.');

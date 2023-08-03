@@ -86,10 +86,10 @@
       <input type="hidden" name="user_idx" value="<%=sidx %>">
       <div class="prodcount">
       <div class="prodcount_prod">&nbsp;<%=dto.getProd_name() %></div>
-      &nbsp;<input type="button" value="ㅡ" onclick="prodCount('minus');">&nbsp;
+      &nbsp;<input type="button" value="ㅡ" onclick="prodCount('minus');" class="button_m">&nbsp;
       <input type="text" name="cart_count" maxlength="2" 
-      id="prodcount" value="1">&nbsp;
-      <input type="button" value="+" onclick="prodCount('plus')">
+      id="prodcount" value="1" class="cart_count">&nbsp;
+      <input type="button" value="+" onclick="prodCount('plus')" class="button_p">
       <span><%=df.format(dto.getProd_price()) %></span>
       </div>
       <hr id="hr">
@@ -97,7 +97,7 @@
       <span>&nbsp;주문금액</span>
       <input type="hidden" name="cart_price" value="<%=dto.getProd_price() %>">
       <input type="hidden" name="cart_total_price" value="<%=dto.getProd_price() %>">
-      <input type="text" name="cart_total_price2" value="<%=df.format(dto.getProd_price()) %>">
+      <input type="text" name="cart_total_price2" value="<%=df.format(dto.getProd_price()) %>" class="order_price" readonly>
       </div>
       <%
          if(sidx==null) {
@@ -132,11 +132,13 @@
 </section>
 <section class="section">
 <article>
-   <h2 class="section_rv"><a>구매후기</a></h2>
+   <h2 class="section_rv"><a name="review">구매후기</a></h2>
    <span><a href="/mni/product/reviewMore.jsp?idx=<%=prod_idx %>">리뷰 더 보기</a></span>
    <hr class="detail_hr">
       </article>
    </section>
+<section class="section">
+<article>
 <%
    ArrayList<ReviewDTO> table = rdao.reviewList(idx);
 
@@ -148,8 +150,8 @@
       int forSize = table.size()<=3 ? table.size() : 3;
       for(int i=0; i<forSize; i++) {
 %>
-      
-
+</article>
+</section>
    <section class="section">
    <article>
    <div class="reviewImg">
@@ -174,11 +176,6 @@
       }
    }
 %>
-</article>
-</section>
-<section>
-<article>
-<h1>페이징 들어갈 부분</h1>
 </article>
 </section>
 <section class="section">

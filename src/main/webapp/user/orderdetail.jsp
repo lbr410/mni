@@ -100,6 +100,7 @@ userInfoDTO dto = udao.loginCheck(id);
       	         </div>
       			<%
       		}else if(arr.get(i).getOrder_state().equals("주문취소") || arr.get(i).getOrder_state().equals("승인거절")){
+      			%>
 				%>
       			<div class = "a">
       	         <span class = "span">주문취소</span>

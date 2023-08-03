@@ -148,6 +148,7 @@ public class userInfoDAO {
                user_id = rs.getString(1);
             }
 
+
             System.out.println(user_id);
 
             return user_id;

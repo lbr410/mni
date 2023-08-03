@@ -5,8 +5,11 @@
 <%
 String id = request.getParameter("id");
 String pwd = request.getParameter("user_pwd");
-String juminfront = request.getParameter("juminfront");
-String juminback = request.getParameter("juminback"); 
+String juminfront_s = request.getParameter("juminfront");
+String juminback_s = request.getParameter("juminback");
+int juminfront = Integer.parseInt(juminfront_s);
+int juminback = Integer.parseInt(juminback_s);
+
 int result = udao.setUserUpdatePwd(pwd, id, juminfront, juminback);
 if(result > 0){
 	%>

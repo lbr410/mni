@@ -14,7 +14,7 @@
 <%@ include file="/header.jsp" %>
 <body>
 <div class="bar">홈 > 베스트</div>
-<div class="head-title">베스트</div>
+<div class="head-title">베스트 </div>
 <div class="prodSection">
 <table>
    <tbody>
@@ -39,18 +39,18 @@
          }      
          %>
             <td>
-               <div class="brand-list-item">
+               <div class="place-list-item">
                      <div class="best-icon">
-                  <img src="/mni/img/<%=icon %>" alt="best<%=i+1 %>" name="besticon">
+                  <img src="/mni/img/<%=icon %>" alt="best1" name="besticon">
                </div>
-                  <div class="prodImg">
+                  <div class="place-image-wrapper">
                       <a href="javascript:location.href='/mni/product/product.jsp?idx=<%=arr.get(i).getProd_idx()%>'">
                       <img src="/mni/img/<%=arr.get(i).getProd_title_img() %>" alt="place image" name="best"></a>
                   </div>
                   <div class="description-section">
-                     <div class="prodName"><%=arr.get(i).getProd_name() %></div>
-                      <div class="prodTitle" id="title"><%=arr.get(i).getProd_title() %></div>
-                       <div class="prodPrice"><%=df.format(arr.get(i).getProd_price()) %></div>
+                     <div class="description-section_title"><%=arr.get(i).getProd_name() %></div>
+                      <div class="description-section_content" id="title"><%=arr.get(i).getProd_title() %></div>
+                       <div class="description-section_price"><%=df.format(arr.get(i).getProd_price()) %></div>
                   </div>
                   </div>
             </td>

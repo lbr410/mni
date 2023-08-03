@@ -9,7 +9,7 @@
 <link rel = "stylesheet" type = "text/css" href = "/mni/css/usercheck.css">
 </head>
 <body>
-<%@include file = "../header.jsp" %>
+<%@include file = "/header.jsp" %>
 <section id = "user">
 	<article>
 	<form name="usercheck" action="usercheck_ok.jsp" method="post">
@@ -24,6 +24,6 @@
 	</form>
 	</article>
 </section>
-<%@include file = "../footer.jsp" %>
+<%@include file = "/footer.jsp" %>
 </body>
 </html>

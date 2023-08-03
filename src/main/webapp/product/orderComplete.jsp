@@ -4,58 +4,51 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="/mni/css/orderComplete.css">
+<title>멍냥이 : 결제완료</title>
 <style>
 section{
 	margin: 0px auto;
 	width: 1000px;
+	
 }
 section h1{
 	width: 1000px;
 	margin-top: 30px;
 }
-hr{
-	margin-top: 10px;
-	background-color: black;
-	height: 1px;
-	border: 0;
-}
+
 .ordUser{
 	float:left;
 	height: 100px;
 	 width: 450px;
-	 margin-top: 40px;
+	 margin-top: 20px;
 	 margin-left: 30px;
 }
 .ordPay{
 	float:right;
 	height: 150px;
 	 width: 450px;
-	 margin-top: 40px;
+	 margin-top: 20px;
 	 margin-left: 30px;
 }
 .line{
-	border-left: 3px solid #e9e9e9;
-	height: 150px;
+	border-left: 1px solid #cccccc;
+	height: 220px;
 	left: 50%;
 	position: absolute;
+	padding-left: 40px;
 }
 .span{
-	font-weight: bold;
 	margin-left: 50px;
 }
 .ordCom{
 	margin-top: 30px;
+	margin-bottom: 10px;
 }
-#hr{
-	width: 1000px;
-	background-color: #e9e9e9;
-}
+
 #mainButton{
 	margin-top:15px;
 	text-align: center;
-	font-size:20px;
+	font-size:16px;
 	color:white;
 	background-color: #ff7f50;
 	text-decoration: none;
@@ -68,7 +61,7 @@ hr{
 #ordButton{
 	margin-top:15px;
 	text-align: center;
-	font-size:20px;
+	font-size:16px;
 	color:#ff7f50;
 	background-color: white;
 	text-decoration: none;
@@ -79,67 +72,87 @@ hr{
 	border: 0.5px solid;
 	border-color: #ff7f50;
 }
+
+.orderComplete {
+	text-align: center;
+}
+
+.hrStyle {
+	background: #cccccc;
+	height: 1px;
+	border: 0;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 1000px;
+}
+
+.menu {
+	font-weight: bold;
+}
+
+.divWidth {
+	width: 400px;
+}
+
+.divFloat {
+	float: left;
+}
+
+.divHeight {
+	height: 30px;
+}
 </style>
 </head>
 <body>
-<%@include file="../header.jsp" %>
+<%@include file="/header.jsp" %>
 <section>
 <article>
-	<div>
-	<h1>주문완료</h1>
-	<hr>
+	<div class="orderComplete">
+	<h1>❤️주문이 완료되었습니다. 멍냥이를 이용해주셔서 감사합니다. 😘❤️</h1>
+	<hr class="hrStyle">
 	</div>
-	<div>
-	<h1>주문이 완료되었습니다! 멍냥이를 이용해주셔서 감사합니다!</h1>
-	<hr>
-	</div>
-	<div>
-	<h1>상품 배송 정보</h1>
-	</div>
-</article>
-</section>
-<section>
-<article>
 	<div class="ordUser">
-	<h2>받는 사람 정보</h2>
+	<h2>🐶 받는 사람 정보</h2>
 	<div class="ordCom">
-	<span>받는사람</span>
+	<span class="menu">받는사람</span>
 	<span class="span">홍길동</span>
 	</div>
 	<div>
-	<span>받는주소</span>
-	<span class="span">서울특별시 서대문구 연희동 연희로 242</span>
+	<div class="menu divFloat">받는주소&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+	<div class="span divWidth">12345</div>
+	<div class="menu divFloat">　　　　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+	<div class="span divWidth">서울특별시 동작구 만양로 19길 78</div>
+	<div class="menu divFloat divHeight">　　　　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+	<div class="span divWidth">행복한우리아파트 707동 101호</div>
 	</div>
 	<div>
-	<span>요청사항</span>
-	<span class="span">부재 시 연락주세요</span>
+	</div>
+	<div class="ordCom">
+	<span class="menu">요청사항</span>
+	<span class="span">부재 시 연락주세요ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</span>
 	</div>
 	</div>
 	<div class="ordPay">
 	<div class="line">
-	<h2>결제 정보</h2>
+	<h2>😺 결제 정보</h2>
 	<div class="ordCom">
-	<span>주문금액</span>
-	<span class="span">17,000원</span>
-	</div>
-	<div>
-	<span>결제방법</span>
+	<span class="menu">결제방법</span>
 	<span class="span">신용카드</span>
 	</div>
 	<div>
-	<span>총 결제금액</span>
+	<span class="menu">결제금액</span>
 	<span class="span">17,000원</span>
 	</div>
 	</div>
 	</div>
 </article>
-</section>
-<hr id="hr">
+</section><br><br><br><br>
+<hr class="hrStyle">
 <section>
 <article>
 <form action="">
-		<input type="button" value="주문 상세보기" id="ordButton">
-		<input type="button" value="쇼핑 계속하기" id="mainButton">
+		<input type="button" value="주문 상세보기" id="ordButton" onclick="location.href='/mni/user/orderdetail.jsp';">
+		<input type="button" value="쇼핑 계속하기" id="mainButton" onclick="location.href='/mni/index.jsp';">
 	</form>
 </article>
 </section>
