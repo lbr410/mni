@@ -91,7 +91,6 @@ if(cp % pageButton == 0){
    <input type="submit" value="검색" class="seaBtnDeco">
    </div>
    </form>
-   <div class="misord"><input type="checkbox" name="ord_checkbox" value="미승인 주문">미승인 주문</div>
       <table>
       <thead>
          <tr id="trUp">
@@ -139,7 +138,7 @@ if(cp % pageButton == 0){
          if(arr == null || arr.size() == 0){
              %>
                   <tr>
-                     <td colspan="10" class="td">등록된 상품이 없습니다.</td>
+                     <td colspan="14" class="td">등록된 상품이 없습니다.</td>
                   </tr>
                   <%
          }else{
