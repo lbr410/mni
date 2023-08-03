@@ -53,12 +53,12 @@ userInfoDTO dto = udao.loginCheck(id);
 	   <%
    }else{
 	%>
-	<h1><%=user_name %>님의 주문내역</h1>
+	<h1><%=dto.getUser_name() %>님의 주문내역</h1>
 
    <%for(int i = 0 ; i < arr.size() ; i++){ %>
    <h3><%=arr.get(i).getOrder_date() %></h3>
    <hr>
-   <div class = "productimg"></div>
+   <div><img src = "/mni/admin/product_img/<%=arr.get(i).getProd_title_img() %>" alt = "상품이미지" class = "productimg"></div>
       <table>
          <tr>   
             <th>상품명</th>
@@ -81,7 +81,6 @@ userInfoDTO dto = udao.loginCheck(id);
          <div class = "a">
          <span class = "spanready">주문완료</span>
          <input type = "button" value = "주문취소" class = "button" onclick = "javascript:location.href='userOrderCancel.jsp?ord_idx=<%=arr.get(i).getOrder_idx()%>'">
-         <input type = "button" value = "수취확인" class = "button" onclick = "javascript:location.href='userReceiptConfirmation.jsp?ord_idx=<%=arr.get(i).getOrder_idx()%>'">
          </div>
          <%
       		}else if(arr.get(i).getOrder_state().equals("상품준비중")){
@@ -101,6 +100,7 @@ userInfoDTO dto = udao.loginCheck(id);
       			<%
       		}else if(arr.get(i).getOrder_state().equals("주문취소") || arr.get(i).getOrder_state().equals("승인거절")){
       			%>
+				%>
       			<div class = "a">
       	         <span class = "span">주문취소</span>
       	         </div><br>

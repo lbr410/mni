@@ -13,41 +13,41 @@ public class OrdDAO {
     /** 상품 주문 - BR */
     public int buyProduct(int sidx, OrdDTO dto, int count, int price, int prod_idx) {
        try {
-    	   conn = com.mni.db.MniDB.getConn();
+          conn = com.mni.db.MniDB.getConn();
    
-    	   String sql = "insert into ord values(order_idx.nextval, ?, ?, ?, ?, ?, ?, ?, ?, sysdate, '미승인', ?, ?)";
-    	   ps = conn.prepareStatement(sql);
-    	   ps.setInt(1, sidx);
-    	   ps.setInt(2, prod_idx);
-    	   ps.setString(3, dto.getOrder_recie());
-    	   ps.setInt(4, dto.getOrder_zip());
-    	   ps.setString(5, dto.getOrder_addr1());
-    	   ps.setString(6, dto.getOrder_addr2());
-    	   ps.setString(7, dto.getOrder_type());
-    	   ps.setString(8, dto.getOrder_req());
-    	   if(dto.getOrder_req() == null) {
-    		   ps.setString(8, "배송 전에 연락주세요.");
-    	   } else {
-    		   ps.setString(8, dto.getOrder_req());
-    	   }
-    	   ps.setInt(9, count);
-    	   ps.setInt(10, price);
+          String sql = "insert into ord values(order_idx.nextval, ?, ?, ?, ?, ?, ?, ?, ?, sysdate, '미승인', ?, ?)";
+          ps = conn.prepareStatement(sql);
+          ps.setInt(1, sidx);
+          ps.setInt(2, prod_idx);
+          ps.setString(3, dto.getOrder_recie());
+          ps.setInt(4, dto.getOrder_zip());
+          ps.setString(5, dto.getOrder_addr1());
+          ps.setString(6, dto.getOrder_addr2());
+          ps.setString(7, dto.getOrder_type());
+          ps.setString(8, dto.getOrder_req());
+          if(dto.getOrder_req() == null) {
+             ps.setString(8, "배송 전에 연락주세요.");
+          } else {
+             ps.setString(8, dto.getOrder_req());
+          }
+          ps.setInt(9, count);
+          ps.setInt(10, price);
       
-    	   int result = 0;
-    	   if(ps.executeUpdate() == 1 ? true : false) {
-    		   ps.close();
-    		   CartDAO cdao = new CartDAO();
-    		   result = cdao.userCartDelete(sidx);
-    	   }
+          int result = 0;
+          if(ps.executeUpdate() == 1 ? true : false) {
+             ps.close();
+             CartDAO cdao = new CartDAO();
+             result = cdao.userCartDelete(sidx);
+          }
       
-    	   return result;
+          return result;
        } catch(Exception e) {
-    	   e.printStackTrace();
-    	   return -1;
+          e.printStackTrace();
+          return -1;
        } finally {
-    	   try {
-    		   if(conn!=null) conn.close();
-    	   } catch(Exception e) {}
+          try {
+             if(conn!=null) conn.close();
+          } catch(Exception e) {}
        }
     }
     
@@ -56,15 +56,15 @@ public class OrdDAO {
        try {
           conn=com.mni.db.MniDB.getConn();
           int start = (cp-1)*pageCnt+1;
-			int end = cp*pageCnt;
+         int end = cp*pageCnt;
           String sql="select * from "
-          		+ "(select rownum as rnum,a.* from "
-          		+ "(select u.user_idx,u.user_name,u.user_id,p.prod_title,p.prod_idx,order_idx,order_date,order_type,order_zip,order_addr1,order_addr2,order_state,order_recie,order_req,order_count,order_price "
+                + "(select rownum as rnum,a.* from "
+                + "(select u.user_idx,u.user_name,u.user_id,p.prod_title,p.prod_idx,order_idx,order_date,order_type,order_zip,order_addr1,order_addr2,order_state,order_recie,order_req,order_count,order_price "
                 + "from userinfo u,ord o,product p where u.user_idx = o.user_idx and p.prod_idx = o.prod_idx order by order_date desc) a) b "
                 + "where rnum>=? and rnum<=?";
           ps=conn.prepareStatement(sql);
           ps.setInt(1, start);
-			ps.setInt(2, end);
+         ps.setInt(2, end);
           rs=ps.executeQuery();
           ArrayList<OrdDTO> arr = new ArrayList<OrdDTO>();
           while(rs.next()) {
@@ -359,6 +359,7 @@ public class OrdDAO {
       }
       /**관리자 페이지 배송 시작*/
       public int orderDelevery(int order_idx) {
+<<<<<<< HEAD
     	  try {
     		  conn = com.mni.db.MniDB.getConn();
     		  String sql = "update ord set order_state = '배송중' where order_idx = ?";
@@ -375,5 +376,23 @@ public class OrdDAO {
 				if(conn!=null)conn.close();
 			}catch(Exception e2) {}
 		}
+=======
+         try {
+            conn = com.mni.db.MniDB.getConn();
+            String sql = "update ord set order_state = '배송중' where order_idx = ?";
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, order_idx);
+            int count = ps.executeUpdate();
+            return count;
+         }catch(Exception e) {
+            e.printStackTrace(); 
+            return 0;
+         }finally {
+         try {
+            if(ps!=null)ps.close();
+            if(conn!=null)conn.close();
+         }catch(Exception e2) {}
+      }
+>>>>>>> branch 'master' of https://github.com/lbr410/mni.git
       }
 }

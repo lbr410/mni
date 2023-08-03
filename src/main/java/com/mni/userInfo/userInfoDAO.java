@@ -146,6 +146,12 @@ public class userInfoDAO {
             if(rs.next()) {
                user_id = rs.getString(1);
             }
+<<<<<<< HEAD
+=======
+
+            System.out.println(user_id);
+
+>>>>>>> branch 'master' of https://github.com/lbr410/mni.git
             return user_id;
          }catch(Exception e) {
             e.printStackTrace();

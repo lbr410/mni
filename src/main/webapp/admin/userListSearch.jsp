@@ -10,19 +10,19 @@ String admin_id = (String)session.getAttribute("admin_saveid");
 String ck = "";
 Cookie cks[]=request.getCookies();
 if(cks!=null){
-	for(int i=0; i<cks.length; i++){
-		//자동 로그인 쿠키 유무
-		if(cks[i].getName().equals("admin_auto")){
-			ck = cks[i].getValue();
-		}
-	}
-	if(admin_id == null && !ck.equals("admin")){
-		%><script>
-		window.alert('로그인 후 이용가능합니다.');
-		location.href='/mni/admin/index_admin.jsp';
-		</script>
-		<%
-	}
+   for(int i=0; i<cks.length; i++){
+      //자동 로그인 쿠키 유무
+      if(cks[i].getName().equals("admin_auto")){
+         ck = cks[i].getValue();
+      }
+   }
+   if(admin_id == null && !ck.equals("admin")){
+      %><script>
+      window.alert('로그인 후 이용가능합니다.');
+      location.href='/mni/admin/index_admin.jsp';
+      </script>
+      <%
+   }
 }
 %>
 <!DOCTYPE html>
@@ -33,11 +33,11 @@ if(cks!=null){
 <link rel="stylesheet" type="text/css" href="/mni/css/adminList.css">
 <script>
 function userInfoSearch(){
-	<%
-	if(user_id == null){
-		user_id = request.getParameter("userinfo_id");
-	}
-	%>
+   <%
+   if(user_id == null){
+      user_id = request.getParameter("userinfo_id");
+   }
+   %>
 }
 </script>
 </head>
@@ -54,7 +54,7 @@ if(cp_s == null || cp_s.equals("")){
 int cp = Integer.parseInt(cp_s);
 
 if(totalCnt == 0){
-	totalCnt=1;
+   totalCnt=1;
 }
 int totalPage = totalCnt / pageCnt +1;
 if(totalCnt % pageCnt == 0){
@@ -72,27 +72,27 @@ if(cp % pageButton == 0){
 <h1>회원 목록</h1>
 <section>
 <article>
-	<form name="userListSearch" action="/mni/admin/userListSearch.jsp" method="post" onsubmit="userInfoSearch();">
-	<div><input type="text" name="userinfo_id" placeholder="회원 ID 입력" id="searchBox" required>
-	<input type="submit" value="검색" class="seaBtnDeco">
-	</div>
-	</form>
-		<table>
-		<thead>
-			<tr>
-				<th>NO.</th>
-				<th>아이디</th>
-				<th id="thup">비밀번호</th>
-				<th>이름</th>
-				<th>주민번호</th>
-				<th>이메일</th>
-				<th>연락처</th>
-				<th>주소</th>
-				<th>가입일자</th>
-				<th id="thup">탈퇴여부</th>
-			</tr>
-			</thead>
-			<tfoot>
+   <form name="userListSearch" action="/mni/admin/userListSearch.jsp" method="post" onsubmit="userInfoSearch();">
+   <div><input type="text" name="userinfo_id" placeholder="회원 ID 입력" id="searchBox" required>
+   <input type="submit" value="검색" class="seaBtnDeco">
+   </div>
+   </form>
+      <table>
+      <thead>
+         <tr>
+            <th>NO.</th>
+            <th>아이디</th>
+            <th id="thup">비밀번호</th>
+            <th>이름</th>
+            <th>주민번호</th>
+            <th>이메일</th>
+            <th>연락처</th>
+            <th>주소</th>
+            <th>가입일자</th>
+            <th id="thup">탈퇴여부</th>
+         </tr>
+         </thead>
+         <tfoot>
          <tr>
             <td colspan="10" align="center">
          <%
