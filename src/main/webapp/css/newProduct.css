@@ -30,33 +30,34 @@ body {
     margin-left: 20px;
 }
 table{
-	border-spacing: 16px;
+	border-spacing: 30px;
 	margin-bottom: 20px;
 	float: left;
 }
 
 tr{
-	border-spacing: 6px;
+	border-spacing: 20px;
 }
-.page{
-	width: 26px;
-	font-size: 20px;
-	background-color:white;
-	text-decoration: none;
-	border: 0.5px solid;
-	border-color: #ff7f50;
-	cursor: pointer;
+td{
+	height: 40px;
 }
-.nowPage{
-	width: 26px;
-	border-radius: 4px;
-	font-size: 20px;
-	background-color:#ff7f50;
-	text-decoration: none;
-	border: 0.5px solid;
-	border-color: white;
-	color: white;
-
+#page{
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    color: black;
+    border: 0;
+    background-color: white;
+    border: 1px #ff7f50 solid;
+    border-radius: 5px;
+    margin-left: 70px;
+    cursor: pointer; 
+}
+#page:focus {
+    background-color:#ff7f50;
+    color:white;
+    outline: none;
+    border-radius: 5px;
 }
 .prodImg {
     width: 200px;
@@ -66,33 +67,35 @@ tr{
     background-color: #f5f5f5;
 }
 .prodImg img {
-    width: 200px;
-    cursor: pointer;
+ 	width: 200px;
+ 	cursor: pointer;
+ 	margin-bottom: 10px;
 }
 
 .prodName{
 	width: 200px;
-	height: 20px;
+	height: 32px;
     padding: 8px;
-    color: dimgrey;
+    color: #808080;
     font-weight: bold;
    	margin: 0;
-	font-size: 12px;
+ 	font-size: 13px;
    	text-align: left;
 }
-
-
 .prodTitle {
     width: 200px;
-    height: 20px;
-    font-size: 15px;
+    height: 58px;
+    font-size: 16px;
+	font-weight: 500;
     padding-left: 2px;
+    color: #333333;
     cursor: pointer;
 }
 .prodPrice {
     width: 200px;
     height: 20px;
-    font-size: 15px;
+    font-size: 18px;
+    font-weight: bold;
     padding: 8px;
     padding-bottom: 34px;
-    }
+}
