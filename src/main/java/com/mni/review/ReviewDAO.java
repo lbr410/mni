@@ -12,7 +12,7 @@ public class ReviewDAO {
    
    public ReviewDAO() {
       System.out.println("ReviewDAO() 생성자 호출");
-   }
+   } 
    
    /** 리뷰 보기 - BR */
    public ArrayList<ReviewDTO> reviewList(int prod_idx) {
