@@ -45,7 +45,7 @@ h3{margin-top: 30px;}
    <article>
    <form name = "fm" action = "pwdSearch.jsp?id=<%=id_s %>" method = "post">
       <%
-      if(id != null){
+      if(id_s != null){
          %>
          <h3>회원님의 아이디는</h3>
          <div class = "div"><%=id_s %> 입니다.</div>

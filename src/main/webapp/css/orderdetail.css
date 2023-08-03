@@ -53,9 +53,21 @@
     }
     
     th{text-align: left; width: 100px;}
+   	
    	td{width: 300px;}
+    
     .a{margin-left: 840px; margin-top: -80px;}	
     
+    .h1{
+    margin-left: 400px;
+    }
+    
+    .orderList{
+    	font-size:20px;
+    	margin-top: 150px;
+    	margin-bottom: 200px;
+    	margin-left: 400px;
+    }
     .button{
     	width: 80px;
     	height: 50px;
@@ -65,8 +77,11 @@
 		color: white;
 		border: 0px;
     }
+    
     .span{margin-left: 40px;}
+    
     .spanready{margin-left: 20px;}
+    
     .settinglogo{
     	width:40px;
     	height: 41px; 
