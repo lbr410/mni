@@ -76,13 +76,18 @@ function changesubmit(){
 </script>
 <%
 if(pwd == false){
+	%>
+	<script>
+		window.alert('입력하신 회원님의 정보가 없습니다.');
+		location.href = 'pwdSearch.jsp?id=<%=id_s%>';
+	</script>
+	<%
    %>
    <script>
       window.alert('입력하신 회원님의 정보가 없습니다.');
       location.href = 'pwdSearch.jsp?id=<%=id_s%>';
    </script>
    <%
-}
 %>
 <body onload = "sethide()">
 <%@include file = "/header.jsp" %>
