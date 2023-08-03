@@ -2,7 +2,6 @@ package com.mni.review;
 
 import java.sql.*;
 import java.util.*;
-import com.mni.ord.*;
 import com.oreilly.servlet.MultipartRequest;
 
 public class ReviewDAO {
@@ -337,10 +336,11 @@ public class ReviewDAO {
 	   }
    
    /*사용자 주문내역 리뷰 작성시 버튼안보이게 하는 조건 메서드 SM*/
-   public Boolean prodReview(int user_idx,int prod_idx,int order_idx) {
+   public String prodReview(int user_idx,int prod_idx,int order_idx) {
 	   try {
+		   
 		   conn = com.mni.db.MniDB.getConn();
-		   String sql = "select * from review "
+		   String sql = "select order_idx from review "
 		   		+ "where user_idx = ? and prod_idx = ? and order_idx = ?";
 		   ps = conn.prepareStatement(sql);
 		   ps.setInt(1, user_idx);
@@ -350,11 +350,15 @@ public class ReviewDAO {
 		   ps.setInt(3, order_idx);
 		   System.out.println(order_idx);
 		   rs = ps.executeQuery();
-		   System.out.println(rs.next());
-		   return rs.next();
+		   if(rs.next() == true) { 
+		   String order_idx_s = rs.getString(1); 
+		   return order_idx_s;
+		  }else {
+			  return null;
+		  }
 	   }catch(Exception e) {
 		   e.printStackTrace();
-		   return false;
+		   return null;
 	   }finally {
 		   try {
 			   if(rs != null) rs.close();

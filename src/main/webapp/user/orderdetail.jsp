@@ -107,19 +107,30 @@ userInfoDTO dto = udao.loginCheck(id);
       	         </div><br>
       	        <%
       		}else if(arr.get(i).getOrder_state().equals("배송완료")){
-      			Boolean reviewButton = rdao.prodReview(idx,arr.get(i).getProd_idx(),arr.get(i).getOrder_idx());
-      			if(reviewButton){
-      				%>
-          			<div class = "a">
-          	         <span class = "span">배송 완료</span>
-          	         </div>
-          	        <%
+      			String reviewButton_s = rdao.prodReview(idx,arr.get(i).getProd_idx(),arr.get(i).getOrder_idx());
+      			if(reviewButton_s != null){
+      				int reviewButton = Integer.parseInt(reviewButton_s);
+      				if(reviewButton == arr.get(i).getOrder_idx()){
+      					%>
+              			<div class = "a">
+              	         <span class = "span">배송 완료</span>
+              	         </div>
+              	        <%
+      				}else{
+      					%>
+              			<div class = "a">
+              	         <span class = "span">배송 완료</span>
+              	         <input type="button" value="리뷰작성" class="button" 
+              	         onclick="location.href='/mni/user/reviewWrite.jsp?prod_idx=<%=arr.get(i).getProd_idx() %>&user_idx=<%=idx%>&order_idx=<%=arr.get(i).getOrder_idx()%>'">
+              	         </div>
+              	        <%
+      				}
       			}else{
       				%>
           			<div class = "a">
           	         <span class = "span">배송 완료</span>
           	         <input type="button" value="리뷰작성" class="button" 
-          	         onclick="location.href='/mni/user/reviewWrite.jsp?prod_idx=<%=arr.get(i).getProd_idx() %>&user_idx=<%=idx%>&order_idx=<%=arr.get(i).getOrder_idx()%>&index=<%=i%>'">
+          	         onclick="location.href='/mni/user/reviewWrite.jsp?prod_idx=<%=arr.get(i).getProd_idx() %>&user_idx=<%=idx%>&order_idx=<%=arr.get(i).getOrder_idx()%>'">
           	         </div>
           	        <%
       			}
