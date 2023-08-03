@@ -34,7 +34,7 @@ label{
     margin-left: 70px;
     cursor: pointer; 
 }
-#buttonDeco:focus {
+#buttonDeco:focus {       
     background-color:#ff7f50;
     color:white;
     outline: none;
@@ -58,12 +58,12 @@ body{width: 1000px; margin: 0 auto;}
     <div class = "container">
         <div class = "inner">
            
-            <img src = "img/002.jpg">
+            <img src = "img/001_2.jpg">
             
         </div>
         <div class = "inner">
            
-            <img src = "img/003.jpg">
+            <img src = "img/002.jpg">
             
         </div>
         <div class = "inner">
