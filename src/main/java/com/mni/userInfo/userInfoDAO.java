@@ -146,9 +146,7 @@ public class userInfoDAO {
             if(rs.next()) {
                user_id = rs.getString(1);
             }
-
             System.out.println(user_id);
-
             return user_id;
          }catch(Exception e) {
             e.printStackTrace();

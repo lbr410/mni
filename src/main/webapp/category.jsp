@@ -120,7 +120,7 @@ if (cp % pageButton == 0) {
            	<div class="brand-list-item">
               		<div class="prodImg">
 						<a href="/mni/product/product.jsp?idx=<%=arr.get(i).getProd_idx() %>">
-                		<img src="/mni/img/<%=arr.get(i).getProd_title_img() %>" alt="prodImg" name="prod"></a>
+                		<img src="/mni/admin/product_img/<%=arr.get(i).getProd_title_img() %>" alt="prodImg" name="prod"></a>
               		</div>
               		<div class="description-section">
                 		<div class="prodName" id="title"><%=arr.get(i).getProd_name() %></div>

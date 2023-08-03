@@ -5,7 +5,9 @@
 <jsp:useBean id="udao" class="com.mni.userInfo.userInfoDAO"></jsp:useBean>
 <%
 	String user_id = (String)session.getAttribute("sid");
-	userInfoDTO dto = udao.loginCheck(user_id);	
+	System.out.println(user_id);
+	userInfoDTO dto = udao.loginCheck(user_id);
+	System.out.println(dto);
 %>
 <!DOCTYPE html>
 <html>
@@ -57,7 +59,7 @@ function userInfoModify(){
 	<article>
 		<h2>회원정보 수정</h2>
 		<hr>
-		<form name = "join" class = "info" action = "userInfo_ok.jsp" method="post" onsubmit = "return userInfoModify()">
+		<form name = "join" class = "info" action = "userInfo_ok.jsp" method="post">
 		<table>
 			<tr>
 				<th>이름</th>

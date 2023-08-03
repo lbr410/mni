@@ -82,6 +82,7 @@ if(cp % pageButton == 0){
 				<th id="thup">상품번호</th>
 				<th>상품명</th>
 				<th>아이디</th>
+				<th>리뷰사진</th>
 				<th>리뷰내용</th>
 				<th>작성일</th>
 				<th></th>
@@ -114,7 +115,7 @@ if(cp % pageButton == 0){
 		if(arr == null || arr.size() == 0){
 			 %>
 	            <tr>
-	               <td colspan="6" class="td">등록된 리뷰가 없습니다.</td>
+	               <td colspan="7" class="td">등록된 리뷰가 없습니다.</td>
 	            </tr>
 	            <%
 		}else{
@@ -125,8 +126,9 @@ if(cp % pageButton == 0){
 				<td><%=arr.get(i).getProd_idx() %></td>
 				<td><%=arr.get(i).getProd_name() %></td>
 				<td><%=arr.get(i).getUser_id() %></td>
+				<%System.out.println(arr.get(i).getReview_img()); %>
 
-				<td><%if(arr.get(i).getReview_img() == null || arr.get(i).getReview_img().equals("")){
+				<td><%if(arr.get(i).getReview_img() == null || arr.get(i).getReview_img().equals("-")){
 					%>사진없음<%
 					}else{%>
 				<img alt="리뷰 사진" src="/mni/user/review_img/<%=arr.get(i).getReview_img() %>" class="title_img"></td>

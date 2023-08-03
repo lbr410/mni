@@ -27,9 +27,7 @@
     }else{
         %>
              <div><%=id %>님 로그인 중
-          |<a href="/mni/user/logout.jsp">로그아웃</a>
-          |<a href="/mni/user/logout.jsp">회원탈퇴</a>|
-          </div>
+          |<a href="/mni/user/logout.jsp">로그아웃</a></div>
         <% 
      }
         %>
