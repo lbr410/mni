@@ -194,13 +194,13 @@ public class OrdDAO {
           }catch(Exception e2) {}
        }
     }
-    /**사용자 주문내역 출력 메서드*/
+    /**사용자 주문내역 출력 메서드SM*/
     public ArrayList<OrdDTO> UserOrderSelect(int idx){
         try {
            conn = com.mni.db.MniDB.getConn();
            String sql = "select order_date, prod_title_img, p.prod_idx, prod_name,o.order_idx,order_type,(order_price*order_count) as order_total_price,order_state "
                    + "from ord o ,product p "
-                   + "where o.user_idx = ? and o.prod_idx = p.prod_idx order by order_date";
+                   + "where o.user_idx = ? and o.prod_idx = p.prod_idx order by order_date desc";
 
            ps = conn.prepareStatement(sql);
            ps.setInt(1, idx);
@@ -316,7 +316,7 @@ public class OrdDAO {
        }
     }
    
-      /*사용자 주문내역에서 주문취소*/
+      /*사용자 주문내역에서 주문취소SM*/
       public int userOrderCancel(int order_idx) {
          try {
             conn = com.mni.db.MniDB.getConn();
@@ -337,7 +337,7 @@ public class OrdDAO {
          }
       }
       
-      /*사용자 주문내역에서 수취확인*/
+      /*사용자 주문내역에서 수취확인SM*/
       public int userReceiptConfirmation(int order_idx) {
          try {
             conn = com.mni.db.MniDB.getConn();

@@ -11,7 +11,7 @@ public class headerSearchDAO {
 	private ResultSet rs;
 	
 	public headerSearchDAO() {
-		// TODO Auto-generated constructor stub
+		System.out.println("headerSearchDAO()생성자 호출됨");
 	}
 	
 	/*헤더 검색SM*/
@@ -48,9 +48,9 @@ public class headerSearchDAO {
 			}else {
 				String sql = "select prod_name,prod_title_img,prod_brand,prod_price,prod_idx,prod_title "
 						+ "from product "
-						+ "where prod_name = ?";
+						+ "where prod_name like ?";
 				ps = conn.prepareStatement(sql);
-				ps.setString(1, search);
+				ps.setString(1,"%" + search + "%");
 				rs = ps.executeQuery();
 				if(rs.next()) {
 					do {
@@ -104,9 +104,9 @@ public class headerSearchDAO {
 				}
 			}else {
 				String sql = "select count(*) from product "
-						+ "where prod_name = ?";
+						+ "where prod_name like ?";
 				ps = conn.prepareStatement(sql);
-				ps.setString(1, search);
+				ps.setString(1,"%" + search + "%");
 				rs = ps.executeQuery();
 				if(rs.next()) {
 					count = rs.getInt(1);
