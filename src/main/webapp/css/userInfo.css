@@ -54,6 +54,12 @@
 	border-radius: 10px;
 	}
 	
+	.a{
+    font-size:10px;
+    margin-left: 460px;
+    cursor: pointer;
+    }
+	
 	.button{
 	width: 100px; 
 	height: 40px; 

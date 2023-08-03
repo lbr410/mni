@@ -2,7 +2,7 @@ package com.mni.review;
 
 import java.sql.*;
 import java.util.*;
-
+import com.mni.ord.*;
 import com.oreilly.servlet.MultipartRequest;
 
 public class ReviewDAO {
@@ -90,16 +90,17 @@ public class ReviewDAO {
       try {
          conn = com.mni.db.MniDB.getConn();
           
-         String sql = "insert into review values(review_idx.nextval, ?, ?, ?, ?, sysdate)";
+         String sql = "insert into review values(review_idx.nextval, ?, ?, ?, ?, ?, sysdate)";
          ps = conn.prepareStatement(sql);
          
          ps.setInt(1, Integer.parseInt(mr.getParameter("prod_idx")));
-         ps.setInt(2, Integer.parseInt(mr.getParameter("user_idx")));
-         ps.setString(3, mr.getParameter("review_content"));
+         ps.setInt(2, Integer.parseInt(mr.getParameter("order_idx")));
+         ps.setInt(3, Integer.parseInt(mr.getParameter("user_idx")));
+         ps.setString(4, mr.getParameter("review_content"));
          if(mr.getFilesystemName("review_img")!=null) {
-        	 ps.setString(4, mr.getFilesystemName("review_img"));
+        	 ps.setString(5, mr.getFilesystemName("review_img"));
          } else {
-        	 ps.setString(4, "-");
+        	 ps.setString(5, "-");
          }
          int count = ps.executeUpdate();
          
@@ -334,4 +335,32 @@ public class ReviewDAO {
 	         } catch(Exception e) {}
 	      }
 	   }
+   
+   /*사용자 주문내역 리뷰 작성시 버튼안보이게 하는 조건 메서드 SM*/
+   public Boolean prodReview(ArrayList<OrdDTO> arr, int index, int idx) {
+	   try {
+		   conn = com.mni.db.MniDB.getConn();
+		   String sql = "select * from review "
+		   		+ "where user_idx = ? and prod_idx = ? and order_idx = ?";
+		   ps = conn.prepareStatement(sql);
+		   ps.setInt(1, idx);
+		   System.out.println(idx);
+		   ps.setInt(2, arr.get(index).getProd_idx());
+		   System.out.println(arr.get(index).getProd_idx());
+		   ps.setInt(3, arr.get(index).getOrder_idx());
+		   System.out.println(arr.get(index).getOrder_idx());
+		   rs = ps.executeQuery();
+		   System.out.println(rs.next());
+		   return rs.next();
+	   }catch(Exception e) {
+		   e.printStackTrace();
+		   return false;
+	   }finally {
+		   try {
+			   if(rs != null) rs.close();
+			   if(ps != null) ps.close();
+			   if(conn != null) conn.close();
+		   }catch(Exception e) {}
+	   }
+   }
 }

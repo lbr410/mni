@@ -74,7 +74,8 @@ public class userInfoDAO {
    public userInfoDTO loginCheck(String id){
          try {
             conn=com.mni.db.MniDB.getConn();
-            String sql="select * from userinfo where user_id = ?";
+            String sql="select * from userinfo "
+            		+ "where user_id = ? and user_delete = 'n'";
             ps=conn.prepareStatement(sql);
             ps.setString(1, id);
             rs=ps.executeQuery();
@@ -422,5 +423,28 @@ public class userInfoDAO {
             if(conn!=null) conn.close();
          } catch(Exception e) {}
       }
+   }
+   
+   //회원탈퇴SM
+   public Boolean userUnregister(int idx) {
+	   try {
+		   conn = com.mni.db.MniDB.getConn();
+		   String sql = "update userinfo "
+		   		+ "set user_delete = 'y' , user_ddate = sysdate "
+		   		+ "where user_idx = ?";
+		   ps = conn.prepareStatement(sql);
+		   ps.setInt(1, idx);
+		   int updateOk = ps.executeUpdate();
+		   Boolean resualt = updateOk > 0 ? true:false;
+		   return resualt;
+	   }catch(Exception e) {
+		   e.printStackTrace();
+		   return false;
+	   }finally {
+		   try {
+			   if(ps != null) ps.close();
+			   if(conn != null) conn.close();
+		   }catch(Exception e) {}
+	   }
    }
 }
