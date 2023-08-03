@@ -140,8 +140,9 @@ if(totalCnt!=-1){
 							%></tr><tr><%	
 							}					
 					}
-					%></tr><%	
+					%></tr><%
 				}
+}
 				%>
 		</tbody>
 	</table>
