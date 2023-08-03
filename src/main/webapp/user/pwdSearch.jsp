@@ -79,7 +79,7 @@ function jumin(object){
 		<tr>
 		<%
 			String id_s = request.getParameter("id");
-		if(id != null){
+		if(id_s != null){
 			%>
 			<th>아이디</th> 
 			<td><input type = "text" name = "id" value = "<%=id_s%>" required class ="input"></td>

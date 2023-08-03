@@ -3,10 +3,12 @@
 .best-icon{
 	width: 212px;
 	height: 40px;
+   width: 212px;
+   height: 40px;
 }
 .best-icon img{
-	width: 40px;
-	height: 40px;
+   width: 40px;
+   height: 40px;
 }
 
 body {
@@ -111,4 +113,8 @@ tr{
     font-weight: bold;
     padding: 8px;
     padding-bottom: 34px;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> branch 'master' of https://github.com/lbr410/mni

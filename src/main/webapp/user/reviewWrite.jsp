@@ -35,6 +35,15 @@
 		}
 		reader.readAsDataURL(event.target.files[0]);
 	}
+	
+	// 리뷰내용 공백시 경고창
+	function contentChk() {
+		var content = document.all.review_content.value;
+		if(content === '') {
+			window.alert('내용을 입력해주세요.');
+			return false;
+		}
+	}
 </script>
 <body>
 <%@ include file="../header.jsp" %>
@@ -57,7 +66,7 @@
 <section>
 	<article>
 	<br><h1>리뷰작성</h1>
-		<form name="reviewWrite" action="reviewWrite_ok.jsp" method="post" enctype="multipart/form-data">
+		<form name="reviewWrite" action="reviewWrite_ok.jsp" onsubmit="return contentChk()" method="post" enctype="multipart/form-data">
 		<table class="tableSize">
 			<tr>
 				<td colspan="4"><textarea placeholder="최대 300자까지 입력 가능합니다."

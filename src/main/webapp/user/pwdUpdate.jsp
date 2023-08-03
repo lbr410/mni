@@ -103,7 +103,7 @@ if(pwd == false){
             </td>
          </tr>   
       </table>
-      <input type = "hidden" name = "id" value = "<%=id %>">
+      <input type = "hidden" name = "id" value = "<%=id_s %>">
       <input type = "hidden" name = "juminfront" value = "<%=juminfront %>">
       <input type = "hidden" name = "juminback" value = "<%=juminback %>">
       <input type = "submit" value = "변경하기" class = "submit">

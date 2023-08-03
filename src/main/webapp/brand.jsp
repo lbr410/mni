@@ -11,7 +11,7 @@
 <body>
 <div class="bar">홈 > 브랜드</div>
 <div class="head-title">브랜드</div>
-	<main>
+   <main>
         <div id="brand-items-wrapper">
          <div class="brand-list-item">
             <div class="brand-image-wrapper">
