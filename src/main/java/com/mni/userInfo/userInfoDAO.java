@@ -1,7 +1,6 @@
 package com.mni.userInfo;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -72,13 +71,12 @@ public class userInfoDAO {
    }
    
    //사용자 정보 세션
-   public userInfoDTO loginCheck(String id, String pwd){
+   public userInfoDTO loginCheck(String id){
          try {
             conn=com.mni.db.MniDB.getConn();
-            String sql="select * from userinfo where user_id = ? and user_pwd = ?";
+            String sql="select * from userinfo where user_id = ?";
             ps=conn.prepareStatement(sql);
             ps.setString(1, id);
-            ps.setString(2, pwd);
             rs=ps.executeQuery();
             userInfoDTO dto = null;      
             if(rs.next()) {
@@ -219,11 +217,12 @@ public class userInfoDAO {
    }
    
    /**사용자 정보 수정*/
-    public int setUserInfo(userInfoDTO dto) {
+    public int setUserInfo(userInfoDTO dto, int idx) {
        try {
          conn=com.mni.db.MniDB.getConn();
          String sql="update userinfo set user_name=?, user_tel=?, "
-               + "user_email=?, user_pwd=?, user_zip=?, user_addr1=? , user_addr2=? ";
+               + "user_email=?, user_pwd=?, user_zip=?, user_addr1=? , user_addr2=? "
+               + "where user_idx = ?";
          ps=conn.prepareStatement(sql);
          ps.setString(1, dto.getUser_name());
          ps.setString(2, dto.getUser_tel());
@@ -232,6 +231,7 @@ public class userInfoDAO {
          ps.setInt(5, dto.getUser_zip());
          ps.setString(6, dto.getUser_addr1());
          ps.setString(7, dto.getUser_addr2());
+         ps.setInt(8, idx);
          int count=ps.executeUpdate();
          System.out.println("ddd="+count);
          return count;

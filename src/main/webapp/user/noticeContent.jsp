@@ -64,7 +64,7 @@ table{
 }
 </style>
 </head>
-<%@ include file="/header.jsp" %>
+<%@include file = "/header.jsp" %>
 <section>
 	<article>
 	<h2>공지사항</h2>

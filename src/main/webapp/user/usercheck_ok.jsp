@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="com.mni.userInfo.*" %>
-<jsp:useBean id="udao" class="com.mni.userInfo.userInfoDAO" scope="session"></jsp:useBean>
+<jsp:useBean id="udao" class="com.mni.userInfo.userInfoDAO"></jsp:useBean>
 <%
 request.setCharacterEncoding("utf-8");
 String userpwd=request.getParameter("pwd");
-String pwd=(String)session.getAttribute("spwd");
-if(pwd!=null){
+String id = (String)session.getAttribute("sid");
+userInfoDTO dto = udao.loginCheck(id);
 	if(userpwd!=""){
-		if(userpwd.equals(pwd)){
+		if(userpwd.equals(dto.getUser_pwd())){
 			%>
 			<script>
 			location.href='/mni/user/userInfo.jsp';
@@ -30,13 +30,4 @@ if(pwd!=null){
 		</script>	
 	<%
 	}
-}else{
-	%>
-	<script>
-	window.alert('로그인 후 사용 가능합니다.');
-	location.href='/mni/user/login.jsp';
-	</script>
-	<%
-}
-
 %>
