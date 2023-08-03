@@ -40,6 +40,8 @@
 <%@ include file="../header.jsp" %>
 <%
 	String prod_idx_s = request.getParameter("prod_idx");
+	String order_idx = request.getParameter("order_idx");
+
 	if(prod_idx_s==null || prod_idx_s.equals("")) {
 %>
 		<script>
@@ -80,6 +82,7 @@
 			<tr>
 				<td colspan="4" class="td2">
 				<input type="hidden" name="prod_idx" value="<%=prod_idx %>">
+				<input type="hidden" name="order_idx" value="<%=order_idx %>">
 				<input type="hidden" name="user_idx" value="<%=user_idx %>">
 				<input type="submit" value="작성" class="countBtn">
 				</td>

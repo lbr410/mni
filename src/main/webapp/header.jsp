@@ -27,7 +27,8 @@
     }else{
         %>
              <div><%=id %>님 로그인 중
-          |<a href="/mni/user/logout.jsp">로그아웃</a></div>
+          |<a href="/mni/user/logout.jsp">로그아웃</a>
+          </div>
         <% 
      }
         %>
@@ -50,9 +51,9 @@
             <div>고양이</div>
         </button>
         </div>
-        <form class="little-search" action = "/mni/headerSearch.jsp">
+        <form name = "headerSearch" class="little-search" action = "/mni/headerSearch.jsp">
             <input type="text" maxlength="30" name="search" id="search" placeholder="검색어를 입력하세요.">
-                <div id="magnifying-glass wrapper">
+                <div id="magnifying-glass wrapper" onclick = "userSearch()">
                     <img id="search-icon" src="/mni/img/magnifying glass icon.png" alt="magnifying glass icon">
                 </div>
         </form>

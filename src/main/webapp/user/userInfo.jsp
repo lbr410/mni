@@ -52,6 +52,17 @@ function userInfoModify(){
 	
 }
 
+function userUnregister(){
+	
+	var x = window.confirm('회원탈퇴 하시겠습니까?');
+	
+	if(x){
+		location.href = 'userUnregister.jsp';
+	}else{
+		
+	}
+}
+
 </script>
 <body onload = "sethide()">
 <%@include file = "../header.jsp" %>
@@ -98,6 +109,8 @@ function userInfoModify(){
 		</table>
 		<input type = "submit" value = "수정" class = "submit">
 		</form>
+		<hr>
+		<a class = "a" onclick = "userUnregister()">회원탈퇴</a>
 	</article>
 </section>
 <%@include file = "../footer.jsp" %>

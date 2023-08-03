@@ -6,6 +6,7 @@
 <%@page import = "com.mni.userInfo.*" %>
 <jsp:useBean id = "odao" class = "com.mni.ord.OrdDAO"></jsp:useBean>
 <jsp:useBean id = "udao" class = "com.mni.userInfo.userInfoDAO"></jsp:useBean>
+<jsp:useBean id = "rdao" class = "com.mni.review.ReviewDAO"></jsp:useBean>
 <%request.setCharacterEncoding("utf-8");%>
 <!DOCTYPE html>
 <html>
@@ -106,13 +107,22 @@ userInfoDTO dto = udao.loginCheck(id);
       	         </div><br>
       	        <%
       		}else if(arr.get(i).getOrder_state().equals("배송완료")){
-      			%>
-      			<div class = "a">
-      	         <span class = "span">배송 완료</span>
-      	         <input type="button" value="리뷰작성" class="button" 
-      	         onclick="location.href='/mni/user/reviewWrite.jsp?prod_idx=<%=arr.get(i).getProd_idx() %>'">
-      	         </div>
-      	        <%
+      			Boolean reviewButton = rdao.prodReview(arr, idx, i);
+      			if(reviewButton){
+      				%>
+          			<div class = "a">
+          	         <span class = "span">배송 완료</span>
+          	         </div>
+          	        <%
+      			}else{
+      				%>
+          			<div class = "a">
+          	         <span class = "span">배송 완료</span>
+          	         <input type="button" value="리뷰작성" class="button" 
+          	         onclick="location.href='/mni/user/reviewWrite.jsp?prod_idx=<%=arr.get(i).getProd_idx() %>&user_idx=<%=idx%>&order_idx=<%=arr.get(i).getOrder_idx()%>&index=<%=i%>'">
+          	         </div>
+          	        <%
+      			}
       		}
       }
 }
