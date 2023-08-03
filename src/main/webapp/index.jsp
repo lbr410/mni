@@ -79,16 +79,16 @@
                   <span>아무것도 없으면 나올 페이지 추가</span>
             <%
                } else {
-                  int forSize = table1.size()<=4 ? table.size() : 4;
+                  int forSize = table1.size()<=4 ? table1.size() : 4;
                   for(int i=0; i<forSize; i++) {
             %>
                 <div class="place-list-item">
                    <div class="place-image-wrapper">
-                       <a href="/mni/product/product.jsp?idx=<%=table1.get(i).getProd_idx() %>"><img src="admin/product_img/<%=table.get(i).getProd_title_img() %>" alt="place image"></a>
+                       <a href="/mni/product/product.jsp?idx=<%=table1.get(i).getProd_idx() %>"><img src="admin/product_img/<%=table1.get(i).getProd_title_img() %>" alt="place image"></a>
                    </div>
                    <div class="description-section">
                        <div class="description-section_title"><%=table1.get(i).getProd_name() %></div>
-                  <a class="description-section_content" href="/mni/product/product.jsp?idx=<%=table1.get(i).getProd_idx() %>"><%=table.get(i).getProd_title() %></a>
+                  <a class="description-section_content" href="/mni/product/product.jsp?idx=<%=table1.get(i).getProd_idx() %>"><%=table1.get(i).getProd_title() %></a>
                        <div class="description-section_price"><%=df.format(table1.get(i).getProd_price()) %></div>
                    </div>
                    </div>
