@@ -7,7 +7,7 @@
 <%
 String num_s=request.getParameter("categoryNum");
 if(num_s==null || num_s.equals("")){
-	num_s="0";
+   num_s="0";
 }int num=Integer.parseInt(num_s);
 
 String categoryName="";
@@ -45,7 +45,7 @@ if (totalCnt == 0) {
     totalCnt = 1;
     ctgCnt = 0;
 }else{
-	ctgCnt = totalCnt;
+   ctgCnt = totalCnt;
 }
 
 int totalPage = totalCnt / pageCnt + 1; // 총 페이지 수
@@ -66,14 +66,14 @@ if (cp % pageButton == 0) {
    <div class="bar">홈 > 카테고리 > <%=categoryName %></div>
    
 <% if(num==01){ %>
-		<%@ include file="/sidemenu/sideMenu_01.jsp"%><%
-	}else if(num==02){ %>
-		<%@ include file="/sidemenu/sideMenu_02.jsp" %><%
-	}else if(num==03){ %>
-		<%@ include file="/sidemenu/sideMenu_03.jsp" %><%
-	}else{%>
-		<%@ include file="/sidemenu/sideMenu_04.jsp" %><%
-	}
+      <%@ include file="/sidemenu/sideMenu_01.jsp"%><%
+   }else if(num==02){ %>
+      <%@ include file="/sidemenu/sideMenu_02.jsp" %><%
+   }else if(num==03){ %>
+      <%@ include file="/sidemenu/sideMenu_03.jsp" %><%
+   }else{%>
+      <%@ include file="/sidemenu/sideMenu_04.jsp" %><%
+   }
 %>
 
    <div class="head-title"><%=categoryName %></div>
@@ -107,11 +107,11 @@ if (cp % pageButton == 0) {
          DecimalFormat df = new DecimalFormat ("#,##0원");
          ArrayList<ProductDTO> arr = pdao.menuList(cp, pageCnt, num);
          if (arr == null || arr.size() == 0) {
-         	%>
-         	<tr>
-            	<td colspan="3"> 등록된 제품이 없습니다.</td>
-         	</tr>
-        	 <%
+            %>
+            <tr>
+               <td colspan="3"> 등록된 제품이 없습니다.</td>
+            </tr>
+            <%
          }else{
          	%><tr><%
          	for(int i=0;i<arr.size();i++){
@@ -127,7 +127,7 @@ if (cp % pageButton == 0) {
                 		<a href="/mni/product/product.jsp?idx=<%=arr.get(i).getProd_idx() %>">
                 			<div class="prodTitle"><%=arr.get(i).getProd_title() %></div>
                 		</a>
-                		<div class="prodPrice"><%=arr.get(i).getProd_price() %>원</div>
+                		<div class="prodPrice"><%=df.format(arr.get(i).getProd_price()) %></div>
               		</div>
            	</div>      
         </td>   
@@ -136,7 +136,7 @@ if (cp % pageButton == 0) {
             %></tr><tr><%   
             }               
         }
-     	%></tr><%
+        %></tr><%
       }
       %>
       </tbody>
