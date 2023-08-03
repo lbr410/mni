@@ -1,0 +1,96 @@
+@charset "UTF-8";
+section{
+	margin: 0px auto;
+	width: 1000px;
+	
+}
+section h1{
+	width: 1000px;
+	margin-top: 30px;
+}
+
+.ordUser{
+	float:left;
+	height: 100px;
+	 width: 450px;
+	 margin-top: 20px;
+	 margin-left: 30px;
+}
+.ordPay{
+	float:right;
+	height: 150px;
+	 width: 450px;
+	 margin-top: 20px;
+	 margin-left: 30px;
+}
+.line{
+	border-left: 1px solid #cccccc;
+	height: 220px;
+	left: 50%;
+	position: absolute;
+	padding-left: 40px;
+}
+.span{
+	margin-left: 50px;
+}
+.ordCom{
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+
+#mainButton{
+	margin-top:15px;
+	text-align: center;
+	font-size:16px;
+	color:white;
+	background-color: #ff7f50;
+	text-decoration: none;
+	width: 180px;
+	height: 40px;
+	border-radius: 2px;
+	cursor: pointer;
+	border: 0;
+}
+#ordButton{
+	margin-top:15px;
+	text-align: center;
+	font-size:16px;
+	color:#ff7f50;
+	background-color: white;
+	text-decoration: none;
+	width: 180px;
+	height: 40px;
+	border-radius: 2px;
+	cursor: pointer;
+	border: 0.5px solid;
+	border-color: #ff7f50;
+}
+
+.orderComplete {
+	text-align: center;
+}
+
+.hrStyle {
+	background: #cccccc;
+	height: 1px;
+	border: 0;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 1000px;
+}
+
+.menu {
+	font-weight: bold;
+}
+
+.divWidth {
+	width: 400px;
+}
+
+.divFloat {
+	float: left;
+}
+
+.divHeight {
+	height: 30px;
+}

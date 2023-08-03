@@ -7,12 +7,22 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	
+	String cart_idx_s = request.getParameter("cart_idx");
+
+	if(cart_idx_s==null || cart_idx_s.equals("")) {
+	%>
+	   <script>
+	      location.href = '/mni/index.jsp';
+	   </script>
+	<%
+		return;
+	}
+
 	ArrayList<CartDTO> cart = (ArrayList)session.getAttribute("cart");
 	Integer idx = (Integer)session.getAttribute("sidx");
 	
 	int totalPrice = Integer.parseInt(request.getParameter("total_price"));
 	DecimalFormat df = new DecimalFormat("#,##0원");
-	
 %>
 <!DOCTYPE html>
 <html>
@@ -36,7 +46,7 @@ function addrpopup(){
 	<article>
 		<h1>주문/결제</h1>
 		<hr>
-		<form name="payment" action="payment_ok.jsp" method="post">
+		<form name="payment" action="orderComplete.jsp" method="post">
 		<h3>구매자 정보</h3>
 		<table>
 			<tr>
@@ -70,7 +80,7 @@ function addrpopup(){
 			</tr>
 			<tr class = "textarea">
 				<th>배송 요청사항</th>
-				<td><input type = "text" name = "request" maxlength="20" placeholder="요청사항을 적어주세요." class = "request"></td>
+				<td><input type = "text" name = "order_req" maxlength="20" placeholder="요청사항을 적어주세요." class = "request"></td>
 			</tr>
 		</table>
 		<h3>결제 정보</h3>
