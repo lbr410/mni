@@ -71,9 +71,9 @@ function price(object){
 		<br>
 		
 		<div class="text_margin_top textFocus">
-		<input type="number" name="prod_price" class="text_size" min="0" maxlength="6" required oninput="price(this)"><label>가격</label></div>
+		<input type="number" name="prod_price" class="text_size" maxlength="6" required oninput="price(this)"><label>가격</label></div>
 		<div class="text_margin_top textFocus">
-		<input type="number" name="prod_count" class="text_size" min="0" maxlength="3" required oninput="price(this)"><label>재고</label></div>
+		<input type="number" name="prod_count" class="text_size" maxlength="3" required oninput="price(this)"><label>재고</label></div>
 		<div class="text_margin_top textFocus">
 		<input type="text" name="prod_title" class="text_size" required="required"><label>글제목</label></div>
 		<div class="text_margin_top2"><label>상품이미지</label>

@@ -38,5 +38,3 @@ userInfoDTO result = udao.loginCheck(user_id);
       </script><%
    }
    %>
-   
-   

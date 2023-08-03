@@ -27,13 +27,6 @@ if(cks!=null){
 <head>
 <meta charset="UTF-8">
 <title>멍냥이 관리자 : 상품등록</title>
-<script>
-function Update(object){
-	if (object.value.length > object.maxLength){
-	      object.value = object.value.slice(0, object.maxLength);
-	    }
-}
-</script>
 </head>
 <%
 String prod_idx_s = request.getParameter("prod_idx");
@@ -113,9 +106,9 @@ case 500: brand_5 = "selected"; break;
       <br>
       
       <div class="text_margin_top textFocus">
-      <input type="number" name="prod_price" class="text_size" min="0" maxlength="6" oninput="Update(this)" required value="<%=dto.getProd_price()%>"><label>가격</label></div>
+      <input type="text" name="prod_price" class="text_size" maxlength="6" value="<%=dto.getProd_price()%>"><label>가격</label></div>
       <div class="text_margin_top textFocus">
-      <input type="number" name="prod_count" class="text_size" min="0" maxlength="3" oninput="Update(this)" required value="<%=dto.getProd_count()%>"><label>재고</label></div>
+      <input type="text" name="prod_count" class="text_size" maxlength="3" value="<%=dto.getProd_count()%>"><label>재고</label></div>
       <div class="text_margin_top textFocus">
       <input type="text" name="prod_title" class="text_size" value="<%=dto.getProd_title()%>"><label>글제목</label></div>
       <div class="text_margin_top2"><label>상품이미지</label>

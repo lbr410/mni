@@ -214,6 +214,7 @@ h1{
 #noticecontent{
 	border-bottom:1px solid #ff7f50;
 	font-size: 15px;
+	background-color: gray;
 	text-align: left;
 }
 .contentDiv{
