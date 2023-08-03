@@ -18,8 +18,19 @@ public class ProductDTO {
    public ProductDTO() {
       
    }
+   
+   
 
-   public ProductDTO(String prod_name, String prod_title, int prod_price, int prod_count, String prod_date,
+   public ProductDTO(int prod_idx, String prod_name, String prod_title, int prod_price, String prod_title_img) {
+   super();
+   this.prod_idx = prod_idx;
+   this.prod_name = prod_name;
+   this.prod_title = prod_title;
+   this.prod_price = prod_price;
+   this.prod_title_img = prod_title_img;
+}
+
+public ProductDTO(String prod_name, String prod_title, int prod_price, int prod_count, String prod_date,
          String prod_title_img, String prod_pet, String prod_info_img, int prod_brand, int prod_category) {
       super();
       this.prod_name = prod_name;
@@ -89,13 +100,13 @@ public class ProductDTO {
       this.prod_title = prod_title;
    }
    
-	public ProductDTO(String prod_name, String prod_title, int prod_price, String prod_title_img) {
-		super();
-		this.prod_name = prod_name;
-		this.prod_title = prod_title;
-		this.prod_price = prod_price;
-		this.prod_title_img = prod_title_img;
-	}
+   public ProductDTO(String prod_name, String prod_title, int prod_price, String prod_title_img) {
+      super();
+      this.prod_name = prod_name;
+      this.prod_title = prod_title;
+      this.prod_price = prod_price;
+      this.prod_title_img = prod_title_img;
+   }
 
    public int getProd_idx() {
       return prod_idx;

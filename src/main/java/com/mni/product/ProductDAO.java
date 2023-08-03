@@ -419,5 +419,38 @@ public class ProductDAO {
 	            }catch(Exception e2) {}
 	         }
 	      }
-	  
+	      /**베스트 관련 메서드*/
+	      public ArrayList<ProductDTO> prodBest(){
+	         try {
+	            conn=com.mni.db.MniDB.getConn();
+	            String sql="select * from "
+	                  + "(select rownum as rnum,a.* from "
+	                  + "(select * from product order by prod_sale desc) a) b "
+	                  + "where rnum>=(1-1)*8+1 and rnum<=1*8";
+	            ps=conn.prepareStatement(sql);
+	            rs=ps.executeQuery();
+	            
+	            ArrayList<ProductDTO>arr=new ArrayList<ProductDTO>();
+	            while(rs.next()) {
+	               String prod_name=rs.getString("prod_name");
+	               String prod_title=rs.getString("prod_title");
+	               int prod_price=rs.getInt("prod_price");
+	               String prod_title_img=rs.getString("prod_title_img");
+	               int prod_idx=rs.getInt("prod_idx");
+	               ProductDTO dto=new ProductDTO(prod_idx, prod_name, prod_title, prod_price, prod_title_img);
+	               arr.add(dto);
+	            }
+	            return arr;
+	         }catch(Exception e) {
+	            e.printStackTrace();
+	            return null;
+	         }finally {
+	            try {
+	               if(rs!=null)rs.close();
+	               if(ps!=null)ps.close();
+	               if(conn!=null)conn.close();
+	            }catch(Exception e2) {}
+	         }
+	      }
+	      
 }
