@@ -23,7 +23,8 @@
 .best-icon{
 	width: 212px;
 	height: 40px;
-	padding: 2px;
+   width: 212px;
+   height: 40px;
 }
 .best-icon img{
 	width: 40px;
@@ -67,6 +68,10 @@
 .description-section_price{
     margin: 0;
     font-size: 18px;
+    font-weight: bold;
+    padding: 8px;
+    padding-bottom: 34px;
+}
     font-weight: 600;
 }
 #title{

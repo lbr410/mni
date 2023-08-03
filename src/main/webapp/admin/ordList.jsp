@@ -99,7 +99,6 @@ if(cp % pageButton == 0){
    <input type="submit" value="검색" class="seaBtnDeco">
    </div>
    </form>
-   <div class="misord"><input type="checkbox" name="ord_checkbox" value="미승인 주문">미승인 주문</div>
       <table>
       <thead>
          <tr id="trUp">
@@ -140,53 +139,53 @@ if(cp % pageButton == 0){
          %>
          </td>
          </tr>
-			</tfoot>
-			<tbody>
-			<%
-			ArrayList<OrdDTO> arr = odao.prodSelect(cp, pageCnt);
-			if(arr == null || arr.size() == 0){
-				 %>
-		            <tr>
-		               <td colspan="10" class="td">등록된 상품이 없습니다.</td>
-		            </tr>
-		            <%
-			}else{
-				for(int i=0; i<arr.size(); i++){
-			%>
-			<tr>
-				<td><%=arr.get(i).getOrder_idx() %></td>
-				<td><%=arr.get(i).getOrder_date() %></td>
-				<td><%=arr.get(i).getUser_id() %></td>
-				<td><%=arr.get(i).getUser_name() %></td>
-				<td><%=arr.get(i).getProd_title() %></td>
-				<td><%=arr.get(i).getOrder_count() %>개</td>
-				<%if(arr.get(i).getOrder_state().equals("미승인")){ %>
-				<td>
-				<input type="button" value="승인" class="ordBtnDeco" onclick="orderSign(<%=arr.get(i).getOrder_idx()%>)">	
-				<input type="button" value="거절" class="ordBtnDeco" onclick="orderDeclined(<%=arr.get(i).getOrder_idx()%>)">
-				</td>
-				<%}else if(arr.get(i).getOrder_state().equals("상품준비중")){
-					%><td><%=arr.get(i).getOrder_state() %>
-					<input type="button" value="배송" class="ordBtnDeco" onclick="orderDelevery(<%=arr.get(i).getOrder_idx()%>)"></td><%
-				}else{ %>
-				<td><%=arr.get(i).getOrder_state() %></td>
-				<%} %>
-				<td><%=arr.get(i).getOrder_type() %></td>
-				<td><%=arr.get(i).getOrder_price() %>원</td>
-				<td><%=arr.get(i).getOrder_zip() %></td>
-				<td><%=arr.get(i).getOrder_addr1() %></td>
-				<td><%=arr.get(i).getOrder_addr2() %></td>
-				<td><%=arr.get(i).getOrder_recie() %></td>
-				<td><%=arr.get(i).getOrder_req() %></td>
-			</tr>
-			<%
-				}
-			}
-			%>
-			</tbody>
-		</table>
-		</article>
-	</section>
+         </tfoot>
+         <tbody>
+         <%
+         ArrayList<OrdDTO> arr = odao.prodSelect(cp, pageCnt);
+         if(arr == null || arr.size() == 0){
+             %>
+                  <tr>
+                     <td colspan="14" class="td">등록된 상품이 없습니다.</td>
+                  </tr>
+                  <%
+         }else{
+            for(int i=0; i<arr.size(); i++){
+         %>
+         <tr>
+            <td><%=arr.get(i).getOrder_idx() %></td>
+            <td><%=arr.get(i).getOrder_date() %></td>
+            <td><%=arr.get(i).getUser_id() %></td>
+            <td><%=arr.get(i).getUser_name() %></td>
+            <td><%=arr.get(i).getProd_title() %></td>
+            <td><%=arr.get(i).getOrder_count() %>개</td>
+            <%if(arr.get(i).getOrder_state().equals("미승인")){ %>
+            <td>
+            <input type="button" value="승인" class="ordBtnDeco" onclick="orderSign(<%=arr.get(i).getOrder_idx()%>)">   
+            <input type="button" value="거절" class="ordBtnDeco" onclick="orderDeclined(<%=arr.get(i).getOrder_idx()%>)">
+            </td>
+            <%}else if(arr.get(i).getOrder_state().equals("상품준비중")){
+               %><td><%=arr.get(i).getOrder_state() %>
+               <input type="button" value="배송" class="ordBtnDeco" onclick="orderDelevery(<%=arr.get(i).getOrder_idx()%>)"></td><%
+            }else{ %>
+            <td><%=arr.get(i).getOrder_state() %></td>
+            <%} %>
+            <td><%=arr.get(i).getOrder_type() %></td>
+            <td><%=arr.get(i).getOrder_price() %>원</td>
+            <td><%=arr.get(i).getOrder_zip() %></td>
+            <td><%=arr.get(i).getOrder_addr1() %></td>
+            <td><%=arr.get(i).getOrder_addr2() %></td>
+            <td><%=arr.get(i).getOrder_recie() %></td>
+            <td><%=arr.get(i).getOrder_req() %></td>
+         </tr>
+         <%
+            }
+         }
+         %>
+         </tbody>
+      </table>
+      </article>
+   </section>
 </div>
 </body>
 </html>

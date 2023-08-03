@@ -74,8 +74,8 @@ if(cp % pageButton == 0){
 <body>
 <div class="divSize">
 <%@ include file="admin_header/admin_header_6.jsp" %>
-<section>
 <h1>공지사항</h1>
+<section>
 	<article>
 		<table>
 		<thead>

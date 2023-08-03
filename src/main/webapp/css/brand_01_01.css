@@ -123,8 +123,16 @@ tr{
      padding: 8px;
 }
 hr{
+
 	width: 780px; 
 	margin-top: 10px;
+	height:1px;
+	border:0;
+	background:#cccccc;
+
+	width: 780px; 
+	margin-top: 10px;
+
 }
 
 .prodPrice {
@@ -136,6 +144,36 @@ hr{
 }
 .prodNum{
 	margin-top: 55px;
+}
+
+
+.page{	
+	width: 22px;
+
+    height: 22px;
+    font-size: 12px;
+    color: black;
+    border: 0;
+    background-color: white;
+    border: 1px #ff7f50 solid;
+    border-radius: 5px;
+    cursor: pointer; 
+   
+}
+.nowPage{
+
+	width: 22px;
+    height: 22px;
+	background-color:#ff7f50;
+
+    color:white;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+}
+.brand-list-item{
+
+	width: 200px;
 }
 
 .page{	
@@ -160,3 +198,4 @@ hr{
 	width: 200px;
 
 }
+

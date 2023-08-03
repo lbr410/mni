@@ -14,7 +14,7 @@
 <%@ include file="/header.jsp" %>
 <body>
 <div class="bar">홈 > 베스트</div>
-<div class="head-title">베스트</div>
+<div class="head-title">베스트 </div>
 <div class="prodSection">
 <table>
    <tbody>

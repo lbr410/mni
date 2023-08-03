@@ -10,22 +10,26 @@
 <title>공지사항</title>
 
 <style>
-.page{
-   font-size: 20px;
-   width: 40px;
-   background-color:white;
-   text-decoration: none;
-   border: 0.5px solid;
-   border-color: #ff7f50;
-   cursor: pointer;
+.page{   
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    color: black;
+    border: 0;
+    background-color: white;
+    border: 1px #ff7f50 solid;
+    border-radius: 5px;
+    cursor: pointer; 
+   
 }
 .nowPage{
-   font-size: 20px;
-   width: 40px;
-   background-color:#ff7f50;
-   text-decoration: none;
-   border: 0.5px solid;
-   border-color: white;
+    width: 22px;
+    height: 22px;
+    background-color:#ff7f50;
+    color:white;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
 }
 body{
    width: 1000px;
@@ -35,6 +39,7 @@ body{
 h1{
    margin: 0 auto;
    padding-bottom:20px;
+   padding-top:20px;
    text-align: center;
 }
 .misord{
@@ -57,7 +62,7 @@ th{
 
 }
 tfoot{
-   height:100px;
+   height:50px;
 }
 td{
    text-align: center;

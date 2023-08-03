@@ -5,6 +5,17 @@
 <jsp:useBean id="bdao" class="com.mni.brand.BrandDAO"></jsp:useBean>
 <%
 String num_s=request.getParameter("brandNum");
+if(num_s==null || num_s.equals("")){
+
+	num_s="0";
+	%>
+	<script>
+	window.alert('잘못된 접근입니다.');
+	location.href='/mni/brand.jsp';
+	</script>
+	<%
+
+
 int num=Integer.parseInt(num_s);
 
 String brandName="";
