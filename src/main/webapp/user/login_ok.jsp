@@ -11,33 +11,33 @@ String user_pwd=request.getParameter("pwd");
 String idremember=request.getParameter("idremember");
 userInfoDTO result = udao.loginCheck(user_id, user_pwd);
 
-   if(result!=null){
-      if(idremember!=null){
-         Cookie ck = new Cookie("idremember",user_id);
-         ck.setMaxAge(60*60*24*30);
-         response.addCookie(ck);
-      }else{
-         Cookie ck = new Cookie("idremember",user_id);
-         ck.setMaxAge(0);
-         response.addCookie(ck);
-      }
-      String user_name=udao.getUserInfo(user_id);
-      userInfoDTO dto = udao.loginCheck(user_id, user_pwd);
-      session.setAttribute("sidx", dto.getUser_idx()); // idx로 session - BR
-      session.setAttribute("sid",user_id);
-      session.setAttribute("sname",user_name);
-      session.setAttribute("spwd",user_pwd);
-      %>
-      <script>
-      location.href='/mni/index.jsp';
-      </script>
-      <%
-   }else{
-      %><script>
-      window.alert('ID 또는 비밀번호가 잘못되었습니다.');
-      location.href='/mni/user/login.jsp';
-      </script><%
-   }
-   %>
-   
-   
+	if(result!=null){
+		if(idremember!=null){
+			Cookie ck = new Cookie("idremember",user_id);
+			ck.setMaxAge(60*60*24*30);
+			response.addCookie(ck);
+		}else{
+			Cookie ck = new Cookie("idremember",user_id);
+			ck.setMaxAge(0);
+			response.addCookie(ck);
+		}
+		String user_name=udao.getUserInfo(user_id);
+		userInfoDTO dto = udao.loginCheck(user_id, user_pwd);
+		session.setAttribute("sidx", dto.getUser_idx()); // idx로 session - BR
+		session.setAttribute("sid",user_id);
+		session.setAttribute("sname",user_name);
+		session.setAttribute("spwd",user_pwd);
+		%>
+		<script>
+		location.href='/mni/index.jsp';
+		</script>
+		<%
+	}else{
+		%><script>
+		window.alert('ID 또는 비밀번호가 잘못되었습니다.');
+		location.href='/mni/user/login.jsp';
+		</script><%
+	}
+	%>
+	
+	
