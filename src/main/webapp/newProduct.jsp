@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
+<%@ page import="java.text.*" %>
 <%@ page import="com.mni.product.*" %>
 <jsp:useBean id="pdao" class="com.mni.product.ProductDAO"></jsp:useBean>
 <%
@@ -56,13 +57,13 @@ if (cp % pageButton == 0) {
 <table border="0" cellspacing="0">
 	<tfoot>
 	<tr>
-		<td colspan="10" align="center">
+		<td colspan="6" align="center">
          <% if (userGroup != 0) { %>
             <a href="newProduct.jsp?cp=<%= userGroup*pageButton %>">&lt;&lt;</a>
          <% } %>
          <% for (int i = userGroup*pageButton+1; i <= (userGroup+1)*pageButton; i++) { %>
             <% String button = i == cp ? "nowPage" : "page"; %>
-            &nbsp;&nbsp;<button class="<%= button %>" onclick="javascript:location.href='newProduct.jsp?cp=<%= i %>'" id="page"><%= i %></button>&nbsp;&nbsp;
+            &nbsp;&nbsp;<button class="<%= button %>" onclick="javascript:location.href='newProduct.jsp?cp=<%= i %>'"><%= i %></button>&nbsp;&nbsp;
             <% if (i == totalPage) { break; } %>
          <% } %>
          <% if (userGroup != (totalPage/pageButton-(totalPage%pageButton==0?1:0))) { %>
@@ -74,7 +75,8 @@ if (cp % pageButton == 0) {
 	
 	<tbody>
 		<%
-		ArrayList<ProductDTO> arr = pdao.newProdView(pet);
+		ArrayList<ProductDTO> arr = pdao.newProduct(pet, cp, pageCnt);
+		DecimalFormat df = new DecimalFormat("#,##0원");
 		if (arr == null || arr.size() == 0) {
 			%>
 			<tr>
@@ -96,7 +98,7 @@ if (cp % pageButton == 0) {
                 		<a href="/mni/product/product.jsp?idx=<%=arr.get(i).getProd_idx() %>">
                 			<div class="prodTitle"><%=arr.get(i).getProd_title() %></div>
                 		</a>
-                		<div class="prodPrice"><%=arr.get(i).getProd_price() %>원</div>
+                		<div class="prodPrice"><%=df.format(arr.get(i).getProd_price()) %></div>
               		</div>
            	</div>      
         </td>   
