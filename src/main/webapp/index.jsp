@@ -39,7 +39,7 @@
         <main>
             <div id="place-items-wrapper">
             <%
-            	ArrayList<ProductDTO> table =pdao.prodBest();
+            	ArrayList<ProductDTO> table =pdao.indexBest(pet);
             	DecimalFormat df = new DecimalFormat("#,##0원");
             	if(table==null || table.size()==0) {
             %>
@@ -48,18 +48,35 @@
             	} else {
             		int forSize = table.size()<=4 ? table.size() : 4;
             		for(int i=0; i<forSize; i++) {
-            %>
-	             <div class="place-list-item">
-	                <div class="place-image-wrapper">
-	                    <a href="/mni/product/product.jsp?idx=<%=table.get(i).getProd_idx() %>"><img src="admin/product_img/<%=table.get(i).getProd_title_img() %>" alt="place image"></a>
-	                </div>
-	                <div class="description-section">
-	                    <div class="description-section_title"><%=table.get(i).getProd_name() %></div>
-						<a class="description-section_content" href="/mni/product/product.jsp?idx=<%=table.get(i).getProd_idx() %>"><%=table.get(i).getProd_title() %></a>
-	                    <div class="description-section_price"><%=df.format(table.get(i).getProd_price()) %></div>
-	                </div>
-	                </div>
-            <% 		}
+            			if(table.get(i).getProd_count() == 0){
+            				%>
+           	             <div class="place-list-item">
+           	                <div class="place-image-wrapper">
+           	                    <a href="/mni/product/product.jsp?idx=<%=table.get(i).getProd_idx() %>"><img src="admin/product_img/<%=table.get(i).getProd_title_img() %>" alt="place image"></a>
+           	                </div>
+           	                <div class="description-section">
+           	                    <div class="description-section_title"><%=table.get(i).getProd_name() %></div>
+           						<a class="description-section_content" href="/mni/product/product.jsp?idx=<%=table.get(i).getProd_idx() %>"><%=table.get(i).getProd_title() %></a>
+           	                    <div><div class="description-section_price_soldout"><%=df.format(table.get(i).getProd_price()) %></div><span class = "soldout">품절</span></div>
+           	                </div>
+           	                </div>
+                       <%
+            			}else{
+            				%>
+           	             <div class="place-list-item">
+           	                <div class="place-image-wrapper">
+           	                    <a href="/mni/product/product.jsp?idx=<%=table.get(i).getProd_idx() %>"><img src="admin/product_img/<%=table.get(i).getProd_title_img() %>" alt="place image"></a>
+           	                </div>
+           	                <div class="description-section">
+           	                    <div class="description-section_title"><%=table.get(i).getProd_name() %></div>
+           						<a class="description-section_content" href="/mni/product/product.jsp?idx=<%=table.get(i).getProd_idx() %>"><%=table.get(i).getProd_title() %></a>
+           	                    <div class="description-section_price"><%=df.format(table.get(i).getProd_price()) %></div>
+           	                </div>
+           	                </div>
+                       <%
+            			}
+             		
+            		}
             	}
             %>    
              </div>
@@ -81,18 +98,34 @@
                } else {
                   int forSize = table1.size()<=4 ? table1.size() : 4;
                   for(int i=0; i<forSize; i++) {
-            %>
-                <div class="place-list-item">
-                   <div class="place-image-wrapper">
-                       <a href="/mni/product/product.jsp?idx=<%=table1.get(i).getProd_idx() %>"><img src="admin/product_img/<%=table1.get(i).getProd_title_img() %>" alt="place image"></a>
-                   </div>
-                   <div class="description-section">
-                       <div class="description-section_title"><%=table1.get(i).getProd_name() %></div>
-                  <a class="description-section_content" href="/mni/product/product.jsp?idx=<%=table1.get(i).getProd_idx() %>"><%=table1.get(i).getProd_title() %></a>
-                       <div class="description-section_price"><%=df.format(table1.get(i).getProd_price()) %></div>
-                   </div>
-                   </div>
-            <%       }
+                	  if(table1.get(i).getProd_count() == 0){
+                		  %>
+                          <div class="place-list-item">
+                             <div class="place-image-wrapper">
+                                 <a href="/mni/product/product.jsp?idx=<%=table1.get(i).getProd_idx() %>"><img src="admin/product_img/<%=table1.get(i).getProd_title_img() %>" alt="place image"></a>
+                             </div>
+                             <div class="description-section">
+                                 <div class="description-section_title"><%=table1.get(i).getProd_name() %></div>
+                            <a class="description-section_content" href="/mni/product/product.jsp?idx=<%=table1.get(i).getProd_idx() %>"><%=table1.get(i).getProd_title() %></a>
+                                 <div><div class="description-section_price_soldout"><%=df.format(table1.get(i).getProd_price()) %></div><span class = "soldout">품절</span></div>
+                             </div>
+                             </div>
+                      <%
+                	  }else{
+                		  %>
+                          <div class="place-list-item">
+                             <div class="place-image-wrapper">
+                                 <a href="/mni/product/product.jsp?idx=<%=table1.get(i).getProd_idx() %>"><img src="admin/product_img/<%=table1.get(i).getProd_title_img() %>" alt="place image"></a>
+                             </div>
+                             <div class="description-section">
+                                 <div class="description-section_title"><%=table1.get(i).getProd_name() %></div>
+                            <a class="description-section_content" href="/mni/product/product.jsp?idx=<%=table1.get(i).getProd_idx() %>"><%=table1.get(i).getProd_title() %></a>
+                                 <div class="description-section_price"><%=df.format(table1.get(i).getProd_price()) %></div>
+                             </div>
+                             </div>
+                      <%  
+                	  }
+                  }
                }
             %>    
              </div>
