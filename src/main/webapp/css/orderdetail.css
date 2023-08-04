@@ -11,7 +11,7 @@
     background: url('/mni/img/logo.png') darkgray center; 
     background-size: 265px;
     position:relative;
-    top:180px;
+    top:30px;
     left: -450px;
    }
     
@@ -24,7 +24,7 @@
     h1{
     font-size: 30px; 
     margin-left: 560px;
-    margin-top: -140px;
+    margin-top: -250px;
     }
     
     h3{
@@ -45,7 +45,7 @@
     }
     
     table{
-    margin-top: -150px; 
+    margin-top: -170px; 
     border-spacing: 0 10px; 
     width: 500px;
     margin-left: 450px;
@@ -53,11 +53,11 @@
     
     th{text-align: left; width: 100px;}
       td{width: 300px;}
-    .a{margin-left: 840px; margin-top: -80px;}   
+    .a{margin-left: 920px; margin-top: -80px;}   
     
     .button{
        width: 80px;
-       height: 50px;
+       height: 40px;
        border-radius: 10px;
       cursor: pointer;
       background-color: #ff7f50;
