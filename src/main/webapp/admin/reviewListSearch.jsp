@@ -5,6 +5,7 @@
 <jsp:useBean id="rdao" class="com.mni.review.ReviewDAO"></jsp:useBean>
 <%
 request.setCharacterEncoding("utf-8");
+String prod_name = request.getParameter("review_search");
 String admin_id = (String)session.getAttribute("admin_saveid");
 String ck = "";
 Cookie cks[]=request.getCookies();
@@ -39,6 +40,13 @@ function reviewDel(review_idx){
 	location.href='/mni/admin/reviewList.jsp';
 	}
 }
+function productName(){
+	<%
+	if(prod_name == null){
+		prod_name = request.getParameter("review_prod_name");
+	}
+	%>
+}
 </script>
 </head>
 <%
@@ -70,8 +78,8 @@ if(cp % pageButton == 0){
 <h1>리뷰 내역</h1>
 <section>
 <article>
-	<form name="reviewList" action="/mni/admin/reviewListSearch.jsp" method="post">
-	<div><input type="text" name="review_search" placeholder="상품명 입력" id="searchBox" required>
+	<form name="reviewList" action="/mni/admin/reviewListSearch.jsp" method="post" onsubmit="productName()">
+	<div><input type="text" name="review_prod_name" placeholder="상품명 입력" id="searchBox" required>
 	<input type="submit" value="검색" class="seaBtnDeco">
 	</div>
 	</form>
@@ -111,7 +119,7 @@ if(cp % pageButton == 0){
          </tr>
 		</tfoot>
 		<tbody>
-		<%ArrayList<ReviewDTO> arr = rdao.getReview(cp, pageCnt);
+		<%ArrayList<ReviewDTO> arr = rdao.reviewSearch(prod_name, cp, pageCnt);
 		if(arr == null || arr.size() == 0){
 			 %>
 	            <tr>

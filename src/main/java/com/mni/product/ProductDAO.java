@@ -327,6 +327,7 @@ public class ProductDAO {
 	         if (rs.next()) {
 	            do {
 	               int prod_idx = rs.getInt("prod_idx");
+	               String prod_search_name = rs.getString("prod_name");
 	               String prod_title = rs.getString("prod_title");
 	               int prod_price = rs.getInt("prod_price");
 	               int prod_count = rs.getInt("prod_count");
@@ -336,7 +337,7 @@ public class ProductDAO {
 	               String prod_info_img = rs.getString("prod_info_img");
 	               int prod_brand = rs.getInt("prod_brand");
 	               int prod_category = rs.getInt("prod_category");
-	               ProductDTO dto = new ProductDTO(prod_idx, prod_name, prod_title, prod_price, prod_count, prod_date,
+	               ProductDTO dto = new ProductDTO(prod_idx, prod_search_name, prod_title, prod_price, prod_count, prod_date,
 	                     prod_title_img, prod_pet, prod_info_img, prod_brand, prod_category);
 	               arr.add(dto);
 	            } while (rs.next());

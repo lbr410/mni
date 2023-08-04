@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -143,6 +144,8 @@ if(cp % pageButton == 0){
          <tbody>
          <%
          ArrayList<OrdDTO> arr = odao.prodSelect(cp, pageCnt);
+         DecimalFormat df = new DecimalFormat();
+         df.applyLocalizedPattern("#,###,###원");
          if(arr == null || arr.size() == 0){
              %>
                   <tr>
@@ -171,7 +174,7 @@ if(cp % pageButton == 0){
             <td><%=arr.get(i).getOrder_state() %></td>
             <%} %>
             <td><%=arr.get(i).getOrder_type() %></td>
-            <td><%=arr.get(i).getOrder_price() %>원</td>
+            <td><%=df.format(arr.get(i).getOrder_price()) %></td>
             <td><%=arr.get(i).getOrder_zip() %></td>
             <td><%=arr.get(i).getOrder_addr1() %></td>
             <td><%=arr.get(i).getOrder_addr2() %></td>

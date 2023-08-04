@@ -43,7 +43,7 @@ System.out.println(result);
    }else{
 	   %>
 	   <script>
-	   window.alert('없는 계정입니다.');
+	   window.alert('ID 또는 비밀번호가 잘못되었습니다.');
 	   location.href='/mni/user/login.jsp';
 	   </script>
 	   <%
