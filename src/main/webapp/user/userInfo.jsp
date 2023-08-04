@@ -70,7 +70,7 @@ function userUnregister(){
 	<article>
 		<h2>회원정보 수정</h2>
 		<hr>
-		<form name = "join" class = "info" action = "userInfo_ok.jsp" method="post">
+		<form name = "join" class = "info" action = "userInfo_ok.jsp" method="post" onsubmit="return userInfoModify()">
 		<table>
 			<tr>
 				<th>이름</th>

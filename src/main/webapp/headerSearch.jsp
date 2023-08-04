@@ -41,10 +41,10 @@ if (cp % pageButton == 0) {
    <div class="menu">
       <div class="category">
          <div class="list1">카테고리</div>
-         <div class="list2"><a href="/mni/feed.jsp">사료</a></div>
-         <div class="list2"><a href="/mni/snack.jsp">간식</a></div>
-         <div class="list2"><a href="/mni/supplies.jsp">용품</a></div>
-         <div class="list2"><a href="/mni/toy.jsp">장난감</a></div>
+         <div class="list2"><a href="/mni/category.jsp?categoryNum=01">사료</a></div>
+         <div class="list2"><a href="/mni/category.jsp?categoryNum=02">간식</a></div>
+         <div class="list2"><a href="/mni/category.jsp?categoryNum=03">용품</a></div>
+         <div class="list2"><a href="/mni/category.jsp?categoryNum=04">장난감</a></div>
       </div>
    </div>
    <div class="head-title">검색어:<%=search %></div>
