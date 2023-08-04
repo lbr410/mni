@@ -54,7 +54,7 @@ table{
    border-spacing:0px;
 }
 th{
-   font-size: 12.9px;
+   font-size: 14px;
    border-top: 3px double #ff7f50;
    border-bottom: 3px double #ff7f50;
    padding-top: 6px;
@@ -66,7 +66,7 @@ tfoot{
 }
 td{
    text-align: center;
-   font-size: 11px;
+   font-size: 12.8px;
    padding-top: 9px;
    padding-bottom: 9px;
    padding-left :6px;
@@ -158,5 +158,6 @@ if(cp % pageButton == 0){
       </tbody>
       </table>
    </section>
+<%@include file="/footer.jsp" %>
 </body>
 </html>

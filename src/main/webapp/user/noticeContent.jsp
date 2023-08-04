@@ -58,8 +58,7 @@ table{
 .contentDiv{
 	margin-top: 15px;
 	margin-bottom: 15px;
-	margin-right: 20px;
-    width: 630px;
+    width: 700px;
     text-align: left;
 }
 </style>
