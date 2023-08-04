@@ -5,7 +5,7 @@
 <jsp:useBean id="rdao" class="com.mni.review.ReviewDAO"></jsp:useBean>
 <%
 request.setCharacterEncoding("utf-8");
-String prod_title = request.getParameter("review_search");
+String prod_name = request.getParameter("review_search");
 String admin_id = (String)session.getAttribute("admin_saveid");
 String ck = "";
 Cookie cks[]=request.getCookies();
@@ -47,6 +47,13 @@ function reviewTitle(){
    }
    %>
 }
+function productName(){
+	<%
+	if(prod_name == null){
+		prod_name = request.getParameter("review_prod_name");
+	}
+	%>
+}
 </script>
 </head>
 <%
@@ -78,26 +85,26 @@ if(cp % pageButton == 0){
 <h1>리뷰 내역</h1>
 <section>
 <article>
-   <form name="reviewList" action="/mni/admin/reviewListSearch.jsp" method="post" onsubmit="reviewTitle();">
-   <div><input type="text" name="review_title" placeholder="상품명 입력" id="searchBox" required>
-   <input type="submit" value="검색" class="seaBtnDeco">
-   </div>
-   </form>
-      <table>
-      <thead>
-         <tr>
-            <th>NO.</th>
-            <th id="thup">상품번호</th>
-            <th>상품명</th>
-            <th>아이디</th>
-            <th>리뷰사진</th>
-            <th>리뷰내용</th>
-            <th>작성일</th>
-            <th></th>
-         </tr>
-      </thead>
-      <tfoot>
-      <tr>
+	<form name="reviewList" action="/mni/admin/reviewListSearch.jsp" method="post" onsubmit="productName()">
+	<div><input type="text" name="review_prod_name" placeholder="상품명 입력" id="searchBox" required>
+	<input type="submit" value="검색" class="seaBtnDeco">
+	</div>
+	</form>
+		<table>
+		<thead>
+			<tr>
+				<th>NO.</th>
+				<th id="thup">상품번호</th>
+				<th>상품명</th>
+				<th>아이디</th>
+				<th>리뷰사진</th>
+				<th>리뷰내용</th>
+				<th>작성일</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tfoot>
+		<tr>
             <td colspan="14" align="center">
          <%
          /**페이징*/
@@ -117,24 +124,24 @@ if(cp % pageButton == 0){
          %>
          </td>
          </tr>
-      </tfoot>
-      <tbody>
-      <%ArrayList<ReviewDTO> arr = rdao.getReview(cp, pageCnt);
-      if(arr == null || arr.size() == 0){
-          %>
-               <tr>
-                  <td colspan="7" class="td">등록된 리뷰가 없습니다.</td>
-               </tr>
-               <%
-      }else{
-         for(int i=0; i<arr.size(); i++){
-      %>
-         <tr>
-            <td><%=arr.get(i).getReview_idx() %></td>
-            <td><%=arr.get(i).getProd_idx() %></td>
-            <td><%=arr.get(i).getProd_name() %></td>
-            <td><%=arr.get(i).getUser_id() %></td>
-            <%System.out.println(arr.get(i).getReview_img()); %>
+		</tfoot>
+		<tbody>
+		<%ArrayList<ReviewDTO> arr = rdao.reviewSearch(prod_name, cp, pageCnt);
+		if(arr == null || arr.size() == 0){
+			 %>
+	            <tr>
+	               <td colspan="7" class="td">등록된 리뷰가 없습니다.</td>
+	            </tr>
+	            <%
+		}else{
+			for(int i=0; i<arr.size(); i++){
+		%>
+			<tr>
+				<td><%=arr.get(i).getReview_idx() %></td>
+				<td><%=arr.get(i).getProd_idx() %></td>
+				<td><%=arr.get(i).getProd_name() %></td>
+				<td><%=arr.get(i).getUser_id() %></td>
+				<%System.out.println(arr.get(i).getReview_img()); %>
 
             <td><%if(arr.get(i).getReview_img() == null || arr.get(i).getReview_img().equals("-")){
                %>사진없음<%

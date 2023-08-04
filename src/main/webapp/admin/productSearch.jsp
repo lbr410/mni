@@ -81,7 +81,7 @@ if(cp % pageButton == 0){
 <body>
 <div class="divSize">
 <%@ include file="admin_header/admin_header_2.jsp" %>
-<h1><%=prod_name %> 상품 관리</h1>
+<h1>상품 관리</h1>
    <section>
    	<article>
    	<form name="prodSearch" action="/mni/admin/productSearch.jsp" method="post" onsubmit="productTitle()">

@@ -540,6 +540,4 @@ public class ProductDAO {
            }catch(Exception e2) {}
         }
      }
-
-  
 }
