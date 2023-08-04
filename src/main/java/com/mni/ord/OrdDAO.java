@@ -14,6 +14,74 @@ public class OrdDAO {
 	   System.out.println("OrdDAO() 생성자 호출");
    }
    
+   /** 상품 구입 시 구입한 수량만큼 재고 감소 - BR */
+   public int buyAfterProdCnt(int prod_count, int prod_idx) {
+	   try {		   
+		   conn = com.mni.db.MniDB.getConn();
+		   String sql = "update product set prod_count = prod_count-? where prod_idx = ?";
+		   
+		   ps = conn.prepareStatement(sql);
+		   ps.setInt(1, prod_count);
+		   ps.setInt(2, prod_idx);
+		   int count = ps.executeUpdate();
+		   
+		   return count;
+	   } catch(Exception e) {
+		   e.printStackTrace();
+		   return -1;
+	   } finally {
+		   try {
+			   if(ps!=null) ps.close();
+			   if(conn!=null) conn.close();
+		   } catch(Exception e) {}
+	   }
+   }
+   
+   /** 어떤 상품에 대해 들어온 주문의 상품 번호, 수량 개수 - BR */
+   public int[] prodOrdCnt(int order_idx) {
+	   try {
+		   String sql = "select order_count, prod_idx from ord where order_idx = ?";
+		   
+		   ps = conn.prepareStatement(sql);
+		   ps.setInt(1, order_idx);
+		   rs = ps.executeQuery();
+		   
+		   int arr[] = new int[2];
+		   rs.next();
+		   arr[0] = rs.getInt("order_count");
+		   arr[1] = rs.getInt("prod_idx");
+		   
+		   return arr;
+	   } catch(Exception e) {
+		   e.printStackTrace();
+		   return null;
+	   } finally {
+		   try {
+			   if(ps!=null) ps.close();
+		   } catch(Exception e) {}
+	   }
+   }
+   
+   /** 사용자 또는 관리자가 주문 취소시 다시 재고 증가 - BR */
+   public int buyCancelAfterCnt(int order_idx, int prod_idx) {
+	   try {
+		   String sql = "update product set prod_count = prod_count+? where prod_idx = ?";
+		   ps = conn.prepareStatement(sql);
+		   ps.setInt(1, order_idx);
+		   ps.setInt(2, prod_idx);
+		   
+		   int result = ps.executeUpdate();
+		   return result;
+	   } catch(Exception e) {
+		   e.printStackTrace();
+		   return 0;
+	   } finally {
+		   try {
+			   if(ps!=null) ps.close();
+		   } catch(Exception e) {}
+	   }
+   }
+   
    /** 상품 주문 - BR */
    public int buyProduct(int sidx, OrdDTO dto, int count, int price, int prod_idx) {
        try {
@@ -40,10 +108,10 @@ public class OrdDAO {
     	   int result = 0;
     	   if(ps.executeUpdate() == 1 ? true : false) {
     		   ps.close();
+    		   //buyAfterProdCnt(count, prod_idx);
     		   CartDAO cdao = new CartDAO();
     		   result = cdao.userCartDelete(sidx);
     	   }
-      
     	   return result;
        } catch(Exception e) {
     	   e.printStackTrace();
@@ -187,6 +255,9 @@ public class OrdDAO {
           ps=conn.prepareStatement(sql);
           ps.setInt(1, order_idx);
           int count = ps.executeUpdate();
+          int arr[] = prodOrdCnt(order_idx); // BR
+          buyCancelAfterCnt(arr[0], arr[1]); // BR
+          
           return count;
        }catch(Exception e) {
           e.printStackTrace();
@@ -202,7 +273,7 @@ public class OrdDAO {
     public ArrayList<OrdDTO> UserOrderSelect(int idx){
         try {
            conn = com.mni.db.MniDB.getConn();
-           String sql = "select order_date, prod_title_img, p.prod_idx, prod_name,o.order_idx,order_type,(order_price*order_count) as order_total_price,order_state "
+           String sql = "select order_date, prod_title_img, o.order_count, p.prod_idx, prod_name,o.order_idx,order_type,(order_price*order_count) as order_total_price,order_state "
                    + "from ord o ,product p "
                    + "where o.user_idx = ? and o.prod_idx = p.prod_idx order by order_date desc";
 
@@ -219,7 +290,8 @@ public class OrdDAO {
               String order_state = rs.getString("order_state");
               int prod_idx = rs.getInt("prod_idx");
               int order_total_price = rs.getInt("order_total_price");
-              OrdDTO dto = new OrdDTO(order_idx, order_type, order_date, prod_title_img, prod_name, order_state, prod_idx, order_total_price);
+              int order_count = rs.getInt("order_count");
+              OrdDTO dto = new OrdDTO(order_idx, order_count, order_type, order_date, prod_title_img, prod_name, order_state, prod_idx, order_total_price);
               arr.add(dto);
            }
            return arr;
@@ -239,7 +311,7 @@ public class OrdDAO {
     public int adminSales(String startDate,String endDate) {
        try {
           conn=com.mni.db.MniDB.getConn();
-          String sql="select sum(order_price) from ord where to_char(order_date,'YYYY-MM-DD')>=? and to_char(order_date,'YYYY-MM-DD')<=? and order_state = '배송완료'";
+          String sql="select sum(order_price*order_count) from ord where to_char(order_date,'YYYY-MM-DD')>=? and to_char(order_date,'YYYY-MM-DD')<=? and order_state = '배송완료'";
           ps=conn.prepareStatement(sql);
           ps.setString(1, startDate);
           ps.setString(2, endDate);
@@ -324,11 +396,14 @@ public class OrdDAO {
       public int userOrderCancel(int order_idx) {
          try {
             conn = com.mni.db.MniDB.getConn();
+            
             String sql = "update ord set order_state = '주문취소' "
                   + "where order_idx = ?";
             ps = conn.prepareStatement(sql);
             ps.setInt(1, order_idx);
             int result = ps.executeUpdate();
+            int arr[] = prodOrdCnt(order_idx); // BR
+            buyCancelAfterCnt(arr[0], arr[1]); // BR
             return result;
          }catch(Exception e) {
             e.printStackTrace();

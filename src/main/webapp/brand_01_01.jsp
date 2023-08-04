@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="java.util.*" %>
+<%@page import="java.text.*" %>
 <%@page import="com.mni.brand.*" %>
 <jsp:useBean id="bdao" class="com.mni.brand.BrandDAO"></jsp:useBean>
 <%
@@ -90,7 +91,7 @@ if(totalCnt!=-1){
    <table>
       <tfoot>
          <tr>
-            <td colspan="6" align="center">
+            <td colspan="4" align="center">
          <%
          if(userGroup != 0){
             %><a href="brand_01_01.jsp?cp=<%=userGroup*pageButton%>">&lt;&lt;</a><%
@@ -112,6 +113,7 @@ if(totalCnt!=-1){
       <tbody>
             <%
             ArrayList<BrandDTO> arr=bdao.brandNum(num,cp,pageCnt);
+           	DecimalFormat df=new DecimalFormat("#,##0원");
             if(arr==null || arr.size()==0){
                %>
                <tr>
@@ -130,7 +132,7 @@ if(totalCnt!=-1){
                                  <div class="description-section">
                                      <div class="prodName"><%=arr.get(i).getProd_name() %></div>
                                    <div class="prodTitle"><%=arr.get(i).getProd_title() %></div>
-                                   <div class="prodPrice"><%=arr.get(i).getProd_price() %>원</div>
+                                   <div class="prodPrice"><%=df.format(arr.get(i).getProd_price())%></div>
                                 </div>
                              </div>      
                      </td>   

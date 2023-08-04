@@ -73,10 +73,11 @@ public class OrdDTO {
             this.prod_title = prod_title;
          }
 
-      public OrdDTO(int order_idx, String order_type, Date order_date, String prod_title_img,
+      public OrdDTO(int order_idx, int order_count, String order_type, Date order_date, String prod_title_img,
                String prod_name, String order_state, int prod_idx, int order_total_price) {
             super();
             this.order_idx = order_idx;
+            this.order_count = order_count;
             this.order_type = order_type;
             this.order_date = order_date;
             this.prod_title_img = prod_title_img;

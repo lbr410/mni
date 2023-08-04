@@ -15,42 +15,43 @@ body {
 }
 
 .bar {
-    width: 990px;
-    height: 18px;
-    padding-top: 15px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    background-color: #f3f3f3;
-    font-size: 12px;
-    text-align: left;
-    margin-bottom: 15px;
+    width: 980px;
+	height: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	background-color: #f3f3f3;
+	font-size: 10px;
+	text-align: left;
 }
 
 
 .head-title {
     display: block;
     float: left;
-    width: 720px;
+    width: 1000px;
     font-size: 30px;
     font-weight: bold;
     padding-bottom: 25px;
-     padding-top: 20px;
-    padding-left: 40px;
+    padding-top: 40px;
+    padding-left: 30px;
     color: #3a3a3a;
 }
 
 .prodSection {
-    display: flex;
-    width: 820px;
+    width: 1000px;
 }
 table{
    margin-bottom: 20px;
-   margin-left:-50px;
+   margin-left:-30px;
    border-spacing: 8px;
 }
 
 tr{
   border-spacing: 20px;
+}
+td{
+	padding-left: 24px;
 }
 
 #page{
@@ -77,7 +78,6 @@ tr{
  border-radius: 24px;
  overflow: hidden;
  background-color: #f5f5f5;
- padding-top: 20px; 
 }
 .prodImg img {
     width: 226px;
@@ -86,29 +86,29 @@ tr{
 }
 
 .prodName{
-   width: 200px;
-   height: 32px;
-    padding: 8px;
+    width: 200px;
+    height: 32px;
     color: #808080;
+    padding-top:8px;
+    padding-left:4px;
+    padding-bottom:4px;
     font-weight: bold;
-      margin: 0;
     font-size: 13px;
-      text-align: left;
+    text-align: left;
 }
 .prodTitle {
     width: 200px;
     height: 58px;
     font-size: 16px;
     font-weight: 500;
-    padding-left: 2px;
     color: #333333;
     cursor: pointer;
+    padding-bottom: 4px;
 }
 .prodPrice {
     width: 200px;
     height: 20px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
-    padding: 8px;
     padding-bottom: 34px;
 }

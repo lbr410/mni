@@ -83,19 +83,19 @@ if (cp % pageButton == 0) {
    <table border="0" cellspacing="0">
       <tfoot>
       <tr>
-         <td colspan="10" align="center">
+         <td colspan="6" align="center">
          <% 
          /**페이징 영역*/
          if (userGroup != 0) { %>
-            <a href="snack.jsp?cp=<%= userGroup*pageButton %>">&lt;&lt;</a>
+            <a href="category.jsp?cp=<%= userGroup*pageButton %>">&lt;&lt;</a>
          <% } %>
          <% for (int i = userGroup*pageButton+1; i <= (userGroup+1)*pageButton; i++) { %>
             <% String button = i == cp ? "nowPage" : "page"; %>
-            &nbsp;&nbsp;<button class="<%= button %>" onclick="javascript:location.href='snack.jsp?cp=<%= i %>'" id="page"><%= i %></button>&nbsp;&nbsp;
+            &nbsp;&nbsp;<button class="<%= button %>" onclick="javascript:location.href='category.jsp?cp=<%= i %>&categoryNum=<%= num%>'"><%= i %></button>&nbsp;&nbsp;
             <% if (i == totalPage) { break; } %>
          <% } %>
          <% if (userGroup != (totalPage/pageButton-(totalPage%pageButton==0?1:0))) { %>
-            <a href="snack.jsp?cp=<%=(userGroup+1)*pageButton+1%>">&gt;&gt;</a>
+            <a href="category.jsp?cp=<%=(userGroup+1)*pageButton+1%>">&gt;&gt;</a>
          <% } %>
          </td>
       </tr>

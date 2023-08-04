@@ -43,9 +43,20 @@
    // 갯수 버튼 눌렀을 때 갯수 증감, 갯수에 따라 주문 금액 변경
    function prodCount(type) {
       var count = document.product.cart_count.value;
+      var prod_count = <%=dto.getProd_count()%>;
       
       if(type === 'plus') {
-         number = parseInt(count) + 1;
+    	  if(prod_count == 0){
+    		window.alert('상품 재고가 0개 남았습니다.');
+    		document.product.cart_count.value = 0;
+    	  }else{
+    		  if(count >= prod_count){
+    			  window.alert('재고가 부족하여 더이상 담으실수 없습니다.');
+    		  }else{
+    				number = parseInt(count) + 1;
+    		  }
+    	}
+        
       } else if(type === 'minus') {
          if(count > 1) {
             number = parseInt(count) - 1;
@@ -90,7 +101,7 @@
       <input type="text" name="cart_count" maxlength="2" 
       id="prodcount" value="1" class="cart_count">&nbsp;
       <input type="button" value="+" onclick="prodCount('plus')" class="button_p">
-      <span><%=df.format(dto.getProd_price()) %></span>
+      <div class = "prod_count">수량: <%=dto.getProd_count() %> 남음<span><%=df.format(dto.getProd_price()) %></span></div>
       </div>
       <hr id="hr">
       <div class="prodcart">
@@ -103,9 +114,17 @@
          if(sidx==null) {
       %>
          <input type="button" value="장바구니" onclick="javascript: window.alert('로그인 후 이용 가능합니다.');location.href='/mni/user/login.jsp'" id="cartBtn">
-      <%   } else { %>
-         <input type="submit" value="장바구니" id="cartBtn">
-      <%   } %>
+      <%   } else {
+      		if(dto.getProd_count() == 0){
+      			%>
+      			<input type="button" value="품절" id="cartBtn">
+      			<%
+      		}else{
+      			%>
+      			<input type="submit" value="장바구니" id="cartBtn">
+      			<%
+      		}
+         } %>
    </form>
    </div>
    </div>
@@ -124,16 +143,17 @@
 <hr id="ulhr">
 <section class="section">
 <article>
-   <h2 id="section_dt"><a name="detail">상세정보</a></h2>
    <div id="detail_img">
-   <img alt="상세이미지" src="/mni/admin/product_img/<%=dto.getProd_info_img() %>">
+   <img alt="상세이미지" src="/mni/admin/product_img/<%=dto.getProd_info_img() %>" class = "detail_imgs">
    </div>
 </article>
 </section>
 <section class="section">
 <article>
-   <h2 class="section_rv"><a name="review">구매후기</a></h2>
-   <span><a href="/mni/product/reviewMore.jsp?idx=<%=prod_idx %>">리뷰 더 보기</a></span>
+<div>
+   <a name="review" class = "a">구매후기</a>
+   <span class = "rv"><a href="/mni/product/reviewMore.jsp?idx=<%=prod_idx %>">리뷰 더 보기</a></span>
+  </div> 
    <hr class="detail_hr">
       </article>
    </section>
@@ -144,7 +164,7 @@
 
    if(table==null || table.size()==0) {
 %>
-      <div>등록된 리뷰가 없습니다.</div>
+      <div class = "none_rv">등록된 리뷰가 없습니다.</div>
 <%
    } else {
       int forSize = table.size()<=3 ? table.size() : 3;
@@ -180,10 +200,10 @@
 </section>
 <section class="section">
 <article>
-   <h1 class="section_rv"><a name="cancel">취소안내</a></h1>
+   <h1 class="section_rv"></h1>
    <fieldset>
    <ul>
-      <li><h3>주문취소</h3></li>
+      <li><h3><a name="cancel">주문취소</a></h3></li>
       <li class="cancel">주문취소는 '미승인' 단계에서만 가능합니다.</li>
       <li class="cancel">주문 내 일부 상품의 부분 취소는 불가능합니다.</li>
       <li class="cancel">주문취소는 '마이페이지 > 주문취소' 를 통해 직접 취소하실 수 있습니다.</li>

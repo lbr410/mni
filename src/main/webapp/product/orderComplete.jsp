@@ -24,6 +24,7 @@
 		int price = cart.get(i).getCart_price();
 		int prodIdx = cart.get(i).getProd_idx();
 		odao.buyProduct(idx, odto, count, price, prodIdx);
+		odao.buyAfterProdCnt(count, prodIdx);
 		total_price += (count*price);
 	}
 	

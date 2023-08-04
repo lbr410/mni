@@ -42,19 +42,19 @@ userInfoDTO dto = udao.loginCheck(id);
        df.applyLocalizedPattern("#,###,###원");
       %>
       <div class = "username">
-      <%=dto.getUser_name() %> &nbsp;&nbsp;&nbsp;<div class = "settinglogo" onclick = "javascript:location.href='/mni/user/usercheck.jsp'"></div>
+      <%=dto.getUser_id() %> &nbsp;&nbsp;&nbsp;<div class = "settinglogo" onclick = "javascript:location.href='/mni/user/usercheck.jsp'"></div>
       </div>
    </div>
 
    <%
    if(arr == null || arr.size() == 0){
 	   %>
-	   <h1 class = "h1"><%=dto.getUser_name() %>님의 주문내역</h1>
+	   <h1 class = "h1"></h1>
 	   <div class = "orderList">주문 내역이 없습니다.</div>
 	   <%
    }else{
 	%>
-	<h1><%=dto.getUser_name() %>님의 주문내역</h1>
+	<h1></h1>
 
    <%for(int i = 0 ; i < arr.size() ; i++){ %>
    <h3><%=arr.get(i).getOrder_date() %></h3>
@@ -76,6 +76,10 @@ userInfoDTO dto = udao.loginCheck(id);
          <tr>   
             <th>결제금액</th>
             <td><%=df.format(arr.get(i).getOrder_total_price()) %></td>
+         </tr>
+         <tr>
+         	<th>상품수량</th>
+         	<td><%=arr.get(i).getOrder_count() %>&nbsp;개</td>
          </tr>
       </table>
       <%if(arr.get(i).getOrder_state().equals("미승인")){ %>

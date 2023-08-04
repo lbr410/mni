@@ -21,13 +21,14 @@ public class ProductDTO {
    
    
 
-   public ProductDTO(int prod_idx, String prod_name, String prod_title, int prod_price, String prod_title_img) {
+   public ProductDTO(int prod_idx, String prod_name, String prod_title, int prod_price, String prod_title_img, int prod_count) {
    super();
    this.prod_idx = prod_idx;
    this.prod_name = prod_name;
    this.prod_title = prod_title;
    this.prod_price = prod_price;
    this.prod_title_img = prod_title_img;
+   this.prod_count = prod_count;
 }
 
 public ProductDTO(String prod_name, String prod_title, int prod_price, int prod_count, String prod_date,
