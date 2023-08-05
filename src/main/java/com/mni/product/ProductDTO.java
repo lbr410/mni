@@ -109,7 +109,7 @@ public ProductDTO(String prod_name, String prod_title, int prod_price, int prod_
       this.prod_title_img = prod_title_img;
    }
 
-   public int getProd_idx() {
+public int getProd_idx() {
       return prod_idx;
    }
 

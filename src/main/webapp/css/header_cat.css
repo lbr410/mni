@@ -170,6 +170,7 @@ header{
     color: #ff7f50;
     margin-right: 10px;
     width: 150px;
+    
 }
 .dropbtn img{
    vertical-align: middle;
@@ -197,10 +198,11 @@ header{
     position: absolute;
     z-index: 1;
     font-weight: 400;
-    background-color: #f9f9f9;
+    background-color:white;
     margin-left: -50px;
     width: 200px;
     flex-direction: column;
+    box-shadow: 0 2px 4px #cecece;
 }
 .dropdown-content a{
     display: block;
@@ -208,15 +210,17 @@ header{
     color: rgb(37, 37, 37);
     font-size: 15px;
     text-align: left;
-    padding: 12px 20px;
+    padding: 10px 20px;
 }
 .dropbtn_icon123:hover{
     color: #ff7f50;
     font-size: 15px;
 }
 .dropdown-content a:hover{
-    background-color: #ececec;
+    background-color: white;
     color: #ff7f50;
+    border-left: solid 1.8px #ff7f50;
+    
 }
 .dropdown:hover .dropdown-content {
     display: block;
