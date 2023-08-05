@@ -81,7 +81,7 @@ if(totalCnt!=-1){
    </div>
      <div class="head-title">전체
      <hr>
-     </div>
+     </div><br><br><br>
    <div class="prodNum"><%=proTotal %>개의 상품</div>   
 <div class="prodSection">
 
