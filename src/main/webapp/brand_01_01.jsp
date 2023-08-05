@@ -77,10 +77,7 @@ if(totalCnt!=-1){
       </div>
       <div class="menu">
    <div class="category">
-      <div class="list1">카테고리</div>
-      <div class="list2">전체</div>
-      <div class="list2"><a href="javascript:location.href='/mni/category.jsp?categoryNum=01'">사료</a></div>
-   </div>
+      <div class="list1"><%=brandName %></div>
    </div>
      <div class="head-title">전체
      <hr>
