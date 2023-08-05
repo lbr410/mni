@@ -1,59 +1,38 @@
 @charset "UTF-8";
 
 .ordersection{margin: 0px auto;}
-   
-.userimg{
-    border: 1px solid gray; 
-    height: 200px;
-    width: 200px; 
-    border-radius: 100%; 
-    background-color: darkgray; 
-    background: url('/mni/img/logo.png') darkgray center; 
-    background-size: 265px;
-    position:relative;
-    top:30px;
-    left: -450px;
-   }
-    
-    .username{
-    font-size: 20px; 
-    margin-top: 250px; 
-    margin-left: 47px;
-    }
     
     h1{
     font-size: 30px; 
     margin-left: 560px;
-    margin-top: -250px;
+    margin-top: -10px;
     }
     
     h3{
-    margin-left: 300px;
+    margin-left: 50px;
     margin-top: 70px;
     font-size: 25px;
     }
     
-    hr{width: 800px; margin-left: 300px;}
+    hr{width: 800px; margin-left: 50px;}
     
     .productimg{
        width: 130px;
        height: 170px;
-       background: url("/mni/img/main.jpeg") darkgray center;
-       background-size: 150px;
        margin-top: 10px;
-       margin-left: 300px;
+       margin-left: 50px;
     }
     
     table{
     margin-top: -170px; 
     border-spacing: 0 10px; 
     width: 500px;
-    margin-left: 450px;
+    margin-left: 200px;
     }
     
     th{text-align: left; width: 100px;}
       td{width: 300px;}
-    .a{margin-left: 920px; margin-top: -80px;}   
+    .a{margin-left: 650px; margin-top: -80px;}   
     
     .button{
        width: 80px;
@@ -67,33 +46,12 @@
     .span{margin-left: 40px;}
     
     .spanready{margin-left: 20px;}
-    
-    .settinglogo{
-       width:40px;
-       height: 41px; 
-       background: url("/mni/img/settinglogo.png");
-       background-size: 39.5px;
-       position: relative;
-       left: 44px;
-       top: -35px;
-       cursor: pointer;
-    }
-    
-    .settinglogo:hover{
-       width:40px;
-       height: 40px; 
-       background: url("/mni/img/settinglogoHover.png");
-       background-size: 39px;
-       position: relative;
-       left: 44px;
-       top: -35px;
-       cursor: pointer;
-      }
+       
     
     .orderList{
        font-size:20px;
-       margin-left: 350px;
-       margin-top: 200px;
+       margin-left: 100px;
+       margin-top: 300px;
        margin-bottom: 200px;
     }
     

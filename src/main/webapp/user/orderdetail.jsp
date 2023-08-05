@@ -35,16 +35,14 @@ userInfoDTO dto = udao.loginCheck(id);
 <section class = "ordersection">
    <article>
    
-   <div class = "userimg">
+   
    <% 
       String user_name = (String)session.getAttribute("sname");
       DecimalFormat df = new DecimalFormat();
        df.applyLocalizedPattern("#,###,###원");
       %>
-      <div class = "username">
-      <%=dto.getUser_id() %> &nbsp;&nbsp;&nbsp;<div class = "settinglogo" onclick = "javascript:location.href='/mni/user/usercheck.jsp'"></div>
-      </div>
-   </div>
+      
+  
 
    <%
    if(arr == null || arr.size() == 0){

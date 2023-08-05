@@ -64,7 +64,7 @@ if (cp % pageButton == 0) {
                      <% if (i == totalPage) { break; } %>
                   <% } %>
                   <% if (userGroup != (totalPage/pageButton-(totalPage%pageButton==0?1:0))) { %>
-                     <a href="headerSearch.jsp?cp=<%=(userGroup+1)*pageButton+1%>">&gt;&gt;</a>
+                     <a href="headerSearch.jsp?cp=<%=(userGroup+1)*pageButton+1%>&search=<%=search%>">&gt;&gt;</a>
                   <% } %>
                </td>
             </tr>
@@ -72,7 +72,7 @@ if (cp % pageButton == 0) {
          <tbody>
          <%
          DecimalFormat df = new DecimalFormat("#,##0원");
-         ArrayList<ProductDTO> arr = hdao.userProductSearch(search);
+         ArrayList<ProductDTO> arr = hdao.userProductSearch(search,cp,pageCnt);
          if (arr == null || arr.size() == 0) {
          %>
          <tr>
