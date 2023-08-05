@@ -75,7 +75,7 @@ function orderDelevery(order_idx){
 </head>
 <%
 int totalCnt = odao.getSearchCnt(user_id); //총 게시물 수
-int pageCnt = 10; // 한 페이지당 게시물 개수
+int pageCnt = 20; // 한 페이지당 게시물 개수
 int pageButton = 10; // 페이지 버튼 개수
 
 String cp_s = request.getParameter("cp");
