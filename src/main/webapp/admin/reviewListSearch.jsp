@@ -7,6 +7,7 @@
 request.setCharacterEncoding("utf-8");
 String prod_name = request.getParameter("review_search");
 String admin_id = (String)session.getAttribute("admin_saveid");
+System.out.println(prod_name);
 String ck = "";
 Cookie cks[]=request.getCookies();
 if(cks!=null){
@@ -40,17 +41,10 @@ function reviewDel(review_idx){
    location.href='/mni/admin/reviewList.jsp';
    }
 }
-function reviewTitle(){
-   <%
-   if(prod_title == null){
-      prod_title = request.getParameter("prod_title");
-   }
-   %>
-}
 function productName(){
 	<%
 	if(prod_name == null){
-		prod_name = request.getParameter("review_prod_name");
+		prod_name = request.getParameter("prod_name");
 	}
 	%>
 }
@@ -58,7 +52,7 @@ function productName(){
 </head>
 <%
 int totalCnt = rdao.adminReviewCnt(); //총 게시물 수
-int pageCnt = 10; // 한 페이지당 게시물 개수
+int pageCnt = 5; // 한 페이지당 게시물 개수
 int pageButton = 10; // 페이지 버튼 개수
 
 String cp_s = request.getParameter("cp");
@@ -82,11 +76,11 @@ if(cp % pageButton == 0){
 <body>
 <div class="divSize">
 <%@ include file="admin_header/admin_header_4.jsp" %>
-<h1>리뷰 내역</h1>
+<h1><%=prod_name %> 상품 리뷰 내역</h1>
 <section>
 <article>
 	<form name="reviewList" action="/mni/admin/reviewListSearch.jsp" method="post" onsubmit="productName()">
-	<div><input type="text" name="review_prod_name" placeholder="상품명 입력" id="searchBox" required>
+	<div><input type="text" name="prod_name" placeholder="상품명 입력" id="searchBox" required>
 	<input type="submit" value="검색" class="seaBtnDeco">
 	</div>
 	</form>
@@ -105,21 +99,21 @@ if(cp % pageButton == 0){
 		</thead>
 		<tfoot>
 		<tr>
-            <td colspan="14" align="center">
+            <td colspan="8" align="center" class="pageTr">
          <%
          /**페이징*/
          if(userGroup != 0){
-            %><a href="productList.jsp?cp=<%=userGroup*pageButton%>">&lt;&lt;</a><%
+            %><a href="/mni/admin/reviewListSearch.jsp?cp=<%=userGroup*pageButton%>&prod_name=<%=prod_name%>">&lt;&lt;</a><%
          }
          for(int i = userGroup*pageButton+1; i<=(userGroup+1)*pageButton; i++){
             String button = i == cp ? "nowPage":"page";
-            %>&nbsp;&nbsp;<button class="<%=button %>" onclick="javascript:location.href='/mni/admin/reviewList.jsp?cp=<%=i%>'"><%=i %></button>&nbsp;&nbsp;<%
+            %>&nbsp;&nbsp;<button class="<%=button %>" onclick="javascript:location.href='/mni/admin/reviewListSearch.jsp?cp=<%=i%>&prod_name=<%=prod_name%>'"><%=i %></button>&nbsp;&nbsp;<%
             if(i == totalPage){
                break;
             }
          }
          if(userGroup != (totalPage/pageButton-(totalPage%pageButton==0?1:0))){
-            %><a href="/mni/admin/reviewList.jsp?cp=<%=(userGroup+1)*pageButton+1%>">&gt;&gt;</a><%
+            %><a href="/mni/admin/reviewListSearch.jsp?cp=<%=(userGroup+1)*pageButton+1%>&prod_name=<%=prod_name%>">&gt;&gt;</a><%
          }
          %>
          </td>
@@ -141,8 +135,6 @@ if(cp % pageButton == 0){
 				<td><%=arr.get(i).getProd_idx() %></td>
 				<td><%=arr.get(i).getProd_name() %></td>
 				<td><%=arr.get(i).getUser_id() %></td>
-				<%System.out.println(arr.get(i).getReview_img()); %>
-
             <td><%if(arr.get(i).getReview_img() == null || arr.get(i).getReview_img().equals("-")){
                %>사진없음<%
                }else{%>

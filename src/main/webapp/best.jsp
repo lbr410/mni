@@ -45,7 +45,7 @@
                </div>
                   <div class="prodImg">
                       <a href="javascript:location.href='/mni/product/product.jsp?idx=<%=arr.get(i).getProd_idx()%>'">
-                      <img src="/mni/img/<%=arr.get(i).getProd_title_img() %>" alt="place image" name="best"></a>
+                      <img src="/mni/admin/product_img/<%=arr.get(i).getProd_title_img() %>" alt="place image" name="best"></a>
                   </div>
                   <div class="description-section">
                      <div class="prodName"><%=arr.get(i).getProd_name() %></div>

@@ -100,7 +100,7 @@ userInfoDTO dto = udao.loginCheck(id);
       			%>
       			<div class = "a">
       	         <span class = "span">배송중</span>
-      	         <input type = "button" value = "수취확인" class = "button" onclick = "javascript:location.href='userReceiptConfirmation.jsp?ord_idx=<%=arr.get(i).getOrder_idx()%>'">
+      	         <input type = "button" value = "수취확인" class = "button" onclick = "javascript:location.href='userReceiptConfirmation.jsp?ord_idx=<%=arr.get(i).getOrder_idx()%>&prod_idx=<%=arr.get(i	).getProd_idx()%>'">
       	         </div>
       			<%
       		}else if(arr.get(i).getOrder_state().equals("주문취소") || arr.get(i).getOrder_state().equals("승인거절")){
