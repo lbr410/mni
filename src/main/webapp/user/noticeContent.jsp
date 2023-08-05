@@ -17,13 +17,10 @@ NoticeDTO dto=ndao.userNoticeContent(idx);
 <meta charset="UTF-8">
 <title>공지사항 내용</title>
 <style>
-h2{
-	text-align: center;
-	padding-bottom: 20px;
-}
+
 table{
 	width:800px;
-	padding-top: 10px;
+	padding-top: 35px;
 	border-spacing: 0px;
 }
 .th1{
@@ -66,7 +63,6 @@ table{
 <%@include file = "/header.jsp" %>
 <section>
 	<article>
-	<h2>공지사항</h2>
 		<table>
 			<thead>
 				<tr>

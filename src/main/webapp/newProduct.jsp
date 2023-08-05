@@ -4,14 +4,7 @@
 <%@ page import="java.text.*" %>
 <%@ page import="com.mni.product.*" %>
 <jsp:useBean id="pdao" class="com.mni.product.ProductDAO"></jsp:useBean>
-<%
-String pet="";
-if(request.getParameter("pet")==null) {
-    pet = "d";
- } else {
-    pet = request.getParameter("pet");
- }
-%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +42,7 @@ if (cp % pageButton == 0) {
 }
 
 %>
-<%@ include file="header.jsp" %>
+<%@ include file="/header.jsp" %>
 <body>
 <div class="bar">홈 > 신상품</div>
 <div class="head-title">신상품</div>
@@ -75,7 +68,7 @@ if (cp % pageButton == 0) {
 	
 	<tbody>
 		<%
-		ArrayList<ProductDTO> arr = pdao.newProduct(pet, cp, pageCnt);
+		ArrayList<ProductDTO> arr = pdao.newProduct(cp, pageCnt);
 		DecimalFormat df = new DecimalFormat("#,##0원");
 		if (arr == null || arr.size() == 0) {
 			%>

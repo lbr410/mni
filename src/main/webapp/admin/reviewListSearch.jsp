@@ -41,6 +41,7 @@ function reviewDel(review_idx){
    location.href='/mni/admin/reviewList.jsp';
    }
 }
+
 function productName(){
 	<%
 	if(prod_name == null){

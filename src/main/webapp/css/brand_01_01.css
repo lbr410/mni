@@ -47,9 +47,11 @@ body{
 	border-bottom: 1px solid #cccccc;
 	padding: 14px;
 	color: #ff7f50;
+	font-weight: bold;
 }
 .list2{
 	padding: 14px;
+	font-weight: bold;
 }
 .head-title{
 	margin-top:50px; 
