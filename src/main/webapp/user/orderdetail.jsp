@@ -69,7 +69,17 @@ userInfoDTO dto = udao.loginCheck(id);
          </tr>
          <tr>   
             <th>결제방법</th>
-            <td><%=arr.get(i).getOrder_type() %></td>
+            <%
+            if(arr.get(i).getOrder_type().equals("card")){
+            	%>
+            	<td>신용카드</td>
+            	<%
+            }else if(arr.get(i).getOrder_type().equals("tel")){
+            	%>
+            	<td>휴대폰</td>
+            	<%
+            }
+            %>
          </tr>
          <tr>   
             <th>결제금액</th>

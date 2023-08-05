@@ -67,7 +67,7 @@ function addrpopup(){
 		<table>
 			<tr>
 				<th>받는사람</th>
-				<td><input type="text" name="order_recie" value="<%=dto.getUser_name() %>"></td>
+				<td><input type="text" name="order_recie" value="<%=dto.getUser_name() %>" class = "inputtext_s"></td>
 			</tr>
 			<tr>
 				<th class = "th">배송주소</th>

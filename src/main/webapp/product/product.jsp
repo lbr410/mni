@@ -68,6 +68,19 @@
       document.product.cart_total_price.value = total;
       document.product.cart_total_price2.value = total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'원';      
    }
+   
+   function product_soldout(){
+	   var count = document.product.cart_count.value;
+	   var prod_count = <%=dto.getProd_count()%>;
+	   
+	   if(count > prod_count){
+		   window.alert('재고가 부족하여 더이상 담으실수 없습니다.');
+		   return false;
+	   }else{
+		  return true;
+	   }
+	      
+   }
 </script>
 <section class="section">
 <article>
@@ -92,7 +105,7 @@
    <div>
    안심하시고 급여하세요!
    </div>
-   <form name="product" action="/mni/product/product_ok.jsp" method="post">
+   <form name="product" action="/mni/product/product_ok.jsp" method="post" onsubmit = "return product_soldout()">
       <input type="hidden" name="prod_idx" value="<%=idx %>">
       <input type="hidden" name="user_idx" value="<%=sidx %>">
       <div class="prodcount">
