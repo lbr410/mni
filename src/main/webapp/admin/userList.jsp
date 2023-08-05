@@ -34,7 +34,7 @@ if(cks!=null){
 <%
 /**페이징*/
 int totalCnt = udao.userCnt();
-int pageCnt = 15;
+int pageCnt = 20;
 int pageButton = 10;
 
 String cp_s = request.getParameter("cp");
