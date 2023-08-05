@@ -77,7 +77,7 @@ if(cp % pageButton == 0){
    <input type="submit" value="검색" class="seaBtnDeco">
    </div>
    </form>
-      <table>
+      <table class="userListSearchTable">
       <thead>
          <tr>
             <th>NO.</th>

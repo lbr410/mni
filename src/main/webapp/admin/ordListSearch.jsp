@@ -108,8 +108,7 @@ int count = 0;
    <input type="submit" value="검색" class="seaBtnDeco">
    </div>
    </form>
-   <div class="misord"><input type="checkbox" name="ord_checkbox" value="미승인 주문">미승인 주문</div>
-      <table>
+      <table class="orderListSearchTable">
       <thead>
          <tr id="trUp">
             <th>주문번호</th>

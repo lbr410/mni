@@ -294,3 +294,15 @@ tfoot td {
 	border-bottom: white;
 	padding-top: 5px;
 }
+
+.orderListSearchTable {
+	font-size: 12px;
+}
+
+.userListSearchTable {
+	font-size: 12px;
+}
+
+.reviewListSearchTable {
+	font-size: 12px;
+}
