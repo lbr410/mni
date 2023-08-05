@@ -52,7 +52,7 @@ function productName(){
 </script>
 </head>
 <%
-int totalCnt = rdao.adminReviewCnt(); //총 게시물 수
+int totalCnt = rdao.reviewSearchCnt(prod_name); //총 게시물 수
 int pageCnt = 5; // 한 페이지당 게시물 개수
 int pageButton = 10; // 페이지 버튼 개수
 
