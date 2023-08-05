@@ -28,6 +28,7 @@
         %>
              <div><%=id %>님 로그인 중
           |<a href="/mni/user/logout.jsp">로그아웃</a>
+          <a href="/mni/user/usercheck.jsp">회원수정</a>
           </div>
         <% 
      }

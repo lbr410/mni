@@ -37,9 +37,8 @@ function price(object){
 <body>
 <div class="divSize">
 <%@ include file="admin_header/admin_header_2.jsp" %>
+<h1>상품등록</h1><br>
 <section>
-<br><br><br>
-	<span>상품등록</span>
 	<article>
 	<br>
 		<form name="prodInsert" action="prodInsert_ok.jsp" method="post" enctype="multipart/form-data">

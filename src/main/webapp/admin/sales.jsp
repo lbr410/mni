@@ -45,9 +45,9 @@ if(cks!=null){
 <body>
 <div class="divSize">
 <%@ include file="admin_header/admin_header_5.jsp" %>
+	<h1>매출집계</h1><br><br><br><br><br>
 	<section>
 	<br><br><br>
-	<span>매출집계</span><br><br><br><br><br>
 		<article>
 			<form name="sales" action="sales.jsp" method="post" onsubmit="return dateCheck()">
 				<input type="date" class="date_size" name="startDate" min="1970-01-01">&nbsp;~

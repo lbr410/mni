@@ -40,13 +40,6 @@ function reviewDel(review_idx){
    location.href='/mni/admin/reviewList.jsp';
    }
 }
-function reviewTitle(){
-   <%
-   if(prod_title == null){
-      prod_title = request.getParameter("prod_title");
-   }
-   %>
-}
 function productName(){
 	<%
 	if(prod_name == null){
