@@ -30,21 +30,7 @@ if(cks!=null){
 <title>멍냥이 관리자 : 공지사항</title>
 <link rel="stylesheet" type="text/css" href="/mni/css/adminList.css">
 <style>
-.page{
-   font-size: 20px;
-   background-color:white;
-   text-decoration: none;
-   border: 0.5px solid;
-   border-color: #ff7f50;
-   cursor: pointer;
-}
-.nowPage{
-   font-size: 20px;
-   background-color:#ff7f50;
-   text-decoration: none;
-   border: 0.5px solid;
-   border-color: white;
-}
+
 td{
 	text-align: center;
 }

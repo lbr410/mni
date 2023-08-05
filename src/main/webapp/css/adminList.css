@@ -30,6 +30,7 @@
     color: #111111;
     border: 0;
     border: 1px #cccccc solid;
+    margin-top: 10px;
 }
 .textFocus input:focus {
     border-color:#ff7f50;
@@ -86,23 +87,24 @@ td{
    border-bottom: 1px solid #cccccc;
 }
 .page{
-   font-size: 20px;
-   background-color:white;
-   text-decoration: none;
-   border: 0.5px solid;
-   border-color: #ff7f50;
-   cursor: pointer;
-   margin-top: 20px;
-   margin-bottom: 20px;
+   width: 22px;
+    height: 22px;
+    font-size: 12px;
+    color: black;
+    border: 0;
+    background-color: white;
+    border: 1px #ff7f50 solid;
+    border-radius: 5px;
+    cursor: pointer; 
 }
 .nowPage{
-   font-size: 20px;
-   background-color:#ff7f50;
-   text-decoration: none;
-   border: 0.5px solid;
-   border-color: white;
-   margin-top: 20px;
-   margin-bottom: 20px;
+    width: 22px;
+    height: 22px;
+    background-color:#ff7f50;
+    color:white;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
 }
 h1{
    margin: 0 auto;
@@ -272,3 +274,11 @@ a:visited{
 	height: 100px;
 }
 
+.pageTr{
+   border-bottom: none;
+}
+
+tfoot td {
+	border-bottom: white;
+	padding-top: 5px;
+}

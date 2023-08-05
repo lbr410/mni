@@ -7,9 +7,9 @@ body {
 	width: 1250px;
 }
 
-span {
-	font-size: 30px;
-	font-weight: bold;
+h1 {
+	margin: 0 auto;
+	padding-top: 50px;
 	color: #ff7f50;
 }
 

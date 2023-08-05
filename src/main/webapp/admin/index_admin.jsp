@@ -29,7 +29,7 @@ if(cks!=null){
 <form name="adminlogin" id="login" action="adminLogin_ok.jsp" method="post"> 
 <img src="/mni/img/mainlogo.png" alt="adminlogo" class="login_logo"><br>
 	<div class="textFocus"><input type="text" name="adminlogin_id" placeholder=" 아이디" 
-	value="<%=admin_saveid%>"></div><br>
+	value="<%=admin_saveid%>"></div>
 	<div class="textFocus"><input type="password" name="adminlogin_pwd" class="textBoxsize" placeholder=" 비밀번호"></div><br>
 	<div class="checkbox"><input type="checkbox" name="admin_auto" value="auto">자동로그인
 	<input type="checkbox" name="admin_saveid" value="on" 
