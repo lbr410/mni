@@ -112,8 +112,7 @@ public class ProductDAO {
          }catch(Exception e2) {}
       }
    }
-   
-   /**관리자 검색 결과 총 상품 개수 메서드 -송준*/
+
    /**관리자 검색 결과 총 상품 개수 메서드 -송준*/
    public int getSearchCnt(String prod_name) {
       try {
@@ -533,4 +532,23 @@ public class ProductDAO {
            }catch(Exception e2) {}
         }
      }
+      /**판매횟수 메서드*/
+      public int salesCount(int prod_idx) {
+    	  try {
+    		  conn = com.mni.db.MniDB.getConn();
+    		  String sql = "update product set prod_sale = prod_sale+1 where prod_idx = ?";
+    		  ps = conn.prepareStatement(sql);
+    		  ps.setInt(1, prod_idx);
+    		  int count = ps.executeUpdate();
+    		  return count;
+    	  }catch(Exception e) {
+    		  e.printStackTrace();
+    		  return 0;
+    	  }finally {
+			try {
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			}catch(Exception e2) {}
+		}
+      }
 }

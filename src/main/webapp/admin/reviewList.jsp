@@ -43,7 +43,7 @@ function reviewDel(review_idx){
 </head>
 <%
 int totalCnt = rdao.adminReviewCnt(); //총 게시물 수
-int pageCnt = 10; // 한 페이지당 게시물 개수
+int pageCnt = 5; // 한 페이지당 게시물 개수
 int pageButton = 10; // 페이지 버튼 개수
 
 String cp_s = request.getParameter("cp");
@@ -90,11 +90,11 @@ if(cp % pageButton == 0){
 		</thead>
 		<tfoot>
 		<tr>
-            <td colspan="14" align="center">
+            <td colspan="8" align="center" class="pageTr">
          <%
          /**페이징*/
          if(userGroup != 0){
-            %><a href="productList.jsp?cp=<%=userGroup*pageButton%>">&lt;&lt;</a><%
+            %><a href="/mni/admin/reviewList.jsp?cp=<%=userGroup*pageButton%>">&lt;&lt;</a><%
          }
          for(int i = userGroup*pageButton+1; i<=(userGroup+1)*pageButton; i++){
             String button = i == cp ? "nowPage":"page";
@@ -126,8 +126,6 @@ if(cp % pageButton == 0){
 				<td><%=arr.get(i).getProd_idx() %></td>
 				<td><%=arr.get(i).getProd_name() %></td>
 				<td><%=arr.get(i).getUser_id() %></td>
-				<%System.out.println(arr.get(i).getReview_img()); %>
-
 				<td><%if(arr.get(i).getReview_img() == null || arr.get(i).getReview_img().equals("-")){
 					%>사진없음<%
 					}else{%>

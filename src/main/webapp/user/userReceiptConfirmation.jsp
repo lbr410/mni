@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>   
 <jsp:useBean id = "odao" class = "com.mni.ord.OrdDAO"></jsp:useBean>
+<jsp:useBean id = "pdao" class = "com.mni.product.ProductDAO"></jsp:useBean>
 <%
 String order_idx_s = request.getParameter("ord_idx");
 int order_idx = Integer.parseInt(order_idx_s);
+String prod_idx_s = request.getParameter("prod_idx");
+int prod_idx = Integer.parseInt(prod_idx_s);
 int result = odao.userReceiptConfirmation(order_idx);
 if(result > 0){
+	pdao.salesCount(prod_idx);
 	%>
 	<script>
 		window.alert('배송이 완료되었습니다.');
