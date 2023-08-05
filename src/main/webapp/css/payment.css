@@ -11,9 +11,10 @@ h1{
 h3{margin-top: 40px; margin-bottom: 30px;}
  
 table{
-	width: 900px;
+	width: 700px;
 	border-top: 1px solid lightgray;
 	border-bottom: 1px solid lightgray;
+	border-right: 1px solid lightgray;
 	border-collapse: collapse;
 	margin-left: 0;
 	margin-bottom: 100px;	
@@ -38,55 +39,67 @@ tr{	height: 50px;}
 	border-bottom: 1px solid lightgray;
 	
 }
-td{width: 700px; text-align: center;}
+td{width: 700px; text-align: left; padding: 10px;}
 
 .button{
     	width: 300px;
     	height: 50px;
-    	border-radius: 10px;
+    	border-radius: 5px;
 		cursor: pointer;
 		background-color: #ff7f50;
 		color: white;
 		border: 0px;
-		margin-left: 300px;
+		margin-left: 200px;
 }
 .button1{
-	width: 100px;
-	height:40px;
-	border-radius: 10px;
+	width: 90px;
+	height:30px;
+	border-radius: 5px;
 	cursor: pointer;
 	background-color: #ff7f50;
 	color: white;
 	border: 0px;
-	margin-left: 10px;
+	margin-left: 5px;
+	margin-top: -10px;
+	
 }
-.textarea{height: 100px;}
 
 .request{
-	size: 20px; 
-	height: 40px;
+	width: 200px; 
+	height: 20px;
 	border: 1px solid lightgray;
 	border-radius: 5px;
-	font-size:20px; 
-	}
+	font-size:15px;
+	padding: 5px; 
+}
 	
 .inputtext{
-width: 300px; 
-height: 40px; 
-margin-bottom: 10px;
-border:1px solid lightgray;
-	border-radius: 10px;
+	width: 200px; 
+	height: 20px; 
+	border:1px solid lightgray;
+	border-radius: 5px;
+	padding:5px;
+	margin-bottom: 10px;
+}
+
+.inputtext_s{
+	width: 200px; 
+	height: 20px; 
+	border:1px solid lightgray;
+	border-radius: 5px;
+	padding:5px;
 }	
 
 .add{
 	width: 100px; 
-	height: 40px; 
+	height: 20px; 
 	margin-bottom: 10px;
-	margin-left: -84px;
-	margin-top:10px;
+	margin-left: 1px;
+	margin-top: 15px;
 	border:1px solid lightgray;
-	border-radius: 10px;
-	font-size:20px;
+	border-radius: 5px;
+	font-size:15px;
+	padding:5px;
 }
 	
 	

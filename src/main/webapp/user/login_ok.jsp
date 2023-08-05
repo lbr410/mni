@@ -11,7 +11,7 @@ String user_id=request.getParameter("id");
 String user_pwd=request.getParameter("pwd");
 String idremember=request.getParameter("idremember");
 userInfoDTO result = udao.loginCheck(user_id);
-System.out.println(result);
+
    if(result!=null){
 	   System.out.println(result);
       if(idremember!=null){
@@ -25,16 +25,18 @@ System.out.println(result);
       }
       String user_name=udao.getUserInfo(user_id);
       userInfoDTO dto = udao.loginCheck(user_id);
+      
+      if(dto.getUser_id().equals(user_id) && dto.getUser_pwd().equals(user_pwd)){
+      
       session.setAttribute("sidx", dto.getUser_idx()); // idx로 session - BR
       session.setAttribute("sid",user_id);
-      if(dto.getUser_id().equals(user_id) && dto.getUser_pwd().equals(user_pwd)){
       %>
       <script>
       location.href='/mni/index.jsp';
       </script>
       <%
    }else{
-	   System.out.println(result);
+	   
       %><script>
       window.alert('ID 또는 비밀번호가 잘못되었습니다.');
       location.href='/mni/user/login.jsp';
