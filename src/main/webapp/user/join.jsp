@@ -109,7 +109,7 @@ function jumin(object){
 	회원가입 submit을 실행 미실행 판단역할	
 	-->
 	<input type = "hidden" name = "idcheckbutton" value = "">
-	<input type = "text" name = "user_id" placeholder="아이디 입력." class = "inputtext" required>
+	<input type = "text" name = "user_id" placeholder="아이디 입력" class = "inputtext" required>
 	<!-- 버튼을 누르면 idCheck.jsp로 이동해서 중복확인 메서드 실행-->
 	<input type = "button" value = "중복확인" onclick = "idcheck()" class = "button">
 	<!-- 사용자에게 중복인지 아닌지 알려주는 div태그 -->
@@ -120,12 +120,12 @@ function jumin(object){
 	</tr>
 	<tr>
 	<th>비밀번호<font color = "red">*</font></th>
-	<td><input type = "password" name = "user_pwd" placeholder="비밀번호 입력." class = "inputtext" required></td>
+	<td><input type = "password" name = "user_pwd" placeholder="비밀번호 입력" class = "inputtext" required></td>
 	</tr>
 	<tr>
 	<th>비밀번호 확인<font color = "red">*</font></th>
 	<td>
-	<input type = "password" name = "pwdcheck" placeholder="비밀번호 확인." class = "inputtext" onchange = "showpwd()" required>
+	<input type = "password" name = "pwdcheck" placeholder="비밀번호 확인" class = "inputtext" onchange = "showpwd()" required>
 	<!-- 사용자에게 위에 비밀번호와 일치하는지 다른지 알려주는 div태그 -->
 	<div id = "pwdchecking" class = "pwdexception">입력한 비밀번호가 일치하지 않습니다.</div>
 	</td>
@@ -148,7 +148,7 @@ function jumin(object){
 	<td>
 	<input type = "text" name = "user_zip" class = "add" readonly>
    <input type = "button" value = "주소검색" onclick = "addrpopup()" class = "button"><br>
-   <input type = "text" name = "user_addr1"  class = "inputtext" readonly><br>
+   <input type = "text" name = "user_addr1"  class = "inputtext_add" readonly><br>
    <input type = "text" name = "user_addr2" class = "inputtext" required>
 	</td>
 	</tr>
@@ -156,7 +156,7 @@ function jumin(object){
 	<th>전화번호<font color = "red">*</font></th>
 	<td>
 	<input type = "text" name = "user_tel" maxlength="11" class = "inputtext" required>
-	<div>"-"는 빼고 입력해 주세요.</div>
+	<div class = "a">"-"는 빼고 입력해 주세요.</div>
 	</td>
 	</tr>
 	<tr>

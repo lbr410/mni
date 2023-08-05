@@ -15,9 +15,11 @@ public class headerSearchDAO {
 	}
 	
 	/*헤더 검색SM*/
-	public ArrayList<ProductDTO> userProductSearch(String search){
+	public ArrayList<ProductDTO> userProductSearch(String search, int cp, int pageCnt){
 		try{
 			conn = com.mni.db.MniDB.getConn();
+			int start = (cp-1)*pageCnt+1;
+	        int end = cp*pageCnt;
 			int userSearch = 0;
 			switch (search) {
 			case "사료": userSearch = 1;break;
@@ -27,11 +29,15 @@ public class headerSearchDAO {
 			}
 			ArrayList<ProductDTO> arr = new ArrayList<ProductDTO>();
 			if(userSearch != 0) {
-				String sql = "select prod_name,prod_title_img,prod_brand,prod_price,prod_idx,prod_title "
-						+ "from product "
-						+ "where prod_category = ?";
+				String sql = "select * from "
+						+ "(select rownum as rnum,a.* from "
+						+ "(select prod_name,prod_title_img,prod_brand,prod_price,prod_idx,prod_title from product "
+						+ "where prod_category = ?) a) b "
+						+ "where rnum>=? and rnum<=?";
 				ps = conn.prepareStatement(sql);
 				ps.setInt(1, userSearch);
+				ps.setInt(2, start);
+				ps.setInt(3, end);
 				rs = ps.executeQuery();
 				if(rs.next()) {
 					do {
@@ -46,11 +52,15 @@ public class headerSearchDAO {
 					}while(rs.next());
 				}
 			}else {
-				String sql = "select prod_name,prod_title_img,prod_brand,prod_price,prod_idx,prod_title "
-						+ "from product "
-						+ "where prod_name like ?";
+				String sql = "select * from "
+						+ "(select rownum as rnum,a.* from "
+						+ "(select prod_name,prod_title_img,prod_brand,prod_price,prod_idx,prod_title from product "
+						+ "where prod_name like ?) a) b "
+						+ "where rnum>=? and rnum<=?";
 				ps = conn.prepareStatement(sql);
 				ps.setString(1,"%" + search + "%");
+				ps.setInt(2, start);
+				ps.setInt(3, end);
 				rs = ps.executeQuery();
 				if(rs.next()) {
 					do {

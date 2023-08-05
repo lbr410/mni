@@ -8,28 +8,32 @@
 	
 	h2{
 	display: inline-block;
-	margin-left:-20px;
+	margin-left:1px;
 	font-size: 35px; 
-	margin-bottom: -20px;
+	margin-bottom: -30px;
 	}
 	
 	hr{width: 800px; margin-top: -50px;}
 	
 	.divsize{
 	font-size: 15px; 
-	margin-left: 650px; 
+	margin-left: 700px; 
 	margin-bottom: 10px;}
 	
 	table{
 	width: 800px; 
 	text-align: left; 
-	border-spacing: 0 40px; 
-	margin: 0px auto;
+	border-spacing: 0 40px;
+	position: relative; 
+	left: 170px;
 	}
 	
-	th{margin-bottom: 20px;}
+	td{width:50px;}
 	
-	.add{width: 100px; 
+	th{width:50px;}
+	
+	.add{
+	width: 100px; 
 	height: 40px; 
 	margin-bottom: 10px;
 	border:1px solid lightgray;
@@ -38,34 +42,52 @@
 	
 	.button{
 	width: 100px; 
-	height: 40px;
+	height: 41px;
 	border: 1px solid #ff7f50;
 	border-radius: 10px;
 	background-color: #ff7f50;
 	color: white;
 	cursor: pointer;
+	font-size: 15.5px;
+	}
 	
+	.a{
+	margin-top: 5px;
+	color:#fc7321;
 	}
 	
 	.submit{
-	width: 400px; 
+	width: 500px; 
 	height: 60px; 
 	margin-top: 30px; 
-	margin-left: 100px;
+	margin-left: -330px;
 	border: 1px solid #ff7f50;
 	border-radius: 10px;
 	background-color: #ff7f50;
 	color: white;
 	cursor: pointer;
+	font-size:20px;
 	}
 	
 	.inputtext{
-	width: 300px; 
-	height: 40px; 
-	margin-bottom: 10px;
+	width: 250px; 
+	height: 20px; 
 	border:1px solid lightgray;
 	border-radius: 10px;
+	padding:10px;
+	font-size: 15px;
 	}
+	
+	.inputtext_add{
+	width: 250px; 
+	height: 20px; 
+	border:1px solid lightgray;
+	border-radius: 10px;
+	padding:10px;
+	font-size: 15px;
+	margin-bottom: 10px;
+	}
+	
 	<!--/*Chrome, Safari, Edge, Opera에서의 number 증가,감소 버튼 숨기기*/ -->
 	input::-webkit-outer-spin-button,
 	input::-webkit-inner-spin-button {
@@ -73,14 +95,14 @@
   	margin: 0;
 	}
 	.jumin{
-	width: 140px; 
+	width: 125px; 
 	height: 40px;
 	border:1px solid lightgray;
 	border-radius: 10px;
 	}
 	
 	.juminback{
-	width: 140px; 
+	width: 125px; 
 	height: 40px;
 	border:1px solid lightgray;
 	border-radius: 10px;
