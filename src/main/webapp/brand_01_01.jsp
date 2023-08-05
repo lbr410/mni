@@ -77,9 +77,9 @@ if(totalCnt!=-1){
       </div>
       <div class="menu">
    <div class="category">
-      <div class="list1"><a href="#">카테고리</a></div>
-      <div class="list2"><a href="#">전체</a></div>
-      <div class="list2"><a href="#">사료</a></div>
+      <div class="list1">카테고리</div>
+      <div class="list2">전체</div>
+      <div class="list2"><a href="javascript:location.href='/mni/category.jsp?categoryNum=01'">사료</a></div>
    </div>
    </div>
      <div class="head-title">전체
@@ -127,7 +127,8 @@ if(totalCnt!=-1){
                      <td>
                         <div class="brand-list-item">
                                 <div class="prodImg">
-                                  <a href="#"><img src="/mni/img/<%=arr.get(i).getProd_title_img() %>" alt="brand image" name="brand"></a>
+                                  <a href="javascript:location.href='/mni/product/product.jsp?idx=<%=arr.get(i).getProd_idx()%>'">
+                                  <img src="/mni/admin/product_img/<%=arr.get(i).getProd_title_img() %>" alt="brand image" name="brand"></a>
                                 </div>
                                  <div class="description-section">
                                      <div class="prodName"><%=arr.get(i).getProd_name() %></div>

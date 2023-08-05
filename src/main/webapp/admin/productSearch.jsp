@@ -108,21 +108,21 @@ if(cp % pageButton == 0){
          </thead>
          <tfoot>
          <tr>
-            <td colspan="10" align="center">
+            <td colspan="11" align="center" class="pageTr">
          <%
          /**페이징*/
          if(userGroup != 0){
-            %><a href="productList.jsp?cp=<%=userGroup*pageButton%>">&lt;&lt;</a><%
+            %><a href="/mni/admin/productSearch.jsp?cp=<%=userGroup*pageButton%>&prod_name=<%=prod_name%>">&lt;&lt;</a><%
          }
          for(int i = userGroup*pageButton+1; i<=(userGroup+1)*pageButton; i++){
             String button = i == cp ? "nowPage":"page";
-            %>&nbsp;&nbsp;<button class="<%=button %>" onclick="javascript:location.href='productList.jsp?cp=<%=i%>'"><%=i %></button>&nbsp;&nbsp;<%
+            %>&nbsp;&nbsp;<button class="<%=button %>" onclick="javascript:location.href='/mni/admin/productSearch.jsp?cp=<%=i%>&prod_name=<%=prod_name%>'"><%=i %></button>&nbsp;&nbsp;<%
             if(i == totalPage){
                break;
             }
          }
          if(userGroup != (totalPage/pageButton-(totalPage%pageButton==0?1:0))){
-            %><a href="productList.jsp?cp=<%=(userGroup+1)*pageButton+1%>">&gt;&gt;</a><%
+            %><a href="/mni/admin/productSearch.jsp?cp=<%=(userGroup+1)*pageButton+1%>&prod_name=<%=prod_name%>">&gt;&gt;</a><%
          }
          %>
          </td>

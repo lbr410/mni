@@ -77,6 +77,7 @@ if(cp % pageButton == 0){
             <th>주민번호</th>
             <th>이메일</th>
             <th>연락처</th>
+            <th>우편번호</th>
             <th>주소</th>
             <th>가입일자</th>
             <th id="thup">탈퇴여부</th>
@@ -84,21 +85,21 @@ if(cp % pageButton == 0){
          </thead>
          <tfoot>
          <tr>
-            <td colspan="10" align="center">
+            <td colspan="11" align="center" class="pageTr">
          <%
          /**페이징*/
          if(userGroup != 0){
-            %><a href="userList.jsp?cp=<%=userGroup*pageButton%>">&lt;&lt;</a><%
+            %><a href="/mni/admin/userList.jsp?cp=<%=userGroup*pageButton%>">&lt;&lt;</a><%
          }
          for(int i = userGroup*pageButton+1; i<=(userGroup+1)*pageButton; i++){
             String button = i == cp ? "nowPage":"page";
-            %>&nbsp;&nbsp;<button class="<%=button %>" onclick="javascript:location.href='userList.jsp?cp=<%=i%>'"><%=i %></button>&nbsp;&nbsp;<%
+            %>&nbsp;&nbsp;<button class="<%=button %>" onclick="javascript:location.href='/mni/admin/userList.jsp?cp=<%=i%>'"><%=i %></button>&nbsp;&nbsp;<%
             if(i == totalPage){
                break;
             }
          }
          if(userGroup != (totalPage/pageButton-(totalPage%pageButton==0?1:0))){
-            %><a href="userList.jsp?cp=<%=(userGroup+1)*pageButton+1%>">&gt;&gt;</a><%
+            %><a href="/mni/admin/userList.jsp?cp=<%=(userGroup+1)*pageButton+1%>">&gt;&gt;</a><%
          }
          %>
          </td>
@@ -110,7 +111,7 @@ if(cp % pageButton == 0){
          if(arr == null || arr.size() == 0){
             %>
             <tr>
-            <td colspan="10" class="td">등록된 회원이 없습니다.</td>
+            <td colspan="11" class="td">등록된 회원이 없습니다.</td>
          </tr>
          <%
          }
@@ -125,6 +126,7 @@ if(cp % pageButton == 0){
                 <td><%=jumin.substring(0, 6)%>-<%=jumin.substring(6) %></td>
                 <td><%=arr.get(i).getUser_email() %></td>
                 <td><%=arr.get(i).getUser_tel().substring(0, 3)%>-<%=arr.get(i).getUser_tel().substring(3, 7)%>-<%=arr.get(i).getUser_tel().substring(7)%></td>
+                <td><%=arr.get(i).getUser_zip() %></td>
                 <td><%=arr.get(i).getUser_addr1() %>&nbsp;<%=arr.get(i).getUser_addr2() %></td>
                 <td><%=arr.get(i).getUser_joindate() %></td>
                 <td><%=arr.get(i).getUser_delete() %></td>

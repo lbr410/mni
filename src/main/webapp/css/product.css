@@ -17,6 +17,11 @@
    float: right;
     width: 400px;
 }
+.prodcount{
+	padding-left: 20px;
+	padding-top: 14px;
+	padding-bottom: 14px;
+}
 /*수량 강조*/
 #prodcount{
    background-color:#e9e9e9;
@@ -75,14 +80,16 @@
 }
 /*메뉴*/
 .ul li{
-   margin-top:40px;
-   font-size: 25px;
+   margin-top:80px;
    float: left;
-   padding-right: 130px;
-   margin-bottom: 10px;
+   padding-left: 80px;
+   padding-right: 100px;
+   margin-bottom: 20px;
 }
 .ul li a{
-   font-weight: normal;
+   font-weight: bold;
+   color: dimgrey;
+   font-size: 18px;
 }
 /*메뉴 구분선*/
 #ulhr{
@@ -102,7 +109,7 @@
    width: 425px;
    margin-bottom: 10px;
 }
-.a{font-size:25px;}
+.a{font-size:25px;padding-bottom: 8px;}
 .rv{margin-left: 800px;}
 .none_rv{margin-top: 20px;}
 .info{
