@@ -100,7 +100,7 @@ if(cp % pageButton == 0){
    <input type="submit" value="검색" class="seaBtnDeco">
    </div>
    </form>
-      <table>
+      <table class="ordTable">
       <thead>
          <tr id="trUp">
             <th>주문번호</th>
