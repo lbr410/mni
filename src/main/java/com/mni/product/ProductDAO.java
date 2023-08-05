@@ -485,7 +485,7 @@ public class ProductDAO {
                   int prod_price = rs.getInt("prod_price");
                   String prod_title = rs.getString("prod_title");
                   int prod_count = rs.getInt("prod_count");
-                 ProductDTO dto = new ProductDTO(prod_idx, prod_title_img, prod_name, prod_price, prod_title, prod_count);
+                 ProductDTO dto = new ProductDTO(prod_idx, prod_name, prod_title, prod_price, prod_title_img, prod_count);
                  arr.add(dto);
               } while(rs.next());
            }

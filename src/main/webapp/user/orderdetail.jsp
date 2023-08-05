@@ -87,7 +87,7 @@ userInfoDTO dto = udao.loginCheck(id);
          </tr>
          <tr>
          	<th>상품수량</th>
-         	<td><%=arr.get(i).getOrder_count() %>&nbsp;개</td>
+         	<td><%=arr.get(i).getOrder_count() %>개</td>
          </tr>
       </table>
       <%if(arr.get(i).getOrder_state().equals("미승인")){ %>
