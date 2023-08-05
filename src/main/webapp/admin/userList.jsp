@@ -5,6 +5,7 @@
 <%@ page import="com.mni.userInfo.*" %>
 <jsp:useBean id="udao" class="com.mni.userInfo.userInfoDAO"></jsp:useBean>
 <%
+request.setCharacterEncoding("utf-8");
 String admin_id = (String)session.getAttribute("admin_saveid");
 String ck = "";
 Cookie cks[]=request.getCookies();
