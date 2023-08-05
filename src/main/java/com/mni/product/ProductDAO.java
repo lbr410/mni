@@ -365,9 +365,9 @@ public class ProductDAO {
             conn = com.mni.db.MniDB.getConn();
             int start = (cp-1)*pageCnt+1;
             int end = cp*pageCnt;
-            String sql = "select * from"
-                  + "(select rownum as rnum, a.* from"
-                  + "(select * from product where prod_category = ?) a) "
+            String sql = "select * from "
+                  + "(select rownum as rnum, a.* from "
+                  + "(select * from product where prod_category = ?) a) b "
                   + "where rnum>=? and rnum<=?";
             ps = conn.prepareStatement(sql);
             ps.setInt(1, num);
@@ -379,9 +379,15 @@ public class ProductDAO {
                String name=rs.getString("prod_name");
                String title=rs.getString("prod_title");
                int price=rs.getInt("prod_price");
-               String img=rs.getString("prod_title_img");
+               String title_img=rs.getString("prod_title_img");
+               int idx = rs.getInt("prod_idx");
+               ProductDTO dto=new ProductDTO();
+               dto.setProd_name(name);
+               dto.setProd_title(title);
+               dto.setProd_price(price);
+               dto.setProd_title_img(title_img);
+               dto.setProd_idx(idx);
                
-               ProductDTO dto=new ProductDTO(name, title, price, img);
                arr.add(dto);
             }
             return arr;

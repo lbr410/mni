@@ -52,6 +52,7 @@ font-size: 11px;
    사업자등록번호 &nbsp;&nbsp; 123-12-10012 &nbsp;&nbsp; | &nbsp;&nbsp; 개인정보보호책임자 &nbsp;&nbsp; 홍길동 &nbsp;&nbsp; | &nbsp;&nbsp; 팩스 &nbsp;&nbsp; 02-123-124<br>
    Tel &nbsp;&nbsp; 011-1234-1233 &nbsp;&nbsp; | &nbsp;&nbsp; E-mail ezen@naver.com<br>
    Copyright &copy; Ezen. All Rights Reserved.
+   <a href="/mni/admin/index_admin.jsp">관리자 페이지 이동</a>
    </label>
 </div>
 </div>

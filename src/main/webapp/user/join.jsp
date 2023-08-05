@@ -62,10 +62,10 @@ function joinsubmit(){
 	         if(zip != "" && addr1 != "" && addr2 != ""){
 	            return true;
 	         }else if(zip == "" && addr1 == ""){
-	            window.alert('주소검색 버튼을 통해 우편번호와 기본주소를 작성해주세요..!');
+	            window.alert('주소검색 버튼을 통해 우편번호와 기본주소를 작성해주세요.');
 	            return false;
 	         }else if(addr2 == ""){
-	            window.alert('상세주소를 작성해주세요..!');
+	            window.alert('상세주소를 작성해주세요.');
 	            return false;
 	         }
 	         
@@ -113,9 +113,9 @@ function jumin(object){
 	<!-- 버튼을 누르면 idCheck.jsp로 이동해서 중복확인 메서드 실행-->
 	<input type = "button" value = "중복확인" onclick = "idcheck()" class = "button">
 	<!-- 사용자에게 중복인지 아닌지 알려주는 div태그 -->
-	<div id = "idchecking_true" class = "idtrue">사용가능한 아이디입니다!</div>
-	<div id = "idchecking_false" class = "idexception">중복된 아이디입니다!</div>
-	<div id = "idchecking_null" class = "idexception">아이디를 입력하셔야합니다..!</div>
+	<div id = "idchecking_true" class = "idtrue">사용가능한 아이디입니다.</div>
+	<div id = "idchecking_false" class = "idexception">중복된 아이디입니다.</div>
+	<div id = "idchecking_null" class = "idexception">아이디를 입력하셔야합니다.</div>
 	</td>
 	</tr>
 	<tr>
