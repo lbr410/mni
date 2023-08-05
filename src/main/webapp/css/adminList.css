@@ -79,7 +79,7 @@ td{
 
 .td{
    text-align: center;
-   font-size: 11px;
+   font-size: 12px;
    padding-top: 9px;
    padding-bottom: 9px;
    padding-left :6px;
@@ -151,6 +151,18 @@ h1{
 }
 .ordText{
    color: #ff7f50;
+}
+.ordTable{
+	font-size: 12px;
+}
+.userTable{
+	font-size: 12px;
+}
+.reviewTable{
+	font-size: 12px;
+}
+.notTable{
+	font-size: 13px;
 }
 .proBtnDeco{
    width: 40px;

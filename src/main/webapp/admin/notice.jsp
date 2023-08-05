@@ -63,7 +63,7 @@ if(cp % pageButton == 0){
 <h1>공지사항</h1>
 <section>
 	<article>
-		<table>
+		<table class="notTable">
 		<thead>
 			<tr>
 				<th>NO.</th>
