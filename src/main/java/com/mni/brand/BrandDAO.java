@@ -32,12 +32,13 @@ public class BrandDAO {
 			
 			ArrayList<BrandDTO> arr=new ArrayList<BrandDTO>();
 			while(rs.next()) {
+				int idx=rs.getInt("prod_idx");
 				String name=rs.getString("prod_name");
 				String title=rs.getString("prod_title");
 				int price=rs.getInt("prod_price");
 				String img=rs.getString("prod_title_img");
 				
-				BrandDTO dto=new BrandDTO(name, title, price, img);
+				BrandDTO dto=new BrandDTO(idx ,name, title, price, img);
 				arr.add(dto);
 			}
 			return arr;
