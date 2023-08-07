@@ -8,11 +8,13 @@
 	int prod_idx = Integer.parseInt(prod_idx_s);
 	request.setCharacterEncoding("UTF-8");
 	
-	int count = cdao.cartInsert(cdto);
-	
-	String result = count>0 ? "장바구니에 담았습니다." : "장바구니 등록 실패!";
+	if(cdao.duplicateProdInTheCart(cdto)) {
+		cdao.duplicateCartUpdate(cdto);
+	} else {
+		cdao.cartInsert(cdto);
+	}
 %>
 <script>
-	window.alert('<%=result %>');
+	window.alert('장바구니에 담았습니다.');
 	location.href='/mni/product/product.jsp?idx=<%=prod_idx%>';
 </script>

@@ -111,7 +111,7 @@
    margin-bottom: 10px;
 }
 .a{font-size:25px;padding-bottom: 8px;}
-.rv{margin-left: 800px;}
+.rv{margin-left: 800px;color:dimgrey;}
 .none_rv{margin-top: 20px;}
 .info{
    margin-top: 20px;
@@ -128,12 +128,10 @@
 }
 /*리뷰 사용자 이미지*/
 .reviewImg{
-   border: 1px solid gray; 
     height: 50px;
     width: 50px; 
     border-radius: 100%; 
-    background-color: darkgray; 
-    background: url('/mni/img/logo.png') darkgray center; 
+    background: url('/mni/img/logo.png') #cccccc center; 
     background-size: 63px;
     position:relative;
     top:30px;
@@ -156,6 +154,9 @@
 }
 .review_hr{
    margin-top: 50px;
+   background-color: #cccccc;
+   height: 1px;
+   border: 0;
 }
 /*주문취소*/
 .cancel{
@@ -205,12 +206,18 @@
 	margin-left: 10px;
 	padding-bottom: 10px;
 }
-fieldset{padding: 10px;}
+fieldset{padding: 10px; border: 1px solid #cccccc;}
 .soldout{
 	margin-top: 10px;
 	margin-left: 100px;
 }
 .prodcount_prod{
 	padding-top: 10px;
-	font-size: 20px;
+	font-size: 16px;
+}
+
+.reviewContentImg {
+	margin-top: 20px;
+	width: 100px;
+	height: 100px;
 }

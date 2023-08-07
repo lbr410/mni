@@ -37,8 +37,8 @@ section {
 
 .reviewContentImg {
 	margin-top: 20px;
-	width: 400px;
-	height: 400px;
+	width: 100px;
+	height: 100px;
 }
 
 .reviewSize {
@@ -68,4 +68,8 @@ h2 {
     color:white;
     outline: none;
     border-radius: 5px;
+}
+
+.pagingAlign {
+	text-align: center;
 }

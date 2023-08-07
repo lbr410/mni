@@ -27,7 +27,7 @@
 	fieldset div input[type="submit"]{
 	width: 300px;
 	height: 50px;
-	margin-top: 30px;
+	margin-top: 10px;
 	border:0;
 	border-radius: 50px;
 	cursor: pointer;
@@ -35,6 +35,7 @@
 	color: white;
 	border: 1px solid #ff7f50; 
 	border-radius: 10px;
+	font-size: 18px;
 	}
 	
 	fieldset img{
@@ -42,4 +43,12 @@
 	height: 130px;
 	margin-left: 80px;
 	margin-top: 30px;
+	}
+	
+	.pwdChk {
+		font-size: 16px;
+	}
+	
+	.logoImg {
+		margin-top: 60px;
 	}

@@ -31,6 +31,7 @@
     border: 0;
     border: 1px #cccccc solid;
     margin-top: 10px;
+    padding-left: 8px;
 }
 .textFocus input:focus {
     border-color:#ff7f50;
@@ -96,6 +97,7 @@ td{
     border: 1px #ff7f50 solid;
     border-radius: 5px;
     cursor: pointer; 
+    text-align: center;
 }
 .nowPage{
     width: 22px;
@@ -105,6 +107,7 @@ td{
     border: 0;
     outline: none;
     border-radius: 5px;
+    text-align: center;
 }
 h1{
    margin: 0 auto;
@@ -177,7 +180,7 @@ h1{
 
 }
 .productup{
-   width:920px;
+   width:693px;
    text-align:right;
    display: inline-block;
    margin-left: 230px;

@@ -8,6 +8,58 @@ public class CartDAO {
 	private PreparedStatement ps;
 	private ResultSet rs;
 	
+	public CartDAO() {
+		System.out.println("CartDAO() 생성자 호출");
+	}
+	
+	/** 해당 상품이 이미 장바구니에 담겨져있는지 확인 - BR */
+	public boolean duplicateProdInTheCart(CartDTO cdto) {
+		try {
+			conn = com.mni.db.MniDB.getConn();
+			
+			String sql = "select cart_idx from cart where user_idx = ? and prod_idx = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, cdto.getUser_idx());
+			ps.setInt(2, cdto.getProd_idx());
+			rs = ps.executeQuery();
+			
+			return rs.next();
+		} catch(Exception e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			try {
+				if(rs!=null) rs.close();
+				if(ps!=null) ps.close();
+				if(conn!=null) conn.close();
+			} catch(Exception e) {}
+		}
+	}
+	
+	/** 장바구니에 해당 상품이 이미 담겨져 있다면 기존의 장바구니에 합산 - BR */
+	public int duplicateCartUpdate(CartDTO dto) {
+		try {
+			conn = com.mni.db.MniDB.getConn();
+			
+			String sql = "update cart set cart_count = cart_count+?, cart_total_price = cart_total_price+? where prod_idx = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, dto.getCart_count());
+			ps.setInt(2, dto.getCart_total_price());
+			ps.setInt(3, dto.getProd_idx());
+			int count = ps.executeUpdate();
+			
+			return count;
+		} catch(Exception e) {
+			e.printStackTrace();
+			return -1;
+		} finally {
+			try {
+				if(ps!=null) ps.close();
+				if(conn!=null) conn.close();
+			} catch(Exception e) {}
+		}
+	}
+	
 	/** 장바구니 물건 추가 - BR */
 	public int cartInsert(CartDTO dto) {
 		try {
@@ -40,9 +92,6 @@ public class CartDAO {
 		try {
 			conn = com.mni.db.MniDB.getConn();
 			
-
-			//String sql = "select c.prod_idx prod_idx, cart_idx, prod_name, prod_title_img, user_idx, cart_count, cart_price, cart_price * cart_count cart_total_price from product p, cart c "
-
 			String sql = "select c.prod_idx prod_idx, cart_idx, prod_name, "
 					+ "prod_title_img, user_idx, cart_count, cart_price, "
 					+ "cart_price * cart_count cart_total_price from product p, cart c "
@@ -146,7 +195,7 @@ public class CartDAO {
 			conn = com.mni.db.MniDB.getConn();
 			
 			String sql = "update cart set cart_count = cart_count+1, cart_total_price = (cart_count+1)*cart_price where prod_idx = ?";
-			//String sql = "update cart set cart_count = cart_count+1 where prod_idx = ?";
+			
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, prod_idx);
 			int count = ps.executeUpdate();
@@ -169,7 +218,7 @@ public class CartDAO {
 			conn = com.mni.db.MniDB.getConn();
 			
 			String sql = "update cart set cart_count = cart_count-1, cart_total_price = (cart_count-1)*cart_price where prod_idx = ?";
-			//String sql = "update cart set cart_count = cart_count-1 where prod_idx = ?";
+			
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, prod_idx);
 			int count = ps.executeUpdate();
@@ -186,7 +235,7 @@ public class CartDAO {
 		}
 	}
 	
-	/** 상품 구매 후 장바구니 목록 삭제 */
+	/** 상품 구매 후 장바구니 목록 삭제 - BR */
 	public int userCartDelete(int idx) {
 		try {
 			conn = com.mni.db.MniDB.getConn();
