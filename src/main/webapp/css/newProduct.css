@@ -34,17 +34,18 @@ body {
     padding-top: 40px;
 }
 table{
-	width: 980px;
-   border-spacing: 8px;
+   width: 980px;
    margin-bottom: 20px;
+   margin-left:4px;
+   border-spacing: 8px;
    float: right;
 }
 
 tr{
-   border-spacing: 20px;
+   border-spacing: 16px;
 }
 td{
-   padding-left: 24px;
+   padding-left: 14px;
 }
 .page{
     width: 22px;
@@ -69,7 +70,7 @@ td{
 }
 .prodImg {
     width: 226px;
-    height: 235px;
+    height: 226px;
     border-radius: 24px;
     overflow: hidden;
     background-color: #f5f5f5;
@@ -77,14 +78,13 @@ td{
 .prodImg img {
     width: 226px;
     cursor: pointer;
-    margin-bottom: 10px;
 }
 
 .prodName{
-   width: 200px;
+   width: 226px;
    height: 32px;
    padding-top: 8px;
-   padding-left: 4px;
+   padding-left: 10px;
    padding-bottom: 4px;
    color: #808080;
    font-weight: bold;
@@ -92,18 +92,21 @@ td{
    text-align: left;
 }
 .prodTitle {
-    width: 200px;
+    width: 226px;
     height: 58px;
     font-size: 16px;
     font-weight: 500;
     padding-bottom: 4px;
     color: #333333;
     cursor: pointer;
+    padding-left: 10px;
+    padding-bottom: 6px;
 }
 .prodPrice {
-    width: 200px;
+    width: 226px;
     height: 20px;
     font-size: 16px;
     font-weight: bold;
-    padding-bottom: 34px;
+    padding-left: 11px;
+    padding-bottom: 40px;
 }
