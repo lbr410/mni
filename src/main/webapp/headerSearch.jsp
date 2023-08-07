@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>검색</title>
-<link rel="stylesheet" type="text/css" href="/mni/css/category.css">
+<link rel="stylesheet" type="text/css" href="/mni/css/headerSearch.css">
 </head>
 <%
 String search = request.getParameter("search");
@@ -35,7 +35,7 @@ if (cp % pageButton == 0) {
     userGroup--;
 }
 %>
-<%@ include file="header.jsp" %>
+<%@ include file="/header.jsp" %>
 <body>
    
    <div class="menu">
@@ -108,6 +108,6 @@ if (cp % pageButton == 0) {
       </table>
 
    </div>
-   <%@ include file="footer.jsp" %>
+   <%@ include file="/footer.jsp" %>
 </body>
 </html>
