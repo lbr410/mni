@@ -64,7 +64,10 @@ th{
 tfoot{
    height:50px;
 }
-.td{
+tfoot td{
+	border: none;
+}
+td{
    text-align: center;
    font-size: 12.8px;
    padding-top: 9px;

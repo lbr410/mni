@@ -74,7 +74,7 @@ td{
 }
 .prodImg {
  width: 226px;
- height: 235px;
+ height: 226px;
  border-radius: 24px;
  overflow: hidden;
  background-color: #f5f5f5;
@@ -82,7 +82,6 @@ td{
 .prodImg img {
     width: 226px;
     cursor: pointer;
-    margin-bottom: 10px;
 }
 
 .prodName{
