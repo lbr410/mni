@@ -13,7 +13,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>멍냥이 : 회원정보 수정</title>
 <link rel = "stylesheet" type = "text/css" href = "/mni/css/userInfo.css">
 </head>
 <script>

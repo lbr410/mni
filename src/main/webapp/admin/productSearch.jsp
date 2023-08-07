@@ -87,9 +87,9 @@ if(cp % pageButton == 0){
    	<form name="prodSearch" action="/mni/admin/productSearch.jsp" method="post" onsubmit="productTitle()">
    <div class="searchBox"><input type="text" name="prod_name" placeholder="상품명 입력" id="searchBox" required>
    <input type="submit" value="검색" class="seaBtnDeco">
+   <div class="productup"><input type="button" value="상품등록" class="longboxBtnDeco" onclick="prodAdd()"></div>
    </div>
    </form>
-   <div class="productup"><input type="button" value="상품등록" class="longboxBtnDeco" onclick="prodAdd()"></div>
       <table>
       <thead>
          <tr>

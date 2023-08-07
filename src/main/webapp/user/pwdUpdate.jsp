@@ -12,7 +12,7 @@ Boolean pwd = udao.getUserPwd(id_s, juminfront, juminback);
 <html>
 <head>
 <meta charset="UTF-8">
-<title>멍냥이: 비밀번호 변경</title>
+<title>멍냥이 : 비밀번호 변경</title>
 </head>
 <style>
 .inputtext{
@@ -21,6 +21,7 @@ Boolean pwd = udao.getUserPwd(id_s, juminfront, juminback);
    margin-bottom: 10px;
    border:1px solid lightgray;
    border-radius: 10px;
+   padding-left: 10px;
 }
 .pwdexception{color: red; font-size: 13px;}
 

@@ -11,7 +11,7 @@ String id_s = udao.getUserId(juminfront, juminback);
 <html>
 <head>
 <meta charset="UTF-8">
-<title>멍냥이: 아이디 정보</title>
+<title>멍냥이 : 아이디 정보</title>
 </head>
 <style>
 .button{

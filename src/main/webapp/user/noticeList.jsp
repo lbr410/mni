@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>공지사항</title>
+<title>멍냥이 : 공지사항</title>
 
 <style>
 .page{   

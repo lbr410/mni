@@ -20,6 +20,7 @@ body {
 
 .contentMargin {
 	margin-top: 40px;
+	width: 800px;
 }
 
 .hrStyle {
@@ -50,7 +51,7 @@ h2 {
 	margin-top: 30px;
 }
 
-#page{
+.page{
     width: 22px;
     height: 22px;
     font-size: 12px;
@@ -59,15 +60,19 @@ h2 {
     background-color: white;
     border: 1px #ff7f50 solid;
     border-radius: 5px;
-    margin-left: 70px;
     cursor: pointer; 
+    text-align: center;
 }
 
-#page:focus {
+.nowPage {
+    width: 22px;
+    height: 22px;
     background-color:#ff7f50;
     color:white;
+    border: 0;
     outline: none;
     border-radius: 5px;
+    text-align: center;
 }
 
 .pagingAlign {

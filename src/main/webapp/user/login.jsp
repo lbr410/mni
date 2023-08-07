@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인</title>
+<title>멍냥이 : 로그인</title>
 <link rel = "stylesheet" type = "text/css" href = "/mni/css/login.css">
 </head>
 <%

@@ -25,7 +25,7 @@ case 04: categoryName="장난감"; sideMenu="/user/myweb/mni/sideMenu_04.jsp" ; 
 <html>
 <head>
 <meta charset="UTF-8">
-<title>사료</title>
+<title>멍냥이 : 카테고리</title>
 <link rel="stylesheet" type="text/css" href="/mni/css/category.css">
 
 </head>

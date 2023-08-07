@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>멍냥이 : 회원가입</title>
 </head>
 <link rel = "stylesheet" type = "text/css" href = "/mni/css/join.css">
 <script>

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>멍냥이: 비밀번호 찾기</title>
+<title>멍냥이 : 비밀번호 찾기</title>
 </head>
 <style>
 
