@@ -83,7 +83,7 @@ if (cp % pageButton == 0) {
                %><tr><%
                for(int i=0;i<arr.size();i++){
                   %>
-                     <td>
+                     <td>  
                         <div class="brand-list-item">
                                 <div class="prodImg">
                                   <a href="/mni/product/product.jsp?idx=<%=arr.get(i).getProd_idx()%>"><img src="/mni/admin/product_img/<%=arr.get(i).getProd_title_img() %>" alt="타이틀이미지" class="title_img"></a>

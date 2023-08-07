@@ -6,7 +6,7 @@ body {
 }
 .bar{
    width: 980px;
-   height: 15px;
+   height: 15px;  
    padding-top: 10px;
    padding-bottom: 10px;
    padding-left: 10px;
@@ -28,7 +28,7 @@ body {
     color: #3a3a3a;
 }
 .prodSection {
-	display: flex;
+   display: flex;
     width: 980px;
     margin-left: -30px;
     padding-top: 40px;
