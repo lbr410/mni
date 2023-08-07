@@ -9,6 +9,7 @@ String juminfront = request.getParameter("juminfront");
 String juminback = request.getParameter("juminback");
 
 int result = udao.setUserUpdatePwd(pwd, id, juminfront, juminback);
+System.out.println(result);
 if(result > 0){
 	%>
 	<script>
@@ -19,7 +20,7 @@ if(result > 0){
 }else{
 	%>
 	<script>
-		window.alert('비밀변호 변경 실패..! 관리자에게 문의해주세요.');
+		window.alert('비밀변호 변경 실패! 관리자에게 문의해주세요.');
 		location.href = 'login.jsp';
 	</script>
 	<%	

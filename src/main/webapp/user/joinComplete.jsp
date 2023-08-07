@@ -11,9 +11,8 @@ String pwd = request.getParameter("user_pwd");
 String tel = request.getParameter("user_tel");
 String user_jumin_front = request.getParameter("user_jumin_front");
 String user_jumin_back = request.getParameter("user_jumin_back");
-String user_jumin_s = user_jumin_front+user_jumin_back;
-System.out.println(user_jumin_s);
-long user_jumin = Long.parseLong(user_jumin_s);
+String user_jumin = user_jumin_front+user_jumin_back;
+System.out.println(user_jumin);
 
 String user_zip_s = request.getParameter("user_zip");
 int user_zip = Integer.parseInt(user_zip_s);

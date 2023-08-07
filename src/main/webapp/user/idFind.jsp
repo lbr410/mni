@@ -37,7 +37,8 @@ String id_s = udao.getUserId(juminfront, juminback);
 .div{
    font-size: 35px;
 }
-h3{margin-top: 30px;}
+h3{margin-top: 100px; margin-bottom: 10px;}
+
 </style>
 <body>
 <%@include file = "/header.jsp" %>
@@ -45,7 +46,7 @@ h3{margin-top: 30px;}
    <article>
    <form name = "fm" action = "pwdSearch.jsp?id=<%=id_s %>" method = "post">
       <%
-      if(id != null){
+      if(id_s != null){
          %>
          <h3>회원님의 아이디는</h3>
          <div class = "div"><%=id_s %> 입니다.</div>
@@ -55,7 +56,7 @@ h3{margin-top: 30px;}
       }else{
          %>
          <script>
-            window.alert('일치하는 정보가 없습니다..!');
+            window.alert('일치하는 정보가 없습니다!');
             location.href='/mni/user/idSearch.jsp';
          </script>
          <!-- <div class = "div">가입된 정보가 없습니다...</div>

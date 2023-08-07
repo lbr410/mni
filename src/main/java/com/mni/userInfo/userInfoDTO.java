@@ -8,7 +8,7 @@ public class userInfoDTO {
 	private String user_name;
 	private String user_pwd;
 	private String user_tel;
-	private long user_jumin;
+	private String user_jumin;
 	private int user_zip;
 	private String user_addr1;
 	private String user_addr2;
@@ -36,7 +36,7 @@ public class userInfoDTO {
 	
 	
 	
-	public userInfoDTO(int user_idx, String user_id, String user_name, String user_pwd, String user_tel, long user_jumin,
+	public userInfoDTO(int user_idx, String user_id, String user_name, String user_pwd, String user_tel, String user_jumin,
 			int user_zip, String user_addr1, String user_addr2, String user_email, String user_delete,
 			Date user_joindate, Date user_ddate) {
 		super();
@@ -57,7 +57,7 @@ public class userInfoDTO {
 	
 	
 	/*회원가입SM*/
-	public userInfoDTO(String user_id, String user_name, String user_pwd, String user_tel, long user_jumin, int user_zip,
+	public userInfoDTO(String user_id, String user_name, String user_pwd, String user_tel, String user_jumin, int user_zip,
 			String user_addr1, String user_addr2, String user_email) {
 		super();
 		this.user_id = user_id;
@@ -111,11 +111,11 @@ public class userInfoDTO {
 		this.user_tel = user_tel;
 	}
 
-	public long getUser_jumin() {
+	public String getUser_jumin() {
 		return user_jumin;
 	}
 
-	public void setUser_jumin(long user_jumin) {
+	public void setUser_jumin(String user_jumin) {
 		this.user_jumin = user_jumin;
 	}
 
