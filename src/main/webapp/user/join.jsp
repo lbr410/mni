@@ -14,6 +14,10 @@ function sethide(){
 	document.getElementById('idchecking_true').style.display = 'none';
 	document.getElementById('idchecking_false').style.display = 'none';
 	document.getElementById('idchecking_null').style.display = 'none';
+	document.getElementById('tel').style.display = 'none';
+	document.getElementById('juminchecking_false').style.display = 'none';
+	document.getElementById('juminchecking_true').style.display = 'none';
+	document.getElementById('juminchecking_null').style.display = 'none';
 	}
 function showpwd(){
 	 
@@ -37,6 +41,17 @@ function idcheck(){
 	window.open("/mni/user/idCheck.jsp?id="+user_id);
 }
 
+function juminCheck(){
+	var juminfront = document.join.user_jumin_front.value;
+	var juminback = document.join.user_jumin_back.value;
+	
+	if(juminfront.length != 6 && juminback != 7){
+			 window.alert('잘못된 주민번호 형식입니다.');
+		}else{
+			window.open("/mni/user/juminCheck.jsp?juminfront="+juminfront+"&juminback="+juminback);
+		}
+}
+
 function joinsubmit(){
 	   
 	   var idcheckbutton = document.join.idcheckbutton.value;
@@ -49,6 +64,15 @@ function joinsubmit(){
 	   var tf = pwd == pwdcheck;
 	   //비밀번호 일치여부 true false
 	   
+	   var tel = document.join.user_tel.value;
+	   // 전화번호 '-'기호 11자리 체크 여부
+	   
+	   var juminfront = document.join.user_jumin_front.value;
+	   var juminback = document.join.user_jumin_back.value;
+	   var jumincheckbutton = document.join.jumincheckbutton.value;
+	   // 주민번호 길이 6자리 7자리 체크 여부
+	   
+	   //아이디 중복여부
 	   if(idcheckbutton == ""){
 	      window.alert('아이디 중복확인을 해주세요.');
 	      return false;
@@ -57,10 +81,37 @@ function joinsubmit(){
 	      return false;
 	   }else if (idcheckbutton == "t"){
 	      
+		   // 비밀번호 여부
 	      if(tf){
 	         
 	         if(zip != "" && addr1 != "" && addr2 != ""){
-	            return true;
+	           
+	         if(zip.length != 5){
+	        	 window.alert('잘못된 우편번호형식 입니다.');
+	        	 return false;
+	         }else{
+	        	 
+	          // 전화번호 형식여부 
+	         if(tel.length != 11){
+	       		 window.alert('잘못된 전화번호 형식입니다.');
+	       		 return false;
+	       	 }else{
+	       		 if(jumincheckbutton == ""){
+	       			window.alert('주민번호 중복확인을 해주세요.');
+	       			 return false;
+	       		 }else if(jumincheckbutton == "f"){
+	       			 window.alert('중복된 주민번호 입니다.');
+	       			 return false;
+	       		 }else if(jumincheckbutton == "n"){
+	       			 window.alert('주민번호를 입력하셔야 합니다.');
+	       			 return false;
+	       		 }else if(jumincheckbutton == "t"){
+	       			 return true;
+	       		 }
+	       	 }
+	          
+	         }
+	          // 우편번호및 기본주소 상세주소 기재 여부
 	         }else if(zip == "" && addr1 == ""){
 	            window.alert('주소검색 버튼을 통해 우편번호와 기본주소를 작성해주세요.');
 	            return false;
@@ -68,15 +119,16 @@ function joinsubmit(){
 	            window.alert('상세주소를 작성해주세요.');
 	            return false;
 	         }
-	         
+	         // 비밀번호 일치여부
 	      }else{
 	         window.alert('비밀번호가 일치하지 않습니다.');
 	         document.getElementById('pwdchecking').style.display = '';
 	         return false;
 	      }
+		   // 아이디 입력 여부
 	   }else if(idcheckbutton == "n"){
 	      window.alert('아이디를 입력하셔야합니다.');
-	      opener.document.getElementById('idchecking_null').style.display = '';
+	      
 	      return false;
 	   }
 	   
@@ -88,6 +140,23 @@ function jumin(object){
       object.value = object.value.slice(0, object.maxLength);
     }    
   }
+  
+function telChecked(){
+	  
+	var tel = document.join.user_tel.value;
+	for(var a = 0 ; a < tel.length; a++){
+		
+		if(tel[a] == "-"){
+			window.alert('"-"는 입력하실수 없습니다.');
+			document.getElementById('tel').style.display = '';
+			document.join.user_tel.value = '';
+			return;
+		}else if(tel[a] != "-"){
+			document.getElementById('tel').style.display = 'none';
+		}
+	}
+ }
+ 
 </script>
 <body onload = "sethide()">
 <%@include file = "/header.jsp" %>
@@ -137,9 +206,14 @@ function jumin(object){
 	<tr>
 	<th>주민번호<font color = "red">*</font></th>
 	<td>
-	<input type = "number" name = "user_jumin_front" maxlength="6" class = "jumin" required oninput = "jumin(this)">
+	<input type = "hidden" name = "jumincheckbutton" value = "">
+	<input type = "number" name = "user_jumin_front" maxlength="6" class = "jumin" oninput = "jumin(this)">
 	-	
-	<input type = "number" name = "user_jumin_back" maxlength="7" class = "juminback" required oninput = "jumin(this)">
+	<input type = "number" name = "user_jumin_back" maxlength="7" class = "juminback" oninput = "jumin(this)">
+	<input type = "button" value = "중복확인" onclick = "juminCheck()" class = "button">
+	<div id = "juminchecking_false" class = "juminexception">중복된 주민번호입니다.</div>
+	<div id = "juminchecking_true" class = "idtrue">사용가능한 주민번호입니다.</div>
+	<div id = "juminchecking_null" class = "juminexception">주민번호를 입력하셔야합니다.</div>
 	</td>
 	
 	</tr>
@@ -155,8 +229,8 @@ function jumin(object){
 	<tr>
 	<th>전화번호<font color = "red">*</font></th>
 	<td>
-	<input type = "text" name = "user_tel" maxlength="11" class = "inputtext" required>
-	<div class = "a">"-"는 빼고 입력해 주세요.</div>
+	<input type = "text" name = "user_tel" maxlength="11" class = "inputtext" required onchange = "telChecked()">
+	<div id = "tel" class = "a">"-"는 빼고 입력해 주세요.</div>
 	</td>
 	</tr>
 	<tr>
