@@ -12,14 +12,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>사용자 주문내역</title>
+<title>멍냥이 : 주문내역</title>
 <link rel = "stylesheet" type = "text/css" href = "/mni/css/orderdetail.css">
 </head>
 <%
 if(session.getAttribute("sidx") == null){
    %>
    <script>
-      window.alert('로그인후 이용해주세요.');
+      window.alert('로그인 후 이용 바랍니다.');
       location.href = 'login.jsp';
    </script>
    <%
@@ -34,7 +34,8 @@ userInfoDTO dto = udao.loginCheck(id);
 %>
 <section class = "ordersection">
    <article>
-   
+   <br>
+	<h1>주문내역</h1>
    
    <% 
       String user_name = (String)session.getAttribute("sname");
@@ -52,7 +53,6 @@ userInfoDTO dto = udao.loginCheck(id);
 	   <%
    }else{
 	%>
-	<h1></h1>
 
    <%for(int i = 0 ; i < arr.size() ; i++){ %>
    <h3><%=arr.get(i).getOrder_date() %></h3>
@@ -86,20 +86,20 @@ userInfoDTO dto = udao.loginCheck(id);
             <td><%=df.format(arr.get(i).getOrder_total_price()) %></td>
          </tr>
          <tr>
-         	<th>상품수량</th>
-         	<td><%=arr.get(i).getOrder_count() %>개</td>
+         	<th class="margin1">상품수량</th>
+         	<td class="margin1"><%=arr.get(i).getOrder_count() %>개</td>
          </tr>
       </table>
       <%if(arr.get(i).getOrder_state().equals("미승인")){ %>
          <div class = "a">
-         <span class = "spanready">주문완료</span>
+         <span class = "spanready">주문완료&nbsp;</span>
          <input type = "button" value = "주문취소" class = "button" onclick = "javascript:location.href='userOrderCancel.jsp?ord_idx=<%=arr.get(i).getOrder_idx()%>'">
          </div>
          <%
       		}else if(arr.get(i).getOrder_state().equals("상품준비중")){
       			%>
       			<div class = "a">
-      	         <span class = "span">배송 준비중</span>
+      	         <span class = "span">배송준비중&nbsp;</span>
       	         <input type = "button" value = "주문취소" class = "button" onclick = "javascript:location.href='userOrderCancel.jsp?ord_idx=<%=arr.get(i).getOrder_idx()%>'">
       	         </div>
       	        <%
@@ -107,7 +107,7 @@ userInfoDTO dto = udao.loginCheck(id);
       		}else if(arr.get(i).getOrder_state().equals("배송중")){
       			%>
       			<div class = "a">
-      	         <span class = "span">배송중</span>
+      	         <span class = "span">배송중&nbsp;</span>
       	         <input type = "button" value = "수취확인" class = "button" onclick = "javascript:location.href='userReceiptConfirmation.jsp?ord_idx=<%=arr.get(i).getOrder_idx()%>&prod_idx=<%=arr.get(i	).getProd_idx()%>'">
       	         </div>
       			<%
@@ -124,13 +124,13 @@ userInfoDTO dto = udao.loginCheck(id);
       				if(reviewButton == arr.get(i).getOrder_idx()){
       					%>
               			<div class = "a">
-              	         <span class = "span">배송 완료</span>
+              	         <span class = "span">배송완료</span>
               	         </div>
               	        <%
       				}else{
       					%>
               			<div class = "a">
-              	         <span class = "span">배송 완료</span>
+              	         <span class = "span">배송완료&nbsp;</span>
               	         <input type="button" value="리뷰작성" class="button" 
               	         onclick="location.href='/mni/user/reviewWrite.jsp?prod_idx=<%=arr.get(i).getProd_idx() %>&user_idx=<%=idx%>&order_idx=<%=arr.get(i).getOrder_idx()%>'">
               	         </div>
@@ -139,7 +139,7 @@ userInfoDTO dto = udao.loginCheck(id);
       			}else{
       				%>
           			<div class = "a">
-          	         <span class = "span">배송 완료</span>
+          	         <span class = "span">배송완료&nbsp;</span>
           	         <input type="button" value="리뷰작성" class="button" 
           	         onclick="location.href='/mni/user/reviewWrite.jsp?prod_idx=<%=arr.get(i).getProd_idx() %>&user_idx=<%=idx%>&order_idx=<%=arr.get(i).getOrder_idx()%>'">
           	         </div>

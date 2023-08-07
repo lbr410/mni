@@ -47,11 +47,11 @@
       
       if(type === 'plus') {
     	  if(prod_count == 0){
-    		window.alert('상품 재고가 0개 남았습니다.');
+    		window.alert('재고가 없습니다.');
     		document.product.cart_count.value = 0;
     	  }else{
     		  if(count >= prod_count){
-    			  window.alert('재고가 부족하여 더이상 담으실수 없습니다.');
+    			  window.alert('재고가 부족하여 더이상 담으실 수 없습니다.');
     		  }else{
     				number = parseInt(count) + 1;
     		  }
@@ -74,7 +74,7 @@
 	   var prod_count = <%=dto.getProd_count()%>;
 	   
 	   if(count > prod_count){
-		   window.alert('재고가 부족하여 더이상 담으실수 없습니다.');
+		   window.alert('재고가 부족하여 더이상 담으실 수 없습니다.');
 		   return false;
 	   }else{
 		  return true;
@@ -114,7 +114,7 @@
       <input type="text" name="cart_count" maxlength="2" 
       id="prodcount" value="1" class="cart_count">&nbsp;
       <input type="button" value="+" onclick="prodCount('plus')" class="button_p">
-      <div class = "prod_count">수량: <%=dto.getProd_count() %> 남음<span><%=df.format(dto.getProd_price()) %></span></div>
+      <div class = "prod_count">수량 : <%=dto.getProd_count() %> 남음<span><%=df.format(dto.getProd_price()) %></span></div>
       </div>
       <hr id="hr">
       <div class="prodcart">
@@ -167,7 +167,7 @@
    <a name="review" class = "a">구매후기</a>
    <span class = "rv"><a href="/mni/product/reviewMore.jsp?idx=<%=prod_idx %>">리뷰 더 보기</a></span>
   </div> 
-   <hr class="detail_hr">
+   <hr id="ulhr" class="detail_hr">
       </article>
    </section>
 <section class="section">
@@ -199,10 +199,11 @@
          </div>
          </div>
          <div class="review_content">
-         <span><%=table.get(i).getReview_content() %></span>
+         <span><%=table.get(i).getReview_content().replaceAll("\n", "<br>") %></span>
          </div>
          <div>
-         <img src="/mni/user/review_img/<%=table.get(i).getReview_img() %>" alt="review image" onError="this.style.visibility='hidden'">
+         <a href="/mni/user/review_img/<%=table.get(i).getReview_img() %>" target="blank">
+         <img src="/mni/user/review_img/<%=table.get(i).getReview_img() %>" alt="review image" class="reviewContentImg" onError="this.style.visibility='hidden'"></a>
          </div>
          <hr class="review_hr">
 <%

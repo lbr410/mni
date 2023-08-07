@@ -51,7 +51,7 @@
 		<span class="SpanMargin"><%=table.get(i).getUser_id() %></span><br>
 		<span class="SpanMargin"><%=table.get(i).getReview_date() %></span>
 	</div>
-		<div class="contentMargin"><%=table.get(i).getReview_content() %></div>
+		<div class="contentMargin"><%=table.get(i).getReview_content().replaceAll("\n", "<br>") %></div>
 	<div>
 		<a href="/mni/user/review_img/<%=table.get(i).getReview_img() %>" target="blank">
 		<img src="/mni/user/review_img/<%=table.get(i).getReview_img() %>" alt="review image" class="reviewContentImg" onError="this.style.visibility='hidden'"></a>
@@ -60,7 +60,7 @@
 	<%
 		}
 	%>
-	<div>
+	<div class="pagingAlign">
 	<%
 	if(userGroup != 0){
             %><a href="reviewMore.jsp?idx=<%=prod_idx %>&cp=<%=userGroup*pageButton%>">&lt;&lt;</a><%
@@ -77,29 +77,6 @@
          }
          %>
 	</div>
-	<!-- 이 밑으로 지울 부분임. review 등록이 안 되서 테스트로 만듦 -->
-	<div class="reviewSize">
-	<img src="/mni/img/logo.png" alt="이미지" class="proImg">
-		<span class="SpanMargin">bb</span><br>
-		<span class="SpanMargin">2023-08-03</span>
-	</div>
-		<div class="contentMargin">뭉이가 잘 먹어요</div>
-	<div>
-		<img src="/mni/img/acana_banner.jpg" alt="review image" class="reviewContentImg" onError="this.style.visibility='hidden'">
-	</div>
-	<hr class="hrStyle">
-	<div class="reviewSize">
-	<img src="/mni/img/orijen.jpg" alt="이미지" class="proImg">
-		<span class="SpanMargin">bb</span><br>
-		<span class="SpanMargin">2023-08-03</span>
-	</div>
-		<div class="contentMargin">뭉이가 잘 먹어요</div>
-	<div>
-		<a href="/mni/img/acana_banner.jpg" target="blank">
-		<img src="/mni/img/acana_banner.jpg" alt="review image" class="reviewContentImg" onError="this.style.visibility='hidden'"></a>
-	</div>
-	<hr class="hrStyle">
-	<!-- 여기까지 -->
 </article>
 </section>
 <%@ include file="/footer.jsp" %>
