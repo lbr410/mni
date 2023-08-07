@@ -93,12 +93,12 @@ if(pwd == false){
       <table>
          <tr>
             <th>새 비밀번호<font color = "red">*</font></th>
-            <td><input type = "password" name = "user_pwd" placeholder="비밀번호 입력." class = "inputtext" required></td>
+            <td><input type = "password" name = "user_pwd" placeholder="비밀번호 입력" class = "inputtext" required maxlength="16"></td>
          </tr>
          <tr>
             <th>새 비밀번호 확인<font color = "red">*</font></th>
             <td>
-            <input type = "password" name = "pwdcheck" placeholder="비밀번호 확인." class = "inputtext" onchange = "showpwd()" required>
+            <input type = "password" name = "pwdcheck" placeholder="비밀번호 확인" class = "inputtext" onchange = "showpwd()" required maxlength="16">
             <!-- 사용자에게 위에 비밀번호와 일치하는지 다른지 알려주는 div태그 -->
             <div id = "pwdchecking" class = "pwdexception">입력한 비밀번호가 일치하지 않습니다.</div>
             </td>
