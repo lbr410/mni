@@ -37,6 +37,31 @@ public class userInfoDAO {
       }
    }
    
+ //주민번호 중복검사   
+   public Boolean userJuminCheck(String juminfront, String juminback) {
+      try {
+    	  
+         conn = com.mni.db.MniDB.getConn();
+         String sql = "select user_idx from userinfo "
+               + "where user_jumin = ?";
+         ps = conn.prepareStatement(sql);
+         String jumin_s = juminfront+juminback;
+         Long jumin = Long.parseLong(jumin_s);
+         ps.setLong(1, jumin);
+         rs = ps.executeQuery();
+         return rs.next();
+      }catch(Exception e) {
+         e.printStackTrace();
+         return false;
+      }finally {
+         try {
+            if(rs != null) rs.close();
+            if(ps != null) ps.close();
+            if(conn != null) conn.close();
+         }catch(Exception e) {}
+      }
+   }
+   
    //회원가입SM
    public int userjoin(userInfoDTO dto) {
       try {

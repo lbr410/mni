@@ -8,7 +8,18 @@
 <title>멍냥이: 비밀번호 찾기</title>
 </head>
 <style>
-fieldset{width: 700px; height: 200px; margin-top: 30px; text-align: center;}
+
+h2{
+margin-bottom: -20px;
+}
+
+fieldset{
+width: 600px; 
+height: 200px; 
+margin-top: 30px; 
+text-align: center;
+border: 1px solid lightgray;
+}
 
 table{
 	border-spacing: 0 20px;
@@ -16,7 +27,7 @@ table{
 
 th{text-align: left;}
 
-td{padding-left: 10px;}
+td{padding-left: 10px; text-align: left;}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -25,21 +36,23 @@ input::-webkit-inner-spin-button {
 }
 
 .input{
-width: 140px;
-height: 40px;
+width: 120px;
+height: 20px;
 border:1px solid lightgray;
 border-radius: 10px;
+padding: 10px;
 }
 
 
 fieldset .submit{
-	width: 200px; 
+	width: 300px; 
 	height: 45px; 
 	border: 1px solid #ff7f50;
 	border-radius: 10px;
 	background-color: #ff7f50;
 	color: white;
 	cursor: pointer;
+	margin-left: 75px;
 }
 
 .jumin{
@@ -87,7 +100,7 @@ function jumin(object){
 		}else{
 			%>
 			<th>아이디</th> 
-			<td><input type = "text" name = "id" placeholder="아이디 입력." required class ="input"></td>
+			<td><input type = "text" name = "id" placeholder="아이디 입력" required class ="input"></td>
 			<%
 		}
 		%>
