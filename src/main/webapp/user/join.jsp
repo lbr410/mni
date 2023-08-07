@@ -45,7 +45,7 @@ function juminCheck(){
 	var juminfront = document.join.user_jumin_front.value;
 	var juminback = document.join.user_jumin_back.value;
 	
-	if(juminfront.length != 6 && juminback != 7){
+	if(juminfront.length != 6 || juminback.length != 7){
 			 window.alert('잘못된 주민번호 형식입니다.');
 		}else{
 			window.open("/mni/user/juminCheck.jsp?juminfront="+juminfront+"&juminback="+juminback);
