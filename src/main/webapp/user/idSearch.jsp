@@ -22,6 +22,7 @@ input::-webkit-inner-spin-button {
 	border-radius: 10px;
 	font-size:medium;
 	text-align: center;
+	margin-left: 30px;
 }
 	
 .juminback{
@@ -34,19 +35,27 @@ input::-webkit-inner-spin-button {
 	text-align: center;
 }
 .submit{
-	width: 200px; 
-	height: 45px; 
-	margin-top: 15px; 
+	width: 300px;
+	height: 50px;
+	margin-top: 20px; 
+	margin-left: 40px;
+	margin-bottom: 20px;
 	border: 1px solid #ff7f50;
 	border-radius: 10px;
 	background-color: #ff7f50;
 	color: white;
 	cursor: pointer;
 }
-
-.div{margin-left: -100px;}
+fieldset{
+width: 600px; 
+height: 250px; 
+margin-top: 10px; 
+text-align: center;
+border: 1px solid lightgray;
+}
+.div{margin-left: -60px;}
 	
-h2{margin-left: -100px;}
+h2{margin-left: 0px;}
 </style>
 <Script>
 function jumin(object){
@@ -61,14 +70,15 @@ function jumin(object){
 <section>
 	<article>
 	<h2>아이디 찾기</h2>
-		<form name = "fm" action = "idFind.jsp" method = "post">
-		
+	<fieldset>
+		<form name = "fm" action = "/mni/user/idFind.jsp" method = "post">
 			<div class = "div">
 			주민번호 <input type = "number" name = "juminfront" maxlength="6" class = "jumin" oninput = "jumin(this)" required>
 			- <input type = "number" name = "juminback" maxlength="7" class = "juminback" oninput = "jumin(this)" required>
 			</div>
 		<input type = "submit" value = "아이디찾기" class = "submit">
 		</form>		
+	</fieldset>
 	</article>
 </section>
 <%@include file = "/footer.jsp" %>
