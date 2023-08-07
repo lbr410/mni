@@ -64,7 +64,7 @@ th{
 tfoot{
    height:50px;
 }
-td{
+.td{
    text-align: center;
    font-size: 12.8px;
    padding-top: 9px;
@@ -137,7 +137,7 @@ if(cp % pageButton == 0){
             if(arr==null || arr.size()==0){
                %>
                <tr>
-                  <td colspan="6">등록된 공지사항이 없습니다.</td>
+                  <td colspan="6" class="td">등록된 공지사항이 없습니다.</td>
                </tr>
                <%
             }else{
@@ -145,11 +145,11 @@ if(cp % pageButton == 0){
                   NoticeDTO dto=arr.get(i);
                   %>
                   <tr>
-                     <td><%=dto.getNotice_idx() %></td>
-                     <td><a href="/mni/user/noticeContent.jsp?userNotice_idx=<%=arr.get(i).getNotice_idx()%>"><%=dto.getNotice_title() %></a></td>
-                     <td><%=dto.getAdmin_id() %></td>
-                     <td><%=dto.getNotice_date() %></td>
-                     <td><%=dto.getNotice_count() %></td>
+                     <td class="td"><%=dto.getNotice_idx() %></td>
+                     <td class="td"><a href="/mni/user/noticeContent.jsp?userNotice_idx=<%=arr.get(i).getNotice_idx()%>"><%=dto.getNotice_title() %></a></td>
+                     <td class="td"><%=dto.getAdmin_id() %></td>
+                     <td class="td"><%=dto.getNotice_date() %></td>
+                     <td class="td"><%=dto.getNotice_count() %></td>
                   </tr>
                   <%
                }
