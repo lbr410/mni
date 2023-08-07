@@ -117,7 +117,7 @@ if(cp % pageButton == 0){
          <%
          }
          for(int i=0; i<arr.size(); i++){
-              String jumin = Long.toString(arr.get(i).getUser_jumin());
+              String jumin = arr.get(i).getUser_jumin();
              %>
              <tr>
                 <td><%=arr.get(i).getUser_idx() %></td>

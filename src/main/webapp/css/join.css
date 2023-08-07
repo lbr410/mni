@@ -76,6 +76,7 @@
 	border-radius: 10px;
 	padding:10px;
 	font-size: 15px;
+	padding:10px;
 	}
 	
 	.inputtext_add{
@@ -95,18 +96,22 @@
   	margin: 0;
 	}
 	.jumin{
-	width: 125px; 
-	height: 40px;
+	width: 105px; 
+	height: 20px;
 	border:1px solid lightgray;
 	border-radius: 10px;
+	padding:10px;
+	font-size:15px;
 	}
 	
 	.juminback{
-	width: 125px; 
-	height: 40px;
+	width: 105px; 
+	height: 20px;
 	border:1px solid lightgray;
 	border-radius: 10px;
 	-webkit-text-security: disc;
+	padding:10px;
+	font-size:15px;
 	}
 	
 	.pwdexception{color: red; font-size: 13px;}

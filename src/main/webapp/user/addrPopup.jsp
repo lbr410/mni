@@ -15,17 +15,19 @@ request.setCharacterEncoding("utf-8");
    h2 hr{width: 300px;}
    .zip{
       width: 65px;
-      height: 30px;
+      height: 20px;
       border: 1px solid lightgray;
       border-radius: 5px;
-      font-size:20px;
+      font-size:15px;
+      padding:10px
    }
    .addr{
       width: 300px;
-      height: 30px;
+      height: 20px;
       border: 1px solid lightgray;
       border-radius: 5px;
-      font-size:20px;
+      font-size:15px;
+      padding:10px;
    }
    input[type="text"]{margin-bottom: 20px; margin-left: 20px;}
    input[type="number"]{margin-bottom: 20px; margin-left: 20px;}

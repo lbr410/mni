@@ -45,9 +45,8 @@ public class userInfoDAO {
          String sql = "select user_idx from userinfo "
                + "where user_jumin = ?";
          ps = conn.prepareStatement(sql);
-         String jumin_s = juminfront+juminback;
-         Long jumin = Long.parseLong(jumin_s);
-         ps.setLong(1, jumin);
+         String jumin = juminfront+juminback;
+         ps.setString(1, jumin);
          rs = ps.executeQuery();
          return rs.next();
       }catch(Exception e) {
@@ -81,7 +80,7 @@ public class userInfoDAO {
         }else {
            ps.setString(8, dto.getUser_email());
         }
-        ps.setLong(9, dto.getUser_jumin());
+        ps.setString(9, dto.getUser_jumin());
         int count = ps.executeUpdate();
         return count;
       }catch(Exception e) {
@@ -111,7 +110,7 @@ public class userInfoDAO {
                String name=rs.getString("user_name");
                String usrpwd=rs.getString("user_pwd");
                String tel=rs.getString("user_tel");
-               Long jumin=rs.getLong("user_jumin");
+               String jumin=rs.getString("user_jumin");
                int zip=rs.getInt("user_zip");
                String addr1=rs.getString("user_addr1");
                String addr2=rs.getString("user_addr2");
@@ -161,22 +160,18 @@ public class userInfoDAO {
    public String getUserId(String juminfront, String juminback) {
          try {
             conn = com.mni.db.MniDB.getConn();
-            String sql = "select user_id from userinfo "
-                  + "where user_jumin = ?";
+            String sql = "select user_id,user_delete from userinfo "
+                  + "where user_jumin = ? and user_delete = 'n'";
             ps = conn.prepareStatement(sql);
-            String jumin_s = juminfront+juminback;
-            Long jumin = Long.parseLong(jumin_s);
-            ps.setLong(1, jumin);
+            String jumin = juminfront+juminback;
+            ps.setString(1, jumin);
             rs = ps.executeQuery();
-            String user_id = null;
+            String user = null;
             if(rs.next()) {
-               user_id = rs.getString(1);
+               user = rs.getString(1);
             }
-
-
-            System.out.println(user_id);
-
-            return user_id;
+            
+            return user;
          }catch(Exception e) {
             e.printStackTrace();
             return null;
@@ -194,12 +189,11 @@ public class userInfoDAO {
          try {
             conn = com.mni.db.MniDB.getConn();
             String sql = "select user_pwd from userinfo "
-                    + "where user_id = ? and user_jumin = ?";
+                    + "where user_id = ? and user_jumin = ? and user_delete = 'n'";
             ps = conn.prepareStatement(sql);
             ps.setString(1, id);
-            String jumin_s = juminfront+juminback;
-            Long jumin = Long.parseLong(jumin_s);
-            ps.setLong(2, jumin);
+            String jumin = juminfront+juminback;
+            ps.setString(2, jumin);
             rs = ps.executeQuery();
             if(rs.next()) {
                return true;
@@ -230,9 +224,11 @@ public class userInfoDAO {
          ps = conn.prepareStatement(sql);
          ps.setString(1, pwd);
          ps.setString(2, id);
-         String jumin_s = juminfront+juminback;
-         Long jumin = Long.parseLong(jumin_s);
-         ps.setLong(3, jumin);
+         String jumin = juminfront+juminback;
+         System.out.println(pwd);
+         System.out.println(id);
+         System.out.println(jumin);
+         ps.setString(3, jumin);
          int count = ps.executeUpdate();
          return count;
       }catch(Exception e) {
@@ -342,7 +338,7 @@ public class userInfoDAO {
             String name = rs.getString("user_name");
             String pwd = rs.getString("user_pwd");
             String tel = rs.getString("user_tel");
-            long user_jumin = rs.getLong("user_jumin");
+            String user_jumin = rs.getString("user_jumin");
             int user_zip = rs.getInt("user_zip");
             String user_addr1 = rs.getString("user_addr1");
             String user_addr2 = rs.getString("user_addr2");
@@ -387,7 +383,7 @@ public class userInfoDAO {
                String user_name = rs.getString("user_name");
                String user_pwd = rs.getString("user_pwd");
                String user_tel = rs.getString("user_tel");
-               long user_jumin = rs.getLong("user_jumin");
+               String user_jumin = rs.getString("user_jumin");
                int user_zip = rs.getInt("user_zip");
                String user_addr1 = rs.getString("user_addr1");
                String user_addr2 = rs.getString("user_addr2");

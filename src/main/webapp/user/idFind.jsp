@@ -37,7 +37,8 @@ String id_s = udao.getUserId(juminfront, juminback);
 .div{
    font-size: 35px;
 }
-h3{margin-top: 30px;}
+h3{margin-top: 100px; margin-bottom: 10px;}
+
 </style>
 <body>
 <%@include file = "/header.jsp" %>
@@ -55,7 +56,7 @@ h3{margin-top: 30px;}
       }else{
          %>
          <script>
-            window.alert('일치하는 정보가 없습니다..!');
+            window.alert('일치하는 정보가 없습니다!');
             location.href='/mni/user/idSearch.jsp';
          </script>
          <!-- <div class = "div">가입된 정보가 없습니다...</div>

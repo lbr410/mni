@@ -91,11 +91,11 @@ if(pwd == false){
    <form name = "change" action = "pwdUpdate_ok.jsp" method = "post" onsubmit = "return changesubmit()">
       <table>
          <tr>
-            <th>변경할 비밀번호<font color = "red">*</font></th>
+            <th>새 비밀번호<font color = "red">*</font></th>
             <td><input type = "password" name = "user_pwd" placeholder="비밀번호 입력." class = "inputtext" required></td>
          </tr>
          <tr>
-            <th>비밀번호 확인<font color = "red">*</font></th>
+            <th>새 비밀번호 확인<font color = "red">*</font></th>
             <td>
             <input type = "password" name = "pwdcheck" placeholder="비밀번호 확인." class = "inputtext" onchange = "showpwd()" required>
             <!-- 사용자에게 위에 비밀번호와 일치하는지 다른지 알려주는 div태그 -->
@@ -103,7 +103,7 @@ if(pwd == false){
             </td>
          </tr>   
       </table>
-      <input type = "hidden" name = "id" value = "<%=id %>">
+      <input type = "hidden" name = "id" value = "<%=id_s %>">
       <input type = "hidden" name = "juminfront" value = "<%=juminfront %>">
       <input type = "hidden" name = "juminback" value = "<%=juminback %>">
       <input type = "submit" value = "변경하기" class = "submit">
