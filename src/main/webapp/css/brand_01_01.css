@@ -48,6 +48,7 @@ body{
 	padding: 14px;
 	color: #ff7f50;
 	font-weight: bold;
+	margin-top: 18.5px;
 }
 .list2{
 	padding: 14px;
@@ -90,6 +91,7 @@ table {
   	margin-bottom: 20px;
   	width: 800px;
   	margin-right: 50px;
+  	margin-left: 30px;
 }
 
 tr{
@@ -147,7 +149,7 @@ hr{
     padding-left:11px;
 }
 .prodNum{
-	margin-top: 55px;
+	/*margin-top: 55px;*/
 }
 
 

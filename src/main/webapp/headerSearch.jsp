@@ -47,7 +47,7 @@ if (cp % pageButton == 0) {
          <div class="list2"><a href="/mni/category.jsp?categoryNum=04">장난감</a></div>
       </div>
    </div>
-   <div class="head-title">검색어:<%=search %></div>
+   <div class="head-title">검색어 : <%=search %></div>
    <div class="prodNum"><%=hdao.searchProdCnt(search) %>개의 상품</div>
    <div class="prodSection">
       <table border="0" cellspacing="0">
