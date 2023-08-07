@@ -17,7 +17,7 @@
 		<img src = "/mni/img/mainlogo.png" class="logoImg">
 			<div class="pwdChk">
 			
-			<input type = "password" name = "pwd" placeholder=" 비밀번호 입력"><br>
+			<input type = "password" name = "pwd" placeholder=" 비밀번호 입력" maxlength="16"><br>
 			<input type = "submit" value = "확인">
 			</div>
 		</fieldset>

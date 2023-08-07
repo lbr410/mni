@@ -28,7 +28,7 @@ if(cks!=null){
 			<div>
 				<input type = "text" name = "id" placeholder="아이디" class = "textbox" value = "<%=idremember%>"><br>
 				<div></div>
-				<input type = "password" name = "pwd" placeholder="비밀번호" class = "textbox"><br>
+				<input type = "password" name = "pwd" placeholder="비밀번호" class = "textbox" maxlength="16"><br>
 				<div class = "textsize">
 				<%if(!idremember.equals("")){%>
 				<input type = "checkbox" name = "idremember" class = "checkbox" checked>&nbsp;아이디 기억하기
