@@ -28,7 +28,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>멍냥이 : 주문/결제</title>
 <link rel = "stylesheet" type = "text/css" href = "/mni/css/payment.css">
 </head>
 <script>

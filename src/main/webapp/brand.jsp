@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>브랜드</title>
+<title>멍냥이 : 브랜드</title>
 <link rel="stylesheet" type="text/css" href="/mni/css/brand.css">
 </head>
 <%@ include file="/header.jsp" %>

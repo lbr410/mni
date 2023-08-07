@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>멍냥이: 아이디 찾기</title>
+<title>멍냥이 : 아이디 찾기</title>
 </head>
 <style>
 input[type="number"]{margin-top: 70px;}

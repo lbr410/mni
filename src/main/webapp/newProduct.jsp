@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>신상품</title>
+<title>멍냥이 : 신상품</title>
 <link rel="stylesheet" type="text/css" href="/mni/css/newProduct.css">
 </head>
 <%

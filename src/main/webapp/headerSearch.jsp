@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>검색</title>
+<title>멍냥이 : 검색결과</title>
 <link rel="stylesheet" type="text/css" href="/mni/css/headerSearch.css">
 </head>
 <%
