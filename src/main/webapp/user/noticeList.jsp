@@ -64,6 +64,9 @@ th{
 tfoot{
    height:50px;
 }
+tfoot td{
+	border: none;
+}
 td{
    text-align: center;
    font-size: 12.8px;
