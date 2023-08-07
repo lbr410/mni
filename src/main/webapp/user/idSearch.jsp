@@ -22,6 +22,7 @@ input::-webkit-inner-spin-button {
 	border-radius: 10px;
 	font-size:medium;
 	text-align: center;
+	margin-left: 30px;
 }
 	
 .juminback{
@@ -34,8 +35,8 @@ input::-webkit-inner-spin-button {
 	text-align: center;
 }
 .submit{
-	width: 200px; 
-	height: 45px; 
+	width: 300px;
+	height: 50px;
 	margin-top: 15px; 
 	border: 1px solid #ff7f50;
 	border-radius: 10px;
