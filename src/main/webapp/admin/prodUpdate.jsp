@@ -71,9 +71,8 @@ case 500: brand_5 = "selected"; break;
 <body>
 <div class="divSize">
 <%@ include file="admin_header/admin_header_2.jsp" %>
+<h1>상품수정</h1><br>
 <section>
-<br><br><br>
-   <span>상품등록</span>
    <article>
    <br>
       <form name="prodInsert" action="prodUpdate_ok.jsp" method="post" enctype="multipart/form-data">
