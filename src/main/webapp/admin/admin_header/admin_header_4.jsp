@@ -9,7 +9,7 @@ header{
 }
 .top{
 	float: left;
-	height: 900px;
+	height: 1000px;
 	width: 280px;
 	background-color: #ff7f50;
 }
